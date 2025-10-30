@@ -1,5 +1,8 @@
 import { Globe, Zap, Users, TrendingUp } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import AnimatedNumber from '@/components/AnimatedNumber';
+import RevealOnScroll from '@/components/RevealOnScroll';
+import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 
 const values = [
   {
@@ -53,34 +56,42 @@ export default function Sobre() {
                 negócios e construir um futuro melhor para todos.
               </p>
             </div>
-            <div className="bg-primary/10 rounded-2xl p-8 text-center">
-              <div className="text-6xl font-bold text-primary mb-2">100+</div>
-              <p className="text-muted-foreground">Países Alcançados</p>
-              <div className="text-6xl font-bold text-secondary my-6">10M+</div>
-              <p className="text-muted-foreground">Leitores Mensais</p>
-              <div className="text-6xl font-bold text-accent mt-6 mb-2">50+</div>
-              <p className="text-muted-foreground">Especialistas</p>
-            </div>
+            <RevealOnScroll delay={200}>
+              <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-2xl p-8 text-center shadow-xl border border-primary/20">
+                <AnimatedNumber value={100} suffix="+" className="text-6xl font-bold text-primary mb-2" />
+                <p className="text-muted-foreground mb-6">Países Alcançados</p>
+                
+                <AnimatedNumber value={10} suffix="M+" className="text-6xl font-bold text-secondary mb-2" />
+                <p className="text-muted-foreground mb-6">Leitores Mensais</p>
+                
+                <AnimatedNumber value={50} suffix="+" className="text-6xl font-bold text-accent mb-2" />
+                <p className="text-muted-foreground">Especialistas</p>
+              </div>
+            </RevealOnScroll>
           </div>
         </div>
       </section>
 
       {/* Values */}
       <section className="wide-container py-16">
-        <h2 className="text-3xl font-bold mb-12 text-center">Nossos Pilares</h2>
+        <RevealOnScroll>
+          <h2 className="text-3xl font-bold mb-12 text-center">Nossos Pilares</h2>
+        </RevealOnScroll>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {values.map((value) => (
-            <Card key={value.title} className="text-center hover-lift">
-              <CardHeader>
-                <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                  <value.icon className="h-6 w-6 text-primary" />
-                </div>
-                <CardTitle className="text-xl">{value.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">{value.description}</p>
-              </CardContent>
-            </Card>
+          {values.map((value, index) => (
+            <RevealOnScroll key={value.title} delay={index * 100}>
+              <Card className="text-center hover-lift hover-glow group cursor-default">
+                <CardHeader>
+                  <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <value.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-xl group-hover:text-primary transition-colors">{value.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground group-hover:text-foreground transition-colors">{value.description}</p>
+                </CardContent>
+              </Card>
+            </RevealOnScroll>
           ))}
         </div>
       </section>

@@ -1,9 +1,12 @@
 import { useParams, Link } from 'react-router-dom';
-import { Clock, User, Calendar, Share2, BookmarkPlus, ArrowLeft } from 'lucide-react';
+import { Clock, User, Calendar, Share2, BookmarkPlus, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import ArticleCard from '@/components/ArticleCard';
+import ScrollProgress from '@/components/ScrollProgress';
+import FloatingShare from '@/components/FloatingShare';
+import RevealOnScroll from '@/components/RevealOnScroll';
 import techImage from '@/assets/article-tech.jpg';
 import businessImage from '@/assets/article-business.jpg';
 
@@ -47,6 +50,8 @@ export default function Artigo() {
 
   return (
     <div>
+      <ScrollProgress />
+      <FloatingShare />
       {/* Back Button */}
       <div className="wide-container py-6">
         <Button variant="ghost" asChild>
@@ -71,9 +76,10 @@ export default function Artigo() {
       {/* Article Content */}
       <article className="editorial-container">
         {/* Header */}
-        <header className="mb-8 fade-in">
-          <Badge className="mb-4">{article.category}</Badge>
-          <h1 className="mb-6">{article.title}</h1>
+        <RevealOnScroll>
+          <header className="mb-8">
+            <Badge className="mb-4">{article.category}</Badge>
+            <h1 className="mb-6">{article.title}</h1>
           
           {/* Meta */}
           <div className="flex flex-wrap items-center gap-4 text-muted-foreground mb-6">
@@ -93,23 +99,25 @@ export default function Artigo() {
             </div>
           </div>
 
-          {/* Actions */}
-          <div className="flex space-x-2">
-            <Button variant="outline" size="sm">
-              <Share2 className="mr-2 h-4 w-4" />
-              Compartilhar
-            </Button>
-            <Button variant="outline" size="sm">
-              <BookmarkPlus className="mr-2 h-4 w-4" />
-              Salvar
-            </Button>
-          </div>
-        </header>
+            {/* Actions */}
+            <div className="flex space-x-2">
+              <Button variant="outline" size="sm" className="hover-glow">
+                <Share2 className="mr-2 h-4 w-4" />
+                Compartilhar
+              </Button>
+              <Button variant="outline" size="sm" className="hover-glow">
+                <BookmarkPlus className="mr-2 h-4 w-4" />
+                Salvar
+              </Button>
+            </div>
+          </header>
+        </RevealOnScroll>
 
         <Separator className="my-8" />
 
         {/* Article Body */}
-        <div className="prose prose-lg max-w-none">
+        <RevealOnScroll>
+          <div className="prose prose-lg max-w-none">
           <p className="lead text-xl text-muted-foreground mb-6">
             {article.excerpt}
           </p>
@@ -154,40 +162,56 @@ export default function Artigo() {
             que começarem sua jornada de transformação digital hoje estarão melhor posicionadas para
             prosperar no mercado cada vez mais competitivo e orientado por dados.
           </p>
-        </div>
+          </div>
+        </RevealOnScroll>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-2 mt-12">
-          {article.tags.map((tag) => (
-            <Badge key={tag} variant="outline">
-              {tag}
-            </Badge>
-          ))}
-        </div>
+        <RevealOnScroll>
+          <div className="flex flex-wrap gap-2 mt-12">
+            {article.tags.map((tag) => (
+              <Badge key={tag} variant="outline" className="hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        </RevealOnScroll>
 
         {/* Author Info */}
-        <div className="mt-12 p-6 rounded-lg bg-muted/50">
-          <div className="flex items-start space-x-4">
-            <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center text-primary-foreground text-2xl font-bold">
-              {article.author[0]}
-            </div>
-            <div>
-              <h3 className="font-semibold text-lg mb-1">{article.author}</h3>
-              <p className="text-muted-foreground">{article.authorBio}</p>
+        <RevealOnScroll>
+          <div className="mt-12 p-6 rounded-lg bg-muted/50 hover:bg-muted/70 transition-colors border border-transparent hover:border-primary/20">
+            <div className="flex items-start space-x-4">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-primary-foreground text-2xl font-bold shadow-lg">
+                {article.author[0]}
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg mb-1">{article.author}</h3>
+                <p className="text-muted-foreground">{article.authorBio}</p>
+              </div>
             </div>
           </div>
-        </div>
+        </RevealOnScroll>
 
         {/* Newsletter CTA */}
-        <div className="mt-12 p-8 rounded-lg hero-gradient text-white text-center">
-          <h3 className="text-2xl font-bold mb-2">Gostou deste artigo?</h3>
-          <p className="mb-6 opacity-90">
-            Receba análises exclusivas e conteúdo como este direto no seu email.
-          </p>
-          <Button variant="secondary" size="lg" asChild>
-            <Link to="/contato">Assinar Newsletter</Link>
-          </Button>
-        </div>
+        <RevealOnScroll>
+          <div className="mt-12 p-8 rounded-lg hero-gradient-rich text-white text-center shadow-2xl relative overflow-hidden">
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white rounded-full blur-2xl" />
+              <div className="absolute bottom-0 left-0 w-40 h-40 bg-accent rounded-full blur-2xl" />
+            </div>
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold mb-2">Gostou deste artigo?</h3>
+              <p className="mb-6 opacity-90">
+                Receba análises exclusivas e conteúdo como este direto no seu email.
+              </p>
+              <Button variant="secondary" size="lg" asChild className="hover-glow animate-pulse hover:animate-none">
+                <Link to="/contato">
+                  Assinar Newsletter Gratuita
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </RevealOnScroll>
       </article>
 
       {/* Related Articles */}

@@ -1,7 +1,9 @@
+import { useState, useEffect } from 'react';
 import { ArrowRight, Cpu, Lightbulb, TrendingUp, Video } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import ArticleCard from '@/components/ArticleCard';
+import RevealOnScroll from '@/components/RevealOnScroll';
 import heroImage from '@/assets/hero-photon.jpg';
 import techImage from '@/assets/article-tech.jpg';
 import businessImage from '@/assets/article-business.jpg';
@@ -67,87 +69,126 @@ const featuredArticles = [
 ];
 
 export default function Home() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
+      {/* Hero Section with Parallax */}
+      <section className="relative overflow-hidden min-h-[85vh] flex items-center">
+        <div 
+          className="absolute inset-0"
+          style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+        >
           <img
             src={heroImage}
             alt="Photon Media"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover scale-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/50" />
+          <div className="absolute inset-0 hero-gradient-rich opacity-80" />
         </div>
         
-        <div className="relative wide-container py-20 md:py-32">
-          <div className="max-w-2xl fade-in">
-            <h1 className="mb-6">
-              O núcleo que move o <span className="text-gradient">universo</span>
+        <div className="relative wide-container py-20 md:py-32 z-10">
+          <div className="max-w-2xl">
+            <h1 className="mb-6 fade-in text-white drop-shadow-2xl">
+              O núcleo que move o <span className="text-accent">universo</span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-xl text-white/90 mb-8 leading-relaxed fade-in stagger-1 drop-shadow-lg">
               Conteúdo inteligente, análises profundas e as tendências que moldam o futuro.
               Bem-vindo ao ecossistema Photon Media.
             </p>
-            <Button size="lg" asChild>
-              <Link to="/categoria/tecnologia">
-                Explorar Conteúdo
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
+            <div className="flex gap-4 fade-in stagger-2">
+              <Button size="lg" variant="secondary" asChild className="hover-glow">
+                <Link to="/categoria/tecnologia">
+                  Explorar Conteúdo
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild className="bg-white/10 border-white/30 text-white hover:bg-white/20">
+                <Link to="/sobre">
+                  Sobre Nós
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Categories Section */}
-      <section className="wide-container py-16">
-        <h2 className="text-3xl font-bold mb-8">Explore por Categoria</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {categories.map((category) => (
-            <Link
-              key={category.name}
-              to={category.href}
-              className="group p-6 rounded-lg border bg-card hover:shadow-lg transition-all"
-            >
-              <category.icon className={`h-8 w-8 mb-3 ${category.color}`} />
-              <h3 className="font-semibold group-hover:text-primary transition-colors">
-                {category.name}
-              </h3>
-            </Link>
-          ))}
-        </div>
-      </section>
+      <RevealOnScroll>
+        <section className="wide-container py-16">
+          <h2 className="text-3xl font-bold mb-8">Explore por Categoria</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {categories.map((category, index) => (
+              <RevealOnScroll key={category.name} delay={index * 100}>
+                <Link
+                  to={category.href}
+                  className="group p-6 rounded-lg border bg-card hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <category.icon className={`h-8 w-8 mb-3 ${category.color} relative z-10 group-hover:scale-110 transition-transform duration-300`} />
+                  <h3 className="font-semibold group-hover:text-primary transition-colors relative z-10">
+                    {category.name}
+                  </h3>
+                </Link>
+              </RevealOnScroll>
+            ))}
+          </div>
+        </section>
+      </RevealOnScroll>
 
       {/* Featured Articles */}
-      <section className="wide-container py-16">
-        <div className="flex items-center justify-between mb-8">
-          <h2 className="text-3xl font-bold">Destaques da Semana</h2>
-          <Button variant="ghost" asChild>
-            <Link to="/categoria/tecnologia">
-              Ver mais
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featuredArticles.map((article) => (
-            <ArticleCard key={article.slug} {...article} />
-          ))}
-        </div>
-      </section>
+      <RevealOnScroll>
+        <section className="wide-container py-16">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-bold">Destaques da Semana</h2>
+            <Button variant="ghost" asChild className="hover-glow">
+              <Link to="/categoria/tecnologia">
+                Ver mais
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {featuredArticles.map((article, index) => (
+              <RevealOnScroll key={article.slug} delay={index * 150}>
+                <ArticleCard {...article} />
+              </RevealOnScroll>
+            ))}
+          </div>
+        </section>
+      </RevealOnScroll>
 
       {/* Newsletter CTA */}
-      <section className="wide-container py-16">
-        <div className="rounded-2xl hero-gradient p-12 text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">Fique por dentro das novidades</h2>
-          <p className="text-lg mb-8 opacity-90">
-            Receba análises exclusivas e as principais tendências direto no seu email.
-          </p>
-          <Button size="lg" variant="secondary" asChild>
-            <Link to="/contato">Assinar Newsletter</Link>
-          </Button>
-        </div>
-      </section>
+      <RevealOnScroll>
+        <section className="wide-container py-16">
+          <div className="rounded-2xl hero-gradient-rich p-12 text-center text-white shadow-2xl relative overflow-hidden">
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-0 left-0 w-40 h-40 bg-white rounded-full blur-3xl" />
+              <div className="absolute bottom-0 right-0 w-60 h-60 bg-accent rounded-full blur-3xl" />
+            </div>
+            <div className="relative z-10">
+              <h2 className="text-3xl font-bold mb-4">Fique por dentro das novidades</h2>
+              <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
+                Receba análises exclusivas e as principais tendências direto no seu email. Junte-se a milhares de leitores inteligentes.
+              </p>
+              <Button size="lg" variant="secondary" asChild className="hover-glow animate-pulse hover:animate-none">
+                <Link to="/contato">
+                  Assinar Newsletter Gratuita
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </RevealOnScroll>
     </div>
   );
 }
