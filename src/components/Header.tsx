@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Search } from 'lucide-react';
+import { Menu, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { SidebarTrigger } from '@/components/ui/sidebar';
 
 const navigation = [
   { name: 'Início', href: '/' },
@@ -20,27 +21,16 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="wide-container">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary">
-              <span className="text-xl font-bold text-primary-foreground">P</span>
-            </div>
-            <span className="text-xl font-bold tracking-tight">
-              Photon <span className="text-primary">Media</span>
-            </span>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-6">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {item.name}
-              </Link>
-            ))}
+          <div className="flex items-center gap-4">
+            <SidebarTrigger />
+            <Link to="/" className="flex items-center space-x-2">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary">
+                <span className="text-xl font-bold text-primary-foreground">P</span>
+              </div>
+              <span className="text-xl font-bold tracking-tight">
+                Photon <span className="text-primary">Media</span>
+              </span>
+            </Link>
           </div>
 
           {/* Actions */}

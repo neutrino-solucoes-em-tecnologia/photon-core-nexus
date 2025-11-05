@@ -125,48 +125,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Categories Section */}
-      <RevealOnScroll>
-        <section className="wide-container py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-3">Explore por Categoria</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Descubra conteúdo personalizado para seus interesses
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {categories.map((category, index) => (
-              <RevealOnScroll key={category.name} delay={index * 100}>
-                <Link
-                  to={category.href}
-                  className="group relative p-8 rounded-2xl bg-card hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 transition-all duration-500 overflow-hidden"
-                >
-                  {/* Gradient Background */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                  
-                  {/* Icon with Animation */}
-                  <div className="relative z-10 mb-4 flex justify-center">
-                    <div className="p-3 rounded-xl bg-background/50 group-hover:bg-background/80 transition-colors duration-300">
-                      <category.icon className={`h-10 w-10 ${category.iconColor} group-hover:scale-125 group-hover:rotate-12 transition-all duration-500`} />
-                    </div>
-                  </div>
-                  
-                  {/* Title */}
-                  <h3 className="font-bold text-lg text-center group-hover:text-primary transition-colors duration-300 relative z-10">
-                    {category.name}
-                  </h3>
-                  
-                  {/* Hover Arrow Indicator */}
-                  <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
-                    <ArrowRight className="h-5 w-5 text-primary" />
-                  </div>
-                </Link>
-              </RevealOnScroll>
-            ))}
-          </div>
-        </section>
-      </RevealOnScroll>
-
       {/* Featured Articles */}
       <RevealOnScroll>
         <section className="wide-container py-16">
