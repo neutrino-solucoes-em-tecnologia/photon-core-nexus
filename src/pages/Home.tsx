@@ -12,25 +12,29 @@ const categories = [
   {
     name: 'Tecnologia',
     icon: Cpu,
-    color: 'text-primary',
+    gradient: 'from-primary/20 to-primary/5',
+    iconColor: 'text-primary',
     href: '/categoria/tecnologia',
   },
   {
     name: 'Inovação',
     icon: Lightbulb,
-    color: 'text-secondary',
+    gradient: 'from-accent/20 to-accent/5',
+    iconColor: 'text-accent',
     href: '/categoria/inovacao',
   },
   {
     name: 'Negócios',
     icon: TrendingUp,
-    color: 'text-accent',
+    gradient: 'from-secondary/20 to-secondary/5',
+    iconColor: 'text-secondary',
     href: '/categoria/negocios',
   },
   {
     name: 'Vídeos',
     icon: Video,
-    color: 'text-primary',
+    gradient: 'from-primary/15 to-accent/10',
+    iconColor: 'text-primary',
     href: '/categoria/videos',
   },
 ];
@@ -124,19 +128,41 @@ export default function Home() {
       {/* Categories Section */}
       <RevealOnScroll>
         <section className="wide-container py-16">
-          <h2 className="text-3xl font-bold mb-8">Explore por Categoria</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">Explore por Categoria</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Descubra conteúdo personalizado para seus interesses
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {categories.map((category, index) => (
               <RevealOnScroll key={category.name} delay={index * 100}>
                 <Link
                   to={category.href}
-                  className="group p-6 rounded-lg border bg-card hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+                  className="group relative p-8 rounded-2xl border-2 border-border bg-card hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 transition-all duration-500 overflow-hidden"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <category.icon className={`h-8 w-8 mb-3 ${category.color} relative z-10 group-hover:scale-110 transition-transform duration-300`} />
-                  <h3 className="font-semibold group-hover:text-primary transition-colors relative z-10">
+                  {/* Gradient Background */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                  
+                  {/* Animated Border Glow */}
+                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-primary/20 via-accent/20 to-secondary/20 blur-xl -z-10" />
+                  
+                  {/* Icon with Animation */}
+                  <div className="relative z-10 mb-4 flex justify-center">
+                    <div className="p-3 rounded-xl bg-background/50 group-hover:bg-background/80 transition-colors duration-300">
+                      <category.icon className={`h-10 w-10 ${category.iconColor} group-hover:scale-125 group-hover:rotate-12 transition-all duration-500`} />
+                    </div>
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className="font-bold text-lg text-center group-hover:text-primary transition-colors duration-300 relative z-10">
                     {category.name}
                   </h3>
+                  
+                  {/* Hover Arrow Indicator */}
+                  <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300">
+                    <ArrowRight className="h-5 w-5 text-primary" />
+                  </div>
                 </Link>
               </RevealOnScroll>
             ))}
