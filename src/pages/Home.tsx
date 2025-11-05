@@ -139,7 +139,7 @@ export default function Home() {
               <RevealOnScroll key={category.name} delay={index * 100}>
                 <Link
                   to={category.href}
-                  className="group relative p-8 rounded-2xl border border-border bg-card hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 transition-all duration-500 overflow-hidden"
+                  className="group relative p-8 rounded-2xl bg-card hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 transition-all duration-500 overflow-hidden"
                 >
                   {/* Gradient Background */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
