@@ -37,13 +37,13 @@ const heroArticles = [
 
 export default function HeroSection() {
   return (
-    <section className="w-full">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
+    <section className="w-full px-4 py-6 md:px-6 md:py-8 lg:px-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-[1600px] mx-auto">
         {heroArticles.map((article) => (
           <Link
             key={article.id}
             to={`/artigo/${article.slug}`}
-            className="group relative aspect-[3/4] md:aspect-[4/5] lg:aspect-[3/4] overflow-hidden"
+            className="group relative aspect-[3/4] md:aspect-[4/5] lg:aspect-[3/4] overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow"
           >
             {/* Background Image */}
             <div className="absolute inset-0">
