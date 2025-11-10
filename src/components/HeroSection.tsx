@@ -57,36 +57,11 @@ export default function HeroSection() {
             </div>
 
             {/* Content */}
-            <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8">
-              {/* Category Badge */}
-              <div className="mb-3">
-                <span className="inline-block px-3 py-1 text-xs font-semibold tracking-wider uppercase bg-secondary text-secondary-foreground rounded">
-                  {article.category}
-                </span>
-              </div>
-
+            <div className="absolute inset-0 flex flex-col justify-end p-4">
               {/* Title */}
-              <h3 className="text-white font-bold text-lg md:text-xl lg:text-2xl leading-tight transition-colors group-hover:text-secondary">
+              <h3 className="text-white font-bold text-base md:text-lg leading-tight transition-colors group-hover:text-secondary line-clamp-3">
                 {article.title}
               </h3>
-
-              {/* Hover Indicator */}
-              <div className="mt-4 flex items-center gap-2 text-white/80 opacity-0 group-hover:opacity-100 transition-opacity">
-                <span className="text-sm font-medium">Ler artigo</span>
-                <svg
-                  className="w-4 h-4 transition-transform group-hover:translate-x-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </div>
             </div>
 
             {/* Subtle Border Effect on Hover */}
