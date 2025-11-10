@@ -1,43 +1,11 @@
-import { useState, useEffect } from 'react';
-import { ArrowRight, Cpu, Lightbulb, TrendingUp, Video } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import ArticleCard from '@/components/ArticleCard';
 import RevealOnScroll from '@/components/RevealOnScroll';
-import heroImage from '@/assets/hero-photon.jpg';
+import HeroSection from '@/components/HeroSection';
 import techImage from '@/assets/article-tech.jpg';
 import businessImage from '@/assets/article-business.jpg';
-
-const categories = [
-  {
-    name: 'Tecnologia',
-    icon: Cpu,
-    gradient: 'from-primary/20 to-primary/5',
-    iconColor: 'text-primary',
-    href: '/categoria/tecnologia',
-  },
-  {
-    name: 'Inovação',
-    icon: Lightbulb,
-    gradient: 'from-accent/20 to-accent/5',
-    iconColor: 'text-accent',
-    href: '/categoria/inovacao',
-  },
-  {
-    name: 'Negócios',
-    icon: TrendingUp,
-    gradient: 'from-secondary/20 to-secondary/5',
-    iconColor: 'text-secondary',
-    href: '/categoria/negocios',
-  },
-  {
-    name: 'Vídeos',
-    icon: Video,
-    gradient: 'from-primary/15 to-accent/10',
-    iconColor: 'text-primary',
-    href: '/categoria/videos',
-  },
-];
 
 const featuredArticles = [
   {
@@ -73,57 +41,10 @@ const featuredArticles = [
 ];
 
 export default function Home() {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <div>
-      {/* Hero Section with Parallax */}
-      <section className="relative overflow-hidden min-h-[85vh] flex items-center">
-        <div 
-          className="absolute inset-0"
-          style={{ transform: `translateY(${scrollY * 0.5}px)` }}
-        >
-          <img
-            src={heroImage}
-            alt="Photon Media"
-            className="w-full h-full object-cover scale-110"
-          />
-          <div className="absolute inset-0 hero-gradient-rich opacity-80" />
-        </div>
-        
-        <div className="relative wide-container py-20 md:py-32 z-10">
-          <div className="max-w-2xl">
-            <h1 className="mb-6 fade-in text-white drop-shadow-2xl">
-              O núcleo que move o <span className="text-accent">universo</span>
-            </h1>
-            <p className="text-xl text-white/90 mb-8 leading-relaxed fade-in stagger-1 drop-shadow-lg">
-              Conteúdo inteligente, análises profundas e as tendências que moldam o futuro.
-              Bem-vindo ao ecossistema Photon Media.
-            </p>
-            <div className="flex gap-4 fade-in stagger-2">
-              <Button size="lg" variant="secondary" asChild className="hover-glow">
-                <Link to="/categoria/tecnologia">
-                  Explorar Conteúdo
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild className="bg-white/10 border-white/30 text-white hover:bg-white/20">
-                <Link to="/sobre">
-                  Sobre Nós
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section - IGN Style Grid */}
+      <HeroSection />
 
       {/* Featured Articles */}
       <RevealOnScroll>
