@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import ArticleCard from '@/components/ArticleCard';
 import RevealOnScroll from '@/components/RevealOnScroll';
 import HeroSection from '@/components/HeroSection';
+import FeaturedHighlights from '@/components/FeaturedHighlights';
+import NewsFeed from '@/components/NewsFeed';
 import techImage from '@/assets/article-tech.jpg';
 import businessImage from '@/assets/article-business.jpg';
 
@@ -43,8 +45,16 @@ const featuredArticles = [
 export default function Home() {
   return (
     <div>
-      {/* Hero Section - IGN Style Grid */}
+      {/* Hero Section */}
       <HeroSection />
+
+      {/* Featured Highlights - Mais destaques */}
+      <FeaturedHighlights />
+
+      {/* News Feed - Feed de Notícias */}
+      <RevealOnScroll>
+        <NewsFeed />
+      </RevealOnScroll>
 
       {/* Featured Articles */}
       <RevealOnScroll>

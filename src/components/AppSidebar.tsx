@@ -1,4 +1,21 @@
-import { Cpu, Lightbulb, TrendingUp, Video, Home, Search, Flame } from 'lucide-react';
+import { 
+  Home, 
+  Search, 
+  ChevronRight, 
+  MoreHorizontal, 
+  ChevronLeft, 
+  Gamepad2,
+  Star,
+  FileText,
+  Dice5,
+  Film,
+  Sparkles,
+  Cpu,
+  Tag,
+  ShoppingCart,
+  Video,
+  Image as ImageIcon
+} from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import {
@@ -14,8 +31,9 @@ import {
   SidebarHeader,
 } from '@/components/ui/sidebar';
 import { Input } from '@/components/ui/input';
-import { Badge } from '@/components/ui/badge';
+import photonLogoUrl from '@/assets/photon-logo.svg';
 
+// Menu items da navegação principal
 const menuItems = [
   {
     name: 'Início',
@@ -23,150 +41,243 @@ const menuItems = [
     href: '/',
   },
   {
-    name: 'Tecnologia',
+    name: 'PS5',
+    icon: Gamepad2,
+    href: '/categoria/ps5',
+    submenu: true,
+  },
+  {
+    name: 'Xbox Series X/S',
+    icon: Gamepad2,
+    href: '/categoria/xbox-series-x',
+    submenu: true,
+  },
+  {
+    name: 'Switch',
+    icon: Gamepad2,
+    href: '/categoria/nintendo-switch',
+    submenu: true,
+  },
+  {
+    name: 'Reviews',
+    icon: FileText,
+    href: '/categoria/reviews',
+    submenu: true,
+  },
+  {
+    name: 'Tabletop',
+    icon: Dice5,
+    href: '/categoria/tabletop',
+    submenu: true,
+  },
+  {
+    name: 'Cinema & TV',
+    icon: Film,
+    href: '/categoria/cinema-tv',
+    submenu: true,
+  },
+  {
+    name: 'Anime',
+    icon: Sparkles,
+    href: '/categoria/anime',
+    submenu: true,
+  },
+  {
+    name: 'Tech',
     icon: Cpu,
-    href: '/categoria/tecnologia',
+    href: '/categoria/tech',
+    submenu: true,
   },
   {
-    name: 'Inovação',
-    icon: Lightbulb,
-    href: '/categoria/inovacao',
-  },
-  {
-    name: 'Negócios',
-    icon: TrendingUp,
-    href: '/categoria/negocios',
+    name: 'Descontos',
+    icon: Tag,
+    href: '/descontos',
+    submenu: true,
   },
   {
     name: 'Vídeos',
     icon: Video,
-    href: '/categoria/videos',
+    href: '/videos',
+    submenu: true,
+  },
+  {
+    name: 'Galerias',
+    icon: ImageIcon,
+    href: '/galerias',
+    submenu: true,
   },
 ];
 
-const trendingArticles = [
-  {
-    id: 1,
-    title: 'IA Generativa Transforma Indústria Tech',
-    views: '12.5K',
-    category: 'Tecnologia'
-  },
-  {
-    id: 2,
-    title: 'Startup Brasileira Levanta R$ 50M',
-    views: '8.3K',
-    category: 'Negócios'
-  },
-  {
-    id: 3,
-    title: 'Nova Descoberta em Computação Quântica',
-    views: '7.1K',
-    category: 'Inovação'
-  },
-  {
-    id: 4,
-    title: 'Tendências Tech para 2025',
-    views: '6.8K',
-    category: 'Tecnologia'
-  },
+const moreItems = [
+  { name: 'Fale Conosco', href: '/fale-conosco' },
+  { name: 'Trabalhe Conosco', href: '/trabalhe-conosco' },
+  { name: 'Imprensa', href: '/imprensa' },
+  { name: 'Termos de Utilização', href: '/termos' },
+  { name: 'Privacidade', href: '/privacidade' },
 ];
 
 export function AppSidebar() {
-  const { state } = useSidebar();
+  const { state, toggleSidebar } = useSidebar();
   const isCollapsed = state === 'collapsed';
   const [searchQuery, setSearchQuery] = useState('');
+  const [showMore, setShowMore] = useState(false);
 
   return (
     <Sidebar
-      className={isCollapsed ? 'w-16' : 'w-72'}
       collapsible="icon"
+      style={{
+        width: isCollapsed ? '80px' : '300px',
+      }}
+      className="transition-all duration-[450ms] cubic-bezier-[0.34,-0.09,0.45,1.18]"
     >
-      <SidebarContent className="border-r border-border bg-card">
-        {/* Search Section */}
-        {!isCollapsed && (
-          <SidebarHeader className="p-4 border-b border-border">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-              <Input
-                type="search"
-                placeholder="Buscar artigos..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-9 bg-muted/50 border-border focus:bg-background transition-colors"
-              />
+      <SidebarContent className="border-r border-border/25 bg-white shadow-sm overflow-y-auto overflow-x-hidden">
+        {/* Toggle Button */}
+        <button
+          onClick={toggleSidebar}
+          className={`absolute top-9 z-50 w-9 h-9 bg-white border border-border rounded-lg shadow-md hover:bg-muted transition-all duration-200 flex items-center justify-center group ${isCollapsed ? 'right-[-18px]' : 'right-[-18px]'}`}
+          title={isCollapsed ? 'Expandir sidebar' : 'Colapsar sidebar'}
+        >
+          {isCollapsed ? (
+            <ChevronRight className="h-4 w-4 text-foreground group-hover:text-primary transition-transform duration-100" />
+          ) : (
+            <ChevronLeft className="h-4 w-4 text-foreground group-hover:text-primary transition-transform duration-100" />
+          )}
+        </button>
+
+        {/* Logo & Header */}
+        <SidebarHeader className={`border-b border-border/25 transition-all duration-200 ${isCollapsed ? 'p-4' : 'p-6'}`}>
+          <div className={`flex items-center transition-all duration-200 ${isCollapsed ? 'justify-center' : 'gap-3'}`}>
+            <img 
+              src={photonLogoUrl} 
+              alt="Photon Logo" 
+              className={`flex-shrink-0 transition-all duration-200 ${isCollapsed ? 'w-10 h-10' : 'w-10 h-10'}`}
+            />
+            <div className={`flex-1 transition-opacity duration-200 ${isCollapsed ? 'opacity-0 hidden' : 'opacity-100'}`}>
+              <h1 className="text-2xl font-black text-primary tracking-tight">PHOTON</h1>
+              <p className="text-xs font-bold text-foreground/80 mt-0.5">Brasil</p>
             </div>
-          </SidebarHeader>
-        )}
+          </div>
+        </SidebarHeader>
 
         {/* Navigation Menu */}
-        <SidebarGroup>
-          <SidebarGroupLabel className={isCollapsed ? 'sr-only' : 'text-muted-foreground font-medium px-4 py-2'}>
-            Categorias
-          </SidebarGroupLabel>
+        <SidebarGroup className={`py-4 ${isCollapsed ? 'px-0' : 'px-3'}`}>
           <SidebarGroupContent>
-            <SidebarMenu>
+            <SidebarMenu className={`space-y-0.5 ${isCollapsed ? 'flex items-center flex-col' : ''}`}>
               {menuItems.map((item) => (
                 <SidebarMenuItem key={item.name}>
-                  <SidebarMenuButton asChild>
+                  <SidebarMenuButton asChild className={isCollapsed ? '!p-0 !w-full !h-auto' : ''}>
                     <NavLink
                       to={item.href}
-                      end
+                      end={item.href === '/'}
                       className={({ isActive }) =>
-                        `flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
+                        `group flex items-center gap-3 rounded-lg transition-all duration-200 relative overflow-hidden ${
                           isActive
-                            ? 'bg-primary text-primary-foreground font-medium shadow-sm'
-                            : 'text-foreground hover:bg-muted hover:text-primary'
-                        }`
+                            ? 'bg-muted/60 text-primary font-bold'
+                            : 'text-foreground hover:bg-muted/80 hover:text-primary'
+                        } ${isCollapsed ? 'justify-center !p-2 w-full' : 'px-3 py-2.5'}`
                       }
                     >
-                      <item.icon className="h-5 w-5 flex-shrink-0" />
-                      {!isCollapsed && <span>{item.name}</span>}
+                      {({ isActive }) => (
+                        <>
+                          {/* Active indicator */}
+                          {isActive && !isCollapsed && (
+                            <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r-full" />
+                          )}
+                          
+                          <item.icon className={`flex-shrink-0 transition-all duration-200 ${isCollapsed ? '!h-6 !w-6' : 'h-5 w-5'}`} />
+                          
+                          <span className={`flex-1 text-sm font-medium transition-opacity duration-200 ${isCollapsed ? 'opacity-0 w-0 overflow-hidden' : 'opacity-100'}`}>
+                            {item.name}
+                          </span>
+                          {item.submenu && !isCollapsed && (
+                            <ChevronRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                          )}
+                        </>
+                      )}
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
+
+              {/* Ver Mais */}
+              {!isCollapsed && (
+                <SidebarMenuItem>
+                  <SidebarMenuButton asChild>
+                    <button
+                      onClick={() => setShowMore(!showMore)}
+                      className="group flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 text-foreground hover:bg-muted/80 hover:text-primary w-full"
+                    >
+                      <MoreHorizontal className="h-5 w-5 flex-shrink-0" />
+                      <span className="flex-1 text-sm font-medium">Ver Mais</span>
+                      <ChevronRight className={`h-4 w-4 transition-transform ${showMore ? 'rotate-90' : ''}`} />
+                    </button>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              )}
+
+              {/* Submenu Ver Mais */}
+              {!isCollapsed && showMore && (
+                <div className="pl-6 space-y-0.5 mt-1">
+                  {moreItems.map((item) => (
+                    <SidebarMenuItem key={item.name}>
+                      <SidebarMenuButton asChild>
+                        <NavLink
+                          to={item.href}
+                          className="flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 text-foreground hover:bg-muted/60 hover:text-primary text-sm"
+                        >
+                          <span>{item.name}</span>
+                        </NavLink>
+                      </SidebarMenuButton>
+                    </SidebarMenuItem>
+                  ))}
+                </div>
+              )}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
 
-        {/* Trending Section */}
+        {/* Divider */}
         {!isCollapsed && (
-          <SidebarGroup className="mt-4 border-t border-border pt-4">
-            <SidebarGroupLabel className="flex items-center gap-2 text-secondary font-medium px-4 py-2">
-              <Flame className="h-4 w-4" />
-              Em Alta
-            </SidebarGroupLabel>
-            <SidebarGroupContent className="px-2">
-              <div className="space-y-1">
-                {trendingArticles.map((article, index) => (
-                  <NavLink
-                    key={article.id}
-                    to={`/artigo/${article.title.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="block group p-3 rounded-lg hover:bg-muted transition-colors"
-                  >
-                    <div className="flex items-start gap-3">
-                      <span className="text-2xl font-bold text-muted-foreground/40 group-hover:text-secondary transition-colors">
-                        {index + 1}
-                      </span>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-sm font-medium text-foreground group-hover:text-primary line-clamp-2 transition-colors">
-                          {article.title}
-                        </p>
-                        <div className="flex items-center gap-2 mt-1">
-                          <Badge variant="secondary" className="text-xs px-1.5 py-0">
-                            {article.category}
-                          </Badge>
-                          <span className="text-xs text-muted-foreground">
-                            {article.views} views
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </NavLink>
-                ))}
-              </div>
-            </SidebarGroupContent>
+          <div className="mx-6 border-t border-border/25" />
+        )}
+
+        {/* Search Section */}
+        {!isCollapsed && (
+          <SidebarGroup className="px-6 py-4">
+            <form className="relative">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+              <Input
+                type="search"
+                placeholder="Pesquisar no Photon Brasil"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-9 bg-background border-border rounded-lg focus:ring-2 focus:ring-primary/20 transition-all text-sm"
+              />
+            </form>
           </SidebarGroup>
+        )}
+
+        {/* Footer - Brand */}
+        {!isCollapsed && (
+          <div className="mt-auto p-6 border-t border-border/25 bg-muted/20">
+            <div className="text-center space-y-2">
+              <div className="flex items-center justify-center gap-2">
+                <img 
+                  src="/logo.png" 
+                  alt="Neutrino" 
+                  className="w-12 h-12 object-contain"
+                />
+              </div>
+              <div>
+                <p className="text-xs font-bold text-foreground">
+                  O Photon Brasil é um site do grupo{' '}
+                  <a href="https://neutrino.dev.br/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                    Neutrino
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
         )}
       </SidebarContent>
     </Sidebar>

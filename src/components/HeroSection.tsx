@@ -37,36 +37,39 @@ const heroArticles = [
 
 export default function HeroSection() {
   return (
-    <section className="w-full px-4 py-6 md:px-6 md:py-8 lg:px-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-[1600px] mx-auto">
+    <section className="wide-container py-6 md:py-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         {heroArticles.map((article) => (
-          <Link
-            key={article.id}
-            to={`/artigo/${article.slug}`}
-            className="group relative aspect-[3/4] md:aspect-[4/5] lg:aspect-[3/4] overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow"
-          >
-            {/* Background Image */}
-            <div className="absolute inset-0">
+          <article key={article.id} className="group relative">
+            <Link
+              to={`/artigo/${article.slug}`}
+              className="block relative aspect-[3/4] md:aspect-[4/5] lg:aspect-[3/4] overflow-hidden rounded-lg"
+            >
+              {/* Background Image */}
               <img
                 src={article.image}
                 alt={article.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
               />
+              
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
-            </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
-            {/* Content */}
-            <div className="absolute inset-0 flex flex-col justify-end p-4">
-              {/* Title */}
-              <h3 className="text-white font-bold text-base md:text-lg leading-tight transition-colors group-hover:text-secondary line-clamp-3">
-                {article.title}
-              </h3>
-            </div>
-
-            {/* Subtle Border Effect on Hover */}
-            <div className="absolute inset-0 border-2 border-transparent group-hover:border-secondary/50 transition-colors pointer-events-none" />
-          </Link>
+              {/* Content */}
+              <div className="absolute inset-0 flex flex-col justify-end p-5">
+                {/* Category Badge */}
+                <span className="inline-block w-fit bg-primary text-primary-foreground text-xs font-bold px-2.5 py-1 rounded mb-3 uppercase tracking-wide">
+                  {article.category}
+                </span>
+                
+                {/* Title */}
+                <h3 className="text-white font-bold text-base md:text-lg leading-snug transition-colors group-hover:text-secondary line-clamp-3">
+                  {article.title}
+                </h3>
+              </div>
+            </Link>
+          </article>
         ))}
       </div>
     </section>
