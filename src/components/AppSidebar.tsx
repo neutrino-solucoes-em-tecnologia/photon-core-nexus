@@ -30,6 +30,12 @@ import {
   useSidebar,
   SidebarHeader,
 } from '@/components/ui/sidebar';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 import { Input } from '@/components/ui/input';
 import photonLogoUrl from '@/assets/photon-logo.svg';
 
@@ -160,79 +166,86 @@ export function AppSidebar() {
         </SidebarHeader>
 
         {/* Navigation Menu */}
-        <SidebarGroup className={`py-4 ${isCollapsed ? 'px-0' : 'px-3'}`}>
+        <SidebarGroup className={`py-4 ${isCollapsed ? 'px-2' : 'px-2'}`}>
           <SidebarGroupContent>
-            <SidebarMenu className={`space-y-0.5 ${isCollapsed ? 'flex items-center flex-col' : ''}`}>
+            <div className="flex flex-col gap-1">
               {menuItems.map((item) => (
-                <SidebarMenuItem key={item.name}>
-                  <SidebarMenuButton asChild className={isCollapsed ? '!p-0 !w-full !h-auto' : ''}>
-                    <NavLink
-                      to={item.href}
-                      end={item.href === '/'}
-                      className={({ isActive }) =>
-                        `group flex items-center gap-3 rounded-lg transition-all duration-200 relative overflow-hidden ${
-                          isActive
-                            ? 'bg-muted/60 text-primary font-bold'
-                            : 'text-foreground hover:bg-muted/80 hover:text-primary'
-                        } ${isCollapsed ? 'justify-center !p-2 w-full' : 'px-3 py-2.5'}`
-                      }
-                    >
-                      {({ isActive }) => (
-                        <>
-                          {/* Active indicator */}
-                          {isActive && !isCollapsed && (
-                            <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r-full" />
-                          )}
-                          
-                          <item.icon className={`flex-shrink-0 transition-all duration-200 ${isCollapsed ? '!h-6 !w-6' : 'h-5 w-5'}`} />
-                          
-                          <span className={`flex-1 text-sm font-medium transition-opacity duration-200 ${isCollapsed ? 'opacity-0 w-0 overflow-hidden' : 'opacity-100'}`}>
-                            {item.name}
-                          </span>
-                          {item.submenu && !isCollapsed && (
-                            <ChevronRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                          )}
-                        </>
-                      )}
-                    </NavLink>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
+                isCollapsed ? (
+                  <TooltipProvider key={item.name} delayDuration={0}>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <NavLink
+                          to={item.href}
+                          end={item.href === '/'}
+                          className={({ isActive }) =>
+                            `flex items-center justify-center p-2.5 rounded-lg transition-colors group relative ${
+                              isActive
+                                ? 'bg-gradient-to-r from-primary/20 to-primary/10 text-primary'
+                                : 'text-foreground/70 hover:bg-gray-100 hover:text-primary'
+                            }`
+                          }
+                        >
+                          <item.icon className="h-5 w-5 transition-colors" />
+                        </NavLink>
+                      </TooltipTrigger>
+                      <TooltipContent side="right">
+                        <p>{item.name}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                ) : (
+                  <NavLink
+                    key={item.name}
+                    to={item.href}
+                    end={item.href === '/'}
+                    className={({ isActive }) =>
+                      `group flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 relative ${
+                        isActive
+                          ? 'bg-gradient-to-r from-primary/20 to-primary/10 text-primary font-bold'
+                          : 'text-foreground hover:bg-gray-100 hover:text-primary'
+                      }`
+                    }
+                  >
+                    {({ isActive }) => (
+                      <>
+                        {isActive && (
+                          <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r-full" />
+                        )}
+                        <item.icon className="flex-shrink-0 h-5 w-5" />
+                        <span className="flex-1 text-sm font-medium">{item.name}</span>
+                      </>
+                    )}
+                  </NavLink>
+                )
               ))}
 
               {/* Ver Mais */}
               {!isCollapsed && (
-                <SidebarMenuItem>
-                  <SidebarMenuButton asChild>
-                    <button
-                      onClick={() => setShowMore(!showMore)}
-                      className="group flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 text-foreground hover:bg-muted/80 hover:text-primary w-full"
-                    >
-                      <MoreHorizontal className="h-5 w-5 flex-shrink-0" />
-                      <span className="flex-1 text-sm font-medium">Ver Mais</span>
-                      <ChevronRight className={`h-4 w-4 transition-transform ${showMore ? 'rotate-90' : ''}`} />
-                    </button>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
+                <button
+                  onClick={() => setShowMore(!showMore)}
+                  className="group flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 text-foreground hover:bg-gray-100 hover:text-primary w-full"
+                >
+                  <MoreHorizontal className="h-5 w-5 flex-shrink-0" />
+                  <span className="flex-1 text-sm font-medium">Ver Mais</span>
+                  <ChevronRight className={`h-4 w-4 transition-transform ${showMore ? 'rotate-90' : ''}`} />
+                </button>
               )}
 
               {/* Submenu Ver Mais */}
               {!isCollapsed && showMore && (
-                <div className="pl-6 space-y-0.5 mt-1">
+                <div className="pl-6 flex flex-col gap-1 mt-1">
                   {moreItems.map((item) => (
-                    <SidebarMenuItem key={item.name}>
-                      <SidebarMenuButton asChild>
-                        <NavLink
-                          to={item.href}
-                          className="flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 text-foreground hover:bg-muted/60 hover:text-primary text-sm"
-                        >
-                          <span>{item.name}</span>
-                        </NavLink>
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
+                    <NavLink
+                      key={item.name}
+                      to={item.href}
+                      className="flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 text-foreground hover:bg-gray-100 hover:text-primary text-sm"
+                    >
+                      <span>{item.name}</span>
+                    </NavLink>
                   ))}
                 </div>
               )}
-            </SidebarMenu>
+            </div>
           </SidebarGroupContent>
         </SidebarGroup>
 
