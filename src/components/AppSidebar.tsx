@@ -19,9 +19,10 @@ import {
   User,
   LogOut,
   Moon,
+  Sun,
 } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Sidebar,
   SidebarContent,
@@ -49,6 +50,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { useTheme } from '@/components/theme-provider';
 import photonLogoUrl from '@/assets/photon-logo.svg';
 
 // Menu items da navegação principal
@@ -77,10 +79,36 @@ const moreItems = [
 ];
 
 export function AppSidebar() {
-  const { state, toggleSidebar } = useSidebar();
+  const { state, toggleSidebar, setOpen } = useSidebar();
+  const { theme, setTheme } = useTheme();
   const isCollapsed = state === 'collapsed';
   const [searchQuery, setSearchQuery] = useState('');
   const [showMore, setShowMore] = useState(false);
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  // Carregar o estado salvo da sidebar apenas na primeira montagem
+  useEffect(() => {
+    if (!isInitialized) {
+      const savedState = localStorage.getItem('sidebar-state');
+      if (savedState) {
+        const shouldBeOpen = savedState === 'expanded';
+        setOpen(shouldBeOpen);
+      }
+      setIsInitialized(true);
+    }
+  }, [isInitialized, setOpen]);
+
+  // Salvar o estado da sidebar sempre que mudar (após inicialização)
+  useEffect(() => {
+    if (isInitialized) {
+      const stateToSave = isCollapsed ? 'collapsed' : 'expanded';
+      localStorage.setItem('sidebar-state', stateToSave);
+    }
+  }, [isCollapsed, isInitialized]);
+
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
 
   return (
     <Sidebar
@@ -90,14 +118,14 @@ export function AppSidebar() {
       }}
       className="transition-all duration-[450ms] cubic-bezier-[0.34,-0.09,0.45,1.18]"
     >
-      <SidebarContent className="border-r border-border/25 bg-white shadow-sm overflow-y-auto overflow-x-hidden">
+      <SidebarContent className="border-r border-border/25 bg-white dark:bg-gray-900 shadow-sm overflow-y-auto overflow-x-hidden sidebar-scroll">
         {/* Toggle Button */}
         <TooltipProvider delayDuration={0}>
           <Tooltip>
             <TooltipTrigger asChild>
               <button
                 onClick={toggleSidebar}
-                className="absolute top-9 z-50 w-9 h-9 bg-white border border-border rounded-lg shadow-md hover:bg-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-200 flex items-center justify-center group right-[-18px]"
+                className="absolute top-9 z-50 w-9 h-9 bg-white dark:bg-gray-800 border border-border rounded-lg shadow-md hover:bg-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-200 flex items-center justify-center group right-[-18px]"
               >
                 {isCollapsed ? (
                   <ChevronRight className="h-4 w-4 text-foreground group-hover:text-primary transition-all duration-200 group-hover:scale-110" />
@@ -159,11 +187,11 @@ export function AppSidebar() {
                         >
                           {({ isActive }) => (
                             <button
-                              className={`flex items-center justify-center p-2.5 rounded-lg transition-colors group relative w-full ${
-                                isActive
-                                  ? 'bg-gradient-to-r from-primary/20 to-primary/10 text-primary'
-                                  : 'text-foreground/70 hover:bg-gray-100 hover:text-primary'
-                              }`}
+                            className={`flex items-center justify-center p-2.5 rounded-lg transition-colors group relative w-full ${
+                              isActive
+                                ? 'bg-gradient-to-r from-primary/20 to-primary/10 text-primary'
+                                : 'text-foreground/70 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary'
+                            }`}
                             >
                               <item.icon className="h-5 w-5 transition-colors" />
                               {isActive && (
@@ -183,7 +211,7 @@ export function AppSidebar() {
                             `group flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 relative ${
                               isActive
                                 ? 'bg-gradient-to-r from-primary/20 to-primary/10 text-primary font-bold'
-                                : 'text-foreground hover:bg-gray-100 hover:text-primary'
+                                : 'text-foreground hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary'
                             }`
                           }
                         >
@@ -218,7 +246,7 @@ export function AppSidebar() {
                 <>
                   <button
                     onClick={() => setShowMore(!showMore)}
-                    className="group flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 text-foreground hover:bg-gray-100 hover:text-primary w-full"
+                    className="group flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 text-foreground hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary w-full"
                   >
                     <MoreHorizontal className="h-5 w-5 flex-shrink-0" />
                     <span className="flex-1 text-sm font-medium">Ver Mais</span>
@@ -232,7 +260,7 @@ export function AppSidebar() {
                         <NavLink
                           key={item.name}
                           to={item.href}
-                          className="flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 text-foreground hover:bg-gray-100 hover:text-primary text-sm"
+                          className="flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 text-foreground hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary text-sm"
                         >
                           <span>{item.name}</span>
                         </NavLink>
@@ -274,16 +302,20 @@ export function AppSidebar() {
             </SidebarGroupLabel>
             <SidebarGroupContent>
               <div className="flex gap-2 px-1">
-                <button className="flex-1 flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-gray-100 transition-colors group">
+                <button className="flex-1 flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
                   <Bell className="h-4 w-4 text-foreground/70 group-hover:text-primary transition-colors" />
                   <span className="text-[10px] font-medium text-foreground/70 group-hover:text-primary transition-colors">Notificações</span>
                 </button>
-                <button className="flex-1 flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-gray-100 transition-colors group">
+                <button className="flex-1 flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
                   <Settings className="h-4 w-4 text-foreground/70 group-hover:text-primary transition-colors" />
                   <span className="text-[10px] font-medium text-foreground/70 group-hover:text-primary transition-colors">Config</span>
                 </button>
-                <button className="flex-1 flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-gray-100 transition-colors group">
-                  <Moon className="h-4 w-4 text-foreground/70 group-hover:text-primary transition-colors" />
+                <button onClick={toggleTheme} className="flex-1 flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
+                  {theme === 'dark' ? (
+                    <Sun className="h-4 w-4 text-foreground/70 group-hover:text-primary transition-colors" />
+                  ) : (
+                    <Moon className="h-4 w-4 text-foreground/70 group-hover:text-primary transition-colors" />
+                  )}
                   <span className="text-[10px] font-medium text-foreground/70 group-hover:text-primary transition-colors">Tema</span>
                 </button>
               </div>
@@ -296,7 +328,7 @@ export function AppSidebar() {
                 <TooltipProvider delayDuration={0}>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <button className="flex items-center justify-center p-2.5 rounded-lg hover:bg-gray-100 transition-colors group relative">
+                      <button className="flex items-center justify-center p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group relative">
                         <Bell className="h-5 w-5 text-foreground/70 group-hover:text-primary transition-colors" />
                         <div className="absolute top-1.5 right-1.5 w-2 h-2 bg-destructive rounded-full border border-white shadow-sm" />
                       </button>
@@ -310,7 +342,7 @@ export function AppSidebar() {
                 <TooltipProvider delayDuration={0}>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <button className="flex items-center justify-center p-2.5 rounded-lg hover:bg-gray-100 transition-colors group">
+                      <button className="flex items-center justify-center p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
                         <Settings className="h-5 w-5 text-foreground/70 group-hover:text-primary transition-colors" />
                       </button>
                     </TooltipTrigger>
@@ -323,12 +355,16 @@ export function AppSidebar() {
                 <TooltipProvider delayDuration={0}>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <button className="flex items-center justify-center p-2.5 rounded-lg hover:bg-gray-100 transition-colors group">
-                        <Moon className="h-5 w-5 text-foreground/70 group-hover:text-primary transition-colors" />
+                      <button onClick={toggleTheme} className="flex items-center justify-center p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
+                        {theme === 'dark' ? (
+                          <Sun className="h-5 w-5 text-foreground/70 group-hover:text-primary transition-colors" />
+                        ) : (
+                          <Moon className="h-5 w-5 text-foreground/70 group-hover:text-primary transition-colors" />
+                        )}
                       </button>
                     </TooltipTrigger>
                     <TooltipContent side="right" className="whitespace-nowrap">
-                      <p>Alternar tema</p>
+                      <p>{theme === 'dark' ? 'Modo claro' : 'Modo escuro'}</p>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
@@ -343,7 +379,7 @@ export function AppSidebar() {
         {!isCollapsed ? (
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <button className="flex items-center gap-3 w-full p-3 hover:bg-gray-100 rounded-lg transition-all group">
+              <button className="flex items-center gap-3 w-full p-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-all group">
                 <Avatar className="h-9 w-9 ring-2 ring-primary/20 group-hover:ring-primary/40 transition-all">
                   <AvatarImage src="https://github.com/shadcn.png" alt="User" />
                   <AvatarFallback className="bg-primary/10 text-primary font-bold">PH</AvatarFallback>
@@ -383,7 +419,7 @@ export function AppSidebar() {
               <TooltipTrigger asChild>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <button className="flex items-center justify-center p-3 hover:bg-gray-100 rounded-lg transition-all group relative">
+                    <button className="flex items-center justify-center p-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-all group relative">
                       <Avatar className="h-9 w-9 ring-2 ring-primary/20 group-hover:ring-primary/40 group-hover:scale-110 transition-all">
                         <AvatarImage src="https://github.com/shadcn.png" alt="User" />
                         <AvatarFallback className="bg-primary/10 text-primary font-bold">PH</AvatarFallback>
