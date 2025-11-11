@@ -106,7 +106,7 @@ export function AppSidebar() {
                 )}
               </button>
             </TooltipTrigger>
-            <TooltipContent side="right">
+            <TooltipContent side="right" className="whitespace-nowrap">
               <p>{isCollapsed ? 'Expandir' : 'Colapsar'} menu</p>
             </TooltipContent>
           </Tooltip>
@@ -130,7 +130,7 @@ export function AppSidebar() {
                   </div>
                 </TooltipTrigger>
                 {isCollapsed && (
-                  <TooltipContent side="right" className="font-bold">
+                  <TooltipContent side="right" className="font-bold whitespace-nowrap">
                     <p className="text-lg">PHOTON</p>
                     <p className="text-xs text-muted-foreground">Brasil</p>
                   </TooltipContent>
@@ -205,9 +205,8 @@ export function AppSidebar() {
                       )}
                     </TooltipTrigger>
                     {isCollapsed && (
-                      <TooltipContent side="right">
-                        <p>{item.name}</p>
-                        {item.badge && <p className="text-xs text-muted-foreground">{item.badge}</p>}
+                      <TooltipContent side="right" className="whitespace-nowrap">
+                        <p>{item.name} {item.badge && <span className="text-xs text-muted-foreground ml-1">{item.badge}</span>}</p>
                       </TooltipContent>
                     )}
                   </Tooltip>
@@ -302,7 +301,7 @@ export function AppSidebar() {
                         <div className="absolute top-1.5 right-1.5 w-2 h-2 bg-destructive rounded-full border border-white shadow-sm" />
                       </button>
                     </TooltipTrigger>
-                    <TooltipContent side="right">
+                    <TooltipContent side="right" className="whitespace-nowrap">
                       <p>Notificações</p>
                     </TooltipContent>
                   </Tooltip>
@@ -315,7 +314,7 @@ export function AppSidebar() {
                         <Settings className="h-5 w-5 text-foreground/70 group-hover:text-primary transition-colors" />
                       </button>
                     </TooltipTrigger>
-                    <TooltipContent side="right">
+                    <TooltipContent side="right" className="whitespace-nowrap">
                       <p>Configurações</p>
                     </TooltipContent>
                   </Tooltip>
@@ -328,7 +327,7 @@ export function AppSidebar() {
                         <Moon className="h-5 w-5 text-foreground/70 group-hover:text-primary transition-colors" />
                       </button>
                     </TooltipTrigger>
-                    <TooltipContent side="right">
+                    <TooltipContent side="right" className="whitespace-nowrap">
                       <p>Alternar tema</p>
                     </TooltipContent>
                   </Tooltip>
@@ -420,7 +419,7 @@ export function AppSidebar() {
                   </DropdownMenuContent>
                 </DropdownMenu>
               </TooltipTrigger>
-              <TooltipContent side="right">
+              <TooltipContent side="right" className="whitespace-nowrap">
                 <p className="font-semibold">Photon User</p>
                 <p className="text-xs text-muted-foreground">Clique para opções</p>
               </TooltipContent>
