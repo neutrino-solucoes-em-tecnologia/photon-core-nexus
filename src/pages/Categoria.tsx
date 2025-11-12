@@ -13,7 +13,6 @@ import {
 import { Checkbox } from '@/components/ui/checkbox';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
-import ArticleCard from '@/components/ArticleCard';
 import RevealOnScroll from '@/components/RevealOnScroll';
 import techImage from '@/assets/article-tech.jpg';
 import businessImage from '@/assets/article-business.jpg';
@@ -78,6 +77,236 @@ const articles = [
     author: 'Fernanda Souza',
     readTime: '5 min',
     date: '9 Jan 2025',
+  },
+  {
+    slug: 'blockchain-empresarial',
+    title: 'Blockchain Empresarial: Aplicações Práticas',
+    excerpt: 'Descubra como grandes empresas estão usando blockchain para otimizar processos e reduzir custos.',
+    image: techImage,
+    category: 'Tecnologia',
+    author: 'Ana Silva',
+    readTime: '10 min',
+    date: '8 Jan 2025',
+  },
+  {
+    slug: 'marketing-digital-2025',
+    title: 'Marketing Digital em 2025: Tendências e Estratégias',
+    excerpt: 'As principais mudanças no marketing digital e como adaptar sua estratégia para o futuro.',
+    image: businessImage,
+    category: 'Negócios',
+    author: 'Carlos Mendes',
+    readTime: '7 min',
+    date: '7 Jan 2025',
+  },
+  {
+    slug: 'automacao-industrial',
+    title: 'Automação Industrial 4.0: A Revolução nas Fábricas',
+    excerpt: 'Como IoT e IA estão transformando a manufatura e criando fábricas inteligentes.',
+    image: techImage,
+    category: 'Tecnologia',
+    author: 'Pedro Costa',
+    readTime: '11 min',
+    date: '6 Jan 2025',
+  },
+  {
+    slug: 'startup-unicornios',
+    title: 'O Caminho para o Unicórnio: Lições de Startups Bilionárias',
+    excerpt: 'Estratégias e insights de fundadores que transformaram suas startups em unicórnios.',
+    image: businessImage,
+    category: 'Negócios',
+    author: 'Julia Martins',
+    readTime: '9 min',
+    date: '5 Jan 2025',
+  },
+  {
+    slug: 'cloud-computing-multicloud',
+    title: 'Estratégias Multicloud: Otimizando Infraestrutura',
+    excerpt: 'Por que empresas estão adotando múltiplas plataformas de nuvem e como gerenciá-las.',
+    image: techImage,
+    category: 'Tecnologia',
+    author: 'Roberto Lima',
+    readTime: '8 min',
+    date: '4 Jan 2025',
+  },
+  {
+    slug: 'rh-digital',
+    title: 'RH Digital: Transformando a Gestão de Pessoas',
+    excerpt: 'Como a tecnologia está revolucionando o recrutamento, treinamento e retenção de talentos.',
+    image: businessImage,
+    category: 'Negócios',
+    author: 'Fernanda Souza',
+    readTime: '6 min',
+    date: '3 Jan 2025',
+  },
+  {
+    slug: '5g-iot',
+    title: '5G e IoT: A Combinação que Muda Tudo',
+    excerpt: 'Explore como a rede 5G está acelerando a adoção de IoT e criando novas possibilidades.',
+    image: techImage,
+    category: 'Tecnologia',
+    author: 'Ana Silva',
+    readTime: '10 min',
+    date: '2 Jan 2025',
+  },
+  {
+    slug: 'financas-corporativas',
+    title: 'Finanças Corporativas: Planejamento para Crescimento',
+    excerpt: 'Estratégias financeiras essenciais para escalar seu negócio de forma sustentável.',
+    image: businessImage,
+    category: 'Negócios',
+    author: 'Carlos Mendes',
+    readTime: '8 min',
+    date: '1 Jan 2025',
+  },
+  {
+    slug: 'edge-computing',
+    title: 'Edge Computing: Processamento na Borda da Rede',
+    excerpt: 'Entenda como edge computing está reduzindo latência e melhorando aplicações em tempo real.',
+    image: techImage,
+    category: 'Tecnologia',
+    author: 'Pedro Costa',
+    readTime: '9 min',
+    date: '31 Dez 2024',
+  },
+  {
+    slug: 'cultura-organizacional',
+    title: 'Cultura Organizacional: O DNA das Empresas de Sucesso',
+    excerpt: 'Como construir e manter uma cultura forte que impulsiona resultados e atrai talentos.',
+    image: businessImage,
+    category: 'Negócios',
+    author: 'Julia Martins',
+    readTime: '7 min',
+    date: '30 Dez 2024',
+  },
+  {
+    slug: 'machine-learning-producao',
+    title: 'Machine Learning em Produção: Desafios e Soluções',
+    excerpt: 'Os principais obstáculos ao colocar modelos de ML em produção e como superá-los.',
+    image: techImage,
+    category: 'Tecnologia',
+    author: 'Ana Silva',
+    readTime: '11 min',
+    date: '29 Dez 2024',
+  },
+  {
+    slug: 'comercio-eletronico-brasil',
+    title: 'E-commerce no Brasil: Oportunidades e Crescimento',
+    excerpt: 'Análise do mercado brasileiro de e-commerce e as melhores estratégias para 2025.',
+    image: businessImage,
+    category: 'Negócios',
+    author: 'Carlos Mendes',
+    readTime: '8 min',
+    date: '28 Dez 2024',
+  },
+  {
+    slug: 'devops-cultura',
+    title: 'DevOps: Muito Além das Ferramentas',
+    excerpt: 'Por que DevOps é principalmente sobre cultura e colaboração, não apenas automação.',
+    image: techImage,
+    category: 'Tecnologia',
+    author: 'Roberto Lima',
+    readTime: '9 min',
+    date: '27 Dez 2024',
+  },
+  {
+    slug: 'gestao-mudancas',
+    title: 'Gestão de Mudanças: Liderando Transformações',
+    excerpt: 'Estratégias comprovadas para conduzir mudanças organizacionais com sucesso.',
+    image: businessImage,
+    category: 'Negócios',
+    author: 'Fernanda Souza',
+    readTime: '6 min',
+    date: '26 Dez 2024',
+  },
+  {
+    slug: 'web3-descentralizacao',
+    title: 'Web3: A Internet Descentralizada do Futuro',
+    excerpt: 'Como a Web3 está redesenhando a internet e criando novas oportunidades de negócio.',
+    image: techImage,
+    category: 'Tecnologia',
+    author: 'Pedro Costa',
+    readTime: '10 min',
+    date: '25 Dez 2024',
+  },
+  {
+    slug: 'modelo-negocios-saas',
+    title: 'Modelo SaaS: Estratégias de Crescimento e Retenção',
+    excerpt: 'Como construir e escalar negócios SaaS de forma sustentável e lucrativa.',
+    image: businessImage,
+    category: 'Negócios',
+    author: 'Julia Martins',
+    readTime: '9 min',
+    date: '24 Dez 2024',
+  },
+  {
+    slug: 'kubernetes-orquestracao',
+    title: 'Kubernetes: Orquestração de Containers em Escala',
+    excerpt: 'Guia completo para implementar e gerenciar clusters Kubernetes em produção.',
+    image: techImage,
+    category: 'Tecnologia',
+    author: 'Ana Silva',
+    readTime: '12 min',
+    date: '23 Dez 2024',
+  },
+  {
+    slug: 'analytics-dados',
+    title: 'Analytics: Transformando Dados em Decisões',
+    excerpt: 'Como usar análise de dados para tomar decisões estratégicas mais inteligentes.',
+    image: businessImage,
+    category: 'Negócios',
+    author: 'Carlos Mendes',
+    readTime: '7 min',
+    date: '22 Dez 2024',
+  },
+  {
+    slug: 'serverless-arquitetura',
+    title: 'Arquitetura Serverless: Escalabilidade sem Limites',
+    excerpt: 'Benefícios e desafios de adotar arquiteturas serverless em aplicações modernas.',
+    image: techImage,
+    category: 'Tecnologia',
+    author: 'Roberto Lima',
+    readTime: '10 min',
+    date: '21 Dez 2024',
+  },
+  {
+    slug: 'customer-success',
+    title: 'Customer Success: A Chave para Retenção',
+    excerpt: 'Como implementar uma estratégia de Customer Success que reduz churn e aumenta LTV.',
+    image: businessImage,
+    category: 'Negócios',
+    author: 'Fernanda Souza',
+    readTime: '8 min',
+    date: '20 Dez 2024',
+  },
+  {
+    slug: 'ia-generativa',
+    title: 'IA Generativa: Criando Conteúdo com Máquinas',
+    excerpt: 'Como a IA generativa está transformando criação de conteúdo, arte e código.',
+    image: techImage,
+    category: 'Tecnologia',
+    author: 'Pedro Costa',
+    readTime: '11 min',
+    date: '19 Dez 2024',
+  },
+  {
+    slug: 'growth-hacking',
+    title: 'Growth Hacking: Crescimento Exponencial com Baixo Custo',
+    excerpt: 'Táticas e estratégias de growth hacking que impulsionaram startups de sucesso.',
+    image: businessImage,
+    category: 'Negócios',
+    author: 'Julia Martins',
+    readTime: '9 min',
+    date: '18 Dez 2024',
+  },
+  {
+    slug: 'microservicos-arquitetura',
+    title: 'Microserviços: Arquitetura para Agilidade',
+    excerpt: 'Quando e como migrar de monólito para microserviços sem quebrar tudo.',
+    image: techImage,
+    category: 'Tecnologia',
+    author: 'Ana Silva',
+    readTime: '13 min',
+    date: '17 Dez 2024',
   },
 ];
 
@@ -237,12 +466,96 @@ export default function Categoria() {
               </div>
             </RevealOnScroll>
 
-            {/* Articles Grid */}
-            <div className="grid md:grid-cols-2 gap-6 stagger-fade-in">
+            {/* Articles List */}
+            <div className="space-y-6">
               {articles.map((article, index) => (
-                <RevealOnScroll key={article.slug} delay={index * 100}>
-                  <ArticleCard {...article} />
-                </RevealOnScroll>
+                <article 
+                  key={article.slug}
+                  className="group grid md:grid-cols-[280px_1fr] gap-6 pb-6 border-b border-border last:border-0"
+                  style={{ 
+                    animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
+                  }}
+                >
+                  {/* Thumbnail */}
+                  <a 
+                    href={`/artigo/${article.slug}`}
+                    className="relative overflow-hidden rounded-md aspect-video bg-muted"
+                  >
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-85"
+                      loading="lazy"
+                    />
+                  </a>
+
+                  {/* Content */}
+                  <div className="flex flex-col justify-center min-h-[166px]">
+                    {/* Meta Info - Mobile */}
+                    <div className="flex items-center gap-3 text-xs text-primary font-bold uppercase tracking-wide mb-2 md:hidden">
+                      <span>{article.readTime}</span>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="mb-2">
+                      <a 
+                        href={`/artigo/${article.slug}`}
+                        className="font-bold text-base md:text-lg text-foreground group-hover:underline line-clamp-2"
+                      >
+                        {article.title}
+                      </a>
+                    </h3>
+
+                    {/* Excerpt - Desktop */}
+                    <p className="hidden md:block text-sm text-muted-foreground mb-3 line-clamp-2">
+                      {article.excerpt}
+                    </p>
+
+                    {/* Meta Info - Desktop */}
+                    <div className="hidden md:flex items-center gap-4 text-xs text-primary font-bold uppercase tracking-wide">
+                      <a 
+                        href={`/categoria/${article.category.toLowerCase()}`}
+                        className="hover:underline flex items-center gap-1"
+                      >
+                        <span className="w-3 h-3 inline-block">
+                          <svg viewBox="0 0 12 12" fill="currentColor">
+                            <path fillRule="evenodd" clipRule="evenodd" d="M8 0.5C8 0.223858 7.77614 0 7.5 0H4.5C4.22386 0 4 0.223858 4 0.5V3.5C4 3.77614 3.77614 4 3.5 4L0.5 4C0.223858 4 0 4.22386 0 4.5V7.5C0 7.77614 0.223858 8 0.5 8H3.5C3.77614 8 4 8.22386 4 8.5V11.5C4 11.7761 4.22386 12 4.5 12H7.5C7.77614 12 8 11.7761 8 11.5V8.5C8 8.22386 8.22386 8 8.5 8H11.5C11.7761 8 12 7.77614 12 7.5V4.5C12 4.22386 11.7761 4 11.5 4L8.5 4C8.22386 4 8 3.77614 8 3.5V0.5Z"/>
+                          </svg>
+                        </span>
+                        {article.category}
+                      </a>
+                      
+                      <a 
+                        href={`/autor/${article.author.toLowerCase().replace(' ', '-')}`}
+                        className="hover:underline flex items-center gap-1"
+                      >
+                        <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                          <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        {article.author}
+                      </a>
+                      
+                      <span className="flex items-center gap-1">
+                        <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M12 20h9"/>
+                          <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                        </svg>
+                        {article.readTime}
+                      </span>
+                    </div>
+
+                    {/* Meta Info Mobile - Bottom */}
+                    <div className="flex md:hidden items-center gap-4 text-xs text-primary font-bold uppercase tracking-wide mt-2">
+                      <a href={`/categoria/${article.category.toLowerCase()}`} className="hover:underline">
+                        {article.category}
+                      </a>
+                      <a href={`/autor/${article.author.toLowerCase().replace(' ', '-')}`} className="hover:underline">
+                        {article.author}
+                      </a>
+                    </div>
+                  </div>
+                </article>
               ))}
             </div>
 
@@ -260,66 +573,62 @@ export default function Categoria() {
             </RevealOnScroll>
           </div>
 
-          {/* Sidebar - Popular Articles */}
-          <aside className="hidden lg:block">
-            <div className="sticky top-24 space-y-6">
-              <RevealOnScroll>
-                <Card className="p-6 glass-effect">
-                  <div className="flex items-center gap-2 mb-6 pb-4 border-b border-border/50">
-                    <TrendingUp className="h-5 w-5 text-primary" />
-                    <h3 className="font-bold text-lg">Mais Populares</h3>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    {popularArticles.map((article) => (
-                      <a 
-                        key={article.slug}
-                        href={`/artigo/${article.slug}`}
-                        className="group block p-3 rounded-lg hover:bg-muted/50 transition-all duration-300 hover-lift"
-                      >
-                        <div className="flex items-start gap-4">
-                          <div className="flex-shrink-0">
-                            <div className={`
-                              w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm
-                              ${article.position === 1 ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground'}
-                            `}>
-                              {article.position}
-                            </div>
-                          </div>
-                          
-                          <div className="flex-1 min-w-0">
-                            <h4 className="font-semibold text-sm mb-2 line-clamp-2 group-hover:text-primary transition-colors">
-                              {article.title}
-                            </h4>
-                            <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                              <span className="flex items-center gap-1">
-                                <Eye className="h-3 w-3" />
-                                {article.views}
-                              </span>
-                              <span className="flex items-center gap-1">
-                                <Clock className="h-3 w-3" />
-                                {article.readTime}
-                              </span>
-                            </div>
+          {/* Sidebar - Popular Articles & Ad */}
+          <aside className="hidden lg:block space-y-6">
+            <RevealOnScroll>
+              <Card className="p-6 glass-effect">
+                <div className="flex items-center gap-2 mb-6 pb-4 border-b border-border/50">
+                  <TrendingUp className="h-5 w-5 text-primary" />
+                  <h3 className="font-bold text-lg">Mais Populares</h3>
+                </div>
+                
+                <div className="space-y-4">
+                  {popularArticles.map((article) => (
+                    <a 
+                      key={article.slug}
+                      href={`/artigo/${article.slug}`}
+                      className="group block p-3 rounded-lg hover:bg-muted/50 transition-all duration-300 hover-lift"
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0">
+                          <div className={`
+                            w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm
+                            ${article.position === 1 ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground'}
+                          `}>
+                            {article.position}
                           </div>
                         </div>
-                      </a>
-                    ))}
-                  </div>
-                </Card>
-              </RevealOnScroll>
+                        
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-semibold text-sm mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+                            {article.title}
+                          </h4>
+                          <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                            <span className="flex items-center gap-1">
+                              <Eye className="h-3 w-3" />
+                              {article.views}
+                            </span>
+                            <span className="flex items-center gap-1">
+                              <Clock className="h-3 w-3" />
+                              {article.readTime}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </Card>
+            </RevealOnScroll>
 
-              {/* Ad Space Placeholder */}
-              <RevealOnScroll delay={200}>
-                <Card className="p-6 glass-effect bg-muted/30 border-dashed">
-                  <div className="text-center text-sm text-muted-foreground space-y-2">
-                    <div className="w-full aspect-square bg-muted/50 rounded-lg flex items-center justify-center">
-                      <span className="text-xs">Espaço Publicitário</span>
-                    </div>
-                    <p className="text-xs">300 x 300</p>
-                  </div>
-                </Card>
-              </RevealOnScroll>
+            {/* Ad Space - 300x600 - Sticky */}
+            <div className="sticky top-6">
+              <div className="bg-muted/50 backdrop-blur-sm rounded-lg border border-border/50 flex items-center justify-center h-[600px] text-muted-foreground shadow-lg hover:shadow-xl transition-all duration-300">
+                <div className="text-center">
+                  <p className="text-sm font-medium">Espaço Publicitário</p>
+                  <p className="text-xs mt-1 opacity-70">300 x 600</p>
+                </div>
+              </div>
             </div>
           </aside>
         </div>
