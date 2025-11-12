@@ -286,6 +286,39 @@ All colors MUST be HSL.
     transition-timing-function: cubic-bezier(0.34, -0.09, 0.45, 1.18);
   }
 
+  /* Smooth scrolling for main content */
+  main {
+    scroll-behavior: smooth;
+  }
+
+  /* Main content area optimization */
+  [data-sidebar-inset] {
+    flex: 1;
+    min-width: 0; /* Permite que o flex-item encolha abaixo do tamanho do conteúdo */
+  }
+
+  /* Prevent horizontal scroll on body */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Better content layout */
+  main > * {
+    max-width: 100%;
+  }
+
+  /* Smooth fade-in for page content */
+  @keyframes fadeInContent {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   /* Scrollbar styling for sidebar */
   .sidebar-scroll::-webkit-scrollbar {
     width: 8px;

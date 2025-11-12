@@ -3,7 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { SidebarProvider } from "@/components/ui/sidebar";
+import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 import { AppSidebar } from "./components/AppSidebar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -21,11 +21,11 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <SidebarProvider>
-          <div className="min-h-screen flex flex-col w-full">
-            <div className="flex flex-1 w-full">
-              <AppSidebar />
-              <main className="flex-1">
+        <SidebarProvider defaultOpen={true}>
+          <AppSidebar />
+          <SidebarInset>
+            <div className="flex flex-col min-h-screen w-full">
+              <main className="flex-1 w-full overflow-y-auto">
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/categoria/:slug" element={<Categoria />} />
@@ -35,9 +35,9 @@ const App = () => (
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </main>
+              <Footer />
             </div>
-            <Footer />
-          </div>
+          </SidebarInset>
         </SidebarProvider>
       </BrowserRouter>
     </TooltipProvider>

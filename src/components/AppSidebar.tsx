@@ -113,9 +113,6 @@ export function AppSidebar() {
   return (
     <Sidebar
       collapsible="icon"
-      style={{
-        width: isCollapsed ? '80px' : '300px',
-      }}
       className="transition-all duration-[450ms] cubic-bezier-[0.34,-0.09,0.45,1.18]"
     >
       <SidebarContent className="border-r border-border/25 bg-white dark:bg-gray-900 shadow-sm overflow-y-auto overflow-x-hidden sidebar-scroll">
