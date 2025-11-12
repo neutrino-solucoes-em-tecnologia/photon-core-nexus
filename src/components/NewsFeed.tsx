@@ -171,12 +171,12 @@ export default function NewsFeed() {
 
         {/* Sidebar - Desktop Only */}
         <aside className="hidden lg:block">
-          <div className="sticky top-24 space-y-6">
+          <div className="sticky top-6 space-y-6">
             {/* Ad Placeholder */}
-            <div className="bg-muted rounded-lg flex items-center justify-center h-[600px] text-muted-foreground">
+            <div className="bg-muted/50 backdrop-blur-sm rounded-lg border border-border/50 flex items-center justify-center h-[600px] text-muted-foreground shadow-lg hover:shadow-xl transition-all duration-300">
               <div className="text-center">
                 <p className="text-sm font-medium">Espaço Publicitário</p>
-                <p className="text-xs">300 x 600</p>
+                <p className="text-xs mt-1 opacity-70">300 x 600</p>
               </div>
             </div>
           </div>
