@@ -1,0 +1,1231 @@
+
+<!DOCTYPE html>
+<html lang="pt-br" data-ign="2018" prefix="og: http://ogp.me/ns#" id="IGN2023">
+<head>
+<title>Master Lemon: The Quest for Iceland é emocionante e divertido na medida certa</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Neste jogo, as palavras realmente têm poder" />
+<link rel="canonical" href="https://br.ign.com/master-lemon/147918/review/master-lemon-the-quest-for-iceland-e-emocionante-e-divertido-na-medida-certa">
+<link rel="alternate" hreflang="pt-br" href="https://br.ign.com/master-lemon/147918/review/master-lemon-the-quest-for-iceland-e-emocionante-e-divertido-na-medida-certa" />
+<link rel="alternate" hreflang="x-default" href="https://br.ign.com/master-lemon/147918/review/master-lemon-the-quest-for-iceland-e-emocionante-e-divertido-na-medida-certa" />
+<meta http-equiv="content-language" content="pt-br" />
+
+<meta name="robots" content="max-image-preview:large">
+
+    <meta property="dable:item_id" content="147918">
+
+
+
+<link href="/s/ign/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link rel="mask-icon" href="https://oystatic.ignimgs.com/src/core/img/favicon/safari_favicon.svg" color="#bf1313"/>
+
+<script id="gdpr" type="text/javascript">
+(function() {
+    if (window !== window.top) {
+        return;
+    }
+    var getGeoCC = function() {
+        var match = document.cookie.match(/(^|;)\s*geoCC\s*=\s*([^;]+)/);
+        if (match) return match[2];
+    }
+    window.geoCC = getGeoCC();
+    //gdprApplies namespace should be fine, the stub function below is a let within an iife
+    window.gdprApplies = (geoCC && /be|bg|cz|dk|de|ee|ie|el|es|fr|gr|hr|it|cy|lv|lt|lu|hu|mt|nl|at|pl|pt|ro|si|sk|fi|no|se|gb|uk|unk/i.test(geoCC)) ? true : false;
+    if (gdprApplies) {
+        (function() {
+            function makeStub() {
+                var TCF_LOCATOR_NAME = '__tcfapiLocator';
+                var queue = [];
+                var win = window;
+                var cmpFrame;
+
+                function addFrame() {
+                    var doc = win.document;
+                    var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+                    if (!otherCMP) {
+                        if (doc.body) {
+                            var iframe = doc.createElement('iframe');
+
+                            iframe.style.cssText = 'display:none';
+                            iframe.name = TCF_LOCATOR_NAME;
+                            doc.body.appendChild(iframe);
+                        } else {
+                            setTimeout(addFrame, 5);
+                        }
+                    }
+                    return !otherCMP;
+                }
+
+                function tcfAPIHandler() {
+                    var gdprApplies;
+                    var args = arguments;
+
+                    if (!args.length) {
+                        return queue;
+                    } else if (args[0] === 'setGdprApplies') {
+                        if (
+                            args.length > 3 &&
+                            args[2] === 2 &&
+                            typeof args[3] === 'boolean'
+                        ) {
+                            gdprApplies = args[3];
+                            if (typeof args[2] === 'function') {
+                                args[2]('set', true);
+                            }
+                        }
+                    } else if (args[0] === 'ping') {
+                        var retr = {
+                            gdprApplies: gdprApplies,
+                            cmpLoaded: false,
+                            cmpStatus: 'stub'
+                        };
+
+                        if (typeof args[2] === 'function') {
+                            args[2](retr);
+                        }
+                    } else {
+                        if (args[0] === 'init' && typeof args[3] === 'object') {
+                            args[3] = Object.assign(args[3], {
+                                tag_version: 'V3'
+                            });
+                        }
+                        queue.push(args);
+                    }
+                }
+
+                function postMessageEventHandler(event) {
+                    var msgIsString = typeof event.data === 'string';
+                    var json = {};
+
+                    try {
+                        if (msgIsString) {
+                            json = JSON.parse(event.data);
+                        } else {
+                            json = event.data;
+                        }
+                    } catch (ignore) {}
+
+                    var payload = json.__tcfapiCall;
+
+                    if (payload) {
+                        window.__tcfapi(
+                            payload.command,
+                            payload.version,
+                            function(retValue, success) {
+                                var returnMsg = {
+                                    __tcfapiReturn: {
+                                        returnValue: retValue,
+                                        success: success,
+                                        callId: payload.callId
+                                    }
+                                };
+                                if (msgIsString) {
+                                    returnMsg = JSON.stringify(returnMsg);
+                                }
+                                if (event && event.source && event.source.postMessage) {
+                                    event.source.postMessage(returnMsg, '*');
+                                }
+                            },
+                            payload.parameter
+                        );
+                    }
+                }
+
+                while (win) {
+                    try {
+                        if (win.frames[TCF_LOCATOR_NAME]) {
+                            cmpFrame = win;
+                            break;
+                        }
+                    } catch (ignore) {}
+
+                    if (win === window.top) {
+                        break;
+                    }
+                    win = win.parent;
+                }
+                if (!cmpFrame) {
+                    addFrame();
+                    win.__tcfapi = tcfAPIHandler;
+                    win.addEventListener('message', postMessageEventHandler, false);
+                }
+            };
+
+            makeStub();
+
+            function makeGppStub() {
+                const CMP_ID = 10;
+                const SUPPORTED_APIS = [
+                    '2:tcfeuv2',
+                    '6:uspv1',
+                    '7:usnatv1',
+                    '8:usca',
+                    '9:usvav1',
+                    '10:uscov1',
+                    '11:usutv1',
+                    '12:usctv1'
+                ];
+
+                window.__gpp_addFrame = function(n) {
+                    if (!window.frames[n]) {
+                        if (document.body) {
+                            var i = document.createElement("iframe");
+                            i.style.cssText = "display:none";
+                            i.name = n;
+                            document.body.appendChild(i);
+                        } else {
+                            window.setTimeout(window.__gpp_addFrame, 10, n);
+                        }
+                    }
+                };
+                window.__gpp_stub = function() {
+                    var b = arguments;
+                    __gpp.queue = __gpp.queue || [];
+                    __gpp.events = __gpp.events || [];
+
+                    if (!b.length || (b.length == 1 && b[0] == "queue")) {
+                        return __gpp.queue;
+                    }
+
+                    if (b.length == 1 && b[0] == "events") {
+                        return __gpp.events;
+                    }
+
+                    var cmd = b[0];
+                    var clb = b.length > 1 ? b[1] : null;
+                    var par = b.length > 2 ? b[2] : null;
+                    if (cmd === "ping") {
+                        clb({
+                                gppVersion: "1.1", // must be “Version.Subversion”, current: “1.1”
+                                cmpStatus: "stub", // possible values: stub, loading, loaded, error
+                                cmpDisplayStatus: "hidden", // possible values: hidden, visible, disabled
+                                signalStatus: "not ready", // possible values: not ready, ready
+                                supportedAPIs: SUPPORTED_APIS, // list of supported APIs
+                                cmpId: CMP_ID, // IAB assigned CMP ID, may be 0 during stub/loading
+                                sectionList: [],
+                                applicableSections: [-1],
+                                gppString: "",
+                                parsedSections: {},
+                            },
+                            true
+                        );
+                    } else if (cmd === "addEventListener") {
+                        if (!("lastId" in __gpp)) {
+                            __gpp.lastId = 0;
+                        }
+                        __gpp.lastId++;
+                        var lnr = __gpp.lastId;
+                        __gpp.events.push({
+                            id: lnr,
+                            callback: clb,
+                            parameter: par,
+                        });
+                        clb({
+                                eventName: "listenerRegistered",
+                                listenerId: lnr, // Registered ID of the listener
+                                data: true, // positive signal
+                                pingData: {
+                                    gppVersion: "1.1", // must be “Version.Subversion”, current: “1.1”
+                                    cmpStatus: "stub", // possible values: stub, loading, loaded, error
+                                    cmpDisplayStatus: "hidden", // possible values: hidden, visible, disabled
+                                    signalStatus: "not ready", // possible values: not ready, ready
+                                    supportedAPIs: SUPPORTED_APIS, // list of supported APIs
+                                    cmpId: CMP_ID, // list of supported APIs
+                                    sectionList: [],
+                                    applicableSections: [-1],
+                                    gppString: "",
+                                    parsedSections: {},
+                                },
+                            },
+                            true
+                        );
+                    } else if (cmd === "removeEventListener") {
+                        var success = false;
+                        for (var i = 0; i < __gpp.events.length; i++) {
+                            if (__gpp.events[i].id == par) {
+                                __gpp.events.splice(i, 1);
+                                success = true;
+                                break;
+                            }
+                        }
+                        clb({
+                                eventName: "listenerRemoved",
+                                listenerId: par, // Registered ID of the listener
+                                data: success, // status info
+                                pingData: {
+                                    gppVersion: "1.1", // must be “Version.Subversion”, current: “1.1”
+                                    cmpStatus: "stub", // possible values: stub, loading, loaded, error
+                                    cmpDisplayStatus: "hidden", // possible values: hidden, visible, disabled
+                                    signalStatus: "not ready", // possible values: not ready, ready
+                                    supportedAPIs: SUPPORTED_APIS, // list of supported APIs
+                                    cmpId: CMP_ID, // CMP ID
+                                    sectionList: [],
+                                    applicableSections: [-1],
+                                    gppString: "",
+                                    parsedSections: {},
+                                },
+                            },
+                            true
+                        );
+                    } else if (cmd === "hasSection") {
+                        clb(false, true);
+                    } else if (cmd === "getSection" || cmd === "getField") {
+                        clb(null, true);
+                    }
+                    //queue all other commands
+                    else {
+                        __gpp.queue.push([].slice.apply(b));
+                    }
+                };
+                window.__gpp_msghandler = function(event) {
+                    var msgIsString = typeof event.data === "string";
+                    try {
+                        var json = msgIsString ? JSON.parse(event.data) : event.data;
+                    } catch (e) {
+                        var json = null;
+                    }
+                    if (typeof json === "object" && json !== null && "__gppCall" in json) {
+                        var i = json.__gppCall;
+                        window.__gpp(
+                            i.command,
+                            function(retValue, success) {
+                                var returnMsg = {
+                                    __gppReturn: {
+                                        returnValue: retValue,
+                                        success: success,
+                                        callId: i.callId,
+                                    },
+                                };
+                                event.source.postMessage(msgIsString ? JSON.stringify(returnMsg) : returnMsg, "*");
+                            },
+                            "parameter" in i ? i.parameter : null,
+                            "version" in i ? i.version : "1.1"
+                        );
+                    }
+                };
+                if (!("__gpp" in window) || typeof window.__gpp !== "function") {
+                    window.__gpp = window.__gpp_stub;
+                    window.addEventListener("message", window.__gpp_msghandler, false);
+                    window.__gpp_addFrame("__gppLocator");
+                }
+            };
+
+            makeGppStub();
+        }());
+    }
+})();
+</script>
+
+
+<script type="text/javascript">
+  window.ICMS = window.ICMS || { cmd: [], libs: [], css: [], tcf2loader: [], deferredJSLoader:[] };
+  ICMS.lang = 'pt'; ICMS.siteID = 'ign_br'; ICMS.siteName = 'IGN Brasil';
+  ICMS.amzTag = 'ignbrasil-bouton-20'; ICMS.contentId = '147918'; ICMS.keywordSlug = '54454';
+  ICMS.baseUri = ''; ICMS.pageName = 'Master Lemon: The Quest for Iceland é emocionante e divertido na medida certa'; ICMS.pageUrl = 'https://br.ign.com/master-lemon/147918/review/master-lemon-the-quest-for-iceland-e-emocionante-e-divertido-na-medida-certa';
+  ICMS.isPublished = 'True'; ICMS.backendEditUrl = 'https://br.icms.ign.com/admin/article/147918/';
+  ICMS.isEmbed = (window.self !== window.top) ? true : false; ICMS.articletype = 'REVIEW';
+  ICMS.staticVersioning = '?675';
+  ICMS.cmd.push(function() { IGNInternationalInit(); });
+</script>
+<script type="text/javascript">window.ICMS.cmd.push(function() {  });</script>
+<script src="/s/bundle_ign.js?675" defer></script><script src="https://sm.ign.com/zdadkit2.js?675" defer></script><script src="https://sm.ign.com/themes_10.js?675" defer></script>
+<script type="text/javascript">window._icmsFbq = window._icmsFbq || []; window._icmsFbq.push(['init', '2316579201919635']); window._icmsFbq.push(['track', 'PageView']);</script><noscript><img height="1" width="1" src="https://www.facebook.com/tr?id=2316579201919635&ev=PageView"/></noscript><meta name="twitter:site" content="@ignbrasil"><meta property="og:site_name" content="IGN Brasil" /><meta property="fb:app_id" content="115982828429116" /><meta property="fb:profile_id" content="https://www.facebook.com/ignbrasil" /><meta property="fb:pages" content="1506696232916318" /><meta property="twitter:image" content="https://sm.ign.com/t/ign_br/screenshot/default/blob_jjaq.1200.png"><meta property="og:image" itemprop="image" content="https://sm.ign.com/t/ign_br/screenshot/default/blob_jjaq.1200.png"><meta name="twitter:card" value="summary_large_image"><meta property="og:type" content="article"><meta property="og:title" content="Master Lemon: The Quest for Iceland é emocionante e divertido na medida certa"><meta property="og:description" content="Neste jogo, as palavras realmente têm poder"><meta property="og:url" content="https://br.ign.com/master-lemon/147918/review/master-lemon-the-quest-for-iceland-e-emocionante-e-divertido-na-medida-certa"><meta property="og:locale" content="pt_BR"><meta property="article:published_time" content="2025-11-06T17:44:07+00:00"><meta property="article:publisher" content="https://www.facebook.com/ignbrasil"><meta property="article:section" content="Master Lemon: The Quest for Iceland"><meta property="article:tag" content="Master Lemon: The Quest for Iceland">
+
+
+  
+      <link rel="alternate" type="application/rss+xml" title="IGN Brasil Master Lemon: The Quest for Iceland" href="/master-lemon.xml">
+  
+
+
+<!-- Trackers -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6V5EDTKRXD"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+window.gtag = window.gtag||function(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-6V5EDTKRXD', {
+  
+})
+
+
+
+  gtag('event', 'icms_page_view', {
+      'send_to': 'G-6V5EDTKRXD',
+      'icms_keyword': "Master Lemon: The Quest for Iceland",
+      'icms_obj_type': "REVIEW",
+      
+      'icms_obj_author': "Allana Aristides"
+      
+  })
+
+gtag('config', 'G-G0Z2FQREVE');
+
+</script>
+
+<script type="text/javascript">var _comscore = _comscore || []; _comscore.push({c1: "2", c2: "3000068" });</script>
+<script type="text/javascript" src="https://sb.scorecardresearch.com/beacon.js" async="true"></script>
+<noscript><img src="https://sb.scorecardresearch.com/p?c1=2&amp;c2=3000068&amp;c4=" alt="*" style="position: absolute" width="1" height="1"></noscript>
+
+
+<style type="text/css">@font-face{font-family:"Inter Var";font-style:normal;font-weight:100 1000;font-display:swap;font-stretch:normal;src:url(/s/ign/Inter-VariableFont_slnt,wght.ttf)format("truetype-variations")}body,html{margin:0;padding:0;font-family:"Inter Var",sans-serif;text-rendering:optimizeLegibility;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}body{overflow-x:hidden}.page-wrapper,body,html{background-color:#f6f8f7}aside#sidebarHeader,body,header{padding-top:0}body.rtl{direction:rtl}body.hasSkin .hspotlight,body.hasSkin .list-content,body.hasSkin .wrap,body.hasSkin section.broll,body.hasSkin section.popular,body.hasSkin section.stripe,body.hasSkin section.vspotlight{max-width:1240px;padding:8px 10px}body.hasSkin section.broll,body.hasSkin section.wrap.videofeatured{padding-left:10px;padding-right:10px;background:#f6f8f7;box-sizing:border-box}body.hasSkin section.stripe{padding-left:10px;padding-right:10px;margin:0 auto;box-sizing:border-box}body.hasSkin .page-content{max-width:1240px;margin:0 auto;background:#f6f8f7;padding-top:5px;box-sizing:border-box}body.hasSkin section.hero article{width:1240px;max-width:1240px;background-position:center;background-repeat:no-repeat}body.hasSkin section.hero{margin-left:initial;margin-right:initial}body.hasSkin .herogrid{padding:10px;box-sizing:border-box;background:#f6f8f7}aside#sidebarHeader.backend,body.hasSkin .spacer,body.iframe #btnoverlay,body.iframe aside#sidebarHeader{display:none}.ad-wrapper.pgQSsticky{position:sticky;position:-webkit-sticky;top:65px;margin-top:35px}#_themeMobileHeaderDoodle{max-height:100%}body iframe.quizembed{width:100%;min-height:500px;border:0;overflow:hidden}header{top:0;width:100%;z-index:100;flex-shrink:0}header .icon-logo{aspect-ratio:182/55;width:6.625em;height:1.9791666666667em;font-size:.7rem}header .icon-logo .dpad-path{fill:#bf1313}.sidebar-page-header{border-bottom:1px solid rgba(138,147,153,.25);display:flex;-webkit-box-align:center;align-items:center;-webkit-box-pack:center;justify-content:center;width:100%;height:64px;background:#fff;z-index:7;padding:0 12px;transition:margin-left 200ms cubic-bezier(.34,-.09,.45,1.18)}.sidebar-page-header #current-user{position:absolute;top:15.5px;right:16px;width:32px;color:#41495a}.sidebar-page-header #current-user .userIcon{width:32px;height:32px;border-radius:50%}aside#sidebarHeader.backend+#btnoverlay+#mainblock{width:100%;margin-left:0}aside#sidebarHeader{--theme-elements-divider:rgba(138, 147, 153, 0.25);--theme-elements-icon-default:#41495a;color:#41495a;position:fixed;top:0;left:0;bottom:0;height:100%;background:#fff;box-shadow:0 0 3px rgba(0,0,0,.1),0 17px 24px rgba(0,0,0,.07);z-index:2000000000;transition-duration:450ms;width:85vw;font-family:"Inter var",sans-serif;-webkit-transform:translateX(0);-ms-transform:translateX(0);transform:translateX(0);-webkit-transition-property:-webkit-transform;-webkit-transition-property:transform;transition-property:transform}.sidebar-page-header,aside#sidebarHeader *{box-sizing:border-box}aside#sidebarHeader.collapsed{width:0}aside#sidebarHeader.collapsed .header-toggle svg{transition:transform .1s linear 0s;transform:rotate(0)}aside#sidebarHeader .header-toggle svg,body.rtl aside#sidebarHeader .back .icon-left-chevron{transform:rotate(180deg)}#sidebarHeader.collapsed button.back label,aside#sidebarHeader.collapsed .ign-logo .ign-path,aside#sidebarHeader.collapsed .logodate,aside#sidebarHeader.collapsed .logout,aside#sidebarHeader.collapsed .region,aside#sidebarHeader.collapsed .search-modal,aside#sidebarHeader.collapsed .sidebar-main a span{opacity:0}#sidebarHeader.hide,aside#sidebarHeader.collapsed .region{display:none}aside#sidebarHeader .ign-logo .ign-path,aside#sidebarHeader .logodate,aside#sidebarHeader .logout,aside#sidebarHeader .region,aside#sidebarHeader .search-modal,aside#sidebarHeader .sidebar-main a span{-webkit-transition-duration:200ms;transition-duration:200ms;transition:opacity 200ms cubic-bezier(.34,-.09,.45,1.18)}aside#sidebarHeader .sidebar-main a span{opacity:1;line-height:1.5}#loginwrapper.loggedin .login-avatar,aside#sidebarHeader.collapsed #loginwrapper .login-avatar{opacity:1}#loginwrapper.loggedin .login-buttons,aside#sidebarHeader #ignheader.collapsed #loginwrapper .login-buttons,aside#sidebarHeader.collapsed #loginwrapper .sidebar-item-text{opacity:0;display:none}aside#sidebarHeader.collapsed .side .sidebar-header{padding-left:36px;padding-right:36px}aside#sidebarHeader.collapsed .side .sidebar-header.scrollbar{padding-left:33px}body.rtl aside#sidebarHeader .sidebar-header{direction:ltr}aside#sidebarHeader.collapsed .sidebar-icon{font-size:1rem}aside#sidebarHeader.collapsed #loginwrapper .userlogged span,aside#sidebarHeader.collapsed .icon-right-chevron{display:none}aside#sidebarHeader .icon-right-chevron{width:16px;margin-left:auto}body.rtl aside#sidebarHeader .icon-right-chevron{width:16px;margin-left:0;margin-right:auto;-moz-transform:scaleX(-1);-o-transform:scaleX(-1);-webkit-transform:scaleX(-1);transform:scaleX(-1)}body.rtl aside#sidebarHeader .icon-left-chevron{margin-left:0;margin-right:auto}body.rtl aside#sidebarHeader.collapsed .icon-left-chevron{-moz-transform:scaleX(-1);-o-transform:scaleX(-1);-webkit-transform:scaleX(-1);transform:scaleX(-1)}aside#sidebarHeader.collapsed .header-toggle{right:-46px;display:flex}aside#sidebarHeader .header-toggle.WIKI{display:none}aside#sidebarHeader #search-input{display:block;padding:8px;width:90%;border:1px solid #181c25;outline:0;font-size:14px;border-radius:8px;color:#181c25;max-width:90%}aside#sidebarHeader .cls-1{color:inherit;stroke:none}.sidebar-mobile-overlay{position:fixed;inset:0;background-color:rgba(65,73,90,.8);backdrop-filter:blur(.5em);transition:opacity 200ms cubic-bezier(.34,-.09,.45,1.18);z-index:10;opacity:1}.sidebar-mobile-overlay.collapsed{opacity:0;z-index:-1}aside#sidebarHeader .logout{padding:4px 16px;color:#fff;border-radius:4px;background-color:#bf1313;font-weight:700;line-height:1em;text-align:center;display:inline-block;width:19%;top:4px;position:relative;align-self:flex-start}.header-toggle{position:absolute;z-index:20002;cursor:pointer;width:35px;height:35px;right:-16px;top:16px;padding:0;border-radius:8px;background-color:#fff;color:#181c25;border:1px solid rgba(138,147,153,.75);display:flex;text-align:center;align-items:center;justify-content:center}.header-toggle:hover{background-color:#41495a;border:1px solid #41495a;color:#fff}#ignheader{display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;overflow:hidden;height:100%}.fixed-header{position:fixed}.side-container{position:relative;-webkit-flex:1;-ms-flex:1;flex:1}#loginwrapper,.side{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.side{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;overscroll-behavior:contain;position:absolute;height:100%;left:-75%;opacity:0;z-index:0;-webkit-transition-property:left,opacity;transition-property:left,opacity,display;-webkit-transition-duration:250ms,100ms;transition-duration:250ms,100ms;-webkit-transition-timing-function:ease-in-out;transition-timing-function:ease-in-out;-webkit-transition-delay:0ms,75ms;transition-delay:0ms,75ms}.side .sidebar-header{-webkit-flex-basis:80px;-ms-flex-preferred-size:80px;flex-basis:80px;-webkit-transition:padding-left 450ms cubic-bezier(.34,-.09,.45,1.18);transition:padding-left 450ms cubic-bezier(.34,-.09,.45,1.18);-webkit-flex:0 0 64px;-ms-flex:0 0 64px;flex:0 0 64px;overflow:hidden;padding:20px 24px 0}#ignheader.collapsed .side-container .sidebar-section li,.side .sidebar-header .logo-edition{white-space:nowrap}.logo-edition{display:flex;gap:6px}.side .sidebar-main{overflow:hidden auto;scroll-behavior:smooth;flex:1 1 0%;padding:18px 24px}.sidebar-main>hr{height:1px;background-color:rgba(138,147,153,.25);border:0}.sidebar-main>b{text-transform:uppercase}aside#sidebarHeader.collapsed .side .sidebar-main{padding-right:24px;padding-left:24px}.side .sidebar-main .divider{width:100%;margin-top:18px;margin-bottom:18px;border-bottom:1px solid rgba(138,147,153,.25)}.side h3{font-size:18px;font-weight:700;margin:18px 0}#loginwrapper{position:relative;box-shadow:0 0 3px rgba(0,0,0,.1),0 17px 24px rgba(0,0,0,.07);height:76px;overflow:hidden;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-top:auto;box-sizing:border-box}.collapsed #loginwrapper{display:block}#loginwrapper.loggedin{gap:80px;display:block}#loginwrapper.loggedin .login-avatar{background:0 0;display:flex;flex-direction:row;gap:12px;width:100%}#loginwrapper .userlogged{font-weight:700;display:inline-block;width:80%;max-width:80%;color:#41495a}#loginwrapper .userlogged span{max-width:70%;display:inline-block}#loginwrapper .login-avatar,#loginwrapper .sidebar-item-text{opacity:0;width:0;padding:0;border:0;-webkit-transition-property:opacity,width,padding;transition-property:opacity,width,padding;-webkit-transition-duration:450ms;transition-duration:450ms;-webkit-transition-timing-function:cubic-bezier(.34,-.09,.45,1.18);transition-timing-function:cubic-bezier(.34,-.09,.45,1.18);display:none}.collapsed #loginwrapper .login-avatar{padding-top:10px;display:block;width:100%;height:auto;color:#41495a}#loginwrapper .login-buttons{display:flex;opacity:1;-webkit-transition:opacity 450ms cubic-bezier(.34,-.09,.45,1.18);transition:opacity 450ms cubic-bezier(.34,-.09,.45,1.18);-webkit-flex:1;-ms-flex:1;flex:1;flex-direction:row;gap:12px;justify-content:center;text-decoration:none}#loginwrapper img.userIcon{height:36px;border-radius:50%;vertical-align:middle;margin-right:10px}body.rtl #loginwrapper img.userIcon{margin-right:0;margin-left:10px}.login-buttons .button{cursor:pointer;white-space:nowrap;transition:color .2s ease 0s,background .15s ease 0s,border .15s ease 0s;max-width:120px;font-size:.875rem;-webkit-letter-spacing:.005em;-moz-letter-spacing:.005em;-ms-letter-spacing:.005em;letter-spacing:.005em;font-weight:700;line-height:1.5;border-radius:8px;padding:6px 12px;flex-grow:1;text-align:center}.login-buttons .login-button{background-color:#fff;border:1px solid #bbc4c4;color:#181c25}.login-buttons .register-button{color:#fff;border:1px solid #181c25;background-color:#181c25}.side-container .sidebar-section{list-style-type:none;display:flex;flex-direction:column;gap:2px;margin:0;padding:0}.side.slide{left:0;opacity:1;z-index:1}.side.right{left:75%}.fancybox-lock .fancybox-overlay{z-index:10000000000}#loginwrapper,.region{padding:18px 24px}.region select{color:#41495a;border-radius:8px;font-size:16px;-webkit-appearance:none;-moz-appearance:none;appearance:none;padding:8px 12px;width:100%;outline:0;margin-top:5px;background:#fff;border:1px solid #767676}.region select:not(:disabled){background-image:url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='12' xmlns='http://www.w3.org/2000/svg'%3e%3cg stroke-width='1' fill='none' stroke-linecap='round' stroke-linejoin='round' stroke='%2341495a'%3e%3cpath d='M8.82842712 5L6 7.82842712 3.17157288 5'/%3e%3c/g%3e%3c/svg%3e");background-size:18px;background-position:calc(100% - 12px) center;background-repeat:no-repeat}body.rtl .region select:not(:disabled){background-position:calc(0 + 12px) center}.side-container .sidebar-section a,.side-container .sidebar-section li{width:100%;display:flex;-webkit-box-align:center;align-items:center;border-radius:8px;overflow:hidden}.side-container .sidebar-section li{gap:18px;font-size:15px}.side-container .sidebar-section a{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;-webkit-align-items:center;-ms-flex-align:center;gap:12px;color:#41495a;padding:8px;fill:#41495a;transition:padding .1s linear 0s;min-height:39px}aside#sidebarHeader.collapsed .side-container .sidebar-section a{padding-left:15px;padding-right:11px}aside#sidebarHeader.collapsed .side-container .sidebar-section a.scrollbar{padding-left:11px}body.rtl aside#sidebarHeader.collapsed .side-container .sidebar-section a{padding-right:15px}.side-container .sidebar-section>li.selected,.side-container .sidebar-section>li:hover{background-color:#8a939940;color:#41495a;border:0}.side-container .sidebar-section>li.search:hover{background-color:inherit;cursor:pointer}.side-container .sidebar-section>li.selected{font-weight:700}.sidebar-section a.icon-home:before{content:url(/s/ign/sidebar/home.svg);padding-left:1px}.sidebar-section .selected a.icon-home:before{content:url(/s/ign/sidebar/home-selected.svg);padding-left:1px}.sidebar-section a[href^="/article/review"]:before{content:url(/s/ign/sidebar/review.svg)}.sidebar-section a[href^="/video"]:before{content:url(/s/ign/sidebar/video.svg)}.sidebar-section a[href^="/forum"]:before{content:url(/s/ign/sidebar/forum.svg)}.sidebar-section a[href^="/ps4"]:before{content:url(/s/ign/sidebar/ps4.svg)}.sidebar-section a[href^="/pc"]:before{content:url(/s/ign/sidebar/pc.svg)}.sidebar-section a[href^="/xbox-one"]:before{content:url(/s/ign/sidebar/xbox.svg)}.sidebar-section a[href^="/article/feature"]:before{content:url(/s/ign/sidebar/facebook.svg)}.sidebar-section a[href^="/nintendo-switch"]:before{content:url(/s/ign/sidebar/nintendo-switch.svg)}.sidebar-section a[href^="/cinematv"]:before{content:url(/s/ign/sidebar/film.svg)}.sidebar-section a[href^="/3ds"]:before{content:url(/s/ign/sidebar/3ds.svg)}.sidebar-section a[href^="/ps5"]:before{content:url(/s/ign/sidebar/ps5.svg)}.sidebar-icon,.sidebar-section a svg,.sidebar-section a:before{background-size:100%;cursor:inherit;user-select:none;aspect-ratio:1/1;display:inline-block;flex-shrink:0}.sidebar-section a svg,.sidebar-section a:before{width:1.2em;height:1.2em;font-size:25px}.editions.desktop,.sidebar-section a.iconsvg:before{display:none}.sidebar-icon{width:1em;height:1em;font-size:1rem}.side .sidebar-main::-webkit-scrollbar{width:6px}.side .sidebar-main::-webkit-scrollbar-thumb{box-shadow:inset 0 0 6px rgba(138,147,153,.5);background:rgba(138,147,153,.5);border-radius:10px}.side .sidebar-main::-webkit-scrollbar-track{background:0 0}button.back{border:0;background-color:transparent;outline-width:0;padding:0;color:#41495a;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;text-align:left;margin:0;font-size:11px;line-height:1.35;-webkit-letter-spacing:.03em;-moz-letter-spacing:.03em;-ms-letter-spacing:.03em;letter-spacing:.03em;text-transform:uppercase;font-weight:700;gap:12px}body.rtl button.back{flex-direction:row-reverse;margin-left:auto}button.back,button.back label{cursor:pointer}#sidebarHeader li.legal{flex-direction:column-reverse;color:#41495a;background:#f6f8f7;padding:8px 11px;font-size:13px;-webkit-letter-spacing:.005em;-moz-letter-spacing:.005em;-ms-letter-spacing:.005em;letter-spacing:.005em;line-height:1.3;gap:6px}#sidebarHeader li.legal a{padding:0}a{text-decoration:none}.wrap{max-width:1200px;margin-left:auto;margin-right:auto;padding-left:15px;padding-right:15px}section#js{position:absolute;bottom:0;left:0;width:1px;height:1px;overflow:hidden}#gheader,section.stripe{background-color:#f5f5f5;padding:18px 0;transition:padding .1s linear 0s;overflow:hidden}section.stripe{padding:24px 0;margin-bottom:0}svg.ign-logo{background-size:100%;cursor:inherit;user-select:none;display:inline-block;flex-shrink:0;aspect-ratio:182/55;height:1.97917em;font-size:1.5rem;width:3.17em}svg.ign-logo,svg.sidebar-icon.icon-logo{color:#bf1313;fill:#bf1313}#ign-logo-wrap{position:absolute;left:50%;transform:translate(-50%);top:25%;z-index:500}div.logodate{font-size:16px;font-weight:700;max-width:280px;display:inline-block;vertical-align:super;align-self:center}.right-rail{display:block}.extramenu{cursor:pointer}.filterlist{padding:0;margin:0}.indexFilter .filterlist{margin:0;display:flex;overflow:auto hidden;scroll-behavior:smooth;gap:4px}.indexFilter .filterlist svg,.search-modal .button,footer{display:none}.indexFilter .filterlist>li{min-width:auto;width:auto;height:auto;white-space:nowrap;display:flex;-moz-box-pack:center;justify-content:center;-moz-box-align:center;align-items:center;background-color:rgba(138,147,153,.15);border:1px solid transparent;color:#181c25}.indexFilter .filterlist>li span{line-height:16px}.indexFilter .filterlist>li a{letter-spacing:.005em;font-size:13px;font-weight:700;color:#181c25;padding:12px 36px}.indexFilter .filterlist>li:first-child{border-top-left-radius:80px;border-bottom-left-radius:80px}body.rtl .indexFilter .filterlist>li:first-child{border-top-right-radius:80px;border-bottom-right-radius:80px;border-top-left-radius:0;border-bottom-left-radius:0}.indexFilter .filterlist>li:last-child{border-top-right-radius:80px;border-bottom-right-radius:80px}body.rtl .indexFilter .filterlist>li:last-child{border-top-left-radius:80px;border-bottom-left-radius:80px;border-top-right-radius:0;border-bottom-right-radius:0}.indexFilter .filterlist>li.active{background-color:#181c25}.indexFilter .filterlist>li.active a{color:#fff}#zdlogoblue{width:65px;height:auto}.search-modal{margin-top:2px;width:100%}.menu-editions{display:block!important;text-align:center!important;line-height:60px}#footer div.legal{display:flex;align-items:center}#footer.limitedScroll{display:block;background:#f5f5f5;padding:4px;font-size:small;text-align:center}#footer.limitedScroll a{color:#bf1313}.page-content{position:relative;top:18%}.button-primary{background-color:#bf1313;border-radius:4px;color:#fff;cursor:pointer;font-size:20px;font-weight:700;letter-spacing:-.5px;white-space:nowrap;padding:8px 20px;border:0}div.tbl{display:table;position:relative;margin-right:320px}section.broll.hasAd div.adk2{position:absolute;right:0;width:300px}section.broll{display:block;grid-template-columns:[mainContent-start]auto[mainContent-end rightRail-start]320px[rightRail-end];margin:0 auto;-ms-grid-columns:auto 320px;max-width:1200px;column-gap:1.5rem}section.broll div.tbl{grid-area:mainContent;margin-right:0}section.broll[data-slotter=news] div.tbl{display:block}section.broll div.side-ad-trail{grid-area:rightRail;display:block}section.broll+section.broll{padding-top:0;padding-bottom:0;grid-gap:0;grid-column-gap:1.5rem}body.hasSkin section.broll+section.broll{padding-left:10px;padding-right:10px}section.broll>h2{border-bottom:solid 1px rgba(37,38,39,.15)}section.broll article{display:table-row;position:relative;margin-left:0}section.broll article.embed_video_broll,section.broll img.thumb{display:block;width:100%}section.broll article.embed_video_broll .icmsvideocontainer{width:100%;margin-bottom:36px;margin-top:36px;border-radius:12px}section.broll article.embed_video_broll div.vplayer{position:relative;height:0;overflow:hidden;padding-bottom:56.25%;border-radius:16px;margin-top:24px;margin-bottom:24px}section.broll div.m,section.broll div.t{display:table-cell;box-sizing:border-box;vertical-align:middle}section.broll div.t{width:240px;max-width:280px;margin:0;position:relative}section.broll div.m{width:auto;flex-direction:column;min-height:166px;padding-top:25px;padding-bottom:25px}section.broll div.m .info{color:#41495a;letter-spacing:.005em;font-size:13px;line-height:1.5;font-weight:400;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow-y:hidden;text-overflow:ellipsis;max-height:4rem;margin:6px 0}section.broll .info-bottom{color:#bf1313;font-size:9px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;line-height:1.35;display:flex;flex-direction:row;gap:14px}section.broll .info-bottom svg{width:12px;height:12px;font-size:12px;margin-right:3px;margin-bottom:-2px}body.rtl section.broll .info-bottom .container::before,body.rtl section.broll .info-bottom svg{margin-right:0;margin-left:3px}section.broll .info-bottom .container{display:flex;flex-direction:row;gap:2px;width:auto}section.broll .info-bottom .container::before{width:1em;height:1em;font-size:12px;margin-right:3px;align-self:center}section.broll .info .deck,section.broll .info-bottom a{display:-webkit-box;-webkit-line-clamp:1;line-clamp:1;-webkit-box-orient:vertical}section.broll .info-bottom a{color:#bf1313;overflow-y:hidden;text-overflow:ellipsis}#BackendInPageMenu,section.broll .info-mobile,section.broll .m-mobile{display:none}section.broll div.t,section.hpcommerce.broll div.m{padding-top:15px;padding-bottom:15px}section.broll img.thumb{border-radius:6px;max-height:160px;max-width:280px;object-fit:cover;transition:opacity .2s ease-out;aspect-ratio:16/9}section.broll img.thumb:hover{opacity:.85;transition:opacity .2s ease-out 0s}section.broll h3{margin:6px 0}section.broll h3 a{font-size:15px;line-height:1.5;font-weight:700;margin:0;color:#181c25}div.zad,section.broll .info{display:flex}section.broll .info .deck{overflow:hidden;color:41495a;letter-spacing:.005em;font-size:13px;font-weight:400;line-height:1.5}section.broll h3 a:hover{text-decoration:underline}body.rtl section.broll .thumb.score-wrapper .article_type,section.broll .thumb.score-wrapper .article_type{position:absolute;bottom:0;left:0;padding:2px 5px;font-size:13px;background-color:#bf1313;color:#fff;margin:0 0 10px 6px;border-radius:4px}.video .duration,section.broll .videobtn{position:absolute;box-shadow:0 2px 4px 0 rgba(0,0,0,.1)}section.broll .videobtn{color:#fff;width:52;height:52px;margin-top:-70px;margin-left:-6px;border:solid 2px rgba(0,0,0,.1);padding:9px}section.broll article.VIDEO>a:after{content:url(/s/ign/playButton.svg);position:absolute;bottom:2px;left:2px}section.broll article.PROMOTED{background:#f2f2f2}.video .duration{background-color:rgba(27,28,29,.85);border-radius:4px;bottom:0;right:0;left:auto;margin:4px;display:flex;padding:2px 4px;z-index:10}.video .duration-text{color:#fff;font-family:"Inter Var",sans-serif;font-weight:700;align-self:flex-end;font-size:9px;line-height:1.35;letter-spacing:.06em}section.broll .video .icon-playhead{background-size:100%;height:1em;width:1em;margin:0 8px 0 0;font-size:22px;line-height:22px;align-self:center}section.broll div.m{padding-left:1.5rem;padding-right:1.5rem}body.rtl .video .duration{right:auto;left:0;margin:0 0 6px 10px}body.rtl section.broll .video .icon-playhead{margin-right:0;margin-left:.5rem}body.rtl section.broll .thumb.score-wrapper .article_type{right:0;left:unset;margin:0 6px 10px 0}.hexagon-wrapper.side-wrapper .hexagon.side-wrapper{height:50%;left:6.7%;position:relative;top:25%;width:86.6%;z-index:2;background-color:#bf1313}body.rtl .hexagon-wrapper.side-wrapper .hexagon.side-wrapper{left:-6.7%}.hexagon-wrapper.side-wrapper .hexagon.side-wrapper:after,.hexagon-wrapper.side-wrapper .hexagon.side-wrapper:before,section.broll .videobtn{background-color:#bf1313}.hexagon-wrapper.side-wrapper .hexagon.side-wrapper:before{-webkit-transform:scale(1,.579) translate(70.71136%,-70.71136%) rotate(45deg);-ms-transform:scale(1,.579) translate(70.71136%,-70.71136%) rotate(45deg);transform:scale(1,.579) translate(70.71136%,-70.71136%) rotate(45deg)}.hexagon-wrapper.side-wrapper .hexagon.side-wrapper:after{-webkit-transform:scale(1,.579) translate(70.71136%,70.71136%) rotate(45deg);-ms-transform:scale(1,.579) translate(70.71136%,70.71136%) rotate(45deg);transform:scale(1,.579) translate(70.71136%,70.71136%) rotate(45deg)}body.rtl .hexagon-wrapper.side-wrapper .hexagon.side-wrapper:before{-webkit-transform:scale(1,.579) translate(30.35568%,-70.71136%) rotate(45deg);-ms-transform:scale(1,.579) translate(30.35568%,-70.71136%) rotate(45deg);transform:scale(1,.579) translate(30.35568%,-70.71136%) rotate(45deg)}body.rtl .hexagon-wrapper.side-wrapper .hexagon.side-wrapper:after{-webkit-transform:scale(1,.579) translate(30.35568%,70.71136%) rotate(45deg);-ms-transform:scale(1,.579) translate(30.35568%,70.71136%) rotate(45deg);transform:scale(1,.579) translate(30.35568%,70.71136%) rotate(45deg)}.hexagon-wrapper.side-wrapper .hexagon.side-wrapper:after,.hexagon-wrapper.side-wrapper .hexagon.side-wrapper:before{content:"";display:block;height:122.46%;position:absolute;-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0;width:70.71%;z-index:1}.hexagon-wrapper.side-wrapper .hexagon-content.side-wrapper{color:#fff;font-family:"Inter var",sans-serif!important;text-transform:uppercase;margin:.1em 0 0;font-weight:900;text-shadow:rgb(0 0 0/20%)0 1px 1px,rgb(0 0 0/10%)0 3px 3px;font-size:.375em}.hexagon-wrapper.side-wrapper{font-size:2rem;margin:0;position:relative;height:2.7em;width:2.7em;min-width:2.7em;display:inline-block}.score-wrapper{position:relative;display:block}.score-wrapper .review-score,.score-wrapper .video-duration{position:absolute;bottom:0;right:0;margin:2px;z-index:2;font-size:32px;height:1em;width:1em;min-width:1em}.hexagon-wrapper.side-wrapper .hexagon-content-wrapper.side-wrapper{align-items:center;display:flex;height:100%;justify-content:center;position:absolute;width:100%;z-index:3;font-size:32px}.list-hero .hexagon-content{display:flex;flex-direction:column;align-items:center}.list-hero .icon-logo{width:30px}div.zad{justify-content:center;align-items:center;transition:height .2s;text-align:center;margin:0 auto}div.zad.billboard,div.zad.top{margin-top:60px;min-height:100px}div.zad.halfpage,div.zad.sidebar{min-height:600px}.zad:not(.billboard,.top){background:#f2f2f2}@media (min-width:768px){div.zad.billboard{padding-top:80px;margin-top:0}}@media (min-width:930px){div.zad.billboard,div.zad.top{min-height:250px}div.zad.billboard{padding-top:80px;margin-top:0}body iframe.quizembed{width:100%;aspect-ratio:16/9;min-height:500px}}.adkit iframe{max-width:100%}@media (max-width:1600px){body.hasSkin .hspotlight,body.hasSkin .list-content,body.hasSkin .wrap,body.hasSkin section.broll,body.hasSkin section.popular,body.hasSkin section.stripe,body.hasSkin section.vspotlight{max-width:1098px;padding:16px 10px;box-sizing:border-box}body.hasSkin .page-content{max-width:1098px}body.hasSkin section.hero article{width:1098px;max-width:1098px}}@media (max-width:1280px){body.hasSkin section.hero article{width:initial}html.lock{overflow:hidden}}@media (min-width:641px){aside#sidebarHeader{width:300px;transition:width 450ms cubic-bezier(.34,-.09,.45,1.18)}aside#sidebarHeader.collapsed{width:96px}aside#sidebarHeader.collapsed+#mainblock{width:calc(100% - 96px);margin-left:96px}aside#sidebarHeader.collapsed .header-toggle{right:-12px}header{display:none}.header-toggle{right:-18px;top:36px}#btnoverlay.collapsed+#mainblock{-webkit-transition-duration:200ms;width:calc(100% - 96px);transition-duration:200ms}#btnoverlay+#mainblock{-webkit-transition-property:width,margin-left;transition-property:width,margin-left;-webkit-transition-duration:450ms;transition-duration:450ms;-webkit-transition-timing-function:cubic-bezier(.34,-.09,.45,1.18);transition-timing-function:cubic-bezier(.34,-.09,.45,1.18);margin-left:96px;color:#181c25}body.iframe #btnoverlay+#mainblock{margin-left:0;width:100%}.side .sidebar-header{padding:2.15625em 24px 0;-webkit-flex-basis:80px;-ms-flex-preferred-size:80px;flex-basis:80px}.sidebar-section a:before{padding-left:5px;font-size:14.1px}.sidebar-section a svg{font-size:15px}body.rtl .sidebar-section a svg{padding-left:2px}.side-container .sidebar-section a{padding:8px 15px}}@media (max-width:640px){#sidebarHeader.start{-webkit-transform:translateX(-100%);-ms-transform:translateX(-100%);transform:translateX(-100%);transition-duration:200ms}#sidebarHeader.start~#mainblock .fixed-header{display:block}.sidebar-mobile-overlay.start{opacity:0;z-index:-1}aside#sidebarHeader.start .header-toggle{right:-46px}aside#sidebarHeader .header-toggle svg{transform:rotate(-180deg)}aside#sidebarHeader.start .header-toggle svg{transition:transform .1s linear 0s;transform:rotate(0)}.sidebar-section .selected a.icon-home:before,.sidebar-section a.icon-home:before{width:24px;padding-left:4px;padding-right:4px}section.broll{padding:0}section.broll .tbl{padding:0 24px}section.broll article{grid-template-columns:1.2fr 2fr;display:grid;grid-auto-flow:column;grid-gap:12px;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:18px 0;border-bottom:solid 1px rgba(138,147,153,.25)}section.broll.hpcommerce article{border-bottom:0}section.broll article.embed_video_broll .icmsvideocontainer{margin-top:18px;margin-bottom:18px}section.broll div.m h3{margin:0}section.broll div.m,section.broll div.t{padding:0;border-bottom:0;min-height:auto}section.broll div.t{width:auto}.fixed-header,section.broll div.m .info,section.broll div.m .info-bottom{display:none}section.broll .info-mobile{display:block;color:#41495a;font-size:9px;-webkit-letter-spacing:.06em;-moz-letter-spacing:.06em;-ms-letter-spacing:.06em;letter-spacing:.06em;text-transform:uppercase;font-weight:700;line-height:1.35}section.broll .m-mobile{grid-row:2;grid-column:1/-1;display:block}section.broll .m h3 a{display:-webkit-box;-webkit-line-clamp:4;line-clamp:4;-webkit-box-orient:vertical;overflow-y:hidden;text-overflow:ellipsis;font-size:13px;-webkit-letter-spacing:.005em;-moz-letter-spacing:.005em;-ms-letter-spacing:.005em;letter-spacing:.005em}section.broll .info-bottom a{-webkit-line-clamp:2;line-clamp:2}section.broll .info-bottom a.comments{-webkit-line-clamp:1;line-clamp:1;display:ruby}}@media (min-width:930px){div.zad.billboard,div.zad.top{min-height:250px}body,html{overflow-x:unset}#ign-logo-wrap{display:inline-flex;position:static;transform:none}.editions.desktop,.right-rail{display:block}body.rtl .browseabout .region select:not(:disabled){background-position:12px}div.zad.billboard{padding-top:12px}body.rtl #headermenuwrapper{right:auto;left:0;width:unset}.score-wrapper .review-score{height:2.6em;width:2.6em;min-width:2.6em;font-size:16px;margin:10px}.hexagon-wrapper.side-wrapper .hexagon-content.side-wrapper{font-size:16px}.video .duration-text{font-size:11px;letter-spacing:.03em}}@media (min-width:1024px){section.broll{display:grid}section.broll div.side-ad-trail{display:block}}@media (min-width:641px) and (max-width:1280px){#sidebarHeader.start{width:96px}.sidebar-mobile-overlay.start{opacity:0;z-index:-1}aside#sidebarHeader .header-toggle svg{transform:rotate(-180deg)}aside#sidebarHeader.start .header-toggle svg{transition:transform .1s linear 0s;transform:rotate(0)}#sidebarHeader.start button.back label,aside#sidebarHeader.start .ign-logo .ign-path,aside#sidebarHeader.start .logodate,aside#sidebarHeader.start .logout,aside#sidebarHeader.start .search-modal,aside#sidebarHeader.start .sidebar-main a span{opacity:0;display:none}#ignheader.start #loginwrapper .userlogged span,#ignheader.start .login-buttons .register-button,aside#sidebarHeader.start .region{display:none}aside#sidebarHeader.start .side .sidebar-header{padding-left:36px;padding-right:36px}#loginwrapper img.userIcon{margin-left:6px}#loginwrapper{padding:18px 14px}}@media (min-width:1281px){svg.ign-logo{height:24px}.sidebar-mobile-overlay{display:none}#btnoverlay+#mainblock{width:calc(100% - 300px);margin-left:300px}#btnoverlay.collapsed+#mainblock{margin-left:96px}.logo-edition{display:block}}</style>
+
+    
+    <style type="text/css">:root{font-size:16px;font-family:"Inter Var",sans-serif;color:#252627}.bottom-wrapper,.right-rail .ad-wrapper{position:sticky;position:-webkit-sticky;top:65px;margin-top:35px}.bottom-wrapper{top:96px;margin-top:64px}.page-content img{max-width:100%;height:auto;width:100%;border-radius:12px;position:relative;margin-top:16px;margin-bottom:16px}.object-summary img,.recircblock p{margin-top:0;margin-bottom:0}div.gallery_embed{position:relative;overflow:hidden;width:100%;padding-bottom:56.25%;padding-top:180px;border:0;margin:0}div.gallery_embed iframe{position:absolute;top:0;left:0;bottom:0;right:0;width:100%;height:100%;background-color:#fff;border:0;margin:0;padding:0}.page-content #id_text img{cursor:pointer;max-height:85vh;width:100%;object-fit:contain}.page-content #id_text figure img{margin-bottom:0}.article-review,.object-summary,.page-content{margin:0 auto}.article-review .page-content,.primary-object .page-content{padding:20px}.article-review,.object-summary{border-radius:24px;box-shadow:0 0 3px rgba(0,0,0,.1),0 17px 24px rgba(0,0,0,.07)}.keyword-platforms{margin:0;padding:0;display:flex;gap:2px;align-items:center;font-size:10px;list-style:none;color:#59626f;font-weight:700;text-transform:uppercase}.articleBody{padding:0 24px}.article-headline h1{font-weight:900;font-size:2.125em;line-height:1.2;margin:0 0 15px;color:#252627}#bottom-list-reviews .review-author .review-details:hover a,a.evidence,h1 a{color:#252627}.mobileArticleAds.mrec1{display:block}.page-content .three-column div.right-rail{position:unset}.desktopArticleAds.mrec1{display:none}.block{clear:both}.strong{font-weight:700}.article-sub-headline h3{font-weight:400;font-size:1.25rem;line-height:1.08;margin:20px 0 24px;color:#41495a}#imageInfo-0{min-height:30px}.img_header_credits{text-align:right;padding-right:8px;padding-bottom:15px;font-size:13px;font-weight:100;color:#666}.by-reviewer{margin-right:5px;font-weight:700;font-size:22px;line-height:1.25}ul.pros-cons-list button.add_element{align-items:center;justify-content:center;display:flex;background-color:transparent;background-image:none;text-transform:none;color:inherit;font-variation-settings:inherit;border:0;padding:0;margin:10px 0 0;width:100%}ul.pros-cons-list button.add_element svg{width:24px;height:24px;fill:#41495a}.reviewer.hcard{font-weight:700;line-height:1.35;color:#bf1313;text-decoration:underline;text-underline-position:under}.cta-button,.cta_shown{display:flex;cursor:pointer;background-color:#d91a1a}.cta_shown{pointer-events:all;justify-content:center;transition:width .5s ease-in-out,opacity .2s ease-in-out}.cta-button{position:absolute;font-size:16px;line-height:23px;z-index:9;align-items:center;color:#fff;padding:8px 23px;border-radius:57px;max-width:60%;bottom:0;transform:translate(0,50%)}.cta-button__text{padding-left:8px}.cta-icon{margin:auto 8px auto auto;height:26px;display:flex;align-items:center;align-content:center;justify-content:center}#article_video_bottom{margin:80px auto;max-width:625px;width:100%}#article_video_bottom iframe{border-radius:7px}.article-details{column-gap:32px}#bottom-list-reviews .author-name{flex-basis:unset}#bottom-list-reviews .roundendimg{width:36px;height:36px}#bottom-list-reviews .author-name,#bottom-list-reviews .by-reviewer,#bottom-list-reviews .reviewer.hcard{font-size:18px}#bottom-list-reviews .reviewer.hcard a{color:#bf1313;text-transform:capitalize}#bottom-list-reviews .review-author{border:0}#bottom-list-reviews .hexagon-wrapper.side-wrapper{font-size:15px}#bottom-list-reviews .review-author .review-details{font-size:15px;font-weight:700;color:#181c25}.article-authors,.article-details .hexagon-content{display:flex;flex-direction:column;align-items:center}.article-details .hexagon-content .icon-logo{width:32px}.author-byline-images img{border-radius:20px;box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);width:35px;height:35px}.author-byline-images .roundendimg{border-radius:32px;box-shadow:0 2px 5px 0 rgb(0 0 0/16%),0 2px 10px 0 rgb(0 0 0/12%);width:21px;height:21px;margin-top:0;margin-bottom:0}.article-authors{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;gap:6px}.article-authors .reviewer a{-webkit-text-decoration:underline;text-decoration:underline;color:#59626f}.article-review .article-authors .reviewer a{color:#181c25;font-size:15px;text-transform:capitalize;text-decoration:none}.article-review .article-authors .reviewer a:hover,.article-section a:hover{text-decoration:underline}.article-review .article-authors .author-names,.article-review .reviewer.hcard{text-decoration:none;color:#181c25;font-size:15px;text-transform:lowercase}.page-content .article-author{margin-top:24px;background-color:#f6f6f8;padding:12px 0;width:100%;margin-right:18px;display:flex;justify-content:center;align-items:center;margin-bottom:20px}.page-content.ign-recommends-headline{padding:0 32px}.article-author img.roundendimg{width:100%;height:100%;max-width:76px;max-height:76px;border:4px solid #fff;border-radius:50%}.author-name{display:block;flex-basis:65%;margin:0 0 0 18px}body.rtl .author-name{margin:0 18px 0 0}.reviews-author{display:flex;gap:24px;justify-content:center}.reviews-author .review-author:nth-child(4){display:none}.review-author{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%}.reviews-author .vertical{height:1px;border-bottom:1px solid rgba(37,38,39,.15)}.review-author a{color:#252627;line-height:1.3}.review-author .review-badge,.review-author .review-details{padding:0;display:flex;align-items:center}body.rtl .review-author .review-badge{border-right:0}.review-author .review-details{padding:0 12px;flex:1 1 55%;line-height:1.5;min-width:125px}.review-author .review-details:hover a{text-decoration:underline;text-underline-position:under;color:#4062bb}.article-authors .author-byline-images{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}body.rtl .article-authors .author-byline-images{margin-right:0;margin-left:8px}.article-authors .author-byline-images a:not(:first-child){margin-left:-7px}body.rtl .article-authors .author-byline-images a:not(:first-child){margin-left:0;margin-right:-7px}.author-names{margin:0;line-height:1.35;-webkit-letter-spacing:.03em;-moz-letter-spacing:.03em;-ms-letter-spacing:.03em;letter-spacing:.03em;text-transform:uppercase;font-weight:700;font-size:11px}div.page-content div.articleHero{position:relative;background-color:#000;margin:16px 0;overflow:hidden;border-radius:4px}.articleHero .video:not(iframe){width:100%;min-height:680px;display:block;position:relative}.videoHero{padding-top:56.25%!important}.articleHero img{position:relative;width:100%;height:auto;border:0}.articleHero iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;z-index:9}iframe.vplayer{width:100%}.vplayer:not(iframe){position:relative;overflow:hidden;padding-top:56.25%;margin-top:40px;margin-bottom:40px;clear:both}.vplayer iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}#id_text iframe{max-width:100%!important}.side-by-side{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.article-section{font-size:1.125rem;line-height:28px}#id_text aside.editorsnote a,.article-section a{color:#0070d1;text-decoration:underline;text-underline-position:under}.article-section h2{font-size:32px}.article-section figure figcaption{font-size:11px;line-height:1.5;letter-spacing:.03em;text-transform:uppercase;font-weight:700;width:100%;text-align:center;margin:0 auto}.article-byline .article-authors,.article-byline .article-modified-date,.article-byline .article-publish-date{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.page-content>div:not(.ad-wrapper){background:#fff;margin:0;box-sizing:border-box}html#IGN2023 .page-content>div:not(.ad-wrapper){background:inherit}.article-byline{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-flow:column wrap;-ms-flex-flow:column wrap;flex-flow:column wrap;width:100%;color:#59626f;margin-top:18px;margin-bottom:18px;font-size:11px;letter-spacing:.33px;text-transform:uppercase;font-weight:700;border-bottom:1px solid rgba(138,147,153,.25);gap:18px}.article-byline .author-names .author-link{-webkit-text-decoration:underline;text-decoration:underline;color:#bf1313}.article-content{padding-top:5px;padding-bottom:5px}.object-breadcrumbs .article-object-link{display:inline-block;margin:0 10px 0 0}.object-breadcrumbs a.article-object-link{font-size:13px;text-transform:uppercase;font-weight:700;-webkit-letter-spacing:.065px;-moz-letter-spacing:.065px;-ms-letter-spacing:.065px;letter-spacing:.065px;color:#bf1313;padding-bottom:2px;margin:10px 0;text-decoration:underline;text-underline-position:under}figure{width:100%;padding:0;margin:0}h3{font-size:26px;font-weight:900;margin:.4em 0}h3.title5{font-weight:700;font-size:18px;line-height:1.25;-webkit-letter-spacing:.8px;-moz-letter-spacing:.08px;-ms-letter-spacing:.08px;letter-spacing:.08px;margin:0 0 18px}#id_text aside:not(.floatrecirc),#id_text>figure,#id_text>iframe,#id_text>p{margin-bottom:1.8rem}.author-thumb-img{border:0}.article-byline .author-avatars .author-thumb img{width:50px;height:50px;border:4px solid #fff;border-radius:50%}.progressive-image{background-color:#d1d5db}.divider{border:0;width:1px;background-color:rgba(138,147,153,.25);align-self:stretch;flex:0 0 1px}.divider.second{display:none}.primary-object{margin-top:18px;max-width:100%}.primary-object h3{margin-bottom:10px;padding-left:10px;box-sizing:border-box}main div.object-summary,main div.page-content,main div.primary-object,main section.object-summary.embed{margin:0!important}.object-info{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-transition:height .1s linear;transition:height .1s linear;height:auto;column-gap:18px}.object-info .evidence{font-weight:900;font-size:18px;line-height:1.25;-webkit-letter-spacing:.005em;-moz-letter-spacing:.005em;-ms-letter-spacing:.005em;letter-spacing:.005em;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow-y:hidden;text-overflow:ellipsis;max-height:4rem}.object-info .evidence:hover{-webkit-text-decoration:underline;text-decoration:underline}.object-details{color:#252627;display:grid;grid-template-rows:min-content 1fr;align-items:end}.object-details .datetime{text-transform:lowercase}.object-details .txt{font-size:11px;text-transform:uppercase;letter-spacing:.03em;font-weight:700;text-decoration:none;color:#41495a}.platform{display:inline-block;line-height:12px}.object-details .platform-name{align-self:start;margin-top:7px;margin-right:12px}body.rtl .object-details .txt{margin-right:0;margin-left:10px}.object-details .evidence{margin:0;padding:0;line-height:1.08}.object-details h2{margin:0;line-height:.7}.object-info .object-title{margin:0;padding:0;line-height:1.25}body.rtl .object-info .object-title{padding-right:10px}.object-summary,.object-summary-mini{background-color:#fff;width:100%;color:#180825}.object-summary .image-blur{position:absolute;top:6px;opacity:.6;-webkit-filter:blur(4px);filter:blur(4px)}.object-thumbnail{grid-row:1/3;background:0 0!important;position:relative}.object-summary .object-thumbnail.mini{padding:0}.object-summary .object-thumbnail.mini:hover{opacity:.9}.object-info .meta .object-subinfo{display:flex;flex-direction:column;gap:6px}.object-summary.embed .object-details{padding:0}.object-info .platformdivider{font-size:14px;margin-top:4px}.comment-count{font-family:"Visby Round CF",sans-serif;color:#bf1313;white-space:nowrap}.content-item .comment-count{content:"-";display:inline-block;margin:0}.comment-count .icon-comment{top:3px;position:relative;margin:0 .2em 0 0}.icon-comment{width:16px;height:16px}svg:not(:root){overflow:hidden}.content-item .item-details{width:100%;position:relative;font-size:15px}.content-item .item-data{font-size:14px;font-weight:700;line-height:1.75em;color:#bf1313;font-family:"Visby Round CF",sans-serif}.content-item .item-title{margin:0;font-family:"Inter Var",sans-serif;color:#252627;font-weight:700;line-height:1.33em;font-size:1.17em}.progressive-image.rounded{border-radius:12px}.progressive-image.expand{width:100%;height:100%}.article-review-content .progressive-image.expand{height:100%;width:auto;margin:0}.ign-recommends-headline{font-size:24px;line-height:1.25;font-weight:900;margin-top:18px;margin-bottom:18px}.ign-recommends-headline .icon-logo{max-width:50px;display:block;height:30px}.ign-recommends-item .item-title-link{font-size:15.2px;font-weight:500;line-height:1.33em;color:#252627}.primary-object .ign-recommends-headline{margin-bottom:18px;padding-right:20px;font-size:26px;line-height:1.25;font-weight:900}body.rtl .primary-object .ign-recommends-headline{padding-left:20px}.icon-logo{height:100%;width:auto;max-width:182px}.squarepromo{background:#d3222a}.right-rail .mrec1+.commerce-box{margin-top:60px}#footerMain,footer{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row}footer{margin:auto;padding-bottom:30px;width:auto;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}footer .wrap{max-width:960px;margin-left:auto;margin-right:auto;width:100%}#footerMain{border-top:1px solid #dfdfdf;padding:24px 24px 0}#footer.limitedScroll{display:flex;background:#f5f5f5;padding:4px;font-size:small;text-align:center}.aspect-ratio-16-9{padding-bottom:56.25%}.aspect-ratio-container{width:100%;position:relative}.aspect-ratio-child{position:absolute;height:100%;width:100%;overflow:hidden}.article-review-content .aspect-ratio-child{position:absolute;height:100%;width:100%;text-align:center}.content-item .item-body{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;height:100%}#id_text aside.editorsnote{display:block;background:#f2f2f2;text-decoration:none;border-radius:12px;padding:4px 16px;margin:0;color:#000}#id_text .articlesummary{border-radius:4px;padding:4px;background-color:#f2f2f2}#id_text .articlesummary li{margin-bottom:.5em}#id_text .commerceblock-wrapper,#id_text .productwidget-wrapper{display:flex;border:1px solid #d1d5db;padding:20px;width:100%;margin-left:auto;margin-right:auto;box-sizing:border-box;border-radius:8px;gap:20px}#id_text .productwidget-wrapper .leftcontainer,.commerceblock-wrapper .leftcontainer{display:grid;width:100%}#id_text .productwidget-container{margin-bottom:15px}#id_text .commerceblock-wrapper .hidden,#id_text .productwidget-wrapper .hidden{display:none}#id_text h4.commerceblock-title,#id_text h4.productwidget-title{margin:4px auto;color:#000;font-size:20px;line-height:32px;width:100%;font-family:"Visby Round CF",sans-serif}#id_text div.commerceblock-content,#id_text div.productwidget-content{margin:0 auto 25px;overflow:hidden;font-size:14px;line-height:18px;width:100%}#id_text div.commerceblock-content{margin:0 auto 10px}#id_text h3.commerceblock-header,#id_text h3.productwidget-header{color:#000;font-size:20px}#id_text a.commerceblock-cta,#id_text a.productwidget-cta{border-radius:4px;background-color:#fcbc70;color:#333;font-size:14px;font-weight:700;text-align:center;padding:1px 5px;display:block;align-self:end;white-space:nowrap}#id_text a.commerceblock-cta:hover,#id_text a.productwidget-cta:hover{background-color:#f3a848}#id_text img.commerceblock-image,#id_text img.productwidget-image{width:400px;height:auto}#id_text span.commerceblock-tracker img{width:0;height:0;border:0}#id_text div.price-container{text-align:left;padding-bottom:13px;font-family:"Visby Round CF",sans-serif}#id_text span.commerceblock-currency,#id_text span.commerceblock-price{font-size:17px;color:#bf1313;font-weight:700}#id_text table#ratingsBoxTable{padding-top:25px}#id_text table#ratingsBoxTable td.txtC{width:60px}#id_text table#ratingsBoxTable .embed.image{width:auto;height:auto}@media (max-width:860px){#id_text img.commerceblock-image,#id_text img.productwidget-image{margin:0 auto;width:100%;height:auto}#id_text .commerceblock-wrapper,#id_text .commerceblock-wrapper .price-container,#id_text .productwidget-wrapper{display:block}#id_text a.productwidget-image-cta,a.commerceblock-image-cta{margin:0}}span.promoted{display:block;font-family:"Inter Var",sans-serif;font-size:1em;color:#b5b5b5;margin:0 0 2em;line-height:1.1em}.paginator{padding:12px;text-align:right}.paginator a{text-align:center;margin-right:1px}.paginator .current,.paginator a{background-color:#d3222a;border-color:rgba(0,0,0,.15);font-size:1.7em;display:inline-block;width:40px;padding:10px;font-weight:700;color:#fff;-webkit-box-shadow:2px 2px 6px rgba(0,0,0,.1);-moz-box-shadow:2px 2px 6px rgba(0,0,0,.1);box-shadow:2px 2px 6px rgba(0,0,0,.1);-moz-transition:all .3s;-ms-transition:all .3s;-o-transition:all .3s;-webkit-transition:all .3s;transition:all .3s;border-radius:3px}.paginator a.next,.paginator a.next:hover,.paginator a.prev,.paginator a.prev:hover{background:0 0;border:0;box-shadow:none}.paginator a:hover{text-decoration:none;border-color:rgba(0,0,0,.15);background-color:#bf1313}.paginator a.current{color:#444;background-color:transparent;padding:10px!important;border:1px solid #ccc}.paginator .disabled{display:none}.articleBody iframe[src*="/embed"].gallery{min-height:initial;transition:height .4s;-webkit-transition:height .4s;max-width:100%;width:100%}.duration{background-color:#bf1313;border-radius:4px;bottom:0;left:0;margin:0 0 10px 6px;position:absolute;box-shadow:0 2px 4px 0 rgba(0,0,0,.1);border:solid 2px rgba(0,0,0,.1);display:flex;padding:5px}.icon-playhead{background-size:100%;height:1em;width:1em;margin:0 8px 0 0;font-size:22px;line-height:22px;align-self:center}.duration-text{color:#fff;font-family:"Inter Var",sans-serif;font-weight:700;letter-spacing:1px;align-self:flex-end}.review-score{position:absolute!important;bottom:0;left:0;margin:24px;z-index:2}.article-details .hexagon-wrapper.side-wrapper .hexagon-content.side-wrapper{font-size:50px}.hexagon-wrapper.side-wrapper .hexagon.side-wrapper,.hexagon-wrapper.side-wrapper .hexagon.side-wrapper:after,.hexagon-wrapper.side-wrapper .hexagon.side-wrapper:before{background-color:#bf1313}.hexagon-wrapper.side-wrapper{font-size:32px;margin:0;position:relative;height:3em;width:3em;min-width:3em;display:inline-block}body:not(.rtl) .hexagon-wrapper.side-wrapper .hexagon.side-wrapper:after{-webkit-transform:scale(1,.579) translate(70.71136%,70.71136%) rotate(45deg);-ms-transform:scale(1,.579) translate(70.71136%,70.71136%) rotate(45deg);transform:scale(1,.579) translate(70.71136%,70.71136%) rotate(45deg)}body:not(.rtl) .hexagon-wrapper.side-wrapper .hexagon.side-wrapper:before{-webkit-transform:scale(1,.579) translate(70.71136%,-70.71136%) rotate(45deg);-ms-transform:scale(1,.579) translate(70.71136%,-70.71136%) rotate(45deg);transform:scale(1,.579) translate(70.71136%,-70.71136%) rotate(45deg)}.review .hexagon-wrapper.side-wrapper{font-size:57px;margin:0 auto 18px}.article-review{background:#fff;margin-top:24px;margin-bottom:24px;color:#181c25}.title{color:#fff;font-size:14px;font-weight:900;line-height:1;-webkit-letter-spacing:1px;-moz-letter-spacing:1px;-ms-letter-spacing:1px;letter-spacing:1px;text-transform:uppercase}.article-review-content .title{vertical-align:super}.image-wrapper{position:relative}.image-wrapper .play-square{position:absolute;bottom:0;margin:6px}.editors-choice{margin:0 auto;border-radius:4px;box-shadow:0 2px 4px 0 rgba(0,0,0,.1);border:solid 2px rgba(0,0,0,.1);color:#fff;background-color:#bf1313;padding:6px;font-size:14px;font-family:"Visby Round CF",sans-serif;font-weight:700;-webkit-letter-spacing:.9px;-moz-letter-spacing:.9px;-ms-letter-spacing:.9px;letter-spacing:.9px;line-height:12px;text-align:center;width:147px}.score-text{text-align:center;font-size:36px;text-transform:capitalize;font-weight:900;-webkit-letter-spacing:-.4px;-moz-letter-spacing:-.4px;-ms-letter-spacing:-.4px;letter-spacing:-.4px;margin:0 0 12px;line-height:1.25}.scoreboxPlatforms{margin:15px 0;border-top:1px #fff solid;padding-top:2px}.blurb{line-height:1.5;padding-bottom:12px}.review{text-align:center}h5.blocktitle{font-family:"Inter Var",sans-serif;font-size:24px;font-weight:900;color:#252627;margin:12px 0}.meta{font-size:14px;line-height:1.25;display:flex;flex-direction:column;gap:12px}.meta .developer,.meta .publisher,.meta .release_date{line-height:1.2;float:left;margin-right:18px}body.rtl .meta .developer,body.rtl .meta .publisher,body.rtl .meta .release_date{float:right;margin-left:18px}.bold{font-weight:700}.article-section h2,.article-section h4,.article-section h5{color:#bf1313}.article-section h3{font-size:26px;color:#181c25}.articleBody .article-section aside h3{color:#fff}.article-section h5{display:block;border-bottom:1px solid #bf1313;margin:36px 0;padding:0 0 24px;width:100%;font-size:34px;font-weight:900;letter-spacing:-.015em;line-height:1.2}.article-section h5::after{content:'"';color:#bf1313;float:right;line-height:88px;margin-top:20px}.articleBody .hdr-article,.articleBody h3{clear:none;border-width:0!important}.articleBody aside:not(.floatrecirc){background-color:#6e89b9;color:#fff;border-radius:4px;padding:0 36px;margin:24px 0;overflow:hidden}.articleBody aside h1{margin:36px 0 12px;line-height:1.12;font-size:2.25rem;font-weight:700}.articleBody aside:not(.floatrecirc) a{color:#fff;transition:color 0ms}.primary-object img{max-width:114px;width:114px;aspect-ratio:1/1;object-fit:cover;border-radius:6px}.full-injected-recirc{padding:24px;margin-bottom:24px;background:#fff;border-radius:24px;box-shadow:0 0 3px rgba(0,0,0,.1)}.full-injected-recirc a{color:#181c25}.floatrecirc .icon-top-right-arrow,.full-injected-recirc .icon-top-right-arrow,.recirc-title .icon-top-right-arrow{background-size:100%;cursor:pointer;user-select:none;aspect-ratio:1/1;width:1em;height:1em;flex-shrink:0;font-size:1rem;margin-left:6px;margin-bottom:2px;vertical-align:middle;display:none}body.rtl .floatrecirc .icon-top-right-arrow,body.rtl .full-injected-recirc .icon-top-right-arrow,body.rtl .recirc-title .icon-top-right-arrow{margin-left:auto;margin-right:6px}.full-injected-recirc ul{padding-inline-start:20px;margin-block-start:.2em;margin-block-end:.2em}.full-injected-recirc ul li{padding-left:20px}.full-injected-recirc ul li,.recirc-title a{font-weight:700;font-size:16px}.full-injected-recirc li::marker{content:"- ";font-size:1.2em;color:#181c25}.floatrecirc{margin-top:24px;margin-bottom:24px;font-size:16px;line-height:24px;padding:12px 24px;border-radius:24px;background-color:#fff;box-shadow:0 0 3px rgba(0,0,0,.1)}.floatrecirc .recirctext{color:#181c25;font-size:14px;display:block;line-height:20px;font-weight:700;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:4;line-clamp:4;-webkit-box-orient:vertical}.floatrecirc .recirc-title{display:block;border-bottom:1px solid #bf1313;margin-bottom:8px;margin-top:0}.recirc-title{color:#181c25;font-weight:700;font-size:18px;margin:20px 0;clear:both}.recirc-title.pos0{margin:0}.recirc-title a{padding-left:10px;color:#181c25}.floatrecirc .recirc_odd{display:block;height:100%;text-decoration:none}.floatrecirc .recirc_odd img{pointer-events:none}.recircblock{margin-top:1em;margin-bottom:1.8em;min-height:310px}.box-wrapper{margin-top:36px;margin-bottom:36px}.box-wrapper .product-specs{border-radius:12px;border:1px solid #8a939940;overflow:hidden}.box-wrapper .product-specs .header{padding:8px 12px;background-color:#181c251a}.box-wrapper .product-specs .header .caption{margin:0;font-size:11px;line-height:1.35;-webkit-letter-spacing:.03em;-moz-letter-spacing:.03em;-ms-letter-spacing:.03em;letter-spacing:.03em;text-transform:uppercase;font-weight:700}.box-wrapper .product-specs .table{display:grid;background-color:#ffffffff}.box-wrapper .product-specs .table .spec{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:8px 12px;border-top:1px solid #8a939940}.box-wrapper .product-specs .table .spec .interface{margin:0;font-size:15px;line-height:1.5;word-break:break-word}@media (max-width:860px){.side-by-side{-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.side-by-side .bottom-content{-webkit-order:2;-ms-flex-order:2;order:2}.ign-recommends-item .item-thumbnail{margin:5px 18px 0 0;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-flex-basis:40%;-ms-flex-preferred-size:40%;flex-basis:40%}body.rtl .ign-recommends-item .item-thumbnail{margin-right:0;margin-left:18px}.ign-recommends-item .content-item:first-child{padding-top:0}.ign-recommends-item .content-item{padding:18px 0;border-bottom:solid 1px rgba(37,38,39,.15)}.review{margin-top:36px}.three-column{display:flex;flex-direction:column;-ms-flex-direction:column;-webkit-flex-direction:column}.three-column .bottom-content{-webkit-order:2;-ms-flex-order:2;order:2}.image-container{margin-top:10px}.page-content div.article-byline{padding-bottom:18px;gap:3px}.articleBody iframe[src*="/embed"].gallery{min-height:0}.gallery-widget-lightbox.enabled .gallery-container{margin-right:0}.gallery-widget-lightbox.enabled .pager-button{width:36px;height:36px;top:40%}.gallery-widget-lightbox.enabled .pager-button.left{left:35px}.gallery-widget-lightbox.enabled .pager-button.right{right:35px}.gallery-widget-lightbox.enabled .icon-arrow{width:20px;height:20px}.articleBody aside h1{font-size:1.825rem}.primary-object section.object-summary div.object-thumbnail.mini{grid-row:1/span 2;align-self:center;padding:0}.object-title{grid-column:2}.object-details{grid-column:1/span 2}.object-info .evidence{font-size:20px}.reviews-author{grid-gap:4px;display:flex;flex-direction:column}}@media (min-width:861px){.article-headline h1{font-size:48px}.article-sub-headline h3{font-size:22px;margin-bottom:40px}.side-by-side,.three-column{display:grid;display:-ms-grid;grid-template-columns:1fr 300px;-ms-grid-columns:1fr 300px}.side-by-side{width:100%}.side-by-side.article-content{grid-row:1/4}.side-by-side .right-rail{grid-column:2;-ms-grid-column:2}.mobileArticleAds.mrec1{display:none}.desktopArticleAds.mrec1{display:block}div.zad.billboard{margin-top:unset;padding-top:20px}.three-column{grid-column-gap:24px}.article-section{font-size:17px;font-weight:400;line-height:1.7;padding-right:24px}body.rtl .article-section{padding-left:18px;padding-right:0}.article-section h3{font-size:22px}.page-content div.article-byline{-webkit-flex-direction:row;-ms-flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;flex-direction:row}.content-item .item-title{font-size:16px;font-weight:700;line-height:24px}.ign-recommends-item .content-item{margin-bottom:24px}.ign-recommends-item .item-thumbnail{margin:0 10px 0 0;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-flex-basis:40%;-ms-flex-preferred-size:40%;flex-basis:40%}body.rtl .ign-recommends-item .item-thumbnail{margin-right:0;margin-left:10px}.article-review-content{display:-ms-grid;display:grid;grid-column-gap:36px;align-items:center}.header{grid-area:header;padding:19px 0}.header .headline{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.header .headline .icon{-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0}.header .headline .title{margin-left:12px}body.rtl .header .headline .title{margin-right:12px}.image-container{-webkit-align-self:center;-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center;padding:1px}.details,.review{display:flex;flex-direction:column}.review{grid-area:review;border-top-right-radius:4px;border-bottom-right-radius:4px;padding:18px 0;display:-webkit-box;display:-ms-flexbox;-ms-flex-direction:column;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.details{gap:18px}.header .headline .icon .has-stroke{stroke:#fff}.score-text{font-size:28px}.blurb{font-size:14px}.ign-recommends-item{display:flex;flex-wrap:wrap}.related-left,.related-right{width:50%}.object-info .meta div{display:inline-block}.floatrecirc.onlymobile,.page-content>.affiliation-disclaimer{display:none}}@media (min-width:641px){.article-section figure figcaption{width:75%}.article-section h5{font-size:48px}}@media (min-width:1696px){div.gallery_embed{padding-bottom:37%;padding-top:0}}@media (max-width:930px){div.page-content div.articleHero{margin-top:12px;margin-bottom:12px}.articleHero img{margin-top:8px;margin-bottom:8px}.articleBody{padding-left:24px;padding-right:24px}}@media (min-width:931px){.article-details{display:flex}.page-content{max-width:900px;padding:32px}.articleBody{margin:0 auto;padding-left:0;padding-right:0}#id_text aside.editorsnote{padding:4px 36px}.article-content{padding:5px 5px 5px 8px}body.rtl .article-content{padding-right:8px;padding-left:0}.page-content>div:not(.ad-wrapper){padding:0 8px}#bottom-list-reviews .article-author{margin-bottom:36px}#bottom-list-reviews .review-author{padding:12px 0}#bottom-list-reviews .reviews-author .vertical{height:unset;border-bottom:0;border-right:1px solid rgba(37,38,39,.15)}.primary-object img{width:114px;max-width:114px}.score-text{text-align:left}.rtl .score-text{text-align:right}.page-content div.article-byline{margin-left:8px;margin-right:8px;padding:0 0 18px}}@media (min-width:1281px){.article-review,.object-summary,.page-content{max-width:1440px}.page-content{padding:32px 64px;box-sizing:border-box}.page-content>div:not(.ad-wrapper){padding:0}.article-content{padding:32px 0}.page-content div.article-byline{margin:0;padding-bottom:16px}#ignheader,footer .wrap{max-width:1200px}footer .wrap{margin-left:auto;margin-right:auto;width:100%}.article-review-content{-ms-grid-columns:175px 36px 370px 36px 1fr;grid-template-columns:1fr 1fr}.score-text{font-size:34px}.recircblock.noflex,.three-column .right-rail{display:block}.three-column{grid-template-columns:1fr 300px;display:-ms-grid;-ms-grid-columns:1fr 24px 300px;grid-column-gap:24px}.article-author{justify-content:initial}.floatrecirc,.recircblock{display:block;margin-bottom:0}.recircblock{flex-direction:row-reverse;min-height:auto}.recircblock.noflex .floatrecirc{width:30%}p+.recircblock{margin-top:-16px}.recircblock>p{align-self:center;flex:1 1 70%;text-align:justify}.floatrecirc{float:right;width:25%;margin-top:0;margin-left:24px;align-self:center;height:100%}body.rtl .floatrecirc{float:left;margin-left:0;margin-right:24px}.floatrecirc a{text-decoration:none;color:#181c25}.floatrecirc .icon-top-right-arrow,.full-injected-recirc .icon-top-right-arrow,.recirc-title .icon-top-right-arrow{display:inline-block}.box-wrapper .product-specs .table{grid-template-columns:1fr 1fr}}body.hasSkin .wrapper.articleBody{max-width:1200px;margin:0 auto;padding:10px 20px;background:#f6f8f7}body.hasSkin .article-review,body.hasSkin .primary-object{margin:0 auto;max-width:1200px}body.hasSkin .article-byline{margin-bottom:0!important}@media (max-width:1600px){body.hasSkin .article-review,body.hasSkin .primary-object,body.hasSkin .wrapper.articleBody{margin:0 auto;max-width:1058px}}.affiliation-disclaimer{border:1px #f2f2f2 solid;padding:4px;box-sizing:content-box}</style>
+    
+
+<style type="text/css">@media (max-width:930px){body:not(.iframe) div.zad.footer[data-sticky=true]{position:fixed;bottom:0;transform:translateX(-50%);margin-left:50%;width:100%;padding-top:10px;z-index:10}body:not(.iframe) div.zad.footer[data-sticky=true]::after{content:"x";top:-20px;position:absolute;right:10px;background:#f2f2f2;display:block;width:20px;height:20px}.mobileArticleAds.affiliate div.zad.affiliate{display:block}}div.zad.affiliate{height:50px;max-height:50px;max-width:320px;display:none;background:#f2f2f2}.mobileArticleAds.affiliate{margin-top:10px}</style>
+
+<script type="text/javascript">
+  (function(b){b.loadCSS||(b.loadCSS=function(){});var c=loadCSS.relpreload={};c.support=function(){try{var a=b.document.createElement("link").relList.supports("preload")}catch(e){a=!1}return function(){return a}}();c.bindMediaToggle=function(a){function b(){a.addEventListener?a.removeEventListener("load",b):a.attachEvent&&a.detachEvent("onload",b);a.setAttribute("onload",null);a.media=c}var c=a.media||"all";a.addEventListener?a.addEventListener("load",b):a.attachEvent&&a.attachEvent("onload",b);setTimeout(function(){a.rel=
+"stylesheet";a.media="only x"});setTimeout(b,3E3)};c.poly=function(){if(!c.support())for(var a=b.document.getElementsByTagName("link"),e=0;e<a.length;e++){var d=a[e];"preload"!==d.rel||"style"!==d.getAttribute("as")||d.getAttribute("data-loadcss")||(d.setAttribute("data-loadcss",!0),c.bindMediaToggle(d))}};if(!c.support()){c.poly();var f=b.setInterval(c.poly,500);b.addEventListener?b.addEventListener("load",function(){c.poly();b.clearInterval(f)}):b.attachEvent&&b.attachEvent("onload",function(){c.poly();
+b.clearInterval(f)})}"undefined"!==typeof exports?exports.loadCSS=loadCSS:b.loadCSS=loadCSS})("undefined"!==typeof global?global:this);
+</script>
+<link rel="preconnect" href="https://tpc.googlesyndication.com">
+
+
+
+    <script async src="https://boot.pbstck.com/v1/tag/ff74ce63-2442-4453-acc5-d944d4441ea2"></script>
+    <script id="navegg" type="text/javascript">//Navegg
+    (function(n,v,g){if (window.gdprApplies){return;};o='Navegg';if(!n[o]){a=v.createElement('script');a.src=g;b=document.getElementsByTagName('script')[0];
+    b.parentNode.insertBefore(a,b);n[o]=n[o]||function(parms){
+    n[o].q=n[o].q||[];n[o].q.push([this, parms])};}})(window, document, 'https://tag.navdmp.com/universal.min.js');
+    try{window.naveggReady = window.naveggReady||[];window.nvgID = new Navegg({acc: 55810});
+    var customSegment = {
+    "ps4": 214943,"ps3": 214944,"ps2": 214945,"vita": 214946,"x-box-one": 214947,"xbox-360": 214948,"pc": 214949,"nintendo-switch": 214950,"n64": 214951,"3ds": 214952,
+    "wii-u": 214953,"nes": 214954,"mobile": 214955,"iphone": 214956,"android": 214957,"tech": 214958}
+    window.naveggReady.push(function(){ for ( platform of ChessKit.data.platforms){if (customSegment[platform]){nvg55810.setCustom(customSegment[platform])} }})
+    }catch(err){console.log(err)};
+    </script>
+    <script type="text/javascript">
+    window.ICMS.cmd.push(function(){(function(){var stickyfooter=window.document.querySelector(".zad.footer[data-sticky=true]");
+    if(stickyfooter)stickyfooter.addEventListener("click",function(){this.removeAttribute("data-sticky")})})()});
+    </script>
+<script>
+  function e(e){var t=!(arguments.length>1&&void 0!==arguments[1])||arguments[1],c=document.createElement("script");c.src=e,t?c.type="module":(c.async=!0,c.type="text/javascript",c.setAttribute("nomodule",""));
+  var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(c,n)}function t(t,c,n){var a,o,r;null!==(a=t.marfeel)&&void 0!==a||(t.marfeel={}),null!==(o=(r=t.marfeel).cmd)&&void 0!==o||(r.cmd=[]),t.marfeel.config=n,t.marfeel.config.accountId=c;
+  var i="https://sdk.mrf.io/statics";e("".concat(i,"/marfeel-sdk.js?id=").concat(c),!0),e("".concat(i,"/marfeel-sdk.es5.js?id=").concat(c),!1)}!function(e,c){var n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{};t(e,c,n)}(window,2097,{multimedia: { providers: ['youtube'] }, adsTrackingFromClient:true});
+</script>
+    <script>var ChessKit= ChessKit || {}; ChessKit.data = {categories:["master-lemon","article"], platforms:[], pagetype:["ros"], article_id:"147918"};</script>
+<script type="text/javascript">var googletag = googletag || {}; googletag.cmd = googletag.cmd || []; var zad = zad || {}; zad.cmd = zad.cmd || [];
+window.zadConfig={"dfp": "/21636860837/IGN/IGN_ROS_", "OOPs": ["interstitial/Site", "imagead/Site"], "OOPsAppendSuffix": true, "autorefresh": 30, "prebid": true, "amazon": "f2e071ed-23d7-445d-9490-f66b135fc141", "navegg": 55810, "tailtarget": false, "pubstack": true, "dependencies": null, "libs": null, "gdprLibs": null, "pageTargeting": {"platforms": [], "tags": ["master-lemon", "article"], "page": "ros", "special": "", "type": "review", "lang": "pt", "article_id": "147918", "site": "ign", "pageTitle": ["Master", "Lemon:", "The", "Quest", "for", "Iceland", "\u00e9", "emocionante", "e", "divertido", "na", "medida", "certa"]}, "lazy": false, "vastPreroll": "https://pubads.g.doubleclick.net/gampad/ads?sz=640x360|640x480&iu=/21636860837/IGN/IGN_PREROLL&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&plcmt=1&vpmute=1&cust_params=&video_id=[video_id]"}; window.zadSlotConfig={"adslotTemplates": {"native": {"size": [[300, 250], [480, 360], [480, 270], ["fluid"], [1, 1]], "sizemap": "native", "adunit": ""}}, "affiliate": {"size": [[320, 50]], "sizemap": "affiliate", "adunit": ""}, "sizemappingTemplates": {"billboard": [[[990, 250], [[970, 250], [970, 200], [970, 180], [980, 90], [970, 90], [728, 90], [120, 30]]], [[750, 200], [[728, 90], [120, 30]]], [[0, 0], [[320, 100], [320, 50], [120, 30]]]], "halfpage": [[[990, 250], [[300, 600], [300, 250]]], [[750, 200], [[300, 600], [300, 250]]], [[0, 0], [300, 250]]], "footer": [[[990, 250], [[970, 90], [728, 90]]], [[750, 200], [[728, 90], [468, 60]]], [[0, 0], [[320, 100], [320, 50]]]], "native": [[[990, 250], [[300, 250], [480, 360], [480, 270], ["fluid"], [1, 1]]], [[750, 200], [[300, 250], [320, 240], [320, 180], ["fluid"], [1, 1]]], [[0, 0], [[300, 250], [320, 240], [320, 180], ["fluid"], [1, 1]]]], "affiliate": [[[990, 250], [[320, 50]]], [[750, 200], [[320, 50]]], [[0, 0], [[320, 50]]]]}}</script><script>window._customPrebidSettings=None</script><script type="text/javascript" src="/s/js/zad.js?675" async="true"></script>
+<script type="text/javascript" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" async="true"></script>
+
+</head>
+
+<body >
+<div class="page-wrapper">
+<aside id="sidebarHeader" class="hide start">
+<div id="ignheader" class="start">
+  <button class="header-toggle" type="button" title="Toggle Sidebar"><svg class="sidebar-icon icon-left-chevron" focusable="false" viewBox="0 0 32 32" aria-hidden="true" role="presentation" fill="none" stroke-width="2"><path d="m10 2 14.14 14.14L10 30.28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+  <div class="side-container">
+    <div class='side home bar-1'>
+              <div class="sidebar-header">
+                <div class="logo-edition">
+                <a id="headerlogo" href='https://br.ign.com/'>
+                  <svg class="ign-logo" focusable="false" viewBox="0 0 76 24" aria-hidden="false" role="img"><title>IGN Logo</title><path class="dpad" fill="currentColor" stroke="none" d="M5.38 7.65a7.85 7.85 0 0 1 2.26-2.26c.13-1.18.31-2.26.52-3.21a10.605 10.605 0 0 0-6 6c.95-.22 2.03-.39 3.21-.52M16.34 5.36v.02c.9.59 1.67 1.37 2.27 2.27 1.18.13 2.26.31 3.21.52a10.627 10.627 0 0 0-6.02-6.01c.22.95.4 2.02.54 3.2M7.64 18.62c-.9-.59-1.67-1.37-2.27-2.27h-.03c-1.19-.14-2.26-.32-3.19-.54 1.07 2.75 3.26 4.95 6.01 6.02-.22-.95-.39-2.03-.52-3.21M18.64 16.35h-.03c-.59.9-1.37 1.67-2.27 2.27v.03c-.14 1.17-.32 2.25-.54 3.19a10.59 10.59 0 0 0 6.03-6.03c-.94.22-2 .4-3.19.54M10.04 0h3.9c.85 1.85 1.2 4.59 1.3 5.52.04.22.06.43.06.63L12 9.11 8.7 6.15c0-.17.02-.35.05-.55.1-.95.43-3.75 1.29-5.61M8.7 17.83c0 .17.02.35.05.55.1.95.43 3.75 1.29 5.61h3.9c.85-1.84 1.2-4.59 1.3-5.52.04-.22.06-.43.06-.64L12 14.87l-3.3 2.96ZM6.16 8.68c-.17 0-.35.02-.55.05-.95.12-3.75.45-5.61 1.31v3.9c1.84.85 4.59 1.19 5.52 1.3.22.04.43.06.64.06L9.11 12 6.16 8.7ZM24 10.02c-1.86-.86-4.66-1.19-5.61-1.29-.2-.03-.38-.05-.55-.05l-2.96 3.3 2.96 3.3c.2 0 .41-.02.64-.06.93-.11 3.68-.45 5.52-1.3v-3.9Z"></path><path class="ign-path" fill="currentColor" stroke="none" d="M42.83 13.9V10h10.45c1.06 0 1.93.86 1.93 1.92v4.63c0 2.38-1.91 4.36-4.33 4.36h-6.69c-4.96 0-8.97-4-8.97-8.94s4.04-8.95 8.98-8.95h10.36v4.11H44.2c-2.67 0-4.86 2.17-4.86 4.84s2.16 4.83 4.86 4.83h6.91v-2.91h-8.27ZM33.86 3h-4.07v16.02c0 1.05.86 1.91 1.91 1.91h2.15V3M74.37 3.01h-2.18v13.81s0 .08-.03.11a.29.29 0 0 1-.24.14c-.09 0-.16-.04-.25-.15L64.83 4.93a4.347 4.347 0 0 0-3.72-2.11h-.07c-2.39 0-4.32 1.93-4.32 4.32v11.88c0 1.05.86 1.91 1.91 1.91h2.17V7.14s.02-.09.04-.13a.29.29 0 0 1 .24-.14c.09 0 .18.03.24.14l6.88 12.07c.76 1.27 2.12 2.05 3.69 2.05h.07c2.39 0 4.32-1.93 4.32-4.32V4.92c0-1.05-.85-1.91-1.91-1.91"></path></svg>
+                </a>
+                <div class="logodate">Brasil</div>
+                </div>
+              </div><div class="sidebar-main"><ul class="sidebar-section home"><li><a class="icon-home" href='https://br.ign.com/'><span>Início</span></a></li><li class=""><a class="iconsvg"  href="https://br.ign.com/ps5"  data-submenu="bar-166"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 209.8" style="enable-background:new 0 0 512 209.8;" xml:space="preserve">
+<g>
+	<path d="M490.2,0.3l-0.6-0.1H29.3C14.9-1.3,1.5,8.8,0,22.3l0,0.3v157c0,19.5,10.3,30.3,29,30.3h458.8c13,0,24-11,24-24V29.4
+		C513.2,15.6,504.2,3.4,490.2,0.3z M484.9,29.1v151.7c0,0.7,0,1.4,0,2c-0.5,0-1.2,0.1-2.1,0.1H29c-0.7,0-1.4,0-2.1,0
+		c0-0.6,0-1.4,0-2.1V29.1c0-0.7,0-1.4,0-2.1c0.6,0,1.4,0,2.1,0h452.6c1.7,0,2.7,0.1,3.2,0.2C484.9,27.6,484.9,28.2,484.9,29.1z"/>
+</g>
+<g>
+	<path d="M182.7,85.2c0-16.6-13.5-30.1-30.1-30.1H81.8v20.1h70.7c5.5,0,10,4.5,10,10s-4.5,10-10,10H112c-16.6,0-30.1,13.5-30.1,30.1
+		v30.1h20.1v-30.1c0-5.5,4.5-10,10-10h40.6C169.2,115.4,182.7,101.8,182.7,85.2z"/>
+	<path d="M228.1,85.2v40.2c0,5.5-4.5,10-10,10h-45.4v20.1H218c16.6,0,30.1-13.5,30.1-30.1V85.2c0-5.5,4.5-10,10-10h45.4V55.1h-45.4
+		C241.6,55.1,228.1,68.6,228.1,85.2z"/>
+	<path d="M420.4,96.7L420.4,96.7c-3.7-1.6-7-1.6-10.8-1.6h-58.4c-4.5,0-6.8,0-7.8-1.3c-1.1-1.3-1.1-4.3-1.1-10.1V69.5h88.7V55.1
+		H322.7v40.5c0,9.1,6.1,16.8,13.3,16.8h66.5l2.4,0c2.3-0.3,4.4,0.5,6.2,2.3c2.9,3,4.4,8.2,3.7,13.5c-1.2,9.2-7.2,12.7-12.3,12.9h-81
+		v14.4l92.7,0l0.2,0c7.5-3.2,13.2-9.4,16.6-18C437.9,123,433.1,104.8,420.4,96.7z"/>
+</g>
+</svg>
+<span>PS5</span></a></li><li class=""><a class="iconsvg"  href="https://br.ign.com/xbox-series-x"  data-submenu="bar-167"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 378.83 199.56" style="enable-background:new 0 0 378.83 199.56;" xml:space="preserve">
+<g>
+	<path d="M208.27,3.93H200c-0.67,0-1.25,0.59-1.25,1.25v188.61c0,0.67,0.59,1.25,1.25,1.25h8.28c0.67,0,1.17-0.5,1.25-1.17V5.18
+		C209.53,4.51,208.94,3.93,208.27,3.93z"/>
+	<path d="M57.12,120.89c-0.84-1.09-2.01-1.67-3.34-1.67c-1.34,0-2.59,0.59-3.34,1.67L0.77,189.03c-0.92,1.25-1,2.84-0.33,4.26
+		s2.09,2.26,3.68,2.26h39.71c1.34,0,2.59-0.67,3.34-1.67l29.76-41.05c1.09-1.42,1.09-3.43,0-4.85L57.12,120.89z M41.74,187.27H12.23
+		l41.55-57.1l14.71,20.15L41.74,187.27z"/>
+	<path d="M129.86,71.56c0.84,1.09,2.01,1.67,3.34,1.67c1.34,0,2.51-0.67,3.34-1.67l44.23-60.95c0.92-1.25,1-2.84,0.33-4.26
+		c-0.75-1.42-2.09-2.26-3.68-2.26h-39.71c-1.34,0-2.59,0.59-3.34,1.67l-24.33,33.86c-1.09,1.42-1.09,3.43,0,4.85L129.86,71.56z
+		 M139.8,12.29h29.51l-36.2,49.83L118.4,41.97L139.8,12.29z"/>
+	<path d="M52.61,5.77C51.77,4.68,50.6,4.1,49.26,4.1H9.55c-1.59,0-3.01,0.84-3.68,2.26c-0.75,1.34-0.59,3.01,0.33,4.26
+		l134.01,183.26c0.84,1.09,2.01,1.67,3.34,1.67h39.71c1.5,0,2.93-0.92,3.68-2.34c0.75-1.34,0.59-3.01-0.33-4.26L52.61,5.77z
+		 M145.66,187.27l-128-174.98h29.51l128,174.98H145.66z"/>
+	<path d="M267.72,109.18c0.33,0.08,0.75,0.17,1.17,0.17c1.25,0,2.51-0.67,3.26-1.59l18.98-26.17c0.84-1.17,1-2.59,0.5-3.93
+		c-0.5-1.34-1.67-2.34-3.01-2.59c-5.35-1.17-10.78-3.51-16.05-7.02c-4.1-3.18-6.27-8.11-5.94-13.54c0-0.25,0-0.42,0-0.59
+		c-0.33-5.02,2.26-9.95,6.69-12.96c6.19-3.85,13.71-5.6,21.9-5.18c0.08,0,0.17,0,0.25,0c27.42,0,36.37,12.12,42.3,20.23
+		c0.75,1.09,1.5,2.09,2.26,3.01c0.84,1,2.01,1.5,3.34,1.5c1.34,0,2.51-0.67,3.26-1.67l18.06-24.83c1-1.34,1.09-3.18,0.17-4.6
+		c-3.76-5.94-7.77-10.53-12.21-14.13C339.61,5.18,320.22,0,295.05,0c-22.57,0-39.79,4.85-52.59,14.88
+		c-12.79,9.78-20.15,25.25-19.65,41.22C222.82,82.6,237.54,99.9,267.72,109.18z M247.48,21.4c11.37-8.86,26.92-13.13,47.57-13.13
+		c23.24,0,40.88,4.51,52.42,13.46c3.18,2.51,6.02,5.68,8.86,9.78l-13.13,17.89c-6.35-8.44-18.06-21.99-47.65-21.99
+		c-9.87-0.5-19.06,1.76-26.67,6.52l-0.08,0.08c-6.94,4.6-10.87,12.29-10.45,20.15c-0.42,8.28,2.93,15.72,9.36,20.48
+		c0,0.08,0.08,0.08,0.17,0.17c4.26,2.84,8.69,5.02,13.13,6.6l-13.71,18.98c-24.75-8.36-36.28-22.49-36.28-44.39v-0.08
+		C230.6,42.55,236.78,29.68,247.48,21.4z"/>
+	<path d="M363.61,100.91c-8.86-7.94-21.32-13.63-40.55-18.56c-1.67-0.42-3.34,0.25-4.35,1.59l-19.4,26.59
+		c-0.84,1.09-1,2.59-0.5,3.93c0.5,1.34,1.67,2.26,3.09,2.51c9.2,1.67,18.06,5.43,26.42,11.12c4.18,2.76,6.6,7.78,6.27,12.96
+		c0,0.17,0,0.33,0,0.5c0.42,6.27-2.51,12.46-7.61,16.14c-7.61,4.68-16.72,6.86-24.83,6.1c-0.17,0-0.25,0-0.42,0
+		c-25.5,0-37.79-7.52-50.5-31.18c-0.67-1.25-1.92-2.09-3.34-2.17c-1.42-0.08-2.76,0.5-3.59,1.67l-19.4,26.17
+		c-0.92,1.25-1,2.84-0.33,4.26c3.59,7.36,8.69,13.63,15.47,19.4c14.05,11.7,34.36,17.64,60.36,17.64c24.5,0,43.14-5.1,57.02-15.63
+		c14.05-10.62,21.9-27.34,21.07-44.64C380.33,125.32,374.73,111.02,363.61,100.91z M352.49,177.32
+		c-12.46,9.45-29.51,14.05-52.08,14.05c-24.08,0-42.55-5.27-55.09-15.72c-5.18-4.43-9.2-9.2-12.21-14.55l14.13-19.06
+		c13.21,21.99,28.09,30.01,54.43,30.01c9.87,0.92,20.73-1.76,29.85-7.36c0.08-0.08,0.17-0.08,0.25-0.17
+		c7.36-5.27,11.62-14.13,11.2-23.16c0.42-8.11-3.34-15.8-9.95-20.15c-7.44-5.02-15.22-8.69-23.33-10.95l14.05-19.31
+		c16.14,4.35,27.09,9.45,34.36,15.97c9.2,8.44,13.79,20.23,12.21,31.6c0,0.25,0,0.5,0,0.75
+		C371.05,154.08,364.44,168.29,352.49,177.32z"/>
+</g>
+</svg>
+<span>Xbox Series X/S</span></a></li><li class=""><a class="iconsvg"  href="/nintendo-switch/"  data-submenu="bar-11"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+	<circle cx="124.2" cy="139.2" r="50.8"/>
+	<circle cx="393.4" cy="276.4" r="50.8"/>
+</g>
+<g>
+	<path d="M249.4,45.9c0-12.2-4.8-23.9-13.5-32.5C227.4,4.8,215.7,0,203.5,0h-78.8C91.6,0,59.9,13.1,36.5,36.5
+		S0,91.6,0,124.7v262.6c0,33.1,13.1,64.8,36.5,88.2c23.4,23.4,55.1,36.5,88.2,36.5h78.8c12.2,0,23.9-4.8,32.5-13.5
+		c8.6-8.6,13.5-20.3,13.5-32.5V45.9z M210.1,45.9v420.1c0,1.7-0.7,3.4-1.9,4.6s-2.9,1.9-4.6,1.9h-78.8c-22.6,0-44.3-9-60.3-25
+		c-16-16-25-37.7-25-60.3c0-78.2,0-184.4,0-262.6c0-22.6,9-44.3,25-60.3c16-16,37.7-25,60.3-25h78.8c1.7,0,3.4,0.7,4.6,1.9
+		S210.1,44.2,210.1,45.9L210.1,45.9z"/>
+	<path d="M512,124.7c0-33.1-13.1-64.8-36.5-88.2C452.1,13.1,420.4,0,387.3,0h-78.8c-12.2,0-23.9,4.8-32.5,13.5
+		c-8.6,8.6-13.5,20.3-13.5,32.5v420.1c0,12.2,4.8,23.9,13.5,32.5c8.6,8.6,20.3,13.5,32.5,13.5h78.8c33.1,0,64.8-13.1,88.2-36.5
+		c23.4-23.4,36.5-55.1,36.5-88.2V124.7z M472.6,124.7v262.6c0,22.6-9,44.3-25,60.3c-16,16-37.7,25-60.3,25h-78.8
+		c-1.7,0-3.4-0.7-4.6-1.9c-1.2-1.2-1.9-2.9-1.9-4.6V45.9c0-1.7,0.7-3.4,1.9-4.6c1.2-1.2,2.9-1.9,4.6-1.9h78.8c22.6,0,44.3,9,60.3,25
+		C463.6,80.4,472.6,102.1,472.6,124.7z"/>
+</g>
+</svg>
+<span>Switch</span></a></li><li class=""><a class="iconsvg"  href="https://br.ign.com/article/review/"  data-submenu="bar-5"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 443.6 512.7" style="enable-background:new 0 0 443.6 512.7;" xml:space="preserve">
+<g>
+	<path d="M443.6,146.3c0.2-12.4-6.6-24.7-17.4-31.3L241.4,5.8c-5.9-4-11.9-5.8-19.5-5.8c-6.5,0-14.1,2.3-19.4,5.8L17.7,114.9
+		C5.5,121.2,0,135.1,0,146.2v220.3c0,12.6,6.9,24.9,17.6,31.2l184.8,109.2c5.9,4,11.9,5.8,19.5,5.8c6.5,0,14.1-2.3,19.4-5.8
+		l184.6-109.1c12.2-6.2,17.7-20.1,17.7-31.3L443.6,146.3z M224.5,32.9l184.7,109.2l0.3,0.2c1.9,1,2.2,2.9,2.2,3.9v221.4
+		c-0.2,1-0.7,2.2-2.2,3l-0.1,0.1l-185,109.3c-1.9,0.9-3.5,0.9-5.3,0L34.4,370.7l-0.3-0.2c-1.9-1-2.2-2.9-2.2-3.9V146.2
+		c0-0.8,0.2-2.9,2.3-4l0.1-0.1L219.2,32.9C221.1,32,222.6,32,224.5,32.9z"/>
+	<path d="M263.9,351.4h-80.7c-9,0-15.1,6.8-15.1,16.8c0,9,6.8,15.1,16.8,15.1h80.7c7.5,0,15.1-5.2,15.1-15.1
+		C280.7,358.6,273.5,351.4,263.9,351.4z"/>
+	<path d="M134.5,272.3H311c7.5,0,15.1-5.2,15.1-15.1c0-9.6-7.2-16.8-16.8-16.8H134.5c-9.6,0-16.8,7.2-16.8,16.8
+		C117.7,266.5,126.4,272.3,134.5,272.3z"/>
+	<path d="M183.2,161.4h80.7c9.8,0,15.1-7.8,15.1-15.1c0-7.6-7-16.8-15.1-16.8h-80.7c-9.8,0-15.1,7.8-15.1,15.1
+		C168.1,154.6,174.2,161.4,183.2,161.4z"/>
+</g>
+</svg>
+<span>Reviews</span></a></li><li class=""><a class="iconsvg"  href="https://br.ign.com/tabletop"  data-submenu="bar-185"><?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 300 300">
+  <!-- Generator: Adobe Illustrator 28.6.0, SVG Export Plug-In . SVG Version: 1.2.0 Build 709)  -->
+  <g>
+    <g id="Layer_1">
+      <path d="M267.21,72.57L158.32,9.7c-5.13-2.96-11.51-2.96-16.64,0l-108.89,62.87c-5.13,2.96-8.32,8.49-8.32,14.41v125.74c0,5.93,3.19,11.45,8.32,14.41l108.89,62.87c2.57,1.48,5.44,2.22,8.32,2.22s5.75-.74,8.32-2.22l108.89-62.87c5.13-2.96,8.32-8.49,8.32-14.41v-125.74c0-5.92-3.18-11.45-8.32-14.41Z" fill="#fff"/>
+      <path d="M149.34,125.91c-4.2,10.62-4.31,25.61-1.68,36.66.45,1.78.94,3.53,1.68,5.24.73-1.71,1.23-3.46,1.68-5.24,2.63-11.05,2.52-26.04-1.68-36.66ZM149.34,125.91c-4.2,10.62-4.31,25.61-1.68,36.66.45,1.78.94,3.53,1.68,5.24.73-1.71,1.23-3.46,1.68-5.24,2.63-11.05,2.52-26.04-1.68-36.66ZM267.21,72.57L158.32,9.7c-5.13-2.96-11.51-2.96-16.64,0l-108.89,62.87c-5.13,2.96-8.32,8.49-8.32,14.41v125.74c0,5.93,3.19,11.45,8.32,14.41l108.89,62.87c2.57,1.48,5.44,2.22,8.32,2.22s5.75-.74,8.32-2.22l108.89-62.87c5.13-2.96,8.32-8.49,8.32-14.41v-125.74c0-5.92-3.18-11.45-8.32-14.41ZM268.48,85.06l-48.59,103.78-68.4-118.47,113.89,9.29c1.59,1.41,2.68,3.32,3.1,5.4ZM125.72,146.86c0,7.71,3.67,14.59,9.35,18.97-17.91-5.64-28.3-19.64-28.3-19.64,0,0,10.24-13.01,28.15-18.19-5.6,4.39-9.2,11.21-9.2,18.86ZM141.31,126.58c2.58-1.07,5.4-1.66,8.36-1.66s5.78.58,8.35,1.65c7.97,3.29,13.59,11.15,13.59,20.3,0,9.71-6.34,17.97-15.1,20.85-2.15.71-4.45,1.09-6.84,1.09-2.57,0-5.04-.44-7.33-1.26-8.5-3.02-14.61-11.15-14.61-20.68s5.62-17,13.58-20.29ZM130.23,167.5c10.39,4.73,21.83,5.73,32.87,2.83,9.54-2.34,18.06-7.54,25.1-14.38-1.99,3.07-4.66,5.62-7.39,8.04-2.75,2.42-5.74,4.61-8.95,6.5-13.38,8.06-29.66,7.6-43.12-.02-4.86-2.73-9.22-6.19-12.96-10.29-1.22-1.36-2.4-2.76-3.4-4.29,5.35,4.75,11.37,8.71,17.85,11.61ZM163.84,166.15c5.93-4.36,9.78-11.39,9.78-19.29s-3.61-14.49-9.22-18.87c18.02,5.16,28.5,18.2,28.5,18.2,0,0-10.59,14.56-29.06,19.96ZM150.86,14.38c1.4.12,2.78.54,4.03,1.26l107.48,62.06-111.51-9.1V14.38ZM171.84,122.91c4.86,2.73,9.22,6.19,12.96,10.29,1.22,1.36,2.4,2.76,3.4,4.29-10.49-9.23-23.78-16.1-37.96-16.08-14.34.02-27.67,6-37.86,16.02,1.99-3.07,4.66-5.62,7.39-8.04,2.75-2.42,5.74-4.61,8.95-6.5,13.38-8.06,29.66-7.6,43.12.02ZM145.11,15.65c1.25-.72,2.63-1.14,4.03-1.26v54.21l-111.51,9.1L145.11,15.65ZM34.62,79.67l113.89-9.29-68.4,118.48L31.52,85.07c.42-2.09,1.51-3.99,3.1-5.4ZM32.29,216.92c-.62-1.29-.96-2.72-.96-4.2v-124.01l47.58,101.63-46.62,26.58ZM36.22,221.19c-1.26-.73-2.32-1.72-3.13-2.88l46.61-26.58,63.9,91.46-107.38-62ZM146.85,284.84l-65.25-93.4h136.8l-65.26,93.4c-2.04.69-4.25.69-6.29,0ZM263.78,221.19l-107.38,62,63.9-91.46,46.61,26.58c-.81,1.15-1.87,2.15-3.13,2.88ZM268.67,212.72c0,1.48-.34,2.91-.96,4.2l-46.62-26.58,47.58-101.63v124.01ZM149.34,167.81c.73-1.71,1.23-3.46,1.68-5.24,2.63-11.05,2.52-26.04-1.68-36.66-4.2,10.62-4.31,25.61-1.68,36.66.45,1.78.94,3.53,1.68,5.24ZM149.34,125.91c-4.2,10.62-4.31,25.61-1.68,36.66.45,1.78.94,3.53,1.68,5.24.73-1.71,1.23-3.46,1.68-5.24,2.63-11.05,2.52-26.04-1.68-36.66ZM149.34,125.91c-4.2,10.62-4.31,25.61-1.68,36.66.45,1.78.94,3.53,1.68,5.24.73-1.71,1.23-3.46,1.68-5.24,2.63-11.05,2.52-26.04-1.68-36.66Z" fill="#010101"/>
+    </g>
+  </g>
+</svg><span>Tabletop</span></a></li><li class=""><a class="iconsvg"  href="https://br.ign.com/cinema-tv"  data-submenu="bar-3"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="_x31_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 522 436.6" style="enable-background:new 0 0 522 436.6;" xml:space="preserve">
+<g>
+	<path d="M495.7,244.6h10.7c8.6,0,15.7-7,15.7-15.7v-42.7c0-28.2-20.1-51.8-46.7-57.2L440,25c-3.1-9.2-10.2-17-19.3-21.3
+		c-9.1-4.3-19.6-4.8-28.7-1.4L55.3,128C24.5,129.5,0,155.1,0,186.2v42.7c0,8.6,7,15.7,15.7,15.7h10.7c20.8,0,37.7,16.9,37.7,37.7
+		s-16.9,37.7-37.7,37.7H15.7c-8.6,0-15.7,7-15.7,15.7v42.7c0,32.2,26.2,58.3,58.3,58.3h405.3c15.6,0,30.2-6.1,41.2-17.1
+		c11-11,17.1-25.7,17.1-41.2v-42.7c0-8.6-7-15.7-15.7-15.7h-10.7c-10.1,0-19.5-3.9-26.6-11c-7.1-7.1-11-16.6-11-26.6
+		C458,261.4,474.9,244.6,495.7,244.6z M426.7,282.2c0,18.4,7.2,35.8,20.2,48.8c11.8,11.8,27.2,18.8,43.8,20v27.2
+		c0,14.9-12.1,27-27,27H202v-5.7c0-8.6-7-15.7-15.7-15.7s-15.7,7-15.7,15.7v5.7H58.3c-14.9,0-27-12.1-27-27V351
+		c35.7-2.6,64-32.5,64-68.8s-28.3-66.3-64-68.8v-27.2c0-14.9,12.1-27,27-27h112.3v5.7c0,8.6,7,15.7,15.7,15.7s15.7-7,15.7-15.7v-5.7
+		h261.7c14.9,0,27,12.1,27,27v27.2C454.9,216,426.7,245.9,426.7,282.2z M145,127.9L403,31.6c1.4-0.5,3-0.4,4.5,0.3
+		c1.4,0.7,2.5,1.8,2.9,3.2l31.5,92.8H145z"/>
+	<path d="M186.3,293.6c-8.6,0-15.7,7-15.7,15.7v36.1c0,8.6,7,15.7,15.7,15.7s15.7-7,15.7-15.6v-36.1
+		C202,300.7,195,293.6,186.3,293.6z"/>
+	<path d="M186.3,203.4c-8.6,0-15.7,7-15.7,15.7v36.1c0,8.6,7,15.7,15.7,15.7s15.7-7,15.7-15.7v-36.1
+		C202,210.4,195,203.4,186.3,203.4z"/>
+</g>
+</svg>
+<span>Cinema & TV</span></a></li><li class=""><a class="iconsvg"  href="/anime/"  data-submenu="bar-161"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 443.6 443.6" style="enable-background:new 0 0 443.6 443.6;" xml:space="preserve">
+<path d="M373.59,291.81l70.01-70.01l-64.97-64.97V64.97h-91.86L221.8,0l-64.97,64.97H64.97v91.86L0,221.8l64.97,64.97v91.86h91.86
+	l64.97,64.97l70.01-70.01l102.29,52.4c5.25,2.68,10.33,3.47,15.1,2.34c4.6-1.09,8.71-3.42,12.21-6.92c3.51-3.5,5.83-7.61,6.92-12.21
+	c1.13-4.77,0.34-9.86-2.34-15.11L373.59,291.81z M45.07,221.8l51.84-51.84V96.9h73.06l51.84-51.84l51.84,51.84h73.06v73.06
+	l51.83,51.84l-64.09,64.09l51.61,100.22L285.23,335.1l-63.43,63.43l-51.84-51.84H96.9v-73.06L45.07,221.8z"/>
+</svg>
+<span>Anime</span></a></li><li class=""><a class="iconsvg"  href="https://br.ign.com/tech/"  data-submenu="bar-13"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="_x31__x2C_5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<path d="M325.3,384H186.7c-32.4,0-58.7-26.3-58.7-58.7V186.7c0-32.4,26.3-58.7,58.7-58.7h138.7c32.4,0,58.7,26.3,58.7,58.7v138.7
+	C384,357.7,357.7,384,325.3,384z M186.7,160c-14.7,0-26.7,12-26.7,26.7v138.7c0,14.7,12,26.7,26.7,26.7h138.7
+	c14.7,0,26.7-12,26.7-26.7V186.7c0-14.7-12-26.7-26.7-26.7H186.7z"/>
+<path d="M320,453.3c-8.8,0-16-7.2-16-16v-64c0-8.8,7.2-16,16-16c8.8,0,16,7.2,16,16v64C336,446.2,328.8,453.3,320,453.3z"/>
+<path d="M320,512c-23.5,0-42.7-19.1-42.7-42.7s19.1-42.7,42.7-42.7c23.5,0,42.7,19.1,42.7,42.7S343.5,512,320,512z M320,458.7
+	c-5.9,0-10.7,4.8-10.7,10.7S314.1,480,320,480c5.9,0,10.7-4.8,10.7-10.7S325.9,458.7,320,458.7z"/>
+<path d="M192,453.3c-8.8,0-16-7.2-16-16v-64c0-8.8,7.2-16,16-16c8.8,0,16,7.2,16,16v64C208,446.2,200.8,453.3,192,453.3z"/>
+<path d="M192,512c-23.5,0-42.7-19.1-42.7-42.7s19.1-42.7,42.7-42.7s42.7,19.1,42.7,42.7S215.5,512,192,512z M192,458.7
+	c-5.9,0-10.7,4.8-10.7,10.7S186.1,480,192,480c5.9,0,10.7-4.8,10.7-10.7S197.9,458.7,192,458.7z"/>
+<path d="M192,154.7c-8.8,0-16-7.2-16-16v-64c0-8.8,7.2-16,16-16c8.8,0,16,7.2,16,16v64C208,147.5,200.8,154.7,192,154.7z"/>
+<path d="M192,85.3c-23.5,0-42.7-19.1-42.7-42.7S168.5,0,192,0s42.7,19.1,42.7,42.7S215.5,85.3,192,85.3z M192,32
+	c-5.9,0-10.7,4.8-10.7,10.7s4.8,10.7,10.7,10.7c5.9,0,10.7-4.8,10.7-10.7S197.9,32,192,32z"/>
+<path d="M320,154.7c-8.8,0-16-7.2-16-16v-64c0-8.8,7.2-16,16-16c8.8,0,16,7.2,16,16v64C336,147.5,328.8,154.7,320,154.7z"/>
+<path d="M320,85.3c-23.5,0-42.7-19.1-42.7-42.7S296.5,0,320,0c23.5,0,42.7,19.1,42.7,42.7S343.5,85.3,320,85.3z M320,32
+	c-5.9,0-10.7,4.8-10.7,10.7s4.8,10.7,10.7,10.7c5.9,0,10.7-4.8,10.7-10.7S325.9,32,320,32z"/>
+<path d="M138.7,336h-64c-8.8,0-16-7.2-16-16c0-8.8,7.2-16,16-16h64c8.8,0,16,7.2,16,16C154.7,328.8,147.5,336,138.7,336z"/>
+<path d="M42.7,362.7C19.1,362.7,0,343.5,0,320c0-23.5,19.1-42.7,42.7-42.7s42.7,19.1,42.7,42.7C85.3,343.5,66.2,362.7,42.7,362.7z
+	 M42.7,309.3c-5.9,0-10.7,4.8-10.7,10.7s4.8,10.7,10.7,10.7s10.7-4.8,10.7-10.7S48.5,309.3,42.7,309.3z"/>
+<path d="M138.7,208h-64c-8.8,0-16-7.2-16-16c0-8.8,7.2-16,16-16h64c8.8,0,16,7.2,16,16C154.7,200.8,147.5,208,138.7,208z"/>
+<path d="M42.7,234.7C19.1,234.7,0,215.5,0,192s19.1-42.7,42.7-42.7s42.7,19.1,42.7,42.7S66.2,234.7,42.7,234.7z M42.7,181.3
+	c-5.9,0-10.7,4.8-10.7,10.7s4.8,10.7,10.7,10.7s10.7-4.8,10.7-10.7S48.5,181.3,42.7,181.3z"/>
+<path d="M437.3,208h-64c-8.8,0-16-7.2-16-16c0-8.8,7.2-16,16-16h64c8.8,0,16,7.2,16,16C453.3,200.8,446.2,208,437.3,208z"/>
+<path d="M469.3,234.7c-23.5,0-42.7-19.1-42.7-42.7s19.1-42.7,42.7-42.7S512,168.5,512,192S492.9,234.7,469.3,234.7z M469.3,181.3
+	c-5.9,0-10.7,4.8-10.7,10.7s4.8,10.7,10.7,10.7S480,197.9,480,192S475.2,181.3,469.3,181.3z"/>
+<path d="M437.3,336h-64c-8.8,0-16-7.2-16-16c0-8.8,7.2-16,16-16h64c8.8,0,16,7.2,16,16C453.3,328.8,446.2,336,437.3,336z"/>
+<path d="M469.3,362.7c-23.5,0-42.7-19.1-42.7-42.7c0-23.5,19.1-42.7,42.7-42.7S512,296.5,512,320C512,343.5,492.9,362.7,469.3,362.7
+	z M469.3,309.3c-5.9,0-10.7,4.8-10.7,10.7s4.8,10.7,10.7,10.7S480,325.9,480,320S475.2,309.3,469.3,309.3z"/>
+</svg>
+<span>Tech</span></a></li><li class=""><a class="iconsvg"  href="https://br.ign.com/descontos"  data-submenu="bar-170"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="regular" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<path d="M383.4,65.2L119.6,170.7H48c-26.5,0-48,21.5-48,48v58.7C0,302.5,19.7,320,48,320h18.1l19.4,135.6
+	c1.1,7.9,7.9,13.7,15.8,13.7h64c4.6,0,8.9-1.9,11.9-5.3c3-3.4,4.5-7.9,4-12.5l-12.6-111.9l214.7,85.9c1.9,0.8,3.9,1.2,6,1.2
+	c3.1,0,6.3-0.9,9-2.8c4.4-3,7-7.9,7-13.2V80c0-5.3-2.6-10.3-7-13.2C393.9,63.8,388.3,63.2,383.4,65.2z M32,277.3v-58.7
+	c0-8.8,7.2-16,16-16h58.7V288H48C40.7,288,32,286.1,32,277.3z M147.4,437.3h-32.2L98.5,320h21.1l15.4,6.1L147.4,437.3z M373.3,387.1
+	l-217.1-86.8c-0.9-0.4-1.8-0.9-2.8-1.1l-14.8-5.9v-95.7l234.7-93.9V387.1z"/>
+<path d="M452.7,199.2l53.3-42.7c6.9-5.5,8-15.6,2.5-22.5c-5.5-6.9-15.6-8-22.5-2.5l-53.3,42.7c-6.9,5.5-8,15.6-2.5,22.5
+	c3.2,3.9,7.8,6,12.5,6C446.2,202.7,449.7,201.5,452.7,199.2L452.7,199.2z"/>
+<path d="M452.7,312.8c-6.9-5.5-16.9-4.4-22.5,2.5c-5.5,6.9-4.4,17,2.5,22.5l53.3,42.7c3,2.3,6.5,3.5,10,3.5c4.7,0,9.3-2.1,12.5-6
+	c5.5-6.9,4.4-17-2.5-22.5L452.7,312.8z"/>
+<path d="M496,240h-53.3c-8.8,0-16,7.2-16,16c0,8.8,7.2,16,16,16H496c8.8,0,16-7.2,16-16C512,247.2,504.8,240,496,240z"/>
+</svg>
+<span>Descontos</span></a></li><li class=""><a class="iconsvg" target='_blank' href="https://www.codashop.com/pt-br/?irclickid=R2WW6a0iZxyKU9oQ4W1UVz9NUksVwVwxZVSnRc0&irgwc=1&utm_campaign=codashop_affiliate_program&utm_content=&utm_medium=affiliate&utm_source=coda_Webedia%20Internet%20Brasil"  data-submenu="bar-186"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Artwork" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 30.5 29.1" style="enable-background:new 0 0 30.5 29.1;" xml:space="preserve">
+<g>
+	<path d="M24.6,1.8c-0.2-0.3-0.5-0.4-0.8-0.5L19.2,0c-0.2,0-0.4,0-0.6,0H12c-0.1,0-0.2,0-0.4,0L6.7,1.4c0,0-0.2,0-0.3,0.1L6,1.8
+		c0,0-0.2,0.1-0.2,0.2c0,0-5.7,7.8-5.8,8.1c0,0.2,0.2,0.2,0.3,0.2L4,9c0.5-0.2,0.7-0.2,0.8-0.5V8.3c0.1,0,3.4-6,3.4-6
+		s0.2-0.2,0.4-0.2s0.2,0.3,0.2,0.4l-2,5.2v0.2L6.7,8c0,0.2,0,0.2,0.2,0.2L12,7.3c0.2,0,0.4,0,0.7,0l7.4,0.5c0.6,0,0.8-0.2,0.7-0.7
+		V6.6c-0.1,0-1.2-4.2-1.2-4.2l-0.3-1c0-0.1,0-0.4,0.2-0.4s0.3,0.1,0.4,0.2l2.7,5.7l0,0c0.2,0.3,0.3,0.6,0.3,0.6
+		c0.2,0.4,0.3,0.5,1,0.6c0.8,0.2,2.3,0.6,2.3,0.6l3.9,1.6c0.2,0,0.5,0,0.4-0.3c0-0.3-5.9-8.1-5.9-8.1L24.6,1.8z"/>
+	<path d="M29.4,12.2L26,11l-1.9-0.5c-0.4,0-0.7,0-0.9,0.5l-0.3,0.6L17,25.5c0,0.1-0.2,0.2-0.3,0.1c-0.1,0-0.2-0.2-0.2-0.3l3.9-13.5
+		l0.3-1.1c0.1-0.4-0.2-0.7-0.7-0.8l-7.5-0.5c-0.2,0-0.4,0-0.7,0l-4.7,0.9c-0.3,0-0.5,0.4-0.4,0.6v0.3c0.1,0,1.2,2.2,1.2,2.2l4.3,8.4
+		c0,0.1,0,0.4-0.2,0.5c-0.2,0-0.4,0-0.5-0.2l-5.3-8.7l-1-1.6l-0.4-0.6c-0.2-0.3-0.6-0.3-0.9-0.2l-3.3,1.1c-0.2,0-0.5,0.2-0.3,0.5
+		s10.3,12.1,13.6,16c0.6,0.7,1.6,0.7,2.1,0l13.5-15.7c0.2-0.3,0-0.6-0.3-0.8L29.4,12.2z"/>
+</g>
+</svg>
+<span>Codashop</span></a></li><li class=""><a class="iconsvg"  href="https://br.ign.com/video/"  data-submenu="bar-177"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="regular" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{stroke:#41495a;stroke-width:10;stroke-miterlimit:10;}
+</style>
+<path d="M256,512c141.2,0,256-114.8,256-256S397.2,0,256,0S0,114.8,0,256S114.8,512,256,512z M256,32c123.5,0,224,100.5,224,224
+	S379.5,480,256,480S32,379.5,32,256S132.5,32,256,32z"/>
+<path class="st0" d="M379.9,226.6l-180.3-98.2c-4.8-3.2-11.3-4.8-16.1-4.8c-19.3,0-33.8,16.1-33.8,33.8v198
+	c0,19.3,16.1,33.8,33.8,33.8l0,0l0,0c6.4,0,11.3-1.6,16.1-4.8l180.3-98.2c6.4-3.2,11.3-8.1,14.5-14.5
+	C402.4,257.2,396,236.3,379.9,226.6z M189.9,366.7C189.9,366.7,189.9,368.3,189.9,366.7c-4.8,1.6-8.1,1.6-11.3,1.6
+	c-3.2-1.6-6.4-3.2-8.1-6.4c-1.6-1.6-1.6-4.8-1.6-6.4v-198c0-8.1,6.4-12.9,12.9-12.9c1.6,0,4.8,0,6.4,1.6l181.9,98.2
+	c3.2,1.6,6.4,3.2,6.4,6.4c1.6,3.2,1.6,6.4,0,9.7c-1.6,3.2-3.2,6.4-8.1,8.1L189.9,366.7z"/>
+</svg>
+<span>Vídeos</span></a></li><li class=""><a class="iconsvg"  href="https://br.ign.com/article/gallery"  data-submenu="bar-178"><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 511 468.4" style="enable-background:new 0 0 511 468.4;" xml:space="preserve">
+<g>
+	<path d="M376.9,468.4c-4,0-8.1-0.5-12.2-1.6L35.5,378.7C10.1,371.7-5,345.4,1.6,320l36.2-138.8c2.2-8.5,10.9-13.7,19.5-11.4
+		c8.5,2.2,13.6,10.9,11.4,19.5L32.5,328.1c-2.2,8.6,2.9,17.4,11.4,19.7l329,88.2c8.5,2.2,17.2-2.8,19.4-11.2l11.2-45.4
+		c2.1-8.6,10.8-13.8,19.3-11.7c8.6,2.1,13.8,10.8,11.7,19.3l-11.3,45.6C417.6,454.2,398.2,468.4,376.9,468.4z"/>
+	<path d="M463.1,340.7h-330c-26.4,0-47.9-21.5-47.9-47.9V47.9C85.2,21.5,106.6,0,133.1,0h330C489.5,0,511,21.5,511,47.9v244.9
+		C511,319.2,489.5,340.7,463.1,340.7z M133.1,31.9c-8.8,0-16,7.2-16,16v244.9c0,8.8,7.2,16,16,16h330c8.8,0,16-7.2,16-16V47.9
+		c0-8.8-7.2-16-16-16C463.1,31.9,133.1,31.9,133.1,31.9z"/>
+	<path d="M191.6,149c-23.5,0-42.6-19.1-42.6-42.6s19.1-42.6,42.6-42.6s42.6,19.1,42.6,42.6S215.1,149,191.6,149z M191.6,95.8
+		c-5.9,0-10.6,4.8-10.6,10.6c0,5.9,4.8,10.6,10.6,10.6c5.9,0,10.6-4.8,10.6-10.6C202.3,100.6,197.5,95.8,191.6,95.8z"/>
+	<path d="M102.9,319c-4.1,0-8.2-1.6-11.3-4.7c-6.2-6.2-6.2-16.4,0-22.6l95.9-96.2c14.6-14.6,38.2-14.6,52.6,0l25.6,25.7l78.8-94.9
+		c7.1-8.5,17.3-13.4,28.3-13.4c11.8-0.7,21.3,4.7,28.5,13.1L507,249.7c5.7,6.7,5,16.8-1.7,22.5c-6.7,5.8-16.7,5-22.4-1.7
+		L377.3,146.8c-1.4-1.7-3.1-1.6-4.1-1.9c-0.9,0-2.7,0.3-4.1,1.9l-90,108.4c-2.9,3.4-7.1,5.5-11.5,5.7c-4.6,0.3-8.9-1.5-12-4.7
+		l-38-38.1c-2.7-2.7-4.9-2.7-7.6,0l-95.9,96.2C111.1,317.4,107,319,102.9,319z"/>
+</g>
+</svg>
+<span>Galerias</span></a></li><li class="more toggletopmore"><a href="" rel="nofollow" class="iconsvg submenu" data-submenu="bar-MORE"><?xml version="1.0" encoding="utf-8"?><svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><path d="M368.7,288.3c17.7,0,32.2-14.5,32.2-32.2c0-17.7-14.5-32.2-32.2-32.2s-32.2,14.5-32.2,32.2 C336.5,273.8,351,288.3,368.7,288.3z M256,288.3c17.7,0,32.2-14.5,32.2-32.2c0-17.7-14.5-32.2-32.2-32.2s-32.2,14.5-32.2,32.2 C223.8,273.8,238.3,288.3,256,288.3z M143.3,288.3c17.7,0,32.2-14.5,32.2-32.2c0-17.7-14.5-32.2-32.2-32.2s-32.2,14.5-32.2,32.2 C111.1,273.8,125.6,288.3,143.3,288.3z"/><g><path d="M256,512c-68.4,0-132.7-26.6-181-75C26.6,388.7,0,324.4,0,256c0-68.4,26.6-132.7,75-181C123.3,26.6,187.6,0,256,0 s132.7,26.6,181,75c48.4,48.4,75,112.6,75,181c0,68.4-26.6,132.7-75,181S324.4,512,256,512z M256,32.3 c-59.8,0-115.9,23.3-158.2,65.5C55.6,140.1,32.3,196.2,32.3,256c0,59.8,23.3,115.9,65.5,158.2c42.2,42.2,98.4,65.5,158.2,65.5 s115.9-23.3,158.2-65.5c42.2-42.3,65.5-98.4,65.5-158.2c0-59.8-23.3-115.9-65.5-158.2C371.9,55.6,315.8,32.3,256,32.3z"/></g></svg><span>Ver Mais</span><svg class="sidebar-icon icon-right-chevron" focusable="false" viewBox="0 0 32 32" aria-hidden="true" role="presentation" fill="none" stroke-width="2"><path d="m10 2 14.14 14.14L10 30.28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></li><div class="divider"></div><li class="search"><a><svg height="512pt" viewBox="0 0 512.016 512" width="512pt" xmlns="http://www.w3.org/2000/svg"><path d="m202.667969 405.339844c-111.746094 0-202.667969-90.921875-202.667969-202.664063 0-111.746093 90.921875-202.6679685 202.667969-202.6679685 111.742187 0 202.664062 90.9218755 202.664062 202.6679685 0 111.742188-90.921875 202.664063-202.664062 202.664063zm0-373.332032c-94.101563 0-170.667969 76.566407-170.667969 170.667969 0 94.101563 76.566406 170.664063 170.667969 170.664063 94.101562 0 170.664062-76.5625 170.664062-170.664063 0-94.101562-76.5625-170.667969-170.664062-170.667969zm0 0"/><path d="m496 512.007812c-4.097656 0-8.191406-1.558593-11.308594-4.691406l-161.277344-161.28125c-6.25-6.25-6.25-16.382812 0-22.636718 6.25-6.25 16.382813-6.25 22.632813 0l161.28125 161.28125c6.25 6.25 6.25 16.382812 0 22.636718-3.136719 3.132813-7.230469 4.691406-11.328125 4.691406zm0 0"/></svg><form action='https://br.ign.com/se/'class="search-modal"><div class="search-input"><input type="hidden" name="model" value=""><input name="q" id="search-input" type="text" maxlength="60" placeholder='Pesquisar no IGN Brasil' autocomplete="off" value=""></div><button role="button" class="button button-primary">Pesquisar</button></form></a></li></ul></div></div><div class="side bar-MORE">
+              <div class="sidebar-header">
+              <button class="back" data-parent="bar-1"><svg class="sidebar-icon icon-left-chevron" focusable="false" viewBox="0 0 32 32" aria-hidden="true" role="presentation" fill="none" stroke-width="2"><path d="M22 2 7.86 16.14 22 30.28" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg><label>Início</label></button>
+              </div>
+              <div class="sidebar-main">
+              <h3>Ver Mais</h3>
+              <ul class="sidebar-section"><li class=""><a class="iconsvg"  href="/ign-brasil/1717/page/fale-conosco"  data-submenu="bar-29"><span>Fale Conosco</span></a></li><li class=""><a class="iconsvg"  href="/ign-brasil/5402/page/trabalhe-conosco"  data-submenu="bar-93"><span>Trabalhe Conosco</span></a></li><li class=""><a class="iconsvg"  href="https://br.ign.com/ign-brasil-1/86956/page/imprensa"  data-submenu="bar-33"><span>Imprensa</span></a></li><li class=""><a class="iconsvg"  href="/ign-brasil/7072/page/user-agreement"  data-submenu="bar-86"><span>Termos de Utilização</span></a></li><li class=""><a class="iconsvg"  href="/ign-brasil/7067/page/privacy"  data-submenu="bar-87"><span>Privacidade</span></a></li><div class="divider"></div><li class="legal"><a href="https://world.ziffdavis.com"><svg id="zdlogoblue" data-name="Ziff Davis Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298.63 174.94"><path d="M102,15.57H83.2V.09H102ZM83.2,26.16H102V94.57H83.2Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M117,38.73H105.72V26.16H117v-5.3C117,8.69,124.51.09,139.86.09c3.31,0,6.75.4,9.92.53v14a58.78,58.78,0,0,0-6.88-.4c-5.16,0-7.14,2.12-7.14,7.81v4.1h13V38.73h-13V94.57H117Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M154.59,38.73H143.34V26.16h11.25v-5.3c0-12.17,7.54-20.77,22.89-20.77,3.31,0,6.75.4,9.92.53v14a58.78,58.78,0,0,0-6.88-.4c-5.16,0-7.14,2.12-7.14,7.81v4.1h13V38.73h-13V94.57H154.59Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M31.37,73.6l-2.95,3.5H50.91a31.52,31.52,0,0,1,13.77,3,29.66,29.66,0,0,1,6.68,4.44,30.31,30.31,0,0,1,7.46,10.07H.77V78.14L4.58,73.6l3-3.57L51.44,17.56H4.75V.09H79.1V16.48L34.35,70Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M80.57,103.2h-24c5.17,5.44,7.18,13.79,7.18,24.16,0,20.9-11.54,28.31-23.57,28.31H21.65V103.2H.86v69.94H41.62c28.83,0,42.87-20.38,42.87-47.76A58.44,58.44,0,0,0,80.57,103.2Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M148.78,157.93v-35.6c0-13.69-11.37-18.06-23-19.13a68.79,68.79,0,0,0-7-.31,8.43,8.43,0,0,0-.87,0c-15.08.17-30.26,5.69-31.3,22.84h18.79c.66-7.42,5.16-10.33,12.44-10.33,6.62,0,12.17,1.32,12.17,9.29.79,15.32-45.23-1.35-45.51,29.77,0,14,10.19,20.49,23.29,20.49,8.46,0,17-2.25,23-8.46a28.37,28.37,0,0,0,1.32,6.62h19.06C149.44,170.37,148.78,164.13,148.78,157.93ZM130,146.66c0,4.23-.52,15.77-15.22,15.77-6.06,0-11.51-1.87-11.51-8.73s5.31-9,11.13-10.09,12.44-1.18,15.6-4Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M195.32,104.72,180.9,151.44h-.27l-14.42-46.72H146.49l23.43,68.42h20.9L214,104.72Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M214.38,104.72v68.42h18.79V104.72Zm0-26.06V94.15h18.79V78.66Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M277.08,132c-10.57-2.5-21.31-3.44-21.31-10.16,0-5.72,6.24-6.38,10.46-6.38,6.76,0,12.31,2,12.83,9.29h17.88c-1.45-16.81-15.35-21.83-30.19-21.83S237,107.36,237,124.83c0,12.2,10.71,15.77,21.7,18.26C272.06,145.86,280,148,280,153.7c0,6.58-7,8.73-12.3,8.73-7.28,0-14.42-3.46-14.42-11.54H235.39C236.05,169,251.68,175,267.55,175c15.49,0,31.23-5.82,31.23-23.81C298.78,138.48,288.07,134.5,277.08,132Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M101.38,15.62H82.59V.14h18.79ZM82.59,26.21h18.79V94.62H82.59Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M116.35,38.78H105.11V26.21h11.24V20.92C116.35,8.74,123.9.14,139.24.14c3.31,0,6.75.4,9.93.53v14a58.78,58.78,0,0,0-6.88-.4c-5.16,0-7.15,2.12-7.15,7.81v4.1h13V38.78h-13V94.62H116.35Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M154,38.78H142.73V26.21H154V20.92C154,8.74,161.52.14,176.86.14c3.31,0,6.75.4,9.93.53v14a58.78,58.78,0,0,0-6.88-.4c-5.16,0-7.15,2.12-7.15,7.81v4.1h13V38.78h-13V94.62H154Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M30.76,73.65l-3,3.5H50.29a31.56,31.56,0,0,1,13.78,3,30,30,0,0,1,6.68,4.44,30.31,30.31,0,0,1,7.46,10.07H.15V78.19L4,73.65l3-3.57L50.82,17.61H4.14V.14H78.48V16.53L33.74,70.08Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M80,103.25h-24c5.16,5.44,7.17,13.79,7.17,24.16,0,20.9-11.54,28.31-23.56,28.31H21V103.25H.24v69.94H41c28.84,0,42.87-20.38,42.87-47.76A58.49,58.49,0,0,0,80,103.25Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M148.17,158v-35.6c0-13.69-11.37-18.06-23-19.13a69.11,69.11,0,0,0-7-.31,8.14,8.14,0,0,0-.86,0c-15.08.18-30.26,5.69-31.3,22.84h18.78c.66-7.41,5.17-10.32,12.45-10.32,6.62,0,12.16,1.31,12.16,9.28.8,15.32-45.23-1.35-45.51,29.78,0,14,10.19,20.48,23.3,20.48,8.45,0,17-2.25,23-8.46a28.26,28.26,0,0,0,1.32,6.62h19.06C148.83,170.42,148.17,164.18,148.17,158Zm-18.79-11.27c0,4.23-.52,15.77-15.21,15.77-6.07,0-11.51-1.87-11.51-8.73s5.3-9,11.13-10.09,12.44-1.18,15.59-3.95Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M194.71,104.78,180.29,151.5H180l-14.42-46.72H145.87l23.43,68.41h20.9l23.15-68.41Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M213.77,104.78v68.41h18.79V104.78Zm0-26.07V94.2h18.79V78.71Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M276.47,132c-10.57-2.5-21.32-3.43-21.32-10.16,0-5.72,6.24-6.37,10.47-6.37,6.76,0,12.3,2,12.82,9.28h17.89C294.87,108,281,102.94,266.14,102.94s-29.77,4.47-29.77,21.94c0,12.2,10.71,15.77,21.69,18.26,13.38,2.78,21.32,4.89,21.32,10.61,0,6.58-7,8.73-12.3,8.73-7.28,0-14.42-3.46-14.42-11.54H234.77c.66,18.13,16.29,24.09,32.17,24.09,15.49,0,31.23-5.82,31.23-23.81C298.17,138.53,287.46,134.55,276.47,132Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path></svg></a><span class="licensee">O IGN Brasil é um site do grupo <a href="https://www.webedia.com.br/" rel="nofollow">Webedia</a> </span></li></ul></div></div>
+  </div>
+  <div class="region">
+    <div class="region-selector">
+        <select id="region-dropdown" class="region-dropdown">
+            <option value="" disabled="" selected="">Change Region</option>
+            <option data-language='US' value="https://www.ign.com/?setccpref=US">United States</option>
+            <option data-language='UK' value="https://uk.ign.com/uk?setccpref=UK">United Kingdom</option>
+            <option data-language='AU' value="https://au.ign.com/au?setccpref=AU">Australia</option>
+            <option data-language='AFR' value="https://za.ign.com/">Africa</option>
+            <option data-language='ADR' value="https://adria.ign.com/">Adria Serbian/Croatian</option>
+            <option data-language='SL' value="https://adria.ign.com/sl/">Adria Slovenian</option>
+            <option data-language='BX' value="https://nl.ign.com/">Benelux / Dutch</option>
+            <option data-language='BR' value="https://br.ign.com/">Brazil</option>
+            <option data-language='CN' value="https://www.ign.com.cn/">China / 中国</option>
+            <option data-language='CZ' value="https://cz.ign.com/">Czechia / Slovakia</option>
+            <option data-language='FR' value="https://fr.ign.com/">France</option>
+            <option data-language='DE' value="https://de.ign.com/">Germany</option>
+            <option data-language='GR' value="https://gr.ign.com/">Greece / Ελλάδα</option>
+            <option data-language='HU' value="https://hu.ign.com/">Hungary</option>
+            <option data-language='IN' value="https://in.ign.com/">India</option>
+            <option data-language='IL' value="https://il.ign.com/">Israel</option>
+            <option data-language='IT' value="https://it.ign.com/">Italy / Italia</option>
+            <option data-language='JP' value="https://jp.ign.com/">Japan / 日本</option>
+            <option data-language='KR' value="https://kr.ign.com/">Korea / 한국</option>
+            <option data-language='LAT' value="https://latam.ign.com/">Latin America</option>
+            <option data-language='ME' value="https://me.ign.com/en/">Middle East - English</option>
+            <option data-language='AR' value="https://me.ign.com/ar/">Middle East -  الأوسطالشرق</option>
+            <option data-language='NOR' value="https://nordic.ign.com/">Nordic</option>
+            <option data-language='PL' value="https://pl.ign.com/">Poland</option>
+            <option data-language='PT' value="https://pt.ign.com/">Portugal</option>
+            <option data-language='SEA' value="https://sea.ign.com/">Southeast Asia</option>
+            <option data-language='ES' value="https://es.ign.com/">Spain / España</option>
+            <option data-language='TR' value="https://tr.ign.com/">Turkey / Türkiye</option>
+            <option data-language='INTL' value="https://world.ign.com/">world.ign.com</option>
+        </select>
+    </div>
+</div>
+  <div id="loginwrapper">
+    <a class="sidebar-item login-avatar" href="https://www.ign.com/sign-in?redirect=http%3A//br.ign.com/master-lemon/147918/review/master-lemon-the-quest-for-iceland-e-emocionante-e-divertido-na-medida-certa" type="button"><img class="userIcon" alt="" title="" src=""></img><svg class="sidebar-icon icon-profile" focusable="false" viewBox="0 0 32 32" aria-hidden="false" role="img" fill="none" stroke-width="1.5"><title>Register / Login</title><g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M31 16a15 15 0 1 1-30 0 15 15 0 0 1 30 0Z"></path><path d="M10 29v-3.5a6 6 0 0 1 6-6v0a6 6 0 0 1 6 6V29"></path><path clip-rule="evenodd" d="M16 17a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"></path></g></svg>
+      <div class="sidebar-item-text">Register / Login</div>
+    </a>
+    <div class="login-buttons">
+      <a href="https://www.ign.com/sign-in?redirect=http%3A//br.ign.com/master-lemon/147918/review/master-lemon-the-quest-for-iceland-e-emocionante-e-divertido-na-medida-certa" target="_top" rel="nofollow" class="lightbox main button login-button">Entrar</a>
+      <a href="https://www.ign.com/register?redirect=http%3A//br.ign.com/master-lemon/147918/review/master-lemon-the-quest-for-iceland-e-emocionante-e-divertido-na-medida-certa" target="_top" rel="nofollow" class="button register-button">Registrar</a>
+    </div>
+  </div>
+
+</div>
+</aside>
+<button id="btnoverlay" type="button" title="Collapse Sidebar" class="start sidebar-mobile-overlay"></button>
+<div id="mainblock">
+<header class="fixed-header">
+  <div class="sidebar-page-header">
+    <a href="https://br.ign.com" title="IGN" class="logo-link"><svg class="ign-logo" focusable="false" viewBox="0 0 76 24" aria-hidden="false" role="img"><title>IGN Logo</title><path class="dpad" fill="currentColor" stroke="none" d="M5.38 7.65a7.85 7.85 0 0 1 2.26-2.26c.13-1.18.31-2.26.52-3.21a10.605 10.605 0 0 0-6 6c.95-.22 2.03-.39 3.21-.52M16.34 5.36v.02c.9.59 1.67 1.37 2.27 2.27 1.18.13 2.26.31 3.21.52a10.627 10.627 0 0 0-6.02-6.01c.22.95.4 2.02.54 3.2M7.64 18.62c-.9-.59-1.67-1.37-2.27-2.27h-.03c-1.19-.14-2.26-.32-3.19-.54 1.07 2.75 3.26 4.95 6.01 6.02-.22-.95-.39-2.03-.52-3.21M18.64 16.35h-.03c-.59.9-1.37 1.67-2.27 2.27v.03c-.14 1.17-.32 2.25-.54 3.19a10.59 10.59 0 0 0 6.03-6.03c-.94.22-2 .4-3.19.54M10.04 0h3.9c.85 1.85 1.2 4.59 1.3 5.52.04.22.06.43.06.63L12 9.11 8.7 6.15c0-.17.02-.35.05-.55.1-.95.43-3.75 1.29-5.61M8.7 17.83c0 .17.02.35.05.55.1.95.43 3.75 1.29 5.61h3.9c.85-1.84 1.2-4.59 1.3-5.52.04-.22.06-.43.06-.64L12 14.87l-3.3 2.96ZM6.16 8.68c-.17 0-.35.02-.55.05-.95.12-3.75.45-5.61 1.31v3.9c1.84.85 4.59 1.19 5.52 1.3.22.04.43.06.64.06L9.11 12 6.16 8.7ZM24 10.02c-1.86-.86-4.66-1.19-5.61-1.29-.2-.03-.38-.05-.55-.05l-2.96 3.3 2.96 3.3c.2 0 .41-.02.64-.06.93-.11 3.68-.45 5.52-1.3v-3.9Z"></path><path class="ign-path" fill="currentColor" stroke="none" d="M42.83 13.9V10h10.45c1.06 0 1.93.86 1.93 1.92v4.63c0 2.38-1.91 4.36-4.33 4.36h-6.69c-4.96 0-8.97-4-8.97-8.94s4.04-8.95 8.98-8.95h10.36v4.11H44.2c-2.67 0-4.86 2.17-4.86 4.84s2.16 4.83 4.86 4.83h6.91v-2.91h-8.27ZM33.86 3h-4.07v16.02c0 1.05.86 1.91 1.91 1.91h2.15V3M74.37 3.01h-2.18v13.81s0 .08-.03.11a.29.29 0 0 1-.24.14c-.09 0-.16-.04-.25-.15L64.83 4.93a4.347 4.347 0 0 0-3.72-2.11h-.07c-2.39 0-4.32 1.93-4.32 4.32v11.88c0 1.05.86 1.91 1.91 1.91h2.17V7.14s.02-.09.04-.13a.29.29 0 0 1 .24-.14c.09 0 .18.03.24.14l6.88 12.07c.76 1.27 2.12 2.05 3.69 2.05h.07c2.39 0 4.32-1.93 4.32-4.32V4.92c0-1.05-.85-1.91-1.91-1.91"></path></svg></a>
+    <a id="current-user" href="https://www.ign.com/sign-in?redirect=http%3A//br.ign.com/master-lemon/147918/review/master-lemon-the-quest-for-iceland-e-emocionante-e-divertido-na-medida-certa" target="_top" rel="nofollow"><svg class="ign-icon icon-profile" focusable="false" viewBox="0 0 32 32" aria-hidden="true" role="presentation" fill="none" stroke-width="2"><g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M31 16a15 15 0 1 1-30 0 15 15 0 0 1 30 0Z"></path><path d="M10 29v-3.5a6 6 0 0 1 6-6v0a6 6 0 0 1 6 6V29"></path><path clip-rule="evenodd" d="M16 17a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"></path></g></svg></a>
+  </div>
+</header>
+  
+  
+  
+
+
+<div class="zad billboard" data-zadtype="billboard" data-suffix="billboard/Site" data-prebid="{&quot;rubicon&quot;: {&quot;accountId&quot;: &quot;13624&quot;, &quot;siteId&quot;: &quot;60722&quot;, &quot;zoneId&quot;: &quot;289632&quot;, &quot;position&quot;: &quot;ATF&quot;}, &quot;criteo&quot;: {&quot;networkId&quot;: &quot;6592&quot;}, &quot;smartadserver&quot;: {&quot;networkId&quot;: &quot;3604&quot;, &quot;siteId&quot;: &quot;707807&quot;, &quot;pageId&quot;: &quot;2082243&quot;, &quot;formatId&quot;: &quot;141800&quot;}, &quot;richaudience&quot;: {&quot;pid&quot;: &quot;FuiEce6pWF&quot;, &quot;supplyType&quot;: &quot;site&quot;}, &quot;taboola&quot;: {&quot;tagId&quot;: &quot;Billboard&quot;, &quot;publisherId&quot;: &quot;1897741&quot;}}" data-prebidmobile="{&quot;rubicon&quot;: {&quot;accountId&quot;: &quot;13624&quot;, &quot;siteId&quot;: &quot;60730&quot;, &quot;zoneId&quot;: &quot;289640&quot;, &quot;position&quot;: &quot;ATF&quot;}, &quot;criteo&quot;: {&quot;networkId&quot;: &quot;6592&quot;}, &quot;smartadserver&quot;: {&quot;networkId&quot;: &quot;3604&quot;, &quot;siteId&quot;: &quot;707807&quot;, &quot;pageId&quot;: &quot;2082243&quot;, &quot;formatId&quot;: &quot;141799&quot;}, &quot;teads&quot;: {&quot;pageId&quot;: &quot;175388&quot;, &quot;placementId&quot;: &quot;190371&quot;}, &quot;richaudience&quot;: {&quot;pid&quot;: &quot;TyiMuNUrrP&quot;, &quot;supplyType&quot;: &quot;site&quot;}}" data-rtc_config="{&quot;vendors&quot;: {&quot;prebidrubicon&quot;: {&quot;REQUEST_ID&quot;: &quot;13624-amp-ign-320x100&quot;}}, &quot;urls&quot;: [&quot;https://usr.navdmp.com/usr?acc=55810&amp;wst=0&amp;v=10&quot;], &quot;timeoutMillis&quot;: 500}"></div>
+<div class="wrapper articleBody">
+    <div class="page-content">
+        <div class="object-breadcrumbs">
+            
+                <a title="Master Lemon: The Quest for Iceland" href="https://br.ign.com/master-lemon" class="article-object-link opt-internal">Master Lemon: The Quest for Iceland</a>
+            
+        </div>
+
+        <div class="article-headline">
+            
+                
+                <h1 class="strong">Master Lemon: The Quest for Iceland - Review</h1>
+                
+            
+            
+        </div>
+        <div class="article-sub-headline">
+            <h3 id="id_deck">Neste jogo, as palavras realmente têm poder</h3>
+        </div>
+
+        
+        
+        <div class="article-byline">
+            <section class="article-authors">
+                <div class="author-byline-images"><a href="https://br.ign.com/u/allana-aristides"><img class="roundendimg" src="https://sm.ign.com/t/ign_br/user/a/allana-ari/allana-aristides_sswf.180.png" alt="Allana Aristides"></a></div><div class="author-names"><span class='byname'>Por</span>&nbsp;<span class="reviewer hcard"><a class="url" href="https://br.ign.com/u/allana-aristides">Allana Aristides</a></span>&nbsp;</div>
+            </section>
+            <div class="divider"></div>
+            
+            <div class="article-publish-date">
+                <span>Atualizado: 6 de Novembro de 2025 às 14:47</span>
+            </div>
+            <div class="divider"></div>
+            
+        </div>
+
+        <section class="side-by-side article-content">
+            <article class="article-section article-page">
+                
+                <div id="id_text" itemprop="articleBody">
+                    
+                        
+                         <div class="mobileArticleAds affiliate"><div class="zad affiliate" data-zadtype="affiliate" data-suffix="affiliate/Site"></div></div>
+                        <p style="text-align: justify">A expressão “as palavras têm poder” é constantemente usada — principalmente por brasileiros — para alertar que aquilo que se diz em voz alta pode influenciar a vida de uma pessoa, seja de forma positiva ou negativa. O estúdio Pepita Digital materializou esse pensamento ao criar Master Lemon: The Quest for Iceland, um RPG em pixel art baseado em uma história real.
+
+<p style="text-align: justify">O jogo indie brasileiro tem uma gameplay simples, mas divertida, educativa e com muito a se explorar, que lembra bastante o clássico To the Moon, uma de suas maiores inspirações. A grande aventura do personagem Limão faz com que o jogador se emocione, pense no verdadeiro significado da morte e entenda as diferentes formas de honrar uma memória, não só de pessoas, mas de momentos, sentimentos e palavras.<div class="mobileArticleAds mrec1"><div class="zad halfpage" data-zadtype="halfpage" data-suffix="mrec1/Site" data-prebid="{&quot;rubicon&quot;: {&quot;accountId&quot;: &quot;13624&quot;, &quot;siteId&quot;: &quot;60722&quot;, &quot;zoneId&quot;: &quot;289632&quot;, &quot;position&quot;: &quot;ATF&quot;}, &quot;criteo&quot;: {&quot;networkId&quot;: &quot;6592&quot;}, &quot;smartadserver&quot;: {&quot;networkId&quot;: &quot;3604&quot;, &quot;siteId&quot;: &quot;707807&quot;, &quot;pageId&quot;: &quot;141798&quot;, &quot;formatId&quot;: &quot;98256&quot;}, &quot;teads&quot;: {&quot;pageId&quot;: &quot;175528&quot;, &quot;placementId&quot;: &quot;190512&quot;}, &quot;richaudience&quot;: {&quot;pid&quot;: &quot;dc3N9RTLr2&quot;, &quot;supplyType&quot;: &quot;site&quot;}, &quot;taboola&quot;: {&quot;tagId&quot;: &quot;MREC&quot;, &quot;publisherId&quot;: &quot;1897741&quot;}}" data-prebidmobile="{&quot;rubicon&quot;: {&quot;accountId&quot;: &quot;13624&quot;, &quot;siteId&quot;: &quot;60730&quot;, &quot;zoneId&quot;: &quot;289640&quot;, &quot;position&quot;: &quot;ATF&quot;}, &quot;criteo&quot;: {&quot;networkId&quot;: &quot;6592&quot;}, &quot;smartadserver&quot;: {&quot;networkId&quot;: &quot;3604&quot;, &quot;siteId&quot;: &quot;707807&quot;, &quot;pageId&quot;: &quot;2082243&quot;, &quot;formatId&quot;: &quot;141798&quot;}, &quot;teads&quot;: {&quot;pageId&quot;: &quot;175529&quot;, &quot;placementId&quot;: &quot;190513&quot;}, &quot;richaudience&quot;: {&quot;pid&quot;: &quot;SgAe4mtibj&quot;, &quot;supplyType&quot;: &quot;site&quot;}}" data-rtc_config="{&quot;vendors&quot;: {&quot;prebidrubicon&quot;: {&quot;REQUEST_ID&quot;: &quot;13624-amp-ign-300x250&quot;}}, &quot;urls&quot;: [&quot;https://usr.navdmp.com/usr?acc=55810&amp;wst=0&amp;v=10&quot;], &quot;timeoutMillis&quot;: 500}"></div></div>
+
+<div class="vplayer"><iframe allowautoplay="" allowfullscreen="true" data-src="https://www.youtube.com/embed/2nkpX8opDbs" framborder="0" scrolling="no"></iframe></div>
+
+<h2 style="text-align: justify">Uma luta contra a escuridão</h2>
+<p style="text-align: justify">Logo de início, o jogador é apresentado ao personagem Limão, um jovem brasileiro, poliglota e apaixonado por línguas desde criança, que viajou pelo mundo e realizou o seu maior sonho: morar na Islândia. Para comemorar, decidiu explorar a Europa Ocidental e ver a aurora boreal de perto, realizando mais um grande sonho. No entanto, sua vida é interrompida por um grave acidente de carro. Não se preocupe, não há spoiler nesta review, e tudo isso é mostrado logo na introdução do game.
+
+<p style="text-align: justify">Por ser uma história real e uma homenagem ao amigo de um dos criadores, Master Lemon: The Quest for Iceland já deixa explícito o que está por vir e o que não pode ser evitado. Mesmo assim, traz uma abordagem única, com muitos momentos que permitem o amadurecimento e incita reflexões sobre relacionamentos e vivências, que podem ser eternizados de diferentes formas, inclusive em um jogo feito em pixel art.
+
+<p style="text-align: justify">Na trama principal, acompanhamos Limão em mais uma viagem, essa que não foi planejada como todas as outras, mas que é forçada em seu caminho de forma repentina, que faz parecer um sonho do qual não se pode acordar. Assim, somos levados a um mundo misterioso conhecido como Ilhas Bashir, onde residentes enfrentam uma terrível praga espalhada por uma escuridão que afeta a memória de todos e faz com que se esqueçam de palavras e relíquias de suas culturas. A partir disso, já temos uma grande ideia da missão principal, e o personagem coloca em prática uma habilidade única, até então desconhecida, que é iluminar os caminhos por onde passa, literalmente.
+
+<figure itemscope="" itemtype="https://schema.org/ImageObject"><img alt="" class="image screenshot" data-position="0" data-src="https://sm.ign.com/ign_br/screenshot/default/captura-de-tela-2025-11-06-143726_8tg2.png" data-srcset="https://sm.ign.com/t/ign_br/screenshot/default/captura-de-tela-2025-11-06-143726_8tg2.960.png, https://sm.ign.com/t/ign_br/screenshot/default/captura-de-tela-2025-11-06-143726_8tg2.1920.png 2x, https://sm.ign.com/t/ign_br/screenshot/default/captura-de-tela-2025-11-06-143726_8tg2.3840.png 4x" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E"/>
+<figcaption itemprop="description">Foi bem divertido acabar com a escuridão e liberar novos lugares para explorar</figcaption>
+<link href="https://sm.ign.com/ign_br/screenshot/default/captura-de-tela-2025-11-06-143726_8tg2.png" itemprop="url"/></figure>
+
+<p>Honestamente, uma das partes mais divertidas da gameplay é fazer com que essa escuridão vá se esvaindo aos poucos com a luz e libertado novos locais pelo mapa, introduzindo novos personagens e novas side quests. Dessa forma, mesmo com um certo limite de mapas disponíveis, há sempre uma nova missão a espera para ser revelada.</p>
+
+<h2 style="text-align: justify">Novas palavras e diferentes culturas para explorar</h2>
+<p style="text-align: justify">Master Lemon: The Quest for Iceland traz puzzles fáceis de resolver, mas que combinam exatamente com o que o game propõe: uma campanha curta, tranquila, de muito aprendizado e reflexão. Além disso, o jogo apresenta uma trilha sonora bem calma e emocionante; e a direção de arte segue pelo mesmo caminho, com detalhes impressionantes e cenários encantadores em arte 2D. É inevitável associar esses elementos a To the Moon, que se tornou um clássico pela narrativa que enche os olhos de lágrimas, mas que se desdobra lentamente e conquista por meio de um ambiente cuidadosamente preparado.
+
+<figure itemscope="" itemtype="https://schema.org/ImageObject"><img alt="" class="image screenshot" data-position="1" data-src="https://sm.ign.com/ign_br/screenshot/default/captura-de-tela-2025-11-06-143523_13jq.png" data-srcset="https://sm.ign.com/t/ign_br/screenshot/default/captura-de-tela-2025-11-06-143523_13jq.960.png, https://sm.ign.com/t/ign_br/screenshot/default/captura-de-tela-2025-11-06-143523_13jq.1920.png 2x, https://sm.ign.com/t/ign_br/screenshot/default/captura-de-tela-2025-11-06-143523_13jq.3840.png 4x" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E"/>
+<figcaption itemprop="description">Reprodução</figcaption>
+<link href="https://sm.ign.com/ign_br/screenshot/default/captura-de-tela-2025-11-06-143523_13jq.png" itemprop="url"/></figure>
+
+<p>A todo momento, o jogador é apresentado a novas palavras de diferentes idiomas — tantos que eu até me perdi na conta —, conforme explora o mundo e se depara com curiosidades interessantes. Muitas palavras que são, de certa forma, intraduzíveis, estão presentes no jogo, como “saudade” e “tsundoku”, que são algumas das quais eu já conhecia. Cada palavra e expressão “aprendida” vem com a sua própria pronúncia e definição, sendo um jeito interessante de ter contato com outras línguas.</p>
+
+<p style="text-align: justify">Não se limitando a apenas idiomas, diferentes culturas também são muito bem exploradas. O jogo conta com elementos e tradições sendo apresentados tanto na missão principal quanto nas side quests, cada uma contando uma história interessante.
+
+<p style="text-align: justify">A cultura brasileira tem grande destaque, mostrando-se presente ao longo do game e trazendo uma sensação de orgulho ao ver o próprio país tão bem representado. Mas isso não quer dizer que outros países tenham sua cultura apagada, pois Master Lemon traz muitas oportunidades para conhecer todas e faz questão de mostrar o que elas têm de melhor para oferecer ao mundo. É como se estivéssemos viajando por vários países e Limão compartilhasse conosco aquilo que viu e experimentou ao longo de uma vida cheia de emoção e momentos únicos.
+
+<p style="text-align: justify">E nada é por acaso, pois o conhecimento adquirido no jogo tem um propósito específico, ou seja, se transforma em recursos necessários para lembrar os residentes daquilo que esqueceram, ganhar força para mover coisas e até mesmo para nos permitir se teletransportar entre mapas. Então, com isso, o jogador aprende e há progressão dentro de Master Lemon. As palavras mostram o caminho e têm o poder de ajudar Limão nesta aventura.
+
+<figure itemscope="" itemtype="https://schema.org/ImageObject"><img alt="" class="image screenshot" data-position="2" data-src="https://sm.ign.com/ign_br/screenshot/default/captura-de-tela-2025-11-06-143940_rhjz.png" data-srcset="https://sm.ign.com/t/ign_br/screenshot/default/captura-de-tela-2025-11-06-143940_rhjz.960.png, https://sm.ign.com/t/ign_br/screenshot/default/captura-de-tela-2025-11-06-143940_rhjz.1920.png 2x, https://sm.ign.com/t/ign_br/screenshot/default/captura-de-tela-2025-11-06-143940_rhjz.3840.png 4x" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E"/><link href="https://sm.ign.com/ign_br/screenshot/default/captura-de-tela-2025-11-06-143940_rhjz.png" itemprop="url"/></figure>
+
+<h2 style="text-align: justify">Habilidades limitadas e um pouco confusas, mas que não afetam a jogabilidade</h2>
+<p style="text-align: justify">Isso me leva a comentar sobre algumas mecânicas que são apresentadas logo no início do jogo: “Gambiarra”, que é exatamente o que você está pensando, aquele jeitinho brasileiro de resolver problemas utilizando o que se tem em mão, e “Desmantelar”, que é basicamente o contrário da anterior, e permite que itens sejam separados e estejam prontos para o uso, cada um com o seu propósito.
+
+<p style="text-align: justify">A Gambiarra é usada durante toda a gameplay, e, à primeira vista, é bastante intuitiva, sem necessidade de muitas explicações, servindo de grande ajuda durante as missões. No entanto, em algumas side quests, itens aleatórios causaram um pouco de confusão ao serem colocados juntos para criar um novo item inesperado. Não foi um problema recorrente, mas pode exigir um tempo — e vários chutes — para descobrir o que é preciso juntar de mais aleatório para criar o que foi exigido. Mas, em geral, não tive grandes dificuldades, e como falei anteriormente, a maioria dos casos são resolvidos de forma bem intuitiva.
+
+<p style="text-align: justify">A habilidade de Desmantelar foi útil no começo, já no momento em que foi introduzida, mas muito pouco explorada e praticamente sem utilidade pelo restante do jogo. É notável que poderia haver um equilíbrio entre ambas, com diversos momentos que possibilitavam uma divisão mais balanceada entre as duas principais habilidades do jogo.
+
+<h2 style="text-align: justify">Campanha breve, emoções infinitas</h2>
+<p style="text-align: justify">É possível zerar o jogo em poucas horas, mas coletar relíquias ao redor do mapa faz com que o jogador se perca no tempo procurando todas as 124 disponíveis. Não é uma função obrigatória ou que vá afetar a missão principal, mas chegar cada vez mais perto de coletar todas é extremamente satisfatório, além do fato de que cada relíquia traz informações interessantes, tornando a exploração ainda mais prazerosa.
+
+<figure itemscope="" itemtype="https://schema.org/ImageObject">
+<figure class="caption screenshot image" itemscope="" itemtype="https://schema.org/ImageObject"><img alt="" data-position="3" data-src="https://sm.ign.com/ign_br/screenshot/default/captura-de-tela-2025-11-06-142729_x8u2.png" data-srcset="https://sm.ign.com/t/ign_br/screenshot/default/captura-de-tela-2025-11-06-142729_x8u2.960.png, https://sm.ign.com/t/ign_br/screenshot/default/captura-de-tela-2025-11-06-142729_x8u2.1920.png 2x, https://sm.ign.com/t/ign_br/screenshot/default/captura-de-tela-2025-11-06-142729_x8u2.3840.png 4x" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E"/>
+<figcaption>A amizade que tornou Master Lemon possível</figcaption>
+<link href="https://sm.ign.com/ign_br/screenshot/default/captura-de-tela-2025-11-06-142729_x8u2.png" itemprop="url"/></figure>
+</figure>
+
+<p>Também é fácil passar horas ininterruptas mergulhado em uma narrativa que desperta diferentes emoções e traz muitos momentos de reflexão. Master Lemon mantém um ritmo calmo, sem prejudicar a imersão e sem fazer com que o jogador perca o interesse, muito pelo contrário, pois o jogo nos prende ainda mais nesse mundo que tem muito para contar.</p>
+
+<p style="text-align: justify">Saber que certas cenas aconteceram na vida real fez com que eu sentisse que fazia parte — nem que fosse por um instante — daquele momento tão importante para quem realmente estava ali presente. É uma forma emocionante de manter viva a memória daqueles que são tão queridos por todos que os rodeavam. Jogar como Limão faz com que o jogador sinta a força desse amor, que ultrapassa o tempo, espaço e a linha tênue entre a vida e a morte. Faz entender a verdadeira definição de saudade.
+                        
+                    
+                </div>
+                
+                
+                
+                
+    
+      
+      
+
+      <h3>O Veredicto</h3><p id="id_keyword__54454__text">Com uma gameplay simples, mas divertida e intuitiva, Master Lemon: The Quest for Iceland é um RPG em pixel art que cumpre aquilo que promete, com vários momentos emocionantes que nos levam a refletir e muitos lugares para explorar. Além de ser uma homenagem emocionante, o título mostra que jogos indies brasileiros merecem cada vez mais reconhecimento dentro da indústria.</p>
+
+    
+
+                
+                
+                <div class="zad native" data-zadtype="native" data-suffix="intext/Site" data-prebid="{&quot;rubicon&quot;: {&quot;siteId&quot;: &quot;87944&quot;, &quot;zoneId&quot;: &quot;415678&quot;}, &quot;criteo&quot;: {&quot;networkId&quot;: &quot;6592&quot;}, &quot;smartadserver&quot;: {&quot;siteId&quot;: &quot;707807&quot;, &quot;pageId&quot;: &quot;2082243&quot;, &quot;formatId&quot;: &quot;98259&quot;}, &quot;customMediaTypes&quot;: {&quot;mediaTypes&quot;: {&quot;video&quot;: {&quot;context&quot;: &quot;outstream&quot;, &quot;playerSize&quot;: [480, 360], &quot;mimes&quot;: [&quot;video/mp4&quot;, &quot;video/x-ms-wmv&quot;], &quot;protocols&quot;: [2, 3, 5, 6, 7, 8], &quot;api&quot;: [2], &quot;maxduration&quot;: 60, &quot;linearity&quot;: 2, &quot;placement&quot;: 3, &quot;skip&quot;: 1, &quot;playbackmethod&quot;: [2]}, &quot;banner&quot;: {&quot;sizes&quot;: [300, 250]}}}}" data-prebidmobile="{&quot;rubicon&quot;: {&quot;siteId&quot;: &quot;87944&quot;, &quot;zoneId&quot;: &quot;415678&quot;}, &quot;criteo&quot;: {&quot;networkId&quot;: &quot;6592&quot;}, &quot;smartadserver&quot;: {&quot;siteId&quot;: &quot;707807&quot;, &quot;pageId&quot;: &quot;2082243&quot;, &quot;formatId&quot;: &quot;141801&quot;}, &quot;customMediaTypes&quot;: {&quot;mediaTypes&quot;: {&quot;video&quot;: {&quot;context&quot;: &quot;outstream&quot;, &quot;playerSize&quot;: [480, 360], &quot;mimes&quot;: [&quot;video/mp4&quot;, &quot;video/x-ms-wmv&quot;], &quot;protocols&quot;: [2, 3, 5, 6, 7, 8], &quot;api&quot;: [2], &quot;maxduration&quot;: 60, &quot;linearity&quot;: 2, &quot;placement&quot;: 3, &quot;skip&quot;: 1, &quot;playbackmethod&quot;: [2]}, &quot;banner&quot;: {&quot;sizes&quot;: [300, 250]}}}}" data-aps="{&quot;mediaType&quot;: &quot;multi-format&quot;, &quot;multiFormatProperties&quot;: {&quot;display&quot;: {&quot;sizes&quot;: [[300, 250]]}, &quot;video&quot;: {&quot;sizes&quot;: [[300, 250]]}}}"></div>
+            </article>
+
+            <div class="right-rail">
+                
+                
+                <div class="ad-wrapper pgQSsticky">
+                    <div class="desktopArticleAds mrec1"><div class="zad halfpage" data-zadtype="halfpage" data-suffix="mrec1/Site" data-prebid="{&quot;rubicon&quot;: {&quot;accountId&quot;: &quot;13624&quot;, &quot;siteId&quot;: &quot;60722&quot;, &quot;zoneId&quot;: &quot;289632&quot;, &quot;position&quot;: &quot;ATF&quot;}, &quot;criteo&quot;: {&quot;networkId&quot;: &quot;6592&quot;}, &quot;smartadserver&quot;: {&quot;networkId&quot;: &quot;3604&quot;, &quot;siteId&quot;: &quot;707807&quot;, &quot;pageId&quot;: &quot;141798&quot;, &quot;formatId&quot;: &quot;98256&quot;}, &quot;teads&quot;: {&quot;pageId&quot;: &quot;175528&quot;, &quot;placementId&quot;: &quot;190512&quot;}, &quot;richaudience&quot;: {&quot;pid&quot;: &quot;dc3N9RTLr2&quot;, &quot;supplyType&quot;: &quot;site&quot;}, &quot;taboola&quot;: {&quot;tagId&quot;: &quot;MREC&quot;, &quot;publisherId&quot;: &quot;1897741&quot;}}" data-prebidmobile="{&quot;rubicon&quot;: {&quot;accountId&quot;: &quot;13624&quot;, &quot;siteId&quot;: &quot;60730&quot;, &quot;zoneId&quot;: &quot;289640&quot;, &quot;position&quot;: &quot;ATF&quot;}, &quot;criteo&quot;: {&quot;networkId&quot;: &quot;6592&quot;}, &quot;smartadserver&quot;: {&quot;networkId&quot;: &quot;3604&quot;, &quot;siteId&quot;: &quot;707807&quot;, &quot;pageId&quot;: &quot;2082243&quot;, &quot;formatId&quot;: &quot;141798&quot;}, &quot;teads&quot;: {&quot;pageId&quot;: &quot;175529&quot;, &quot;placementId&quot;: &quot;190513&quot;}, &quot;richaudience&quot;: {&quot;pid&quot;: &quot;SgAe4mtibj&quot;, &quot;supplyType&quot;: &quot;site&quot;}}" data-rtc_config="{&quot;vendors&quot;: {&quot;prebidrubicon&quot;: {&quot;REQUEST_ID&quot;: &quot;13624-amp-ign-300x250&quot;}}, &quot;urls&quot;: [&quot;https://usr.navdmp.com/usr?acc=55810&amp;wst=0&amp;v=10&quot;], &quot;timeoutMillis&quot;: 500}"></div></div>
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+
+    
+    
+        <div class="primary-object">
+            <div class="page-content ign-recommends-headline">Neste Artigo</div>
+            <section class="object-summary embed">
+                <div class="object-info page-content">
+                    <a title="Master Lemon: The Quest for Iceland" class="object-thumbnail mini" href="https://br.ign.com/master-lemon">
+                        <img  class="img-obj" src="https://sm.ign.com/t/ign_br/game/m/master-lem/master-lemon_25yr.128.png" srcset="https://sm.ign.com/t/ign_br/game/m/master-lem/master-lemon_25yr.128.png, https://sm.ign.com/t/ign_br/game/m/master-lem/master-lemon_25yr.256.png 2x, https://sm.ign.com/t/ign_br/game/m/master-lem/master-lemon_25yr.512.png 4x"" title="Master Lemon: The Quest for Iceland">
+                    </a>
+                    <div class="object-details">
+                        <div class="meta">
+                            <h2 class="object-title"><a title="Master Lemon: The Quest for Iceland" class="evidence opt-internal" href="https://br.ign.com/master-lemon">Master Lemon: The Quest for Iceland</a></h2>
+                            <div class="object-subinfo">
+                                
+                                
+                            </div>
+                        </div>
+                        <div class="platformdivider">
+                            
+                                <ul class="keyword-platforms">
+                                    
+                                </ul>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    
+    
+    
+
+
+    
+        <div class="article-review">
+            <div class='page-content'>
+                <h3 class="title5">Master Lemon: The Quest for Iceland é emocionante e divertido na medida certa</h3>
+                <div class="article-review-content">
+                    <div class="article-details">
+                <div class="review">
+                        <figure class="side-wrapper side-wrapper hexagon-wrapper"><div class="side-wrapper side-wrapper hexagon"><span class="side-wrapper side-wrapper hexagon-content-wrapper"><span class="side-wrapper side-wrapper hexagon-content"><div>8.5</div><svg class="ign-icon icon-logo" focusable="false" viewBox="0 0 76 24" aria-hidden="false" role="img"><title>IGN Logo</title><path class="dpad" fill="currentColor" stroke="none" d="M5.38 7.65a7.85 7.85 0 0 1 2.26-2.26c.13-1.18.31-2.26.52-3.21a10.605 10.605 0 0 0-6 6c.95-.22 2.03-.39 3.21-.52M16.34 5.36v.02c.9.59 1.67 1.37 2.27 2.27 1.18.13 2.26.31 3.21.52a10.627 10.627 0 0 0-6.02-6.01c.22.95.4 2.02.54 3.2M7.64 18.62c-.9-.59-1.67-1.37-2.27-2.27h-.03c-1.19-.14-2.26-.32-3.19-.54 1.07 2.75 3.26 4.95 6.01 6.02-.22-.95-.39-2.03-.52-3.21M18.64 16.35h-.03c-.59.9-1.37 1.67-2.27 2.27v.03c-.14 1.17-.32 2.25-.54 3.19a10.59 10.59 0 0 0 6.03-6.03c-.94.22-2 .4-3.19.54M10.04 0h3.9c.85 1.85 1.2 4.59 1.3 5.52.04.22.06.43.06.63L12 9.11 8.7 6.15c0-.17.02-.35.05-.55.1-.95.43-3.75 1.29-5.61M8.7 17.83c0 .17.02.35.05.55.1.95.43 3.75 1.29 5.61h3.9c.85-1.84 1.2-4.59 1.3-5.52.04-.22.06-.43.06-.64L12 14.87l-3.3 2.96ZM6.16 8.68c-.17 0-.35.02-.55.05-.95.12-3.75.45-5.61 1.31v3.9c1.84.85 4.59 1.19 5.52 1.3.22.04.43.06.64.06L9.11 12 6.16 8.7ZM24 10.02c-1.86-.86-4.66-1.19-5.61-1.29-.2-.03-.38-.05-.55-.05l-2.96 3.3 2.96 3.3c.2 0 .41-.02.64-.06.93-.11 3.68-.45 5.52-1.3v-3.9Z"></path><path class="ign-path" fill="currentColor" stroke="none" d="M42.83 13.9V10h10.45c1.06 0 1.93.86 1.93 1.92v4.63c0 2.38-1.91 4.36-4.33 4.36h-6.69c-4.96 0-8.97-4-8.97-8.94s4.04-8.95 8.98-8.95h10.36v4.11H44.2c-2.67 0-4.86 2.17-4.86 4.84s2.16 4.83 4.86 4.83h6.91v-2.91h-8.27ZM33.86 3h-4.07v16.02c0 1.05.86 1.91 1.91 1.91h2.15V3M74.37 3.01h-2.18v13.81s0 .08-.03.11a.29.29 0 0 1-.24.14c-.09 0-.16-.04-.25-.15L64.83 4.93a4.347 4.347 0 0 0-3.72-2.11h-.07c-2.39 0-4.32 1.93-4.32 4.32v11.88c0 1.05.86 1.91 1.91 1.91h2.17V7.14s.02-.09.04-.13a.29.29 0 0 1 .24-.14c.09 0 .18.03.24.14l6.88 12.07c.76 1.27 2.12 2.05 3.69 2.05h.07c2.39 0 4.32-1.93 4.32-4.32V4.92c0-1.05-.85-1.91-1.91-1.91"></path></svg></span></span></div></figure>
+                        
+                    </div>
+                    <div class="details">
+                        <div class="score-text">Ótimo</div>
+                        <div class="blurb" id="id_keyword__54454__bottomline">Com uma gameplay simples, mas divertida e intuitiva, Master Lemon: The Quest for Iceland é um RPG em pixel art que cumpre aquilo que promete, com vários momentos emocionantes que nos levam a refletir e muitos lugares para explorar. Além de ser uma homenagem emocionante, o título mostra que jogos indies brasileiros merecem cada vez mais reconhecimento dentro da indústria.</div>
+                        <section class="article-authors">
+                                <div class="author-byline-images"><a href="https://br.ign.com/u/allana-aristides"><img class="roundendimg" src="https://sm.ign.com/t/ign_br/user/a/allana-ari/allana-aristides_sswf.180.png" alt="Allana Aristides"></a></div><div class="author-names"><span class='byname'>Por</span>&nbsp;<span class="reviewer hcard"><a class="url" href="https://br.ign.com/u/allana-aristides">Allana Aristides</a></span>&nbsp;</div>
+                        </section>
+                    </div>
+                    </div>
+                    <div class="image-container">
+                        <div class="image-wrapper">
+                            <div class="aspect-ratio-container aspect-ratio-16-9">
+                                <div class="aspect-ratio-child">
+                                <img src="https://sm.ign.com/t/ign_br/screenshot/default/blob_jjaq.1024.png" alt="Master Lemon: The Quest for Iceland" class="progressive-image expand rounded">
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="article-review">
+        <div class="page-content" id="bottom-list-reviews">
+            <div class="article-author">
+                <div class="author-byline-images">
+                    <a href="https://br.ign.com/u/allana-aristides">
+                        <img class="roundendimg" src="https://sm.ign.com/t/ign_br/user/a/allana-ari/allana-aristides_sswf.180.png" alt="Allana Aristides">
+                    </a>
+                </div>
+                <div class="author-name">
+                    <span class="by-reviewer">More Reviews by</span>
+                    <span class="reviewer hcard">
+                        <a class="url" href="https://br.ign.com/u/allana-aristides">Allana Aristides</a>
+                    </span>
+                </div>
+            </div>
+            <div class="reviews-author">
+            
+            
+            
+            
+            <div class="review-author">
+                <div class="review-badge">
+                   <a href="https://br.ign.com/little-nightmares-iii/147068/review/little-nightmares-iii-busca-preservar-essencia-da-franquia-mas-nao-alcanca-impacto-dos-antecessores"><figure class="side-wrapper side-wrapper hexagon-wrapper"><div class="side-wrapper side-wrapper hexagon"><span class="side-wrapper side-wrapper hexagon-content-wrapper"><span class="side-wrapper side-wrapper hexagon-content">6.5</span></span></div></figure></a>
+                </div>
+                <div class="review-details">
+                    <a href="https://br.ign.com/little-nightmares-iii/147068/review/little-nightmares-iii-busca-preservar-essencia-da-franquia-mas-nao-alcanca-impacto-dos-antecessores">Little Nightmares III - Review</a>
+                </div>
+            </div>
+                
+                <div class="vertical"></div>
+                
+            
+            
+            
+            <div class="review-author">
+                <div class="review-badge">
+                   <a href="https://br.ign.com/the-wandering-village/144659/review/the-wandering-village-encanta-com-visuais-de-tirar-o-folego-e-traz-o-equilibrio-perfeito-entre-calma"><figure class="side-wrapper side-wrapper hexagon-wrapper"><div class="side-wrapper side-wrapper hexagon"><span class="side-wrapper side-wrapper hexagon-content-wrapper"><span class="side-wrapper side-wrapper hexagon-content">9</span></span></div></figure></a>
+                </div>
+                <div class="review-details">
+                    <a href="https://br.ign.com/the-wandering-village/144659/review/the-wandering-village-encanta-com-visuais-de-tirar-o-folego-e-traz-o-equilibrio-perfeito-entre-calma">The Wandering Village - Review</a>
+                </div>
+            </div>
+                
+                <div class="vertical"></div>
+                
+            
+            
+            
+            <div class="review-author">
+                <div class="review-badge">
+                   <a href="https://br.ign.com/uma-sexta-feira-mais-louca-ainda/144088/review/embora-dispensavel-uma-sexta-feira-mais-louca-ainda-diverte-e-prende-o-espectador-pela-nostalgia-rev"><figure class="side-wrapper side-wrapper hexagon-wrapper"><div class="side-wrapper side-wrapper hexagon"><span class="side-wrapper side-wrapper hexagon-content-wrapper"><span class="side-wrapper side-wrapper hexagon-content">7</span></span></div></figure></a>
+                </div>
+                <div class="review-details">
+                    <a href="https://br.ign.com/uma-sexta-feira-mais-louca-ainda/144088/review/embora-dispensavel-uma-sexta-feira-mais-louca-ainda-diverte-e-prende-o-espectador-pela-nostalgia-rev">Uma Sexta-Feira Mais Louca Ainda - Review</a>
+                </div>
+            </div>
+                
+            
+            
+            </div>
+        </div>
+        </div>
+        
+    
+
+
+
+    <div class="page-content">
+        <div class="three-column">
+            <div class="bottom-content">
+                <div id="article_video_bottom">
+                    
+                </div>
+                <div id="taboola-below-article-thumbnails" style="overflow: hidden; padding: 0px 10px;"></div><script>
+ICMS.cmd.push(function() { if (!document.getElementById('taboola-below-article-thumbnails')) { return; }
+window._taboola = window._taboola || []; _taboola.push({article:'auto'}); ICMS.deferredJSLoader.push('https://cdn.taboola.com/libtrc/webediabr-ign/loader.js');
+window._taboola.push({ mode: 'thumbnails-a', container: 'taboola-below-article-thumbnails', placement: 'Below Article Thumbnails', target_type: 'mix' });
+window._taboola.push({flush:true});});</script>
+                <div class="block"></div>
+                <div class="disqus" id="disqus">
+  <h5 class="blocktitle">Comentários</h5>
+  <div id="disqus_thread"></div>
+  
+  <script type="text/javascript">
+    function disqus_config() {
+        var getCookieValue = function(a, b) { b = document.cookie.match('(^|;)\\s*' + a + '\\s*=\\s*([^;]+)'); return b ? b.pop() : ''; }
+        this.language = "pt";
+        this.sso = {
+              name: "IGN",
+              url:  "https://www.ign.com/sign-in?mobile_fallback=1&redirect="+encodeURIComponent("https://br.ign.com/myign.iframe"),
+              logout:  "/myignlogout.sync?redirect="+encodeURIComponent(window.location.href.toString().split("?")[0]),
+              button: "https://oystatic.ignimgs.com/src/core/img/widgets/disqus/ign-sso-button.png"
+        };
+        this.page.remote_auth_s3 = getCookieValue("dsqSSO");
+        if (!this.page.remote_auth_s3) { this.page.remote_auth_s3 = "b'KHt9KQ==' 72743de5f7e14665c556e671adc8b29b783b66e7 1762881600"; }
+        this.page.api_key = "o3Y4oGq4ug3ODe9L3WLewWxe4vEbpJpVUnai4E473qdFiUA3USX6te17hMPACady";
+        /* this.callbacks.onNewComment.push(function (comment) { ga_comment(comment); }); */
+    }
+    var disqus_shortname = 'ign-br';
+    var disqus_identifier = 'article_147918';
+    var disqus_url = 'https://br.ign.com/master-lemon/147918/review/master-lemon-the-quest-for-iceland-e-emocionante-e-divertido-na-medida-certa';
+    var disqus_title = 'Master Lemon: The Quest for Iceland é emocionante e divertido na medida certa';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+(function(){
+  var _loadDisqus = function() {
+    if (!disqus_shortname){return}
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  };
+  if (!window.IntersectionObserver) { return _loadDisqus(); }
+  var lazyDsqObserver = new IntersectionObserver(function(entries, observer) {
+    var entry = entries[0];
+    if (entry.isIntersecting || entry.isVisible) { _loadDisqus(); lazyDsqObserver.unobserve(entry.target); }
+  },{ rootMargin: '500px', threshold: 0 });
+  lazyDsqObserver.observe(document.getElementById('disqus_thread'));
+})();
+  </script>
+  
+  <noscript>Por favor ative o JavaScript para ler os comentários</noscript>
+</div>
+
+            </div>
+            <div class="right-rail">
+                <div class="ad-wrapper pgQSsticky">
+                    <div class="zad halfpage" data-zadtype="halfpage" data-suffix="mrec2/Site" data-prebid="{&quot;rubicon&quot;: {&quot;accountId&quot;: &quot;13624&quot;, &quot;siteId&quot;: &quot;60722&quot;, &quot;zoneId&quot;: &quot;289632&quot;, &quot;position&quot;: &quot;BTF&quot;}, &quot;criteo&quot;: {&quot;networkId&quot;: &quot;6592&quot;}, &quot;smartadserver&quot;: {&quot;networkId&quot;: &quot;3604&quot;, &quot;siteId&quot;: &quot;707807&quot;, &quot;pageId&quot;: &quot;2082243&quot;, &quot;formatId&quot;: &quot;141798&quot;}, &quot;taboola&quot;: {&quot;tagId&quot;: &quot;MREC&quot;, &quot;publisherId&quot;: &quot;1897741&quot;}}" data-prebidmobile="{&quot;rubicon&quot;: {&quot;accountId&quot;: &quot;13624&quot;, &quot;siteId&quot;: &quot;60730&quot;, &quot;zoneId&quot;: &quot;289640&quot;, &quot;position&quot;: &quot;BTF&quot;}, &quot;criteo&quot;: {&quot;networkId&quot;: &quot;6592&quot;}, &quot;smartadserver&quot;: {&quot;networkId&quot;: &quot;3604&quot;, &quot;siteId&quot;: &quot;707807&quot;, &quot;pageId&quot;: &quot;2082243&quot;, &quot;formatId&quot;: &quot;141798&quot;}}" data-rtc_config="{&quot;vendors&quot;: {&quot;prebidrubicon&quot;: {&quot;REQUEST_ID&quot;: &quot;13624-amp-ign-300x250&quot;}}, &quot;urls&quot;: [&quot;https://usr.navdmp.com/usr?acc=55810&amp;wst=0&amp;v=10&quot;], &quot;timeoutMillis&quot;: 500}"></div>
+                </div>
+                <div class="ad-wrapper pgQSsticky">
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  <div id="sidebar"></div>
+  
+
+  <div class="zad footer" data-zadtype="footer" data-suffix="footer/Site" data-sticky="true" data-prebid="{&quot;rubicon&quot;: {&quot;accountId&quot;: &quot;13624&quot;, &quot;siteId&quot;: &quot;60722&quot;, &quot;zoneId&quot;: &quot;289632&quot;, &quot;position&quot;: &quot;BTF&quot;}, &quot;criteo&quot;: {&quot;networkId&quot;: &quot;6592&quot;}}" data-prebidmobile="{&quot;rubicon&quot;: {&quot;accountId&quot;: &quot;13624&quot;, &quot;siteId&quot;: &quot;60730&quot;, &quot;zoneId&quot;: &quot;289640&quot;, &quot;position&quot;: &quot;BTF&quot;}, &quot;criteo&quot;: {&quot;networkId&quot;: &quot;6592&quot;}}"></div>
+  <div id="adsense" style="visibility: hidden">Ad</div>
+
+  <footer id="footer" class="limitedScroll">
+    <div id="footerMain" class="wrap">
+      <div class="legal">
+        <a href="https://world.ziffdavis.com"><svg id="zdlogoblue" data-name="Ziff Davis Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298.63 174.94"><path d="M102,15.57H83.2V.09H102ZM83.2,26.16H102V94.57H83.2Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M117,38.73H105.72V26.16H117v-5.3C117,8.69,124.51.09,139.86.09c3.31,0,6.75.4,9.92.53v14a58.78,58.78,0,0,0-6.88-.4c-5.16,0-7.14,2.12-7.14,7.81v4.1h13V38.73h-13V94.57H117Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M154.59,38.73H143.34V26.16h11.25v-5.3c0-12.17,7.54-20.77,22.89-20.77,3.31,0,6.75.4,9.92.53v14a58.78,58.78,0,0,0-6.88-.4c-5.16,0-7.14,2.12-7.14,7.81v4.1h13V38.73h-13V94.57H154.59Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M31.37,73.6l-2.95,3.5H50.91a31.52,31.52,0,0,1,13.77,3,29.66,29.66,0,0,1,6.68,4.44,30.31,30.31,0,0,1,7.46,10.07H.77V78.14L4.58,73.6l3-3.57L51.44,17.56H4.75V.09H79.1V16.48L34.35,70Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M80.57,103.2h-24c5.17,5.44,7.18,13.79,7.18,24.16,0,20.9-11.54,28.31-23.57,28.31H21.65V103.2H.86v69.94H41.62c28.83,0,42.87-20.38,42.87-47.76A58.44,58.44,0,0,0,80.57,103.2Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M148.78,157.93v-35.6c0-13.69-11.37-18.06-23-19.13a68.79,68.79,0,0,0-7-.31,8.43,8.43,0,0,0-.87,0c-15.08.17-30.26,5.69-31.3,22.84h18.79c.66-7.42,5.16-10.33,12.44-10.33,6.62,0,12.17,1.32,12.17,9.29.79,15.32-45.23-1.35-45.51,29.77,0,14,10.19,20.49,23.29,20.49,8.46,0,17-2.25,23-8.46a28.37,28.37,0,0,0,1.32,6.62h19.06C149.44,170.37,148.78,164.13,148.78,157.93ZM130,146.66c0,4.23-.52,15.77-15.22,15.77-6.06,0-11.51-1.87-11.51-8.73s5.31-9,11.13-10.09,12.44-1.18,15.6-4Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M195.32,104.72,180.9,151.44h-.27l-14.42-46.72H146.49l23.43,68.42h20.9L214,104.72Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M214.38,104.72v68.42h18.79V104.72Zm0-26.06V94.15h18.79V78.66Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M277.08,132c-10.57-2.5-21.31-3.44-21.31-10.16,0-5.72,6.24-6.38,10.46-6.38,6.76,0,12.31,2,12.83,9.29h17.88c-1.45-16.81-15.35-21.83-30.19-21.83S237,107.36,237,124.83c0,12.2,10.71,15.77,21.7,18.26C272.06,145.86,280,148,280,153.7c0,6.58-7,8.73-12.3,8.73-7.28,0-14.42-3.46-14.42-11.54H235.39C236.05,169,251.68,175,267.55,175c15.49,0,31.23-5.82,31.23-23.81C298.78,138.48,288.07,134.5,277.08,132Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M101.38,15.62H82.59V.14h18.79ZM82.59,26.21h18.79V94.62H82.59Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M116.35,38.78H105.11V26.21h11.24V20.92C116.35,8.74,123.9.14,139.24.14c3.31,0,6.75.4,9.93.53v14a58.78,58.78,0,0,0-6.88-.4c-5.16,0-7.15,2.12-7.15,7.81v4.1h13V38.78h-13V94.62H116.35Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M154,38.78H142.73V26.21H154V20.92C154,8.74,161.52.14,176.86.14c3.31,0,6.75.4,9.93.53v14a58.78,58.78,0,0,0-6.88-.4c-5.16,0-7.15,2.12-7.15,7.81v4.1h13V38.78h-13V94.62H154Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M30.76,73.65l-3,3.5H50.29a31.56,31.56,0,0,1,13.78,3,30,30,0,0,1,6.68,4.44,30.31,30.31,0,0,1,7.46,10.07H.15V78.19L4,73.65l3-3.57L50.82,17.61H4.14V.14H78.48V16.53L33.74,70.08Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M80,103.25h-24c5.16,5.44,7.17,13.79,7.17,24.16,0,20.9-11.54,28.31-23.56,28.31H21V103.25H.24v69.94H41c28.84,0,42.87-20.38,42.87-47.76A58.49,58.49,0,0,0,80,103.25Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M148.17,158v-35.6c0-13.69-11.37-18.06-23-19.13a69.11,69.11,0,0,0-7-.31,8.14,8.14,0,0,0-.86,0c-15.08.18-30.26,5.69-31.3,22.84h18.78c.66-7.41,5.17-10.32,12.45-10.32,6.62,0,12.16,1.31,12.16,9.28.8,15.32-45.23-1.35-45.51,29.78,0,14,10.19,20.48,23.3,20.48,8.45,0,17-2.25,23-8.46a28.26,28.26,0,0,0,1.32,6.62h19.06C148.83,170.42,148.17,164.18,148.17,158Zm-18.79-11.27c0,4.23-.52,15.77-15.21,15.77-6.07,0-11.51-1.87-11.51-8.73s5.3-9,11.13-10.09,12.44-1.18,15.59-3.95Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M194.71,104.78,180.29,151.5H180l-14.42-46.72H145.87l23.43,68.41h20.9l23.15-68.41Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M213.77,104.78v68.41h18.79V104.78Zm0-26.07V94.2h18.79V78.71Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path><path d="M276.47,132c-10.57-2.5-21.32-3.43-21.32-10.16,0-5.72,6.24-6.37,10.47-6.37,6.76,0,12.3,2,12.82,9.28h17.89C294.87,108,281,102.94,266.14,102.94s-29.77,4.47-29.77,21.94c0,12.2,10.71,15.77,21.69,18.26,13.38,2.78,21.32,4.89,21.32,10.61,0,6.58-7,8.73-12.3,8.73-7.28,0-14.42-3.46-14.42-11.54H234.77c.66,18.13,16.29,24.09,32.17,24.09,15.49,0,31.23-5.82,31.23-23.81C298.17,138.53,287.46,134.55,276.47,132Z" transform="translate(-0.15 -0.09)" style="fill:#221276"></path></svg></a>
+        <span class="licensee wrap">O IGN Brasil é um site do grupo <a href="https://www.webedia.com.br/" rel="nofollow">Webedia</a> </span>
+      </div>
+    </div>
+  </footer>
+</div>
+</div>
+<div id="tracker"><script>window._tfa=window._tfa||[];window._tfa.push({notify:"event",name:"page_view",id:1307214});</script>
+<script>
+var batchVapidPublicKey = "BD6ohXap8C7a5/i5BeyECYh440hNTnpB+qaV5w+z/PIcvRwIMMUWZ3YWmfSelZewlVtfAlcLhxyXjZgaoO+6mmU=";
+(function(b, a, t, c, h, e, r) {
+  h = "batchSDK";
+  b[h] = b[h] || function() {
+    (b[h].q = b[h].q || []).push(arguments);
+  };
+  e = a.createElement(t), r = a.getElementsByTagName(t)[0];
+  e.async = 1;
+  e.src = c;
+  r.parentNode.insertBefore(e, r);
+})(window, document, "script", "https://via.batch.com/v3/bootstrap.min.js");
+var batchSDKUIConfig = {"native":{}};
+if (Notification && Notification.permission !== "granted") {
+  if (navigator.userAgent.indexOf("Firefox") !== -1 || navigator.userAgent.indexOf("Safari") !== -1 && navigator.userAgent.indexOf("Chrome") === -1) {
+    batchSDKUIConfig = {alert:{text:"Quer ficar por dentro de tudo sobre games e cultura pop?", positiveSubBtnLabel:"Sim!", negativeBtnLabel:"Não, obrigado.", positiveBtnStyle:{backgroundColor:"#1E294E", hoverBackgroundColor:"#2F3A5F", textColor:"white"}}};
+  }
+}
+batchSDK("setup", {apiKey:"7A92C0BF469247C28460BBFE88D7047C", subdomain:"ign", authKey:"2.PHGn5h3eL75V80++e2AyQtqXjRSqhYeJoF+22UiPSrM=", vapidPublicKey:batchVapidPublicKey, ui:batchSDKUIConfig, safari:{"https://br.ign.com":"web.com.br.ign",}});
+function reregisterBatchPushIfNeeded(batchApplicationServerKey) {
+  var urlUnsafeB64ServerKey = batchApplicationServerKey.replace(/-/g, "+").replace(/_/g, "/");
+  var reencodedServerKey = window.btoa(window.atob(urlUnsafeB64ServerKey));
+  navigator.serviceWorker.getRegistration().then(function(sw) {
+    return sw.pushManager.getSubscription();
+  }).then(function(sub) {
+    return sub.options.applicationServerKey;
+  }).then(function(key) {
+    return btoa(String.fromCharCode.apply(String, new Uint8Array(key)));
+  }).then(function(key) {
+    if (reencodedServerKey != key) {
+      console.debug("Batch - Registered application server doesn't match Batch's, unregistering SW and asking Batch to reregister");
+      navigator.serviceWorker.getRegistration().then(function(reg) {
+        return reg.unregister();
+      }).then(function() {
+        batchSDK(function(api) {
+          api.subscribe();
+        });
+      })["catch"](function(e) {
+        console.debug("Batch - Could not fix application server key mismatch:", e);
+      });
+    } else {
+      console.debug("Batch - Registered application server key matches with Batch's, not doing anything");
+    }
+  })["catch"](function() {
+    console.debug("Batch - Could not get applicationServerKey. User might not be subscribed to notifications.");
+  });
+}
+reregisterBatchPushIfNeeded(batchVapidPublicKey);
+</script></div>
+
+<section id="js">
+  
+  <script type="text/javascript" src="https://pg.ignimgs.com/pogoadkit.js" async></script>
+  <script>var zad = zad || {'cmd': []}; zad.cmd.push(function() { window.zad.start(); })</script>
+  
+  
+  
+    <script>
+    function send_recirc_event() {
+        var recirc_exists = ['.full-injected-recirc','.floatrecirc', '.recircblock','.recirc-title']
+        var run_event = false
+        for (let i = 0; i < recirc_exists.length; i++) {
+                if (document.querySelector(recirc_exists[i])) {
+                    run_event = true
+                    break;
+                }
+        }
+        if (run_event) {
+            window.gtag('event', 'ICMS Recirc', {
+                'send_to': 'G-6V5EDTKRXD',
+                
+                
+                    'icms_recirc_group' : '0',
+                
+                
+            })
+        } else {
+            if (document.querySelector('.ign-recommends-item')) {
+                window.gtag('event', 'ICMS Recirc', {
+                'send_to': 'G-6V5EDTKRXD',
+                
+                    'icms_recirc_group' : '2',
+                
+            })  
+            }
+        } 
+    } 
+    window.onload = setTimeout(send_recirc_event,0);
+       
+
+    function img_find() {
+            let page_content = document.querySelector('#id_text')
+            var imgs = page_content.querySelectorAll("img");
+            var imgSrcs = [];
+            var obj = new Object();
+            obj.title = "Master Lemon: The Quest for Iceland é emocionante e divertido na medida certa"
+
+            obj.elements = []
+            position = 0;
+            for (var i = 0; i < imgs.length; i++) {
+                if (imgs[i].parentElement?.classList?.contains('recirc_odd')) {
+                    continue
+                }
+                caption = ''
+                imgs[i].dataset.position = position
+                position = position+1;
+                if (imgs[i].closest('figure')) {
+                    let figcaption = imgs[i].closest('figure').querySelector('figcaption')
+                    if (figcaption) {
+                        caption = figcaption.innerHTML
+                    }  else { 
+                        caption = imgs[i].alt
+                    }
+                }
+                
+                if (imgs[i].dataset.src) {
+                    src = imgs[i].dataset.src
+                } else if (imgs[i].src) {
+                    src = imgs[i].src
+                }
+                obj.elements.push({'src': src, 'caption': caption});
+            }
+            return obj
+     }
+    
+  
+    initUgwArticle = function() {
+         const ugwArticle = new UGW(
+             {
+                 'invoker': '#id_text img',
+                 'json':img_find(),
+                  translation: {
+                    'images': 'images',
+                    'of': 'OF',
+                    'fullscreen': 'Fullscreen'
+                }
+             }
+         )
+    }
+    ICMS.libs.push({
+        'url': '/s/js/universal_gallery_widget.js?675',
+            'onPageReady': initUgwArticle
+    });
+    </script>
+
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@id": "https://br.ign.com/review/", "name": "Review"}}, {"@type": "ListItem", "position": 2, "item": {"@id": "https://br.ign.com/master-lemon", "name": "Master Lemon: The Quest for Iceland"}}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Videogame", "name": "Master Lemon: The Quest for Iceland", "description": "Com uma gameplay simples, mas divertida e intuitiva, Master Lemon: The Quest for Iceland \u00e9 um RPG em pixel art que cumpre aquilo que promete, com v\u00e1rios momentos emocionantes que nos levam a refletir e muitos lugares para explorar. Al\u00e9m de ser uma homenagem emocionante, o t\u00edtulo mostra que jogos indies brasileiros merecem cada vez mais reconhecimento dentro da ind\u00fastria.", "image": ["https://sm.ign.com/ign_br/game/m/master-lem/master-lemon_25yr.png"], "applicationCategory": "Game", "review": {"@context": "https://schema.org", "@type": "Review", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://br.ign.com/master-lemon/147918/review/master-lemon-the-quest-for-iceland-e-emocionante-e-divertido-na-medida-certa"}, "headline": "Master Lemon: The Quest for Iceland \u00e9 emocionante e divertido na medida certa", "image": [{"@type": "ImageObject", "url": "https://sm.ign.com/ign_br/screenshot/default/blob_jjaq.png", "width": 820, "height": 461}], "description": "Neste jogo, as palavras realmente t\u00eam poder", "datePublished": "2025-11-06 17:44:07+00:00", "inLanguage": "pt-br", "publisher": {"@type": "Organization", "name": "IGN Brasil", "url": "https://br.ign.com", "logo": {"@type": "ImageObject", "url": "https://br.ign.com/s/ign/ign_logo_micro.png", "width": 245, "height": 60}}, "author": [{"@type": "Person", "name": "Allana Aristides", "additionalName": "Allana Aristides", "givenName": "Allana", "familyName": "Aristides", "image": "https://sm.ign.com/ign_br/user/a/allana-ari/allana-aristides_sswf.png", "url": "https://br.ign.com/u/allana-aristides"}], "dateModified": ["2025-11-06T17:47:06+00:00"], "reviewRating": {"@type": "Rating", "ratingValue": "8.5", "worstRating": 0, "bestRating": 10}, "reviewBody": "<p style=\"text-align: justify\">A express\u00e3o \u201cas palavras t\u00eam poder\u201d \u00e9 constantemente usada \u2014 principalmente por brasileiros \u2014 para alertar que aquilo que se diz em voz alta pode influenciar a vida de uma pessoa, seja de forma positiva ou negativa. O est\u00fadio Pepita Digital materializou esse pensamento ao criar Master Lemon: The Quest for Iceland, um RPG em pixel art baseado em uma hist\u00f3ria real.</p>\n\n<p style=\"text-align: justify\">O jogo indie brasileiro tem uma gameplay simples, mas divertida, educativa e com muito a se explorar, que lembra bastante o cl\u00e1ssico To the Moon, uma de suas maiores inspira\u00e7\u00f5es. A grande aventura do personagem Lim\u00e3o faz com que o jogador se emocione, pense no verdadeiro significado da morte e entenda as diferentes formas de honrar uma mem\u00f3ria, n\u00e3o s\u00f3 de pessoas, mas de momentos, sentimentos e palavras.</p>\n\n<div class=\"vplayer\"><iframe allowfullscreen=\"true\" framborder=\"0\" scrolling=\"no\" src=\"https://www.youtube.com/embed/2nkpX8opDbs\"></iframe></div>\n\n<h2 style=\"text-align: justify\">Uma luta contra a escurid\u00e3o</h2>\n<p style=\"text-align: justify\">Logo de in\u00edcio, o jogador \u00e9 apresentado ao personagem Lim\u00e3o, um jovem brasileiro, poliglota e apaixonado por l\u00ednguas desde crian\u00e7a, que viajou pelo mundo e realizou o seu maior sonho: morar na Isl\u00e2ndia. Para comemorar, decidiu explorar a Europa Ocidental e ver a aurora boreal de perto, realizando mais um grande sonho. No entanto, sua vida \u00e9 interrompida por um grave acidente de carro. N\u00e3o se preocupe, n\u00e3o h\u00e1 spoiler nesta review, e tudo isso \u00e9 mostrado logo na introdu\u00e7\u00e3o do game.</p>\n\n<p style=\"text-align: justify\">Por ser uma hist\u00f3ria real e uma homenagem ao amigo de um dos criadores, Master Lemon: The Quest for Iceland j\u00e1 deixa expl\u00edcito o que est\u00e1 por vir e o que n\u00e3o pode ser evitado. Mesmo assim, traz uma abordagem \u00fanica, com muitos momentos que permitem o amadurecimento e incita reflex\u00f5es sobre relacionamentos e viv\u00eancias, que podem ser eternizados de diferentes formas, inclusive em um jogo feito em pixel art.</p>\n\n<p style=\"text-align: justify\">Na trama principal, acompanhamos Lim\u00e3o em mais uma viagem, essa que n\u00e3o foi planejada como todas as outras, mas que \u00e9 for\u00e7ada em seu caminho de forma repentina, que faz parecer um sonho do qual n\u00e3o se pode acordar. Assim, somos levados a um mundo misterioso conhecido como Ilhas Bashir, onde residentes enfrentam uma terr\u00edvel praga espalhada por uma escurid\u00e3o que afeta a mem\u00f3ria de todos e faz com que se esque\u00e7am de palavras e rel\u00edquias de suas culturas. A partir disso, j\u00e1 temos uma grande ideia da miss\u00e3o principal, e o personagem coloca em pr\u00e1tica uma habilidade \u00fanica, at\u00e9 ent\u00e3o desconhecida, que \u00e9 iluminar os caminhos por onde passa, literalmente.</p>\n\n<figure itemscope=\"\" itemtype=\"https://schema.org/ImageObject\"><img alt=\"\" class=\"image screenshot\" data-model=\"image\" data-pk=\"340673\" data-position=\"0\" data-thumb=\"https://sm.ign.com/ign_br/screenshot/default/captura-de-tela-2025-11-06-143726_8tg2.png\" itemprop=\"contentUrl\" src=\"https://sm.ign.com/ign_br/screenshot/default/captura-de-tela-2025-11-06-143726_8tg2.png\"/>\n<figcaption itemprop=\"description\">Foi bem divertido acabar com a escurid\u00e3o e liberar novos lugares para explorar</figcaption>\n</figure>\n\n<p>Honestamente, uma das partes mais divertidas da gameplay \u00e9 fazer com que essa escurid\u00e3o v\u00e1 se esvaindo aos poucos com a luz e libertado novos locais pelo mapa, introduzindo novos personagens e novas side quests. Dessa forma, mesmo com um certo limite de mapas dispon\u00edveis, h\u00e1 sempre uma nova miss\u00e3o a espera para ser revelada.</p>\n\n<h2 style=\"text-align: justify\">Novas palavras e diferentes culturas para explorar</h2>\n<p style=\"text-align: justify\">Master Lemon: The Quest for Iceland traz puzzles f\u00e1ceis de resolver, mas que combinam exatamente com o que o game prop\u00f5e: uma campanha curta, tranquila, de muito aprendizado e reflex\u00e3o. Al\u00e9m disso, o jogo apresenta uma trilha sonora bem calma e emocionante; e a dire\u00e7\u00e3o de arte segue pelo mesmo caminho, com detalhes impressionantes e cen\u00e1rios encantadores em arte 2D. \u00c9 inevit\u00e1vel associar esses elementos a To the Moon, que se tornou um cl\u00e1ssico pela narrativa que enche os olhos de l\u00e1grimas, mas que se desdobra lentamente e conquista por meio de um ambiente cuidadosamente preparado.</p>\n\n<figure itemscope=\"\" itemtype=\"https://schema.org/ImageObject\"><img alt=\"\" class=\"image screenshot\" data-model=\"image\" data-pk=\"340672\" data-position=\"1\" data-thumb=\"https://sm.ign.com/ign_br/screenshot/default/captura-de-tela-2025-11-06-143523_13jq.png\" itemprop=\"contentUrl\" src=\"https://sm.ign.com/ign_br/screenshot/default/captura-de-tela-2025-11-06-143523_13jq.png\"/>\n<figcaption itemprop=\"description\">Reprodu\u00e7\u00e3o</figcaption>\n</figure>\n\n<p>A todo momento, o jogador \u00e9 apresentado a novas palavras de diferentes idiomas \u2014 tantos que eu at\u00e9 me perdi na conta \u2014, conforme explora o mundo e se depara com curiosidades interessantes. Muitas palavras que s\u00e3o, de certa forma, intraduz\u00edveis, est\u00e3o presentes no jogo, como \u201csaudade\u201d e \u201ctsundoku\u201d, que s\u00e3o algumas das quais eu j\u00e1 conhecia. Cada palavra e express\u00e3o \u201caprendida\u201d vem com a sua pr\u00f3pria pron\u00fancia e defini\u00e7\u00e3o, sendo um jeito interessante de ter contato com outras l\u00ednguas.</p>\n\n<p style=\"text-align: justify\">N\u00e3o se limitando a apenas idiomas, diferentes culturas tamb\u00e9m s\u00e3o muito bem exploradas. O jogo conta com elementos e tradi\u00e7\u00f5es sendo apresentados tanto na miss\u00e3o principal quanto nas side quests, cada uma contando uma hist\u00f3ria interessante.</p>\n\n<p style=\"text-align: justify\">A cultura brasileira tem grande destaque, mostrando-se presente ao longo do game e trazendo uma sensa\u00e7\u00e3o de orgulho ao ver o pr\u00f3prio pa\u00eds t\u00e3o bem representado. Mas isso n\u00e3o quer dizer que outros pa\u00edses tenham sua cultura apagada, pois Master Lemon traz muitas oportunidades para conhecer todas e faz quest\u00e3o de mostrar o que elas t\u00eam de melhor para oferecer ao mundo. \u00c9 como se estiv\u00e9ssemos viajando por v\u00e1rios pa\u00edses e Lim\u00e3o compartilhasse conosco aquilo que viu e experimentou ao longo de uma vida cheia de emo\u00e7\u00e3o e momentos \u00fanicos.</p>\n\n<p style=\"text-align: justify\">E nada \u00e9 por acaso, pois o conhecimento adquirido no jogo tem um prop\u00f3sito espec\u00edfico, ou seja, se transforma em recursos necess\u00e1rios para lembrar os residentes daquilo que esqueceram, ganhar for\u00e7a para mover coisas e at\u00e9 mesmo para nos permitir se teletransportar entre mapas. Ent\u00e3o, com isso, o jogador aprende e h\u00e1 progress\u00e3o dentro de Master Lemon. As palavras mostram o caminho e t\u00eam o poder de ajudar Lim\u00e3o nesta aventura.</p>\n\n<figure itemscope=\"\" itemtype=\"https://schema.org/ImageObject\"><img alt=\"\" class=\"image screenshot\" data-model=\"image\" data-pk=\"340674\" data-position=\"2\" data-thumb=\"https://sm.ign.com/ign_br/screenshot/default/captura-de-tela-2025-11-06-143940_rhjz.png\" itemprop=\"contentUrl\" src=\"https://sm.ign.com/ign_br/screenshot/default/captura-de-tela-2025-11-06-143940_rhjz.png\"/></figure>\n\n<h2 style=\"text-align: justify\">Habilidades limitadas e um pouco confusas, mas que n\u00e3o afetam a jogabilidade</h2>\n<p style=\"text-align: justify\">Isso me leva a comentar sobre algumas mec\u00e2nicas que s\u00e3o apresentadas logo no in\u00edcio do jogo: \u201cGambiarra\u201d, que \u00e9 exatamente o que voc\u00ea est\u00e1 pensando, aquele jeitinho brasileiro de resolver problemas utilizando o que se tem em m\u00e3o, e \u201cDesmantelar\u201d, que \u00e9 basicamente o contr\u00e1rio da anterior, e permite que itens sejam separados e estejam prontos para o uso, cada um com o seu prop\u00f3sito.</p>\n\n<p style=\"text-align: justify\">A Gambiarra \u00e9 usada durante toda a gameplay, e, \u00e0 primeira vista, \u00e9 bastante intuitiva, sem necessidade de muitas explica\u00e7\u00f5es, servindo de grande ajuda durante as miss\u00f5es. No entanto, em algumas side quests, itens aleat\u00f3rios causaram um pouco de confus\u00e3o ao serem colocados juntos para criar um novo item inesperado. N\u00e3o foi um problema recorrente, mas pode exigir um tempo \u2014 e v\u00e1rios chutes \u2014 para descobrir o que \u00e9 preciso juntar de mais aleat\u00f3rio para criar o que foi exigido. Mas, em geral, n\u00e3o tive grandes dificuldades, e como falei anteriormente, a maioria dos casos s\u00e3o resolvidos de forma bem intuitiva.</p>\n\n<p style=\"text-align: justify\">A habilidade de Desmantelar foi \u00fatil no come\u00e7o, j\u00e1 no momento em que foi introduzida, mas muito pouco explorada e praticamente sem utilidade pelo restante do jogo. \u00c9 not\u00e1vel que poderia haver um equil\u00edbrio entre ambas, com diversos momentos que possibilitavam uma divis\u00e3o mais balanceada entre as duas principais habilidades do jogo.</p>\n\n<h2 style=\"text-align: justify\">Campanha breve, emo\u00e7\u00f5es infinitas</h2>\n<p style=\"text-align: justify\">\u00c9 poss\u00edvel zerar o jogo em poucas horas, mas coletar rel\u00edquias ao redor do mapa faz com que o jogador se perca no tempo procurando todas as 124 dispon\u00edveis. N\u00e3o \u00e9 uma fun\u00e7\u00e3o obrigat\u00f3ria ou que v\u00e1 afetar a miss\u00e3o principal, mas chegar cada vez mais perto de coletar todas \u00e9 extremamente satisfat\u00f3rio, al\u00e9m do fato de que cada rel\u00edquia traz informa\u00e7\u00f5es interessantes, tornando a explora\u00e7\u00e3o ainda mais prazerosa.</p>\n\n<figure itemscope=\"\" itemtype=\"https://schema.org/ImageObject\">\n<figure class=\"caption screenshot image\"><img alt=\"\" data-model=\"image\" data-pk=\"340669\" data-position=\"3\" data-thumb=\"https://sm.ign.com/ign_br/screenshot/default/captura-de-tela-2025-11-06-142729_x8u2.png\" itemprop=\"contentUrl\" src=\"https://sm.ign.com/ign_br/screenshot/default/captura-de-tela-2025-11-06-142729_x8u2.png\"/>\n<figcaption>A amizade que tornou Master Lemon poss\u00edvel</figcaption>\n</figure>\n</figure>\n\n<p>Tamb\u00e9m \u00e9 f\u00e1cil passar horas ininterruptas mergulhado em uma narrativa que desperta diferentes emo\u00e7\u00f5es e traz muitos momentos de reflex\u00e3o. Master Lemon mant\u00e9m um ritmo calmo, sem prejudicar a imers\u00e3o e sem fazer com que o jogador perca o interesse, muito pelo contr\u00e1rio, pois o jogo nos prende ainda mais nesse mundo que tem muito para contar.</p>\n\n<p style=\"text-align: justify\">Saber que certas cenas aconteceram na vida real fez com que eu sentisse que fazia parte \u2014 nem que fosse por um instante \u2014 daquele momento t\u00e3o importante para quem realmente estava ali presente. \u00c9 uma forma emocionante de manter viva a mem\u00f3ria daqueles que s\u00e3o t\u00e3o queridos por todos que os rodeavam. Jogar como Lim\u00e3o faz com que o jogador sinta a for\u00e7a desse amor, que ultrapassa o tempo, espa\u00e7o e a linha t\u00eanue entre a vida e a morte. Faz entender a verdadeira defini\u00e7\u00e3o de saudade.</p>"}}</script>
+</section>
+</body>
+</html>
