@@ -11,7 +11,7 @@ const navigation = [
   { name: 'Negócios', href: '/categoria/negocios' },
   { name: 'Inovação', href: '/categoria/inovacao' },
   { name: 'Sobre', href: '/sobre' },
-  { name: 'Contato', href: '/contato' },
+  { name: 'Fale Conosco', href: '/fale-conosco' },
 ];
 
 export default function Header() {

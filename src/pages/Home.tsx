@@ -92,7 +92,7 @@ export default function Home() {
                 Receba análises exclusivas e as principais tendências direto no seu email. Junte-se a milhares de leitores inteligentes.
               </p>
               <Button size="lg" variant="secondary" asChild className="hover-glow animate-pulse hover:animate-none">
-                <Link to="/contato">
+                <Link to="/fale-conosco">
                   Assinar Newsletter Gratuita
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
