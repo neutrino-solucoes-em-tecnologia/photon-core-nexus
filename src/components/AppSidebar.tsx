@@ -299,14 +299,18 @@ export function AppSidebar() {
             </SidebarGroupLabel>
             <SidebarGroupContent>
               <div className="flex gap-2 px-1">
-                <button className="flex-1 flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
-                  <Bell className="h-4 w-4 text-foreground/70 group-hover:text-primary transition-colors" />
-                  <span className="text-[10px] font-medium text-foreground/70 group-hover:text-primary transition-colors">Notificações</span>
-                </button>
-                <button className="flex-1 flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
-                  <Settings className="h-4 w-4 text-foreground/70 group-hover:text-primary transition-colors" />
-                  <span className="text-[10px] font-medium text-foreground/70 group-hover:text-primary transition-colors">Config</span>
-                </button>
+                <NavLink to="/notificacoes" className="flex-1">
+                  <button className="w-full flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
+                    <Bell className="h-4 w-4 text-foreground/70 group-hover:text-primary transition-colors" />
+                    <span className="text-[10px] font-medium text-foreground/70 group-hover:text-primary transition-colors">Notificações</span>
+                  </button>
+                </NavLink>
+                <NavLink to="/configuracoes" className="flex-1">
+                  <button className="w-full flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
+                    <Settings className="h-4 w-4 text-foreground/70 group-hover:text-primary transition-colors" />
+                    <span className="text-[10px] font-medium text-foreground/70 group-hover:text-primary transition-colors">Config</span>
+                  </button>
+                </NavLink>
                 <button onClick={toggleTheme} className="flex-1 flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
                   {theme === 'dark' ? (
                     <Sun className="h-4 w-4 text-foreground/70 group-hover:text-primary transition-colors" />
@@ -325,10 +329,12 @@ export function AppSidebar() {
                 <TooltipProvider delayDuration={0}>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <button className="flex items-center justify-center p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group relative">
-                        <Bell className="h-5 w-5 text-foreground/70 group-hover:text-primary transition-colors" />
-                        <div className="absolute top-1.5 right-1.5 w-2 h-2 bg-destructive rounded-full border border-white shadow-sm" />
-                      </button>
+                      <NavLink to="/notificacoes">
+                        <button className="w-full flex items-center justify-center p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group relative">
+                          <Bell className="h-5 w-5 text-foreground/70 group-hover:text-primary transition-colors" />
+                          <div className="absolute top-1.5 right-1.5 w-2 h-2 bg-destructive rounded-full border border-white shadow-sm" />
+                        </button>
+                      </NavLink>
                     </TooltipTrigger>
                     <TooltipContent side="right" className="whitespace-nowrap">
                       <p>Notificações</p>
@@ -339,9 +345,11 @@ export function AppSidebar() {
                 <TooltipProvider delayDuration={0}>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <button className="flex items-center justify-center p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
-                        <Settings className="h-5 w-5 text-foreground/70 group-hover:text-primary transition-colors" />
-                      </button>
+                      <NavLink to="/configuracoes">
+                        <button className="w-full flex items-center justify-center p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
+                          <Settings className="h-5 w-5 text-foreground/70 group-hover:text-primary transition-colors" />
+                        </button>
+                      </NavLink>
                     </TooltipTrigger>
                     <TooltipContent side="right" className="whitespace-nowrap">
                       <p>Configurações</p>
@@ -391,17 +399,23 @@ export function AppSidebar() {
             <DropdownMenuContent align="end" className="w-56" side="top">
               <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>
-                <User className="mr-2 h-4 w-4" />
-                <span>Perfil</span>
+              <DropdownMenuItem asChild>
+                <NavLink to="/perfil" className="cursor-pointer">
+                  <User className="mr-2 h-4 w-4" />
+                  <span>Perfil</span>
+                </NavLink>
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Settings className="mr-2 h-4 w-4" />
-                <span>Configurações</span>
+              <DropdownMenuItem asChild>
+                <NavLink to="/configuracoes" className="cursor-pointer">
+                  <Settings className="mr-2 h-4 w-4" />
+                  <span>Configurações</span>
+                </NavLink>
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Bell className="mr-2 h-4 w-4" />
-                <span>Notificações</span>
+              <DropdownMenuItem asChild>
+                <NavLink to="/notificacoes" className="cursor-pointer">
+                  <Bell className="mr-2 h-4 w-4" />
+                  <span>Notificações</span>
+                </NavLink>
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem className="text-destructive">
@@ -432,17 +446,23 @@ export function AppSidebar() {
                       </div>
                     </DropdownMenuLabel>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem>
-                      <User className="mr-2 h-4 w-4" />
-                      <span>Perfil</span>
+                    <DropdownMenuItem asChild>
+                      <NavLink to="/perfil" className="cursor-pointer">
+                        <User className="mr-2 h-4 w-4" />
+                        <span>Perfil</span>
+                      </NavLink>
                     </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      <Settings className="mr-2 h-4 w-4" />
-                      <span>Configurações</span>
+                    <DropdownMenuItem asChild>
+                      <NavLink to="/configuracoes" className="cursor-pointer">
+                        <Settings className="mr-2 h-4 w-4" />
+                        <span>Configurações</span>
+                      </NavLink>
                     </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      <Bell className="mr-2 h-4 w-4" />
-                      <span>Notificações</span>
+                    <DropdownMenuItem asChild>
+                      <NavLink to="/notificacoes" className="cursor-pointer">
+                        <Bell className="mr-2 h-4 w-4" />
+                        <span>Notificações</span>
+                      </NavLink>
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem className="text-destructive">
