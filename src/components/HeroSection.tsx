@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import heroTech from '@/assets/hero-tech-1.jpg';
 import heroBusiness from '@/assets/hero-business-1.jpg';
 import heroInnovation from '@/assets/hero-innovation-1.jpg';
@@ -36,6 +37,20 @@ const heroArticles = [
 ];
 
 export default function HeroSection() {
+  // Preload first hero image for better LCP
+  useEffect(() => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = heroTech;
+    link.fetchPriority = 'high';
+    document.head.appendChild(link);
+    
+    return () => {
+      document.head.removeChild(link);
+    };
+  }, []);
+
   return (
     <section className="wide-container py-6 md:py-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 stagger-fade-in">
@@ -50,7 +65,9 @@ export default function HeroSection() {
                 src={article.image}
                 alt={article.title}
                 className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110 group-hover:saturate-110"
-                loading="lazy"
+                loading={index === 0 ? 'eager' : 'lazy'}
+                fetchPriority={index === 0 ? 'high' : 'auto'}
+                decoding={index === 0 ? 'sync' : 'async'}
               />
               
               {/* Gradient Overlay */}

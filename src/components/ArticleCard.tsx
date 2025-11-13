@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Clock, User } from 'lucide-react';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { memo } from 'react';
 
 interface ArticleCardProps {
   slug: string;
@@ -14,7 +15,7 @@ interface ArticleCardProps {
   date: string;
 }
 
-export default function ArticleCard({
+const ArticleCard = memo(({
   slug,
   title,
   excerpt,
@@ -23,7 +24,7 @@ export default function ArticleCard({
   author,
   readTime,
   date,
-}: ArticleCardProps) {
+}: ArticleCardProps) => {
   return (
     <Card className="overflow-hidden hover-lift-enhanced card-shine group cursor-pointer border-muted/50 transition-all duration-300 hover:border-muted hover:shadow-xl bg-card/50 backdrop-blur-sm">
       <Link to={`/artigo/${slug}`}>
@@ -74,4 +75,8 @@ export default function ArticleCard({
       </CardFooter>
     </Card>
   );
-}
+});
+
+ArticleCard.displayName = 'ArticleCard';
+
+export default ArticleCard;
