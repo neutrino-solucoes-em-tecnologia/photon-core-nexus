@@ -12,6 +12,11 @@ import Categoria from "./pages/Categoria";
 import Artigo from "./pages/Artigo";
 import Sobre from "./pages/Sobre";
 import Contato from "./pages/Contato";
+import TrabalheConosco from "./pages/TrabalheConosco";
+import Imprensa from "./pages/Imprensa";
+import Termos from "./pages/Termos";
+import Privacidade from "./pages/Privacidade";
+import Cookies from "./pages/Cookies";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +39,11 @@ const App = () => (
                     <Route path="/artigo/:slug" element={<Artigo />} />
                     <Route path="/sobre" element={<Sobre />} />
                     <Route path="/fale-conosco" element={<Contato />} />
+                    <Route path="/trabalhe-conosco" element={<TrabalheConosco />} />
+                    <Route path="/imprensa" element={<Imprensa />} />
+                    <Route path="/termos" element={<Termos />} />
+                    <Route path="/privacidade" element={<Privacidade />} />
+                    <Route path="/cookies" element={<Cookies />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </MainContent>

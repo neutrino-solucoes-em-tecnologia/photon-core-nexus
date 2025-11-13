@@ -5,9 +5,9 @@ export default function Footer() {
   return (
     <footer className="border-t bg-muted/30 mt-20">
       <div className="wide-container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand */}
-          <div className="space-y-4">
+          <div className="space-y-4 lg:col-span-1">
             <div className="flex items-center space-x-2">
               <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary">
                 <span className="text-xl font-bold text-primary-foreground">P</span>
@@ -25,7 +25,9 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><Link to="/" className="hover:text-foreground transition-colors">Início</Link></li>
               <li><Link to="/sobre" className="hover:text-foreground transition-colors">Sobre</Link></li>
+              <li><Link to="/imprensa" className="hover:text-foreground transition-colors">Imprensa</Link></li>
               <li><Link to="/fale-conosco" className="hover:text-foreground transition-colors">Fale Conosco</Link></li>
+              <li><Link to="/trabalhe-conosco" className="hover:text-foreground transition-colors">Trabalhe Conosco</Link></li>
             </ul>
           </div>
 
@@ -36,6 +38,16 @@ export default function Footer() {
               <li><Link to="/categoria/tecnologia" className="hover:text-foreground transition-colors">Tecnologia</Link></li>
               <li><Link to="/categoria/negocios" className="hover:text-foreground transition-colors">Negócios</Link></li>
               <li><Link to="/categoria/inovacao" className="hover:text-foreground transition-colors">Inovação</Link></li>
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h3 className="font-semibold mb-4">Legal</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li><Link to="/termos" className="hover:text-foreground transition-colors">Termos de Uso</Link></li>
+              <li><Link to="/privacidade" className="hover:text-foreground transition-colors">Privacidade</Link></li>
+              <li><Link to="/cookies" className="hover:text-foreground transition-colors">Cookies</Link></li>
             </ul>
           </div>
 
