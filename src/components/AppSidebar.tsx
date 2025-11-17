@@ -307,8 +307,8 @@ export function AppSidebar() {
                 </NavLink>
                 <NavLink to="/perfil" className="flex-1">
                   <button className="w-full flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
-                    <Settings className="h-4 w-4 text-foreground/70 group-hover:text-primary transition-colors" />
-                    <span className="text-[10px] font-medium text-foreground/70 group-hover:text-primary transition-colors">Config</span>
+                    <User className="h-4 w-4 text-foreground/70 group-hover:text-primary transition-colors" />
+                    <span className="text-[10px] font-medium text-foreground/70 group-hover:text-primary transition-colors">Perfil</span>
                   </button>
                 </NavLink>
                 <button onClick={toggleTheme} className="flex-1 flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
@@ -347,12 +347,12 @@ export function AppSidebar() {
                     <TooltipTrigger asChild>
                       <NavLink to="/perfil">
                         <button className="w-full flex items-center justify-center p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
-                          <Settings className="h-5 w-5 text-foreground/70 group-hover:text-primary transition-colors" />
+                          <User className="h-5 w-5 text-foreground/70 group-hover:text-primary transition-colors" />
                         </button>
                       </NavLink>
                     </TooltipTrigger>
                     <TooltipContent side="right" className="whitespace-nowrap">
-                      <p>Configurações</p>
+                      <p>Perfil</p>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>
@@ -382,87 +382,30 @@ export function AppSidebar() {
       {/* User Profile Footer */}
       <SidebarFooter className="border-t border-border/25 bg-muted/10">
         {!isCollapsed ? (
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <button className="flex items-center gap-3 w-full p-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-all group">
-                <Avatar className="h-9 w-9 ring-2 ring-primary/20 group-hover:ring-primary/40 transition-all">
-                  <AvatarImage src="https://github.com/shadcn.png" alt="User" />
-                  <AvatarFallback className="bg-primary/10 text-primary font-bold">PH</AvatarFallback>
-                </Avatar>
-                <div className="flex-1 text-left">
-                  <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">Photon User</p>
-                  <p className="text-xs text-muted-foreground">user@photon.com</p>
-                </div>
-                <MoreHorizontal className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-              </button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-56" side="top">
-              <DropdownMenuLabel>Minha Conta</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem asChild>
-                <NavLink to="/perfil" className="cursor-pointer">
-                  <User className="mr-2 h-4 w-4" />
-                  <span>Perfil</span>
-                </NavLink>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <NavLink to="/notificacoes" className="cursor-pointer">
-                  <Bell className="mr-2 h-4 w-4" />
-                  <span>Notificações</span>
-                </NavLink>
-              </DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem className="text-destructive">
-                <LogOut className="mr-2 h-4 w-4" />
-                <span>Sair</span>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <div className="flex items-center gap-3 w-full p-3">
+            <Avatar className="h-9 w-9 ring-2 ring-primary/20">
+              <AvatarImage src="https://github.com/shadcn.png" alt="User" />
+              <AvatarFallback className="bg-primary/10 text-primary font-bold">PH</AvatarFallback>
+            </Avatar>
+            <div className="flex-1 text-left">
+              <p className="text-sm font-semibold text-foreground">Photon User</p>
+              <p className="text-xs text-muted-foreground">user@photon.com</p>
+            </div>
+          </div>
         ) : (
           <TooltipProvider delayDuration={0}>
             <Tooltip>
               <TooltipTrigger asChild>
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <button className="flex items-center justify-center p-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-all group relative">
-                      <Avatar className="h-9 w-9 ring-2 ring-primary/20 group-hover:ring-primary/40 group-hover:scale-110 transition-all">
-                        <AvatarImage src="https://github.com/shadcn.png" alt="User" />
-                        <AvatarFallback className="bg-primary/10 text-primary font-bold">PH</AvatarFallback>
-                      </Avatar>
-                      <div className="absolute -inset-1 bg-primary/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 -z-10 blur-md" />
-                    </button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end" className="w-56" side="right">
-                    <DropdownMenuLabel>
-                      <div>
-                        <p className="font-semibold">Photon User</p>
-                        <p className="text-xs text-muted-foreground font-normal">user@photon.com</p>
-                      </div>
-                    </DropdownMenuLabel>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem asChild>
-                      <NavLink to="/perfil" className="cursor-pointer">
-                        <User className="mr-2 h-4 w-4" />
-                        <span>Perfil</span>
-                      </NavLink>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <NavLink to="/notificacoes" className="cursor-pointer">
-                        <Bell className="mr-2 h-4 w-4" />
-                        <span>Notificações</span>
-                      </NavLink>
-                    </DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem className="text-destructive">
-                      <LogOut className="mr-2 h-4 w-4" />
-                      <span>Sair</span>
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
+                <div className="flex items-center justify-center p-3">
+                  <Avatar className="h-9 w-9 ring-2 ring-primary/20">
+                    <AvatarImage src="https://github.com/shadcn.png" alt="User" />
+                    <AvatarFallback className="bg-primary/10 text-primary font-bold">PH</AvatarFallback>
+                  </Avatar>
+                </div>
               </TooltipTrigger>
               <TooltipContent side="right" className="whitespace-nowrap">
                 <p className="font-semibold">Photon User</p>
-                <p className="text-xs text-muted-foreground">Clique para opções</p>
+                <p className="text-xs text-muted-foreground">user@photon.com</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
