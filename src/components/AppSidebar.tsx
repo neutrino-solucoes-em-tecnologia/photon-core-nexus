@@ -305,7 +305,7 @@ export function AppSidebar() {
                     <span className="text-[10px] font-medium text-foreground/70 group-hover:text-primary transition-colors">Notificações</span>
                   </button>
                 </NavLink>
-                <NavLink to="/configuracoes" className="flex-1">
+                <NavLink to="/perfil" className="flex-1">
                   <button className="w-full flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
                     <Settings className="h-4 w-4 text-foreground/70 group-hover:text-primary transition-colors" />
                     <span className="text-[10px] font-medium text-foreground/70 group-hover:text-primary transition-colors">Config</span>
@@ -345,7 +345,7 @@ export function AppSidebar() {
                 <TooltipProvider delayDuration={0}>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <NavLink to="/configuracoes">
+                      <NavLink to="/perfil">
                         <button className="w-full flex items-center justify-center p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
                           <Settings className="h-5 w-5 text-foreground/70 group-hover:text-primary transition-colors" />
                         </button>
@@ -406,12 +406,6 @@ export function AppSidebar() {
                 </NavLink>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <NavLink to="/configuracoes" className="cursor-pointer">
-                  <Settings className="mr-2 h-4 w-4" />
-                  <span>Configurações</span>
-                </NavLink>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
                 <NavLink to="/notificacoes" className="cursor-pointer">
                   <Bell className="mr-2 h-4 w-4" />
                   <span>Notificações</span>
@@ -450,12 +444,6 @@ export function AppSidebar() {
                       <NavLink to="/perfil" className="cursor-pointer">
                         <User className="mr-2 h-4 w-4" />
                         <span>Perfil</span>
-                      </NavLink>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <NavLink to="/configuracoes" className="cursor-pointer">
-                        <Settings className="mr-2 h-4 w-4" />
-                        <span>Configurações</span>
                       </NavLink>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>

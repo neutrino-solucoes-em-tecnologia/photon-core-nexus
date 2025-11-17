@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { User, Mail, Phone, MapPin, Calendar, Settings, Bell, Shield, Bookmark, Clock, Eye, Pencil, Camera, Save, LogOut } from 'lucide-react';
+import { User, Mail, Phone, MapPin, Calendar, Settings, Bell, Shield, Bookmark, Clock, Eye, Pencil, Camera, Save, Lock, Palette, Globe, Smartphone, EyeOff, Trash2, Download, Upload, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -10,13 +10,19 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Switch } from '@/components/ui/switch';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 import { useToast } from '@/hooks/use-toast';
+import { useTheme } from '@/components/theme-provider';
 import RevealOnScroll from '@/components/RevealOnScroll';
 
 export default function Perfil() {
   const { toast } = useToast();
+  const { theme, setTheme } = useTheme();
   const [isEditing, setIsEditing] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const [userData, setUserData] = useState({
     name: 'João Silva',
@@ -35,7 +41,24 @@ export default function Perfil() {
     emailArticles: true,
     emailComments: false,
     emailDigest: true,
-    darkMode: false,
+  });
+
+  const [settings, setSettings] = useState({
+    emailNotifications: true,
+    pushNotifications: true,
+    smsNotifications: false,
+    newsletterDaily: true,
+    newsletterWeekly: true,
+    commentReplies: true,
+    articleRecommendations: true,
+    profileVisibility: 'public',
+    showEmail: false,
+    showReadingHistory: true,
+    allowDataCollection: true,
+    fontSize: 'medium',
+    articleLayout: 'comfortable',
+    autoPlayVideos: false,
+    language: 'pt-BR',
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -48,7 +71,6 @@ export default function Perfil() {
   const handleSave = async () => {
     setIsSaving(true);
     
-    // Simular salvamento
     setTimeout(() => {
       setIsSaving(false);
       setIsEditing(false);
@@ -59,10 +81,37 @@ export default function Perfil() {
     }, 1500);
   };
 
+  const handleSaveSettings = async (section: string) => {
+    setIsSaving(true);
+    
+    setTimeout(() => {
+      setIsSaving(false);
+      toast({
+        title: "Configurações salvas!",
+        description: `As configurações de ${section} foram atualizadas com sucesso.`,
+      });
+    }, 1000);
+  };
+
   const handleAvatarUpload = () => {
     toast({
       title: "Upload de foto",
       description: "Funcionalidade de upload de foto em desenvolvimento.",
+    });
+  };
+
+  const handleExportData = () => {
+    toast({
+      title: "Exportação iniciada",
+      description: "Seus dados estão sendo preparados para download. Você receberá um email em breve.",
+    });
+  };
+
+  const handleDeleteAccount = () => {
+    toast({
+      title: "Atenção",
+      description: "Para excluir sua conta, entre em contato com nosso suporte.",
+      variant: "destructive",
     });
   };
 
@@ -214,14 +263,10 @@ export default function Perfil() {
         {/* Main Content - Tabs */}
         <RevealOnScroll>
           <Tabs defaultValue="info" className="space-y-6">
-            <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-4 h-auto">
+            <TabsList className="grid w-full max-w-4xl mx-auto grid-cols-2 md:grid-cols-5 h-auto gap-2">
               <TabsTrigger value="info" className="flex items-center gap-2">
                 <User className="h-4 w-4" />
-                <span className="hidden sm:inline">Informações</span>
-              </TabsTrigger>
-              <TabsTrigger value="preferences" className="flex items-center gap-2">
-                <Settings className="h-4 w-4" />
-                <span className="hidden sm:inline">Preferências</span>
+                <span className="hidden sm:inline">Dados</span>
               </TabsTrigger>
               <TabsTrigger value="saved" className="flex items-center gap-2">
                 <Bookmark className="h-4 w-4" />
@@ -230,6 +275,14 @@ export default function Perfil() {
               <TabsTrigger value="history" className="flex items-center gap-2">
                 <Clock className="h-4 w-4" />
                 <span className="hidden sm:inline">Histórico</span>
+              </TabsTrigger>
+              <TabsTrigger value="preferences" className="flex items-center gap-2">
+                <Bell className="h-4 w-4" />
+                <span className="hidden sm:inline">Preferências</span>
+              </TabsTrigger>
+              <TabsTrigger value="settings" className="flex items-center gap-2">
+                <Settings className="h-4 w-4" />
+                <span className="hidden sm:inline">Configurações</span>
               </TabsTrigger>
             </TabsList>
 
@@ -330,6 +383,97 @@ export default function Perfil() {
                         className="resize-none"
                       />
                     </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </TabsContent>
+
+            {/* Artigos Salvos */}
+            <TabsContent value="saved">
+              <div className="max-w-3xl mx-auto space-y-4">
+                <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <Bookmark className="h-5 w-5 text-primary" />
+                      Artigos Salvos ({savedArticles.length})
+                    </CardTitle>
+                    <CardDescription>
+                      Seus artigos favoritos para ler mais tarde
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    {savedArticles.map((article) => (
+                      <div
+                        key={article.id}
+                        className="flex items-start justify-between p-4 rounded-lg border border-border/50 hover:border-primary/20 hover:bg-accent/5 transition-all cursor-pointer group"
+                      >
+                        <div className="flex-1">
+                          <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">
+                            {article.title}
+                          </h3>
+                          <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                            <Badge variant="secondary">{article.category}</Badge>
+                            <span className="flex items-center gap-1">
+                              <Clock className="h-3 w-3" />
+                              {article.readTime}
+                            </span>
+                            <span>{article.date}</span>
+                          </div>
+                        </div>
+                        <Button variant="ghost" size="icon" className="flex-shrink-0">
+                          <Bookmark className="h-4 w-4 fill-primary text-primary" />
+                        </Button>
+                      </div>
+                    ))}
+                  </CardContent>
+                </Card>
+              </div>
+            </TabsContent>
+
+            {/* Histórico de Leitura */}
+            <TabsContent value="history">
+              <div className="max-w-3xl mx-auto space-y-4">
+                <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <Clock className="h-5 w-5 text-primary" />
+                      Histórico de Leitura
+                    </CardTitle>
+                    <CardDescription>
+                      Artigos que você leu recentemente
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    {readingHistory.map((article) => (
+                      <div
+                        key={article.id}
+                        className="p-4 rounded-lg border border-border/50 hover:border-primary/20 hover:bg-accent/5 transition-all cursor-pointer group"
+                      >
+                        <div className="flex items-start justify-between mb-3">
+                          <div className="flex-1">
+                            <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">
+                              {article.title}
+                            </h3>
+                            <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                              <Badge variant="secondary">{article.category}</Badge>
+                              <span>{article.date}</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="space-y-2">
+                          <div className="flex items-center justify-between text-sm">
+                            <span className="text-muted-foreground">Progresso de leitura</span>
+                            <span className="font-medium text-primary">{article.progress}%</span>
+                          </div>
+                          <div className="w-full bg-muted rounded-full h-2 overflow-hidden">
+                            <div
+                              className="bg-primary h-full transition-all duration-300"
+                              style={{ width: `${article.progress}%` }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    ))}
                   </CardContent>
                 </Card>
               </div>
@@ -450,112 +594,351 @@ export default function Perfil() {
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <Button variant="outline" className="w-full justify-start">
+                      <Lock className="h-4 w-4 mr-2" />
                       Alterar Senha
                     </Button>
                     <Button variant="outline" className="w-full justify-start">
+                      <Shield className="h-4 w-4 mr-2" />
                       Autenticação em Duas Etapas
                     </Button>
                     <Button variant="outline" className="w-full justify-start">
+                      <Eye className="h-4 w-4 mr-2" />
                       Sessões Ativas
                     </Button>
-                    <Separator />
-                    <Button variant="outline" className="w-full justify-start text-destructive hover:text-destructive">
-                      <LogOut className="h-4 w-4 mr-2" />
-                      Sair de Todas as Sessões
-                    </Button>
                   </CardContent>
                 </Card>
               </div>
             </TabsContent>
 
-            {/* Artigos Salvos */}
-            <TabsContent value="saved">
-              <div className="max-w-3xl mx-auto space-y-4">
-                <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Bookmark className="h-5 w-5 text-primary" />
-                      Artigos Salvos ({savedArticles.length})
-                    </CardTitle>
-                    <CardDescription>
-                      Seus artigos favoritos para ler mais tarde
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    {savedArticles.map((article) => (
-                      <div
-                        key={article.id}
-                        className="flex items-start justify-between p-4 rounded-lg border border-border/50 hover:border-primary/20 hover:bg-accent/5 transition-all cursor-pointer group"
-                      >
-                        <div className="flex-1">
-                          <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">
-                            {article.title}
-                          </h3>
-                          <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                            <Badge variant="secondary">{article.category}</Badge>
-                            <span className="flex items-center gap-1">
-                              <Clock className="h-3 w-3" />
-                              {article.readTime}
-                            </span>
-                            <span>{article.date}</span>
-                          </div>
+            {/* Configurações */}
+            <TabsContent value="settings">
+              <div className="max-w-3xl mx-auto">
+                <Tabs defaultValue="appearance" className="space-y-6">
+                  <TabsList className="grid w-full grid-cols-2 md:grid-cols-4">
+                    <TabsTrigger value="appearance">
+                      <Palette className="h-4 w-4 mr-2" />
+                      <span className="hidden sm:inline">Aparência</span>
+                    </TabsTrigger>
+                    <TabsTrigger value="privacy">
+                      <Shield className="h-4 w-4 mr-2" />
+                      <span className="hidden sm:inline">Privacidade</span>
+                    </TabsTrigger>
+                    <TabsTrigger value="security">
+                      <Lock className="h-4 w-4 mr-2" />
+                      <span className="hidden sm:inline">Segurança</span>
+                    </TabsTrigger>
+                    <TabsTrigger value="account">
+                      <User className="h-4 w-4 mr-2" />
+                      <span className="hidden sm:inline">Conta</span>
+                    </TabsTrigger>
+                  </TabsList>
+
+                  {/* Aparência */}
+                  <TabsContent value="appearance">
+                    <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+                      <CardHeader>
+                        <CardTitle className="flex items-center gap-2">
+                          <Palette className="h-5 w-5 text-primary" />
+                          Aparência
+                        </CardTitle>
+                        <CardDescription>
+                          Customize a aparência da plataforma
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="space-y-6">
+                        <div className="space-y-3">
+                          <Label className="text-base font-medium">Tema</Label>
+                          <RadioGroup value={theme} onValueChange={(value: any) => setTheme(value)}>
+                            <div className="grid grid-cols-3 gap-3">
+                              <div className={`relative flex flex-col items-center p-4 rounded-lg border-2 cursor-pointer transition-all ${theme === 'light' ? 'border-primary bg-primary/5' : 'border-border/50 hover:border-primary/30'}`}>
+                                <RadioGroupItem value="light" id="light" className="sr-only" />
+                                <Label htmlFor="light" className="cursor-pointer text-center">
+                                  <div className="mb-2 text-2xl">☀️</div>
+                                  <p className="font-medium">Claro</p>
+                                </Label>
+                              </div>
+                              <div className={`relative flex flex-col items-center p-4 rounded-lg border-2 cursor-pointer transition-all ${theme === 'dark' ? 'border-primary bg-primary/5' : 'border-border/50 hover:border-primary/30'}`}>
+                                <RadioGroupItem value="dark" id="dark" className="sr-only" />
+                                <Label htmlFor="dark" className="cursor-pointer text-center">
+                                  <div className="mb-2 text-2xl">🌙</div>
+                                  <p className="font-medium">Escuro</p>
+                                </Label>
+                              </div>
+                              <div className={`relative flex flex-col items-center p-4 rounded-lg border-2 cursor-pointer transition-all ${theme === 'system' ? 'border-primary bg-primary/5' : 'border-border/50 hover:border-primary/30'}`}>
+                                <RadioGroupItem value="system" id="system" className="sr-only" />
+                                <Label htmlFor="system" className="cursor-pointer text-center">
+                                  <div className="mb-2 text-2xl">💻</div>
+                                  <p className="font-medium">Sistema</p>
+                                </Label>
+                              </div>
+                            </div>
+                          </RadioGroup>
                         </div>
-                        <Button variant="ghost" size="icon" className="flex-shrink-0">
-                          <Bookmark className="h-4 w-4 fill-primary text-primary" />
-                        </Button>
-                      </div>
-                    ))}
-                  </CardContent>
-                </Card>
-              </div>
-            </TabsContent>
 
-            {/* Histórico de Leitura */}
-            <TabsContent value="history">
-              <div className="max-w-3xl mx-auto space-y-4">
-                <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Clock className="h-5 w-5 text-primary" />
-                      Histórico de Leitura
-                    </CardTitle>
-                    <CardDescription>
-                      Artigos que você leu recentemente
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    {readingHistory.map((article) => (
-                      <div
-                        key={article.id}
-                        className="p-4 rounded-lg border border-border/50 hover:border-primary/20 hover:bg-accent/5 transition-all cursor-pointer group"
-                      >
-                        <div className="flex items-start justify-between mb-3">
-                          <div className="flex-1">
-                            <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">
-                              {article.title}
-                            </h3>
-                            <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                              <Badge variant="secondary">{article.category}</Badge>
-                              <span>{article.date}</span>
+                        <Separator />
+
+                        <div className="space-y-3">
+                          <Label htmlFor="fontSize" className="text-base font-medium">Tamanho da Fonte</Label>
+                          <Select
+                            value={settings.fontSize}
+                            onValueChange={(value) => setSettings({ ...settings, fontSize: value })}
+                          >
+                            <SelectTrigger id="fontSize">
+                              <SelectValue />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="small">Pequena</SelectItem>
+                              <SelectItem value="medium">Média (Padrão)</SelectItem>
+                              <SelectItem value="large">Grande</SelectItem>
+                              <SelectItem value="xlarge">Muito Grande</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+
+                        <Separator />
+
+                        <div className="space-y-3">
+                          <Label htmlFor="language" className="text-base font-medium flex items-center gap-2">
+                            <Globe className="h-4 w-4 text-primary" />
+                            Idioma
+                          </Label>
+                          <Select
+                            value={settings.language}
+                            onValueChange={(value) => setSettings({ ...settings, language: value })}
+                          >
+                            <SelectTrigger id="language">
+                              <SelectValue />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="pt-BR">Português (Brasil)</SelectItem>
+                              <SelectItem value="en-US">English (US)</SelectItem>
+                              <SelectItem value="es-ES">Español</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+
+                        <Separator />
+
+                        <Button onClick={() => handleSaveSettings('aparência')} disabled={isSaving} className="w-full">
+                          <Save className="h-4 w-4 mr-2" />
+                          {isSaving ? 'Salvando...' : 'Salvar Configurações'}
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+
+                  {/* Privacidade */}
+                  <TabsContent value="privacy">
+                    <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+                      <CardHeader>
+                        <CardTitle className="flex items-center gap-2">
+                          <Shield className="h-5 w-5 text-primary" />
+                          Privacidade
+                        </CardTitle>
+                        <CardDescription>
+                          Controle quem pode ver suas informações
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="space-y-6">
+                        <div className="space-y-4">
+                          <Label className="text-base font-medium">Visibilidade do Perfil</Label>
+                          <RadioGroup
+                            value={settings.profileVisibility}
+                            onValueChange={(value) =>
+                              setSettings({ ...settings, profileVisibility: value })
+                            }
+                          >
+                            <div className="flex items-center space-x-3 p-3 rounded-lg border border-border/50 hover:border-primary/20 transition-colors">
+                              <RadioGroupItem value="public" id="public" />
+                              <Label htmlFor="public" className="flex-1 cursor-pointer">
+                                <p className="font-medium">Público</p>
+                                <p className="text-sm text-muted-foreground">Qualquer pessoa pode ver seu perfil</p>
+                              </Label>
+                            </div>
+                            <div className="flex items-center space-x-3 p-3 rounded-lg border border-border/50 hover:border-primary/20 transition-colors">
+                              <RadioGroupItem value="followers" id="followers" />
+                              <Label htmlFor="followers" className="flex-1 cursor-pointer">
+                                <p className="font-medium">Apenas Seguidores</p>
+                                <p className="text-sm text-muted-foreground">Somente quem você segue pode ver</p>
+                              </Label>
+                            </div>
+                            <div className="flex items-center space-x-3 p-3 rounded-lg border border-border/50 hover:border-primary/20 transition-colors">
+                              <RadioGroupItem value="private" id="private" />
+                              <Label htmlFor="private" className="flex-1 cursor-pointer">
+                                <p className="font-medium">Privado</p>
+                                <p className="text-sm text-muted-foreground">Apenas você pode ver seu perfil</p>
+                              </Label>
+                            </div>
+                          </RadioGroup>
+                        </div>
+
+                        <Separator />
+
+                        <div className="flex items-center justify-between">
+                          <div className="space-y-1">
+                            <Label htmlFor="showEmail" className="text-base font-medium">
+                              Mostrar Email no Perfil
+                            </Label>
+                            <p className="text-sm text-muted-foreground">
+                              Permitir que outros usuários vejam seu email
+                            </p>
+                          </div>
+                          <Switch
+                            id="showEmail"
+                            checked={settings.showEmail}
+                            onCheckedChange={(checked) =>
+                              setSettings({ ...settings, showEmail: checked })
+                            }
+                          />
+                        </div>
+
+                        <Separator />
+
+                        <div className="space-y-3">
+                          <Button variant="outline" className="w-full justify-start" onClick={handleExportData}>
+                            <Download className="h-4 w-4 mr-2" />
+                            Exportar Meus Dados (LGPD)
+                          </Button>
+                        </div>
+
+                        <Separator />
+
+                        <Button onClick={() => handleSaveSettings('privacidade')} disabled={isSaving} className="w-full">
+                          <Save className="h-4 w-4 mr-2" />
+                          {isSaving ? 'Salvando...' : 'Salvar Configurações'}
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+
+                  {/* Segurança */}
+                  <TabsContent value="security">
+                    <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+                      <CardHeader>
+                        <CardTitle className="flex items-center gap-2">
+                          <Lock className="h-5 w-5 text-primary" />
+                          Segurança
+                        </CardTitle>
+                        <CardDescription>
+                          Proteja sua conta
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="space-y-6">
+                        <div className="space-y-4">
+                          <h4 className="font-semibold text-sm text-muted-foreground uppercase tracking-wide">Senha</h4>
+                          
+                          <div className="space-y-3">
+                            <Label htmlFor="currentPassword">Senha Atual</Label>
+                            <div className="relative">
+                              <Input
+                                id="currentPassword"
+                                type={showPassword ? 'text' : 'password'}
+                                placeholder="Digite sua senha atual"
+                                className="pr-10"
+                              />
+                              <Button
+                                type="button"
+                                variant="ghost"
+                                size="icon"
+                                className="absolute right-0 top-0 h-full"
+                                onClick={() => setShowPassword(!showPassword)}
+                              >
+                                {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                              </Button>
                             </div>
                           </div>
-                        </div>
-                        <div className="space-y-2">
-                          <div className="flex items-center justify-between text-sm">
-                            <span className="text-muted-foreground">Progresso de leitura</span>
-                            <span className="font-medium text-primary">{article.progress}%</span>
-                          </div>
-                          <div className="w-full bg-muted rounded-full h-2 overflow-hidden">
-                            <div
-                              className="bg-primary h-full transition-all duration-300"
-                              style={{ width: `${article.progress}%` }}
+
+                          <div className="space-y-3">
+                            <Label htmlFor="newPassword">Nova Senha</Label>
+                            <Input
+                              id="newPassword"
+                              type="password"
+                              placeholder="Digite sua nova senha"
                             />
                           </div>
+
+                          <Button variant="outline" className="w-full">
+                            Alterar Senha
+                          </Button>
                         </div>
-                      </div>
-                    ))}
-                  </CardContent>
-                </Card>
+
+                        <Separator />
+
+                        <div className="space-y-4">
+                          <h4 className="font-semibold text-sm text-muted-foreground uppercase tracking-wide">Autenticação em Duas Etapas</h4>
+                          
+                          <Alert className="border-primary/20 bg-primary/5">
+                            <Shield className="h-4 w-4 text-primary" />
+                            <AlertDescription className="ml-2">
+                              Adicione uma camada extra de segurança
+                            </AlertDescription>
+                          </Alert>
+
+                          <Button variant="outline" className="w-full">
+                            Ativar 2FA
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+
+                  {/* Conta */}
+                  <TabsContent value="account">
+                    <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
+                      <CardHeader>
+                        <CardTitle className="flex items-center gap-2">
+                          <User className="h-5 w-5 text-primary" />
+                          Gerenciar Conta
+                        </CardTitle>
+                        <CardDescription>
+                          Opções avançadas de conta
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="space-y-6">
+                        <div className="space-y-4">
+                          <h4 className="font-semibold text-sm text-muted-foreground uppercase tracking-wide">Dados</h4>
+                          
+                          <Button variant="outline" className="w-full justify-start" onClick={handleExportData}>
+                            <Download className="h-4 w-4 mr-2" />
+                            Exportar Dados (LGPD)
+                          </Button>
+                          
+                          <Button variant="outline" className="w-full justify-start">
+                            <Upload className="h-4 w-4 mr-2" />
+                            Importar Dados
+                          </Button>
+                        </div>
+
+                        <Separator />
+
+                        <div className="space-y-4">
+                          <h4 className="font-semibold text-sm text-muted-foreground uppercase tracking-wide">Zona de Perigo</h4>
+                          
+                          <Alert variant="destructive" className="border-destructive/50">
+                            <AlertTriangle className="h-4 w-4" />
+                            <AlertDescription className="ml-2">
+                              As ações abaixo são permanentes e não podem ser desfeitas
+                            </AlertDescription>
+                          </Alert>
+
+                          <Button variant="outline" className="w-full justify-start text-destructive hover:text-destructive border-destructive/30">
+                            <Trash2 className="h-4 w-4 mr-2" />
+                            Limpar Histórico
+                          </Button>
+
+                          <Button
+                            variant="destructive"
+                            className="w-full"
+                            onClick={handleDeleteAccount}
+                          >
+                            <Trash2 className="h-4 w-4 mr-2" />
+                            Excluir Conta Permanentemente
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                </Tabs>
               </div>
             </TabsContent>
           </Tabs>

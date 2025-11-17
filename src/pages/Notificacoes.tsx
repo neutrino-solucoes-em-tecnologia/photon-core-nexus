@@ -422,7 +422,7 @@ export default function Notificacoes() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <NavLink to="/configuracoes">
+                  <NavLink to="/perfil">
                     <Button variant="outline" size="icon" className="shadow-sm">
                       <Settings className="w-4 h-4" />
                     </Button>
