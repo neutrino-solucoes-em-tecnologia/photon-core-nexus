@@ -484,16 +484,44 @@ export default function Categoria() {
             <div className="space-y-6">
               {articles.map((article, index) => (
                 <>
-                  {/* Anúncio após 6, 12 e 18 artigos */}
-                  {(index === 6 || index === 12 || index === 18) && (
+                  {/* Anúncio após 6 artigos - Slot 3034133117 */}
+                  {index === 6 && (
                     <div className="my-8 not-prose">
                       <ins 
                         className="adsbygoogle"
                         style={{ display: 'block' }}
                         data-ad-format="fluid"
-                        data-ad-layout-key="-62+dr+1e-1m+57"
+                        data-ad-layout-key="-6t+ed+2i-1n-4w"
                         data-ad-client="ca-pub-8616282875609147"
-                        data-ad-slot="4466634287"
+                        data-ad-slot="3034133117"
+                      />
+                    </div>
+                  )}
+                  
+                  {/* Anúncio após 12 artigos - Slot 1401503159 */}
+                  {index === 12 && (
+                    <div className="my-8 not-prose">
+                      <ins 
+                        className="adsbygoogle"
+                        style={{ display: 'block' }}
+                        data-ad-format="fluid"
+                        data-ad-layout-key="-6t+ed+2i-1n-4w"
+                        data-ad-client="ca-pub-8616282875609147"
+                        data-ad-slot="1401503159"
+                      />
+                    </div>
+                  )}
+                  
+                  {/* Anúncio após 18 artigos - Slot 2470918537 */}
+                  {index === 18 && (
+                    <div className="my-8 not-prose">
+                      <ins 
+                        className="adsbygoogle"
+                        style={{ display: 'block' }}
+                        data-ad-format="fluid"
+                        data-ad-layout-key="-6t+ed+2i-1n-4w"
+                        data-ad-client="ca-pub-8616282875609147"
+                        data-ad-slot="2470918537"
                       />
                     </div>
                   )}
