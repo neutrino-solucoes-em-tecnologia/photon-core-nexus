@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { Clock, User, Calendar, Share2, BookmarkPlus, Tag, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -7,7 +8,6 @@ import ArticleCard from '@/components/ArticleCard';
 import ScrollProgress from '@/components/ScrollProgress';
 import FloatingShare from '@/components/FloatingShare';
 import RevealOnScroll from '@/components/RevealOnScroll';
-import DynamicAd from '@/components/DynamicAd';
 import heroImage from '@/assets/hero-ai-1.jpg';
 import techImage from '@/assets/article-tech.jpg';
 import businessImage from '@/assets/article-business.jpg';
@@ -96,6 +96,20 @@ const relatedArticles = [
 export default function Artigo() {
   const { slug } = useParams();
 
+  // Inicializa AdSense após o componente montar
+  useEffect(() => {
+    try {
+      // Inicializa os 3 anúncios in-article
+      const ads = document.querySelectorAll('.adsbygoogle');
+      ads.forEach(() => {
+        // @ts-ignore
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      });
+    } catch (err) {
+      console.error('AdSense error:', err);
+    }
+  }, []);
+
   return (
     <div className="page-transition min-h-screen">
       <ScrollProgress />
@@ -170,12 +184,14 @@ export default function Artigo() {
             </RevealOnScroll>
 
             {/* High-Value In-Feed Ad - After Hero */}
-            <div className="mb-8">
-              <DynamicAd 
-                slot="2359361602" 
-                format="auto"
-                position={2}
-                className="w-full"
+            <div className="mb-8 not-prose">
+              <ins 
+                className="adsbygoogle"
+                style={{ display: 'block', textAlign: 'center' }}
+                data-ad-layout="in-article"
+                data-ad-format="fluid"
+                data-ad-client="ca-pub-8616282875609147"
+                data-ad-slot="7831164226"
               />
             </div>
 
@@ -225,11 +241,13 @@ export default function Artigo() {
 
             {/* Mid-Content Ad #1 - After introduction (25% through content) */}
             <div className="my-8 not-prose">
-              <DynamicAd 
-                slot="2359361602" 
-                format="auto"
-                position={3}
-                className="w-full"
+              <ins 
+                className="adsbygoogle"
+                style={{ display: 'block', textAlign: 'center' }}
+                data-ad-layout="in-article"
+                data-ad-format="fluid"
+                data-ad-client="ca-pub-8616282875609147"
+                data-ad-slot="7831164226"
               />
             </div>
 
@@ -267,11 +285,13 @@ export default function Artigo() {
 
             {/* Mid-Content Ad #3 - Before conclusion (75% through content) */}
             <div className="my-8 not-prose">
-              <DynamicAd 
-                slot="2359361602" 
-                format="auto"
-                position={5}
-                className="w-full"
+              <ins 
+                className="adsbygoogle"
+                style={{ display: 'block', textAlign: 'center' }}
+                data-ad-layout="in-article"
+                data-ad-format="fluid"
+                data-ad-client="ca-pub-8616282875609147"
+                data-ad-slot="7831164226"
               />
             </div>
 
