@@ -277,18 +277,6 @@ export default function Artigo() {
               </div>
             </RevealOnScroll>
 
-            {/* Ad #4 - Após Aplicações Práticas */}
-            <div className="my-8 not-prose">
-              <ins 
-                className="adsbygoogle"
-                style={{ display: 'block', textAlign: 'center' }}
-                data-ad-layout="in-article"
-                data-ad-format="fluid"
-                data-ad-client="ca-pub-8616282875609147"
-                data-ad-slot="7831164226"
-              />
-            </div>
-
             <RevealOnScroll>
               <div className="prose prose-lg max-w-none article-content">
                 <h2 className="text-2xl md:text-3xl font-bold mt-8 mb-4">Desafios e Oportunidades</h2>
@@ -316,18 +304,6 @@ export default function Artigo() {
               />
             </div>
 
-            {/* Ad #5 - Após Desafios e Oportunidades */}
-            <div className="my-8 not-prose">
-              <ins 
-                className="adsbygoogle"
-                style={{ display: 'block', textAlign: 'center' }}
-                data-ad-layout="in-article"
-                data-ad-format="fluid"
-                data-ad-client="ca-pub-8616282875609147"
-                data-ad-slot="4211499320"
-              />
-            </div>
-
             <RevealOnScroll>
               <div className="prose prose-lg max-w-none article-content">
                 <h2 className="text-2xl md:text-3xl font-bold mt-8 mb-4">O Futuro é Agora</h2>
@@ -338,18 +314,6 @@ export default function Artigo() {
                 </p>
               </div>
             </RevealOnScroll>
-
-            {/* Ad #6 - Após O Futuro é Agora */}
-            <div className="my-8 not-prose">
-              <ins 
-                className="adsbygoogle"
-                style={{ display: 'block', textAlign: 'center' }}
-                data-ad-layout="in-article"
-                data-ad-format="fluid"
-                data-ad-client="ca-pub-8616282875609147"
-                data-ad-slot="8039047789"
-              />
-            </div>
 
             {/* Tags */}
             <RevealOnScroll>
