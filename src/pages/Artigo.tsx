@@ -157,6 +157,7 @@ export default function Artigo() {
                       src={article.authorImage} 
                       alt={article.author}
                       className="w-10 h-10 rounded-full object-cover ring-2 ring-border"
+                      loading="lazy"
                     />
                     <div>
                       <Link to={`/autor/${article.authorSlug}`} className="font-bold text-sm hover:text-primary transition-colors">
@@ -191,6 +192,7 @@ export default function Artigo() {
                   src={article.image}
                   alt={article.title}
                   className="w-full aspect-video object-cover"
+                  fetchPriority="high"
                 />
               </div>
             </RevealOnScroll>
@@ -336,6 +338,7 @@ export default function Artigo() {
                       src={article.authorImage} 
                       alt={article.author}
                       className="w-20 h-20 rounded-full object-cover ring-2 ring-border hover-lift transition-transform"
+                      loading="lazy"
                     />
                   </Link>
                   <div className="flex-1">
