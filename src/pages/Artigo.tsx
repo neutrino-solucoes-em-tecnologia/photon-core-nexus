@@ -1,5 +1,4 @@
 import { useParams, Link } from 'react-router-dom';
-import { useEffect } from 'react';
 import { Clock, User, Calendar, Share2, BookmarkPlus, Tag, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -96,29 +95,6 @@ const relatedArticles = [
 export default function Artigo() {
   const { slug } = useParams();
 
-  // Inicializa AdSense após o componente montar
-  useEffect(() => {
-    try {
-      // Delay para garantir que o DOM está pronto
-      setTimeout(() => {
-        const ads = document.querySelectorAll('.adsbygoogle');
-        console.log(`[Artigo] Encontrados ${ads.length} anúncios para inicializar`);
-        
-        ads.forEach((ad, index) => {
-          if (!ad.getAttribute('data-adsbygoogle-status')) {
-            // @ts-ignore
-            (window.adsbygoogle = window.adsbygoogle || []).push({});
-            console.log(`[Artigo] Anúncio ${index + 1} inicializado`);
-          } else {
-            console.log(`[Artigo] Anúncio ${index + 1} já estava inicializado`);
-          }
-        });
-      }, 500);
-    } catch (err) {
-      console.error('AdSense error:', err);
-    }
-  }, []);
-
   return (
     <div className="page-transition min-h-screen">
       <ScrollProgress />
@@ -181,18 +157,6 @@ export default function Artigo() {
               </header>
             </RevealOnScroll>
 
-            {/* Ad #1 - Abaixo do título */}
-            <div className="mb-8 not-prose">
-              <ins 
-                className="adsbygoogle"
-                style={{ display: 'block', textAlign: 'center' }}
-                data-ad-layout="in-article"
-                data-ad-format="fluid"
-                data-ad-client="ca-pub-8616282875609147"
-                data-ad-slot="7831164226"
-              />
-            </div>
-
             {/* Hero Image */}
             <RevealOnScroll>
               <div className="mb-8 rounded-xl overflow-hidden">
@@ -248,18 +212,6 @@ export default function Artigo() {
               </div>
             </RevealOnScroll>
 
-            {/* Ad #2 - Após primeiro parágrafo */}
-            <div className="my-8 not-prose">
-              <ins 
-                className="adsbygoogle"
-                style={{ display: 'block', textAlign: 'center' }}
-                data-ad-layout="in-article"
-                data-ad-format="fluid"
-                data-ad-client="ca-pub-8616282875609147"
-                data-ad-slot="4211499320"
-              />
-            </div>
-
             <RevealOnScroll>
               <div className="prose prose-lg max-w-none article-content">
                 <h2 className="text-2xl md:text-3xl font-bold mt-8 mb-4">Aplicações Práticas</h2>
@@ -291,18 +243,6 @@ export default function Artigo() {
                 </p>
               </div>
             </RevealOnScroll>
-
-            {/* Ad #3 - Antes do último parágrafo */}
-            <div className="my-8 not-prose">
-              <ins 
-                className="adsbygoogle"
-                style={{ display: 'block', textAlign: 'center' }}
-                data-ad-layout="in-article"
-                data-ad-format="fluid"
-                data-ad-client="ca-pub-8616282875609147"
-                data-ad-slot="8039047789"
-              />
-            </div>
 
             <RevealOnScroll>
               <div className="prose prose-lg max-w-none article-content">
