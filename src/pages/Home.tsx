@@ -45,7 +45,7 @@ const featuredArticles = [
 
 export default function Home() {
   return (
-    <div className="pb-8">
+    <div className="pb-8 w-full max-w-full overflow-x-hidden">
       <ContentWithViewportAds
         adSlot="home-viewport-ads"
         adFormat="horizontal"
@@ -75,7 +75,7 @@ export default function Home() {
                 </Link>
               </Button>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full max-w-full">
               {featuredArticles.map((article, index) => (
                 <RevealOnScroll key={article.slug} delay={index * 150}>
                   <ArticleCard {...article} />
@@ -88,7 +88,7 @@ export default function Home() {
         {/* Newsletter CTA */}
         <RevealOnScroll>
           <section className="wide-container py-8 md:py-12">
-            <div className="rounded-xl md:rounded-2xl hero-gradient-rich p-6 md:p-12 text-center text-white shadow-xl md:shadow-2xl relative overflow-hidden">
+            <div className="rounded-xl md:rounded-2xl hero-gradient-rich p-6 md:p-12 text-center text-white shadow-xl md:shadow-2xl relative overflow-hidden w-full max-w-full">
               <div className="absolute inset-0 opacity-10">
                 <div className="absolute top-0 left-0 w-40 h-40 bg-white rounded-full blur-3xl" />
                 <div className="absolute bottom-0 right-0 w-60 h-60 bg-accent rounded-full blur-3xl" />

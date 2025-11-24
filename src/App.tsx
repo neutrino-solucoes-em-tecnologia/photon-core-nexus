@@ -32,8 +32,8 @@ const App = () => (
         <SidebarProvider defaultOpen={true}>
           <AppSidebar />
           <SidebarInset>
-            <div className="flex flex-col min-h-screen w-full group">
-              <main className="flex-1 w-full relative">
+            <div className="flex flex-col min-h-screen w-full max-w-full overflow-x-hidden group">
+              <main className="flex-1 w-full max-w-full overflow-x-hidden relative">
                 <MainContent>
                   <Routes>
                     <Route path="/" element={<Home />} />

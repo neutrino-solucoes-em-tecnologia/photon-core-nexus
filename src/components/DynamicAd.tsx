@@ -196,7 +196,7 @@ export default function DynamicAd({
   return (
     <div
       ref={adRef}
-      className={`relative w-full min-h-[100px] md:min-h-[90px] bg-muted/20 backdrop-blur-sm rounded-lg overflow-hidden transition-all duration-300 ${
+      className={`relative w-full max-w-full min-h-[100px] md:min-h-[90px] bg-muted/20 backdrop-blur-sm rounded-lg overflow-hidden transition-all duration-300 ${
         isVisible ? 'opacity-100' : 'opacity-70'
       } ${className}`}
       data-ad-slot={slot}

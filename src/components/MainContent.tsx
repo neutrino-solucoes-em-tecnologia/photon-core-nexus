@@ -21,7 +21,7 @@ export default function MainContent({ children }: MainContentProps) {
       <ScrollProgress />
       <div 
         className={`
-          relative w-full min-h-screen
+          relative w-full max-w-full overflow-x-hidden min-h-screen
           transition-all duration-600 ease-out
           ${isAnimating ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}
         `}
@@ -38,7 +38,7 @@ export default function MainContent({ children }: MainContentProps) {
         </div>
 
         {/* Content Container */}
-        <div className="relative z-10">
+        <div className="relative z-10 w-full max-w-full overflow-x-hidden">
           {children}
         </div>
       </div>

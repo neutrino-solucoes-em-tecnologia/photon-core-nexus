@@ -38,9 +38,9 @@ const heroArticles = [
 export default function HeroSection() {
   return (
     <section className="wide-container py-4 md:py-6">
-      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6 stagger-fade-in">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6 stagger-fade-in w-full max-w-full overflow-hidden">
         {heroArticles.map((article, index) => (
-          <article key={article.id} className="group relative" style={{ animationDelay: `${index * 0.1}s` }}>
+          <article key={article.id} className="group relative w-full max-w-full" style={{ animationDelay: `${index * 0.1}s` }}>
             <Link
               to={`/artigo/${article.slug}`}
               className="block relative aspect-[3/4] overflow-hidden rounded-lg md:rounded-xl shadow-md hover:shadow-xl md:shadow-lg md:hover:shadow-2xl transition-all duration-500 card-shine"

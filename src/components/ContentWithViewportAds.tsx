@@ -29,7 +29,7 @@ export default function ContentWithViewportAds({
     if ((index + 1) % itemsPerViewport === 0 && index !== childrenArray.length - 1) {
       adCounter++;
       result.push(
-        <div key={`viewport-ad-${adCounter}`} className="my-6 md:my-8">
+        <div key={`viewport-ad-${adCounter}`} className="my-6 md:my-8 w-full max-w-full overflow-hidden px-4 sm:px-6 lg:px-8">
           <DynamicAd
             slot={adSlot}
             format={adFormat}

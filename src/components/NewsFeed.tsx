@@ -79,9 +79,9 @@ export default function NewsFeed() {
     <section className="wide-container py-4 md:py-6">
       <h2 className="text-xl md:text-3xl font-bold mb-4 md:mb-6">Últimas Notícias</h2>
       
-      <div className="grid lg:grid-cols-[1fr_320px] gap-6 md:gap-8">
+      <div className="grid lg:grid-cols-[1fr_320px] gap-6 md:gap-8 w-full max-w-full overflow-hidden">
         {/* Main Content */}
-        <div>
+        <div className="w-full max-w-full overflow-hidden">
           <ContentWithViewportAds
             adSlot="newsfeed-ads"
             adFormat="horizontal"
@@ -90,12 +90,12 @@ export default function NewsFeed() {
             {newsArticles.map((article) => (
               <article 
                 key={article.id} 
-                className="group grid grid-cols-[100px_1fr] md:grid-cols-[200px_1fr] lg:grid-cols-[280px_1fr] gap-3 md:gap-4 lg:gap-6 pb-4 md:pb-6 border-b border-border"
+                className="group grid grid-cols-[100px_1fr] md:grid-cols-[200px_1fr] lg:grid-cols-[280px_1fr] gap-3 md:gap-4 lg:gap-6 pb-4 md:pb-6 border-b border-border w-full max-w-full"
               >
               {/* Thumbnail */}
               <Link 
                 to={`/artigo/${article.slug}`} 
-                className="relative overflow-hidden rounded-md aspect-video md:aspect-video bg-muted flex-shrink-0"
+                className="relative overflow-hidden rounded-md aspect-video md:aspect-video bg-muted flex-shrink-0 w-full"
               >
                 <img
                   src={article.image}

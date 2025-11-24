@@ -105,6 +105,14 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
+  
+  /* Prevent horizontal overflow globally */
+  *,
+  *::before,
+  *::after {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
 
   body {
     @apply bg-background text-foreground antialiased;
@@ -129,13 +137,15 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  /* Editorial utilities */
+  /* Editorial utilities - Fixed for mobile with proper max-width */
   .editorial-container {
-    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply w-full mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: min(64rem, 100vw);
   }
   
   .wide-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply w-full mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: min(80rem, 100vw);
   }
   
   .hero-gradient {
@@ -261,7 +271,7 @@ All colors MUST be HSL.
 
   /* Image loading optimization */
   img {
-    @apply object-cover;
+    @apply object-cover max-w-full h-auto;
   }
   
   img[loading="lazy"] {
@@ -308,13 +318,26 @@ All colors MUST be HSL.
     min-width: 0; /* Permite que o flex-item encolha abaixo do tamanho do conteúdo */
   }
 
-  /* Prevent horizontal scroll on body */
-  body {
+  /* Prevent horizontal scroll on all elements */
+  html, body {
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
   }
 
   /* Better content layout */
-  main > * {
+  main, main > * {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Ensure all containers respect viewport width */
+  * {
+    max-width: 100%;
+  }
+
+  /* Fix for container utilities */
+  .container, .editorial-container, .wide-container {
     max-width: 100%;
   }
 
