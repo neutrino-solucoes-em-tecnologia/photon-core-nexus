@@ -185,8 +185,8 @@ export default function Artigo() {
             {/* High-Value In-Feed Ad - After Hero */}
             <div className="mb-8">
               <DynamicAd 
-                slot="article-after-hero" 
-                format="horizontal"
+                slot="2359361602" 
+                format="auto"
                 position={2}
                 className="w-full"
               />
@@ -239,8 +239,8 @@ export default function Artigo() {
             {/* Mid-Content Ad #1 - After introduction (25% through content) */}
             <div className="my-8 not-prose">
               <DynamicAd 
-                slot="article-mid-content-1" 
-                format="horizontal"
+                slot="2359361602" 
+                format="auto"
                 position={3}
                 className="w-full"
               />
@@ -266,8 +266,8 @@ export default function Artigo() {
             {/* Mid-Content Ad #2 - After practical applications (50% through content) */}
             <div className="my-8 not-prose">
               <DynamicAd 
-                slot="article-mid-content-2" 
-                format="horizontal"
+                slot="2359361602" 
+                format="auto"
                 position={4}
                 className="w-full"
               />
@@ -291,8 +291,8 @@ export default function Artigo() {
             {/* Mid-Content Ad #3 - Before conclusion (75% through content) */}
             <div className="my-8 not-prose">
               <DynamicAd 
-                slot="article-mid-content-3" 
-                format="horizontal"
+                slot="2359361602" 
+                format="auto"
                 position={5}
                 className="w-full"
               />
@@ -329,8 +329,8 @@ export default function Artigo() {
             {/* Bottom Content Ad - Before author card */}
             <div className="my-8">
               <DynamicAd 
-                slot="article-bottom-content" 
-                format="horizontal"
+                slot="2359361602" 
+                format="auto"
                 position={6}
                 className="w-full"
               />
