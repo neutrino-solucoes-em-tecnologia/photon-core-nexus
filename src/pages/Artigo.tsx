@@ -121,16 +121,6 @@ export default function Artigo() {
 
       {/* Main Container */}
       <div className="w-full max-w-full overflow-x-hidden">
-        {/* Mobile Top Ad - High viewability */}
-        <div className="lg:hidden w-full px-4 py-4">
-          <DynamicAd 
-            slot="article-top-mobile" 
-            format="horizontal"
-            position={1}
-            className="w-full"
-          />
-        </div>
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6 lg:gap-8">
             
@@ -145,6 +135,16 @@ export default function Artigo() {
                   {article.title}
                 </h1>
                 
+                {/* Mobile Top Ad - Below title for high engagement */}
+                <div className="lg:hidden my-6">
+                  <DynamicAd 
+                    slot="article-top-mobile" 
+                    format="horizontal"
+                    position={1}
+                    className="w-full"
+                  />
+                </div>
+
                 {/* Subtitle */}
                 <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
                   {article.subtitle}
