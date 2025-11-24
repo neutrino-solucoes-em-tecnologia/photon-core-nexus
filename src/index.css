@@ -540,33 +540,7 @@ All colors MUST be HSL.
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* Custom scrollbar for main content */
-  main::-webkit-scrollbar {
-    width: 10px;
-  }
 
-  main::-webkit-scrollbar-track {
-    background: hsl(var(--muted) / 0.2);
-  }
-
-  main::-webkit-scrollbar-thumb {
-    background: hsl(var(--primary) / 0.3);
-    border-radius: 10px;
-    border: 2px solid transparent;
-    background-clip: padding-box;
-  }
-
-  main::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary) / 0.5);
-  }
-
-  .dark main::-webkit-scrollbar-thumb {
-    background: hsl(var(--primary) / 0.4);
-  }
-
-  .dark main::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary) / 0.6);
-  }
 
   /* Scrollbar styling for sidebar */
   .sidebar-scroll::-webkit-scrollbar {
