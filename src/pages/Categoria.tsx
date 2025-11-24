@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { SlidersHorizontal, TrendingUp, Clock, Eye } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -368,6 +368,16 @@ export default function Categoria() {
   const category = categories[slug as keyof typeof categories] || categories.tecnologia;
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
 
+  // Inicializa AdSense após o componente montar
+  useEffect(() => {
+    try {
+      // @ts-ignore
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (err) {
+      console.error('AdSense error:', err);
+    }
+  }, []);
+
   return (
     <div className="page-transition">
       {/* Hero Header */}
@@ -469,6 +479,20 @@ export default function Categoria() {
             {/* Articles List */}
             <div className="space-y-6">
               {articles.map((article, index) => (
+                <>
+                  {/* Anúncio após 6 artigos */}
+                  {index === 6 && (
+                    <div className="my-8 not-prose">
+                      <ins 
+                        className="adsbygoogle"
+                        style={{ display: 'block' }}
+                        data-ad-format="fluid"
+                        data-ad-layout-key="-62+dr+1e-1m+57"
+                        data-ad-client="ca-pub-8616282875609147"
+                        data-ad-slot="4466634287"
+                      />
+                    </div>
+                  )}
                 <article 
                   key={article.slug}
                   className="group grid md:grid-cols-[280px_1fr] gap-6 pb-6 border-b border-border"
@@ -556,6 +580,7 @@ export default function Categoria() {
                     </div>
                   </div>
                 </article>
+                </>
               ))}
             </div>
 
