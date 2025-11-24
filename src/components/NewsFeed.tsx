@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { User, MessageSquare } from 'lucide-react';
+import ContentWithViewportAds from './ContentWithViewportAds';
+import DynamicAd from './DynamicAd';
 import techImage from '@/assets/article-tech.jpg';
 import businessImage from '@/assets/article-business.jpg';
 
@@ -79,12 +81,17 @@ export default function NewsFeed() {
       
       <div className="grid lg:grid-cols-[1fr_320px] gap-6 md:gap-8">
         {/* Main Content */}
-        <div className="space-y-4 md:space-y-6">
-          {newsArticles.map((article) => (
-            <article 
-              key={article.id} 
-              className="group grid grid-cols-[100px_1fr] md:grid-cols-[200px_1fr] lg:grid-cols-[280px_1fr] gap-3 md:gap-4 lg:gap-6 pb-4 md:pb-6 border-b border-border last:border-0"
-            >
+        <div>
+          <ContentWithViewportAds
+            adSlot="newsfeed-ads"
+            adFormat="horizontal"
+            itemsPerViewport={3}
+          >
+            {newsArticles.map((article) => (
+              <article 
+                key={article.id} 
+                className="group grid grid-cols-[100px_1fr] md:grid-cols-[200px_1fr] lg:grid-cols-[280px_1fr] gap-3 md:gap-4 lg:gap-6 pb-4 md:pb-6 border-b border-border"
+              >
               {/* Thumbnail */}
               <Link 
                 to={`/artigo/${article.slug}`} 
@@ -160,18 +167,19 @@ export default function NewsFeed() {
               </div>
             </article>
           ))}
+          </ContentWithViewportAds>
         </div>
 
         {/* Sidebar - Desktop Only */}
         <aside className="hidden lg:block">
           <div className="sticky top-6 space-y-6">
-            {/* Ad Placeholder */}
-            <div className="bg-muted/50 backdrop-blur-sm rounded-lg border border-border/50 flex items-center justify-center h-[600px] text-muted-foreground shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="text-center">
-                <p className="text-sm font-medium">Espaço Publicitário</p>
-                <p className="text-xs mt-1 opacity-70">300 x 600</p>
-              </div>
-            </div>
+            {/* Ad Sidebar */}
+            <DynamicAd 
+              slot="newsfeed-sidebar" 
+              format="vertical" 
+              position={1}
+              className="h-[600px]"
+            />
           </div>
         </aside>
       </div>

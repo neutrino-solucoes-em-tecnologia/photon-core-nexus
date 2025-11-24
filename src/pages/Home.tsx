@@ -6,6 +6,7 @@ import RevealOnScroll from '@/components/RevealOnScroll';
 import HeroSection from '@/components/HeroSection';
 import FeaturedHighlights from '@/components/FeaturedHighlights';
 import NewsFeed from '@/components/NewsFeed';
+import ContentWithViewportAds from '@/components/ContentWithViewportAds';
 import techImage from '@/assets/article-tech.jpg';
 import businessImage from '@/assets/article-business.jpg';
 
@@ -45,64 +46,70 @@ const featuredArticles = [
 export default function Home() {
   return (
     <div className="pb-8">
-      {/* Hero Section */}
-      <HeroSection />
+      <ContentWithViewportAds
+        adSlot="home-viewport-ads"
+        adFormat="horizontal"
+        itemsPerViewport={1}
+      >
+        {/* Hero Section */}
+        <HeroSection />
 
-      {/* Featured Highlights - Mais destaques */}
-      <FeaturedHighlights />
+        {/* Featured Highlights - Mais destaques */}
+        <FeaturedHighlights />
 
-      {/* News Feed - Feed de Notícias */}
-      <RevealOnScroll>
-        <NewsFeed />
-      </RevealOnScroll>
+        {/* News Feed - Feed de Notícias */}
+        <RevealOnScroll>
+          <NewsFeed />
+        </RevealOnScroll>
 
-      {/* Featured Articles */}
-      <RevealOnScroll>
-        <section className="wide-container py-8 md:py-12">
-          <div className="flex items-center justify-between mb-4 md:mb-6">
-            <h2 className="text-xl md:text-3xl font-bold">Destaques da Semana</h2>
-            <Button variant="ghost" asChild className="hover-glow text-sm md:text-base">
-              <Link to="/categoria/tecnologia">
-                <span className="hidden sm:inline">Ver mais</span>
-                <span className="sm:hidden">Mais</span>
-                <ArrowRight className="ml-1 md:ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {featuredArticles.map((article, index) => (
-              <RevealOnScroll key={article.slug} delay={index * 150}>
-                <ArticleCard {...article} />
-              </RevealOnScroll>
-            ))}
-          </div>
-        </section>
-      </RevealOnScroll>
-
-      {/* Newsletter CTA */}
-      <RevealOnScroll>
-        <section className="wide-container py-8 md:py-12">
-          <div className="rounded-xl md:rounded-2xl hero-gradient-rich p-6 md:p-12 text-center text-white shadow-xl md:shadow-2xl relative overflow-hidden">
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-0 left-0 w-40 h-40 bg-white rounded-full blur-3xl" />
-              <div className="absolute bottom-0 right-0 w-60 h-60 bg-accent rounded-full blur-3xl" />
-            </div>
-            <div className="relative z-10">
-              <h2 className="text-xl md:text-3xl font-bold mb-3 md:mb-4">Fique por dentro das novidades</h2>
-              <p className="text-sm md:text-lg mb-6 md:mb-8 opacity-90 max-w-2xl mx-auto">
-                Receba análises exclusivas e as principais tendências direto no seu email.
-              </p>
-              <Button size="lg" variant="secondary" asChild className="hover-glow animate-pulse hover:animate-none w-full sm:w-auto">
-                <Link to="/fale-conosco">
-                  <span className="hidden sm:inline">Assinar Newsletter Gratuita</span>
-                  <span className="sm:hidden">Assinar Newsletter</span>
-                  <ArrowRight className="ml-2 h-4 md:h-5 w-4 md:w-5" />
+        {/* Featured Articles */}
+        <RevealOnScroll>
+          <section className="wide-container py-8 md:py-12">
+            <div className="flex items-center justify-between mb-4 md:mb-6">
+              <h2 className="text-xl md:text-3xl font-bold">Destaques da Semana</h2>
+              <Button variant="ghost" asChild className="hover-glow text-sm md:text-base">
+                <Link to="/categoria/tecnologia">
+                  <span className="hidden sm:inline">Ver mais</span>
+                  <span className="sm:hidden">Mais</span>
+                  <ArrowRight className="ml-1 md:ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>
-          </div>
-        </section>
-      </RevealOnScroll>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+              {featuredArticles.map((article, index) => (
+                <RevealOnScroll key={article.slug} delay={index * 150}>
+                  <ArticleCard {...article} />
+                </RevealOnScroll>
+              ))}
+            </div>
+          </section>
+        </RevealOnScroll>
+
+        {/* Newsletter CTA */}
+        <RevealOnScroll>
+          <section className="wide-container py-8 md:py-12">
+            <div className="rounded-xl md:rounded-2xl hero-gradient-rich p-6 md:p-12 text-center text-white shadow-xl md:shadow-2xl relative overflow-hidden">
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-0 left-0 w-40 h-40 bg-white rounded-full blur-3xl" />
+                <div className="absolute bottom-0 right-0 w-60 h-60 bg-accent rounded-full blur-3xl" />
+              </div>
+              <div className="relative z-10">
+                <h2 className="text-xl md:text-3xl font-bold mb-3 md:mb-4">Fique por dentro das novidades</h2>
+                <p className="text-sm md:text-lg mb-6 md:mb-8 opacity-90 max-w-2xl mx-auto">
+                  Receba análises exclusivas e as principais tendências direto no seu email.
+                </p>
+                <Button size="lg" variant="secondary" asChild className="hover-glow animate-pulse hover:animate-none w-full sm:w-auto">
+                  <Link to="/fale-conosco">
+                    <span className="hidden sm:inline">Assinar Newsletter Gratuita</span>
+                    <span className="sm:hidden">Assinar Newsletter</span>
+                    <ArrowRight className="ml-2 h-4 md:h-5 w-4 md:w-5" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </section>
+        </RevealOnScroll>
+      </ContentWithViewportAds>
     </div>
   );
 }

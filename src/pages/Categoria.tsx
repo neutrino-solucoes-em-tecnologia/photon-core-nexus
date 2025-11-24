@@ -14,6 +14,8 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import RevealOnScroll from '@/components/RevealOnScroll';
+import DynamicAd from '@/components/DynamicAd';
+import ContentWithViewportAds from '@/components/ContentWithViewportAds';
 import techImage from '@/assets/article-tech.jpg';
 import businessImage from '@/assets/article-business.jpg';
 
@@ -466,12 +468,16 @@ export default function Categoria() {
               </div>
             </RevealOnScroll>
 
-            {/* Articles List */}
-            <div className="space-y-6">
+            {/* Articles List com Ads entre os itens */}
+            <ContentWithViewportAds
+              adSlot="category-viewport-ads"
+              adFormat="horizontal"
+              itemsPerViewport={6}
+            >
               {articles.map((article, index) => (
                 <article 
                   key={article.slug}
-                  className="group grid md:grid-cols-[280px_1fr] gap-6 pb-6 border-b border-border last:border-0"
+                  className="group grid md:grid-cols-[280px_1fr] gap-6 pb-6 border-b border-border"
                   style={{ 
                     animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
                   }}
@@ -557,7 +563,7 @@ export default function Categoria() {
                   </div>
                 </article>
               ))}
-            </div>
+            </ContentWithViewportAds>
 
             {/* Load More */}
             <RevealOnScroll>
@@ -623,12 +629,14 @@ export default function Categoria() {
 
             {/* Ad Space - 300x600 - Sticky */}
             <div className="sticky top-6">
-              <div className="bg-muted/50 backdrop-blur-sm rounded-lg border border-border/50 flex items-center justify-center h-[600px] text-muted-foreground shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="text-center">
-                  <p className="text-sm font-medium">Espaço Publicitário</p>
-                  <p className="text-xs mt-1 opacity-70">300 x 600</p>
-                </div>
-              </div>
+              <RevealOnScroll>
+                <DynamicAd 
+                  slot="category-sidebar" 
+                  format="vertical" 
+                  position={3}
+                  className="h-[600px]"
+                />
+              </RevealOnScroll>
             </div>
           </aside>
         </div>
