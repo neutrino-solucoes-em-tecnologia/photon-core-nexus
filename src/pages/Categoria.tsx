@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { SlidersHorizontal, TrendingUp, Clock, Eye } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -368,6 +368,16 @@ export default function Categoria() {
   const category = categories[slug as keyof typeof categories] || categories.tecnologia;
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
 
+  useEffect(() => {
+    try {
+      setTimeout(() => {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      }, 100);
+    } catch (err) {
+      console.error('AdSense error:', err);
+    }
+  }, []);
+
   return (
     <div className="page-transition">
       {/* Hero Header */}
@@ -469,7 +479,8 @@ export default function Categoria() {
             {/* Articles List */}
             <div className="space-y-6">
               {articles.map((article, index) => (
-                <article 
+                <>
+                  <article 
                   key={article.slug}
                   className="group grid md:grid-cols-[280px_1fr] gap-6 pb-6 border-b border-border"
                   style={{ 
@@ -556,6 +567,21 @@ export default function Categoria() {
                     </div>
                   </div>
                 </article>
+
+                {/* CATEGORIA-01 - Após primeiro item */}
+                {index === 0 && (
+                  <div className="my-8 not-prose">
+                    <ins 
+                      className="adsbygoogle"
+                      style={{ display: 'block' }}
+                      data-ad-format="fluid"
+                      data-ad-layout-key="-62+dr+1e-1m+57"
+                      data-ad-client={import.meta.env.VITE_ADSENSE_CLIENT_ID}
+                      data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_01}
+                    />
+                  </div>
+                )}
+                </>
               ))}
             </div>
 
