@@ -390,6 +390,7 @@ export default function Categoria() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentPage]);
 
+  // Inicializar anúncios quando a página muda
   useEffect(() => {
     try {
       setTimeout(() => {
@@ -402,7 +403,7 @@ export default function Categoria() {
         console.error('AdSense error:', err);
       }
     }
-  }, []);
+  }, [currentPage]);
 
   return (
     <div className="page-transition">
@@ -598,8 +599,8 @@ export default function Categoria() {
                   </div>
                 </article>
 
-                {/* CATEGORIA-01 - Após 3º artigo */}
-                {index === 2 && (
+                {/* CATEGORIA-01 - Após 1º artigo */}
+                {index === 0 && (
                   <div className="my-8 not-prose">
                     <ins 
                       className="adsbygoogle"
@@ -612,8 +613,8 @@ export default function Categoria() {
                   </div>
                 )}
 
-                {/* CATEGORIA-02 - Após 7º artigo */}
-                {index === 6 && (
+                {/* CATEGORIA-02 - Após 5º artigo */}
+                {index === 4 && (
                   <div className="my-8 not-prose">
                     <ins 
                       className="adsbygoogle"
@@ -626,8 +627,8 @@ export default function Categoria() {
                   </div>
                 )}
 
-                {/* CATEGORIA-03 - Após 10º artigo */}
-                {index === 9 && (
+                {/* CATEGORIA-03 - Antes do penúltimo artigo */}
+                {index === currentArticles.length - 2 && currentArticles.length >= 2 && (
                   <div className="my-8 not-prose">
                     <ins 
                       className="adsbygoogle"
