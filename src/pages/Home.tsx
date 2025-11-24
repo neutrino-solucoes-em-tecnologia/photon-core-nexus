@@ -47,8 +47,8 @@ export default function Home() {
   return (
     <div className="pb-8 w-full max-w-full overflow-x-hidden">
       <ContentWithViewportAds
-        adSlot="home-viewport-ads"
-        adFormat="horizontal"
+        adSlot="6721278442"
+        adFormat="auto"
         itemsPerViewport={1}
       >
         {/* Hero Section */}
