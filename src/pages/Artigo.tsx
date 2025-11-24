@@ -250,16 +250,6 @@ export default function Artigo() {
               </div>
             </RevealOnScroll>
 
-            {/* Mid-Content Ad #2 - After practical applications (50% through content) */}
-            <div className="my-8 not-prose">
-              <DynamicAd 
-                slot="2359361602" 
-                format="auto"
-                position={4}
-                className="w-full"
-              />
-            </div>
-
             <RevealOnScroll>
               <div className="prose prose-lg max-w-none article-content">
                 <h2 className="text-2xl md:text-3xl font-bold mt-8 mb-4">Desafios e Oportunidades</h2>
@@ -313,17 +303,7 @@ export default function Artigo() {
               </div>
             </RevealOnScroll>
 
-            {/* Bottom Content Ad - Before author card */}
-            <div className="my-8">
-              <DynamicAd 
-                slot="2359361602" 
-                format="auto"
-                position={6}
-                className="w-full"
-              />
-            </div>
-
-            {/* Author Card */}
+            {/* Author Card */
             <RevealOnScroll>
               <div className="mt-12 p-6 rounded-xl glass-effect border border-border/50 hover:border-primary/20 transition-all">
                 <div className="flex items-start space-x-4">
