@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { SlidersHorizontal, TrendingUp, Clock, Eye } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -368,20 +368,6 @@ export default function Categoria() {
   const category = categories[slug as keyof typeof categories] || categories.tecnologia;
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
 
-  // Inicializa AdSense após o componente montar
-  useEffect(() => {
-    try {
-      // Inicializa múltiplos anúncios
-      const ads = document.querySelectorAll('.adsbygoogle');
-      ads.forEach(() => {
-        // @ts-ignore
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-      });
-    } catch (err) {
-      console.error('AdSense error:', err);
-    }
-  }, []);
-
   return (
     <div className="page-transition">
       {/* Hero Header */}
@@ -483,48 +469,6 @@ export default function Categoria() {
             {/* Articles List */}
             <div className="space-y-6">
               {articles.map((article, index) => (
-                <>
-                  {/* Anúncio após 6 artigos - Slot 3034133117 */}
-                  {index === 6 && (
-                    <div className="my-8 not-prose">
-                      <ins 
-                        className="adsbygoogle"
-                        style={{ display: 'block' }}
-                        data-ad-format="fluid"
-                        data-ad-layout-key="-6t+ed+2i-1n-4w"
-                        data-ad-client="ca-pub-8616282875609147"
-                        data-ad-slot="3034133117"
-                      />
-                    </div>
-                  )}
-                  
-                  {/* Anúncio após 12 artigos - Slot 1401503159 */}
-                  {index === 12 && (
-                    <div className="my-8 not-prose">
-                      <ins 
-                        className="adsbygoogle"
-                        style={{ display: 'block' }}
-                        data-ad-format="fluid"
-                        data-ad-layout-key="-6t+ed+2i-1n-4w"
-                        data-ad-client="ca-pub-8616282875609147"
-                        data-ad-slot="1401503159"
-                      />
-                    </div>
-                  )}
-                  
-                  {/* Anúncio após 18 artigos - Slot 2470918537 */}
-                  {index === 18 && (
-                    <div className="my-8 not-prose">
-                      <ins 
-                        className="adsbygoogle"
-                        style={{ display: 'block' }}
-                        data-ad-format="fluid"
-                        data-ad-layout-key="-6t+ed+2i-1n-4w"
-                        data-ad-client="ca-pub-8616282875609147"
-                        data-ad-slot="2470918537"
-                      />
-                    </div>
-                  )}
                 <article 
                   key={article.slug}
                   className="group grid md:grid-cols-[280px_1fr] gap-6 pb-6 border-b border-border"
@@ -612,7 +556,6 @@ export default function Categoria() {
                     </div>
                   </div>
                 </article>
-                </>
               ))}
             </div>
 
