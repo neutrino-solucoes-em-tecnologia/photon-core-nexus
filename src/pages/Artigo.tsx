@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { Clock, User, Calendar, Share2, BookmarkPlus, Tag, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -95,6 +96,14 @@ const relatedArticles = [
 export default function Artigo() {
   const { slug } = useParams();
 
+  useEffect(() => {
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (err) {
+      console.error('AdSense error:', err);
+    }
+  }, []);
+
   return (
     <div className="page-transition min-h-screen">
       <ScrollProgress />
@@ -156,6 +165,18 @@ export default function Artigo() {
                 </div>
               </header>
             </RevealOnScroll>
+
+            {/* ARTIGO-TITULO-01 */}
+            <div className="mb-8 not-prose">
+              <ins 
+                className="adsbygoogle"
+                style={{ display: 'block' }}
+                data-ad-client={import.meta.env.VITE_ADSENSE_CLIENT_ID}
+                data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_TITULO_01}
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+              />
+            </div>
 
             {/* Hero Image */}
             <RevealOnScroll>
