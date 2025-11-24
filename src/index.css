@@ -328,7 +328,6 @@ All colors MUST be HSL.
   /* Better content layout */
   main, main > * {
     max-width: 100%;
-    overflow-x: hidden;
   }
 
   /* Ensure all containers respect viewport width */
