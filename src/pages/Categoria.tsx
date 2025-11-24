@@ -13,6 +13,15 @@ import {
 import { Checkbox } from '@/components/ui/checkbox';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from '@/components/ui/pagination';
 import RevealOnScroll from '@/components/RevealOnScroll';
 import techImage from '@/assets/article-tech.jpg';
 import businessImage from '@/assets/article-business.jpg';
@@ -367,6 +376,19 @@ export default function Categoria() {
   const { slug } = useParams<{ slug: string }>();
   const category = categories[slug as keyof typeof categories] || categories.tecnologia;
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 12;
+
+  // Calcular paginação
+  const totalPages = Math.ceil(articles.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentArticles = articles.slice(startIndex, endIndex);
+
+  // Scroll to top ao mudar de página
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentPage]);
 
   useEffect(() => {
     try {
@@ -418,6 +440,10 @@ export default function Categoria() {
                 <div className="flex items-center gap-3">
                   <p className="text-muted-foreground font-medium">
                     <span className="text-foreground font-bold">{articles.length}</span> artigos encontrados
+                  </p>
+                  <span className="text-muted-foreground/50">•</span>
+                  <p className="text-muted-foreground text-sm">
+                    Página {currentPage} de {totalPages}
                   </p>
                 </div>
                 
@@ -482,7 +508,7 @@ export default function Categoria() {
 
             {/* Articles List */}
             <div className="space-y-6">
-              {articles.map((article, index) => (
+              {currentArticles.map((article, index) => (
                 <>
                   <article 
                   key={article.slug}
@@ -572,8 +598,8 @@ export default function Categoria() {
                   </div>
                 </article>
 
-                {/* CATEGORIA-01 - Após primeiro item */}
-                {index === 0 && (
+                {/* CATEGORIA-01 - Após 3º artigo */}
+                {index === 2 && (
                   <div className="my-8 not-prose">
                     <ins 
                       className="adsbygoogle"
@@ -586,8 +612,8 @@ export default function Categoria() {
                   </div>
                 )}
 
-                {/* CATEGORIA-02 - Após quinto item */}
-                {index === 4 && (
+                {/* CATEGORIA-02 - Após 7º artigo */}
+                {index === 6 && (
                   <div className="my-8 not-prose">
                     <ins 
                       className="adsbygoogle"
@@ -600,8 +626,8 @@ export default function Categoria() {
                   </div>
                 )}
 
-                {/* CATEGORIA-03 - Acima do penúltimo item */}
-                {index === articles.length - 2 && (
+                {/* CATEGORIA-03 - Após 10º artigo */}
+                {index === 9 && (
                   <div className="my-8 not-prose">
                     <ins 
                       className="adsbygoogle"
@@ -617,16 +643,70 @@ export default function Categoria() {
               ))}
             </div>
 
-            {/* Load More */}
+            {/* Pagination */}
             <RevealOnScroll>
-              <div className="mt-12 text-center">
-                <Button 
-                  size="lg" 
-                  variant="outline"
-                  className="hover-lift-enhanced shadow-md hover:shadow-lg min-w-[200px]"
-                >
-                  Carregar Mais Artigos
-                </Button>
+              <div className="mt-12">
+                <Pagination>
+                  <PaginationContent>
+                    <PaginationItem>
+                      <PaginationPrevious 
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          if (currentPage > 1) setCurrentPage(currentPage - 1);
+                        }}
+                        className={currentPage === 1 ? 'pointer-events-none opacity-50' : 'cursor-pointer'}
+                      />
+                    </PaginationItem>
+                    
+                    {[...Array(totalPages)].map((_, i) => {
+                      const pageNum = i + 1;
+                      // Mostrar primeira, última, atual e adjacentes
+                      if (
+                        pageNum === 1 ||
+                        pageNum === totalPages ||
+                        (pageNum >= currentPage - 1 && pageNum <= currentPage + 1)
+                      ) {
+                        return (
+                          <PaginationItem key={pageNum}>
+                            <PaginationLink
+                              href="#"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                setCurrentPage(pageNum);
+                              }}
+                              isActive={currentPage === pageNum}
+                              className="cursor-pointer"
+                            >
+                              {pageNum}
+                            </PaginationLink>
+                          </PaginationItem>
+                        );
+                      } else if (
+                        pageNum === currentPage - 2 ||
+                        pageNum === currentPage + 2
+                      ) {
+                        return (
+                          <PaginationItem key={pageNum}>
+                            <PaginationEllipsis />
+                          </PaginationItem>
+                        );
+                      }
+                      return null;
+                    })}
+
+                    <PaginationItem>
+                      <PaginationNext 
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+                        }}
+                        className={currentPage === totalPages ? 'pointer-events-none opacity-50' : 'cursor-pointer'}
+                      />
+                    </PaginationItem>
+                  </PaginationContent>
+                </Pagination>
               </div>
             </RevealOnScroll>
           </div>
