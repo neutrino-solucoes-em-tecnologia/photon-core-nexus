@@ -371,8 +371,12 @@ export default function Categoria() {
   // Inicializa AdSense após o componente montar
   useEffect(() => {
     try {
-      // @ts-ignore
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      // Inicializa múltiplos anúncios
+      const ads = document.querySelectorAll('.adsbygoogle');
+      ads.forEach(() => {
+        // @ts-ignore
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      });
     } catch (err) {
       console.error('AdSense error:', err);
     }
@@ -480,8 +484,8 @@ export default function Categoria() {
             <div className="space-y-6">
               {articles.map((article, index) => (
                 <>
-                  {/* Anúncio após 6 artigos */}
-                  {index === 6 && (
+                  {/* Anúncio após 6, 12 e 18 artigos */}
+                  {(index === 6 || index === 12 || index === 18) && (
                     <div className="my-8 not-prose">
                       <ins 
                         className="adsbygoogle"
