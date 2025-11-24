@@ -30,9 +30,12 @@ export default function DynamicAd({
   const [isVisible, setIsVisible] = useState(false);
   const [loadCount, setLoadCount] = useState(0);
   const [lastLoadY, setLastLoadY] = useState(0);
+  const [lastLoadTime, setLastLoadTime] = useState(0);
   const hasLoadedRef = useRef(false);
   const insRef = useRef<HTMLModElement>(null);
   const adInstanceRef = useRef<string>(`ad-${slot}-${Date.now()}`);
+
+  const MIN_RELOAD_INTERVAL = 45000; // 45 segundos em milissegundos
 
   // Dimensões e estilos baseados no formato para AdSense
   const adFormats = {
@@ -63,6 +66,14 @@ export default function DynamicAd({
   // Carrega/recarrega o AdSense
   const loadAd = useCallback(() => {
     const currentY = window.scrollY;
+    const currentTime = Date.now();
+    
+    // Verifica se já passou tempo suficiente desde o último load (45s)
+    const timeSinceLastLoad = currentTime - lastLoadTime;
+    if (timeSinceLastLoad < MIN_RELOAD_INTERVAL && loadCount > 0) {
+      console.log(`[AdSense ${slot}] Aguardando... ${Math.ceil((MIN_RELOAD_INTERVAL - timeSinceLastLoad) / 1000)}s restantes`);
+      return;
+    }
     
     // Para infinite scroll, sempre carrega quando visível
     if (!infiniteScroll) {
@@ -73,6 +84,7 @@ export default function DynamicAd({
     }
 
     setLastLoadY(currentY);
+    setLastLoadTime(currentTime);
     setLoadCount(prev => prev + 1);
 
     try {
@@ -84,7 +96,7 @@ export default function DynamicAd({
     } catch (error) {
       console.error('[AdSense] Erro ao carregar anúncio:', error);
     }
-  }, [slot, position, loadCount, lastLoadY, infiniteScroll]);
+  }, [slot, position, loadCount, lastLoadY, lastLoadTime, infiniteScroll]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -124,16 +136,21 @@ export default function DynamicAd({
   useEffect(() => {
     if (!infiniteScroll && isVisible && hasLoadedRef.current) {
       const timer = setTimeout(() => {
-        // Remove o anúncio anterior
-        if (insRef.current) {
-          insRef.current.innerHTML = '';
+        const timeSinceLastLoad = Date.now() - lastLoadTime;
+        
+        // Só recarrega se passou tempo suficiente
+        if (timeSinceLastLoad >= MIN_RELOAD_INTERVAL) {
+          // Remove o anúncio anterior
+          if (insRef.current) {
+            insRef.current.innerHTML = '';
+          }
+          loadAd();
         }
-        loadAd();
       }, 500);
 
       return () => clearTimeout(timer);
     }
-  }, [isVisible, infiniteScroll, loadAd]);
+  }, [isVisible, infiniteScroll, loadAd, lastLoadTime]);
 
   // Listener para scroll e reload baseado em distância (apenas se não for infinite scroll)
   useEffect(() => {
@@ -152,9 +169,11 @@ export default function DynamicAd({
           // Se o ad está completamente visível por tempo suficiente
           if (rect.top >= 0 && rect.bottom <= viewportHeight) {
             const currentY = window.scrollY;
+            const currentTime = Date.now();
+            const timeSinceLastLoad = currentTime - lastLoadTime;
             
-            // Reload se rolou mais de uma viewport desde o último load
-            if (Math.abs(currentY - lastLoadY) > viewportHeight) {
+            // Reload se rolou mais de uma viewport E passou tempo suficiente (45s)
+            if (Math.abs(currentY - lastLoadY) > viewportHeight && timeSinceLastLoad >= MIN_RELOAD_INTERVAL) {
               // Remove o anúncio anterior
               if (insRef.current) {
                 insRef.current.innerHTML = '';
@@ -172,7 +191,7 @@ export default function DynamicAd({
       window.removeEventListener('scroll', handleScroll);
       clearTimeout(scrollTimeout);
     };
-  }, [isVisible, lastLoadY, infiniteScroll, loadAd]);
+  }, [isVisible, lastLoadY, lastLoadTime, infiniteScroll, loadAd]);
 
   return (
     <div
@@ -199,6 +218,11 @@ export default function DynamicAd({
         <div className="absolute top-2 left-2 z-10">
           <div className="text-xs bg-black/50 text-white px-2 py-1 rounded">
             Slot: {slot} | Cargas: {loadCount} | {isVisible ? '👁️' : '💤'}
+            {lastLoadTime > 0 && (
+              <div className="text-[10px] mt-0.5">
+                Último reload: {new Date(lastLoadTime).toLocaleTimeString()}
+              </div>
+            )}
           </div>
         </div>
       )}
