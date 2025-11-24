@@ -120,12 +120,11 @@ export default function Artigo() {
       </RevealOnScroll>
 
       {/* Main Container */}
-      <div className="w-full max-w-full overflow-x-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6 lg:gap-8">
-            
-            {/* Main Content */}
-            <article className="min-w-0 w-full max-w-full overflow-hidden">
+      <div className="relative max-w-7xl mx-auto px-6 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8 items-start">
+          
+          {/* Main Content */}
+          <article className="min-w-0">
             
             {/* Article Header */}
             <RevealOnScroll>
@@ -361,37 +360,29 @@ export default function Artigo() {
             </RevealOnScroll>
           </article>
 
-          {/* Sidebar - Desktop Only */}
+          {/* Sidebar */}
           <aside className="hidden lg:block">
-            <div className="sticky top-6 space-y-6">
-              {/* Sticky Sidebar Ad #1 - High viewability */}
+            <div className="sticky top-20 w-full">
+              {/* Sidebar Ad - Follows scroll */}
               <DynamicAd 
                 slot="article-sidebar-top" 
                 format="vertical"
                 position={7}
-                className="h-[600px] w-full"
-              />
-              
-              {/* Sticky Sidebar Ad #2 - Extended scroll */}
-              <DynamicAd 
-                slot="article-sidebar-bottom" 
-                format="rectangle"
-                position={8}
-                className="w-full"
+                className="w-[300px] h-[600px]"
               />
             </div>
           </aside>
         </div>
+      </div>
 
-        {/* Mobile Bottom Ad - Before related articles */}
-        <div className="lg:hidden w-full px-4 py-6">
-          <DynamicAd 
-            slot="article-before-related-mobile" 
-            format="horizontal"
-            position={9}
-            className="w-full"
-          />
-        </div>
+      {/* Mobile Bottom Ad - Before related articles */}
+      <div className="lg:hidden w-full px-4 py-6">
+        <DynamicAd 
+          slot="article-before-related-mobile" 
+          format="horizontal"
+          position={9}
+          className="w-full"
+        />
       </div>
 
       {/* Related Articles - With ads integrated */}
@@ -441,7 +432,6 @@ export default function Artigo() {
           position={10}
           className="w-full"
         />
-      </div>
       </div>
     </div>
   );
