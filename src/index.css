@@ -618,4 +618,32 @@ All colors MUST be HSL.
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
   }
+
+  /* AdSense ads - ensure full visibility and prevent clipping */
+  .adsbygoogle {
+    display: block !important;
+    overflow: visible !important;
+    min-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Container for ads - prevent overflow clipping */
+  [data-ad-slot] {
+    overflow: visible !important;
+    contain: layout style !important;
+  }
+
+  /* Ensure ad containers don't clip content */
+  ins.adsbygoogle {
+    overflow: visible !important;
+    position: relative !important;
+  }
+
+  /* Fix for in-article ads */
+  ins.adsbygoogle[data-ad-format="fluid"],
+  ins.adsbygoogle[data-ad-layout="in-article"] {
+    display: block !important;
+    text-align: center !important;
+    overflow: visible !important;
+  }
 }

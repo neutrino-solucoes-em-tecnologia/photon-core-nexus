@@ -196,17 +196,27 @@ export default function DynamicAd({
   return (
     <div
       ref={adRef}
-      className={`relative w-full max-w-full min-h-[100px] md:min-h-[90px] bg-muted/20 backdrop-blur-sm rounded-lg overflow-hidden transition-all duration-300 ${
+      className={`relative w-full max-w-full min-h-[100px] md:min-h-[90px] bg-muted/20 backdrop-blur-sm rounded-lg transition-all duration-300 ${
         isVisible ? 'opacity-100' : 'opacity-70'
       } ${className}`}
       data-ad-slot={slot}
       data-ad-position={position}
+      style={{ 
+        overflow: 'visible',
+        contain: 'layout style',
+      }}
     >
       {/* Google AdSense Tag */}
       <ins
         ref={insRef}
         className="adsbygoogle"
-        style={adConfig.style}
+        style={{
+          ...adConfig.style,
+          display: 'block',
+          overflow: 'visible',
+          minWidth: '100%',
+          minHeight: '90px',
+        }}
         data-ad-client={client}
         data-ad-slot={slot}
         data-ad-format={adConfig.dataAdFormat}
