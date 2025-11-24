@@ -74,21 +74,21 @@ const newsArticles = [
 
 export default function NewsFeed() {
   return (
-    <section className="wide-container py-8">
-      <h2 className="text-3xl font-bold mb-8">Últimas Notícias</h2>
+    <section className="wide-container py-4 md:py-6">
+      <h2 className="text-xl md:text-3xl font-bold mb-4 md:mb-6">Últimas Notícias</h2>
       
-      <div className="grid lg:grid-cols-[1fr_320px] gap-8">
+      <div className="grid lg:grid-cols-[1fr_320px] gap-6 md:gap-8">
         {/* Main Content */}
-        <div className="space-y-6">
+        <div className="space-y-4 md:space-y-6">
           {newsArticles.map((article) => (
             <article 
               key={article.id} 
-              className="group grid md:grid-cols-[280px_1fr] gap-6 pb-6 border-b border-border last:border-0"
+              className="group grid grid-cols-[100px_1fr] md:grid-cols-[200px_1fr] lg:grid-cols-[280px_1fr] gap-3 md:gap-4 lg:gap-6 pb-4 md:pb-6 border-b border-border last:border-0"
             >
               {/* Thumbnail */}
               <Link 
                 to={`/artigo/${article.slug}`} 
-                className="relative overflow-hidden rounded-md aspect-video bg-muted"
+                className="relative overflow-hidden rounded-md aspect-video md:aspect-video bg-muted flex-shrink-0"
               >
                 <img
                   src={article.image}
@@ -99,24 +99,19 @@ export default function NewsFeed() {
               </Link>
 
               {/* Content */}
-              <div className="flex flex-col justify-center min-h-[166px]">
-                {/* Meta Info - Mobile */}
-                <div className="flex items-center gap-3 text-xs text-primary font-bold uppercase tracking-wide mb-2 md:hidden">
-                  <span>{article.readTime}</span>
-                </div>
-
+              <div className="flex flex-col justify-start md:justify-center min-h-0">
                 {/* Title */}
-                <h3 className="mb-2">
+                <h3 className="mb-1.5 md:mb-2">
                   <Link 
                     to={`/artigo/${article.slug}`}
-                    className="font-bold text-base md:text-lg text-foreground group-hover:underline line-clamp-2"
+                    className="font-bold text-sm md:text-base lg:text-lg text-foreground group-hover:underline line-clamp-2 md:line-clamp-2"
                   >
                     {article.title}
                   </Link>
                 </h3>
 
                 {/* Excerpt - Desktop */}
-                <p className="hidden md:block text-sm text-muted-foreground mb-3 line-clamp-2">
+                <p className="hidden md:block text-sm text-muted-foreground mb-2 md:mb-3 line-clamp-2">
                   {article.excerpt}
                 </p>
 
@@ -152,12 +147,10 @@ export default function NewsFeed() {
                 </div>
 
                 {/* Meta Info Mobile - Bottom */}
-                <div className="flex md:hidden items-center gap-4 text-xs text-primary font-bold uppercase tracking-wide mt-2">
-                  <Link to={`/categoria/${article.category.toLowerCase()}`} className="hover:underline">
+                <div className="flex md:hidden items-center gap-2 md:gap-3 text-[10px] md:text-xs text-primary font-bold uppercase tracking-wide mt-1">
+                  <span className="text-muted-foreground">{article.readTime}</span>
+                  <Link to={`/categoria/${article.category.toLowerCase()}`} className="hover:underline truncate">
                     {article.category}
-                  </Link>
-                  <Link to={`/autor/${article.author.toLowerCase().replace(' ', '-')}`} className="hover:underline">
-                    {article.author}
                   </Link>
                   <Link to={`/artigo/${article.slug}#comments`} className="hover:underline flex items-center gap-1">
                     <MessageSquare className="w-3 h-3" />

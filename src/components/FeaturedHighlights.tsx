@@ -35,14 +35,14 @@ const highlights = [
 
 export default function FeaturedHighlights() {
   return (
-    <section className="wide-container py-8">
-      <h2 className="text-3xl font-bold mb-6">Mais destaques</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <section className="wide-container py-4 md:py-6">
+      <h2 className="text-xl md:text-3xl font-bold mb-4 md:mb-6">Mais destaques</h2>
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6">
         {highlights.map((article) => (
           <article key={article.id} className="group">
             <Link to={`/artigo/${article.slug}`}>
               {/* Image Container */}
-              <div className="relative overflow-hidden rounded-md mb-3 aspect-video bg-muted">
+              <div className="relative overflow-hidden rounded-md mb-2 md:mb-3 aspect-video bg-muted">
                 <img
                   src={article.image}
                   alt={article.title}
@@ -51,13 +51,13 @@ export default function FeaturedHighlights() {
                 />
                 
                 {/* Category Badge */}
-                <span className="absolute top-2 left-2 bg-primary text-primary-foreground text-xs font-bold px-2.5 py-1 rounded uppercase tracking-wide">
+                <span className="absolute top-1.5 left-1.5 md:top-2 md:left-2 bg-primary text-primary-foreground text-[10px] md:text-xs font-bold px-1.5 py-0.5 md:px-2.5 md:py-1 rounded uppercase tracking-wide">
                   {article.category}
                 </span>
               </div>
               
               {/* Title */}
-              <h3 className="text-sm md:text-base font-bold leading-tight text-foreground group-hover:text-primary transition-colors line-clamp-3">
+              <h3 className="text-xs md:text-sm lg:text-base font-bold leading-tight text-foreground group-hover:text-primary transition-colors line-clamp-2 md:line-clamp-3">
                 {article.title}
               </h3>
             </Link>
