@@ -172,18 +172,7 @@ export default function Artigo() {
               </header>
             </RevealOnScroll>
 
-            {/* Hero Image */}
-            <RevealOnScroll>
-              <div className="mb-8 rounded-xl overflow-hidden">
-                <img
-                  src={article.image}
-                  alt={article.title}
-                  className="w-full aspect-video object-cover"
-                />
-              </div>
-            </RevealOnScroll>
-
-            {/* High-Value In-Feed Ad - After Hero */}
+            {/* Ad #1 - Abaixo do título */}
             <div className="mb-8 not-prose">
               <ins 
                 className="adsbygoogle"
@@ -194,6 +183,17 @@ export default function Artigo() {
                 data-ad-slot="7831164226"
               />
             </div>
+
+            {/* Hero Image */}
+            <RevealOnScroll>
+              <div className="mb-8 rounded-xl overflow-hidden">
+                <img
+                  src={article.image}
+                  alt={article.title}
+                  className="w-full aspect-video object-cover"
+                />
+              </div>
+            </RevealOnScroll>
 
             {/* Article Actions */}
             <RevealOnScroll>
@@ -239,7 +239,7 @@ export default function Artigo() {
               </div>
             </RevealOnScroll>
 
-            {/* Mid-Content Ad #1 - After introduction (25% through content) */}
+            {/* Ad #2 - Após primeiro parágrafo */}
             <div className="my-8 not-prose">
               <ins 
                 className="adsbygoogle"
@@ -247,7 +247,7 @@ export default function Artigo() {
                 data-ad-layout="in-article"
                 data-ad-format="fluid"
                 data-ad-client="ca-pub-8616282875609147"
-                data-ad-slot="7831164226"
+                data-ad-slot="4211499320"
               />
             </div>
 
@@ -283,7 +283,7 @@ export default function Artigo() {
               </div>
             </RevealOnScroll>
 
-            {/* Mid-Content Ad #3 - Before conclusion (75% through content) */}
+            {/* Ad #3 - Antes do último parágrafo */}
             <div className="my-8 not-prose">
               <ins 
                 className="adsbygoogle"
@@ -291,7 +291,7 @@ export default function Artigo() {
                 data-ad-layout="in-article"
                 data-ad-format="fluid"
                 data-ad-client="ca-pub-8616282875609147"
-                data-ad-slot="7831164226"
+                data-ad-slot="8039047789"
               />
             </div>
 
