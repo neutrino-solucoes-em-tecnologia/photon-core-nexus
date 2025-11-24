@@ -7,6 +7,8 @@ import ArticleCard from '@/components/ArticleCard';
 import ScrollProgress from '@/components/ScrollProgress';
 import FloatingShare from '@/components/FloatingShare';
 import RevealOnScroll from '@/components/RevealOnScroll';
+import DynamicAd from '@/components/DynamicAd';
+import ContentWithViewportAds from '@/components/ContentWithViewportAds';
 import heroImage from '@/assets/hero-ai-1.jpg';
 import techImage from '@/assets/article-tech.jpg';
 import businessImage from '@/assets/article-business.jpg';
@@ -118,11 +120,22 @@ export default function Artigo() {
       </RevealOnScroll>
 
       {/* Main Container */}
-      <div className="max-w-7xl mx-auto px-6 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8">
-          
-          {/* Main Content */}
-          <article className="min-w-0">
+      <div className="w-full max-w-full overflow-x-hidden">
+        {/* Mobile Top Ad - High viewability */}
+        <div className="lg:hidden w-full px-4 py-4">
+          <DynamicAd 
+            slot="article-top-mobile" 
+            format="horizontal"
+            position={1}
+            className="w-full"
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6 lg:gap-8">
+            
+            {/* Main Content */}
+            <article className="min-w-0 w-full max-w-full overflow-hidden">
             
             {/* Article Header */}
             <RevealOnScroll>
@@ -170,6 +183,16 @@ export default function Artigo() {
               </div>
             </RevealOnScroll>
 
+            {/* High-Value In-Feed Ad - After Hero */}
+            <div className="mb-8">
+              <DynamicAd 
+                slot="article-after-hero" 
+                format="horizontal"
+                position={2}
+                className="w-full"
+              />
+            </div>
+
             {/* Article Actions */}
             <RevealOnScroll>
               <div className="flex items-center justify-between mb-8 pb-6 border-b border-border/50">
@@ -195,7 +218,7 @@ export default function Artigo() {
               </div>
             </RevealOnScroll>
 
-            {/* Article Body - Editorial Style */}
+            {/* Article Body - Editorial Style with Strategic Ad Placements */}
             <RevealOnScroll>
               <div className="prose prose-lg max-w-none article-content">
                 <p className="lead text-xl mb-6 font-medium">
@@ -211,8 +234,22 @@ export default function Artigo() {
                   De acordo com pesquisas recentes, mais de 70% das empresas globais já implementaram alguma forma de IA
                   em suas operações. Este número deve crescer exponencialmente nos próximos anos.
                 </p>
+              </div>
+            </RevealOnScroll>
 
-                <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">Aplicações Práticas</h2>
+            {/* Mid-Content Ad #1 - After introduction (25% through content) */}
+            <div className="my-8 not-prose">
+              <DynamicAd 
+                slot="article-mid-content-1" 
+                format="horizontal"
+                position={3}
+                className="w-full"
+              />
+            </div>
+
+            <RevealOnScroll>
+              <div className="prose prose-lg max-w-none article-content">
+                <h2 className="text-2xl md:text-3xl font-bold mt-8 mb-4">Aplicações Práticas</h2>
                 <p>
                   As aplicações de IA vão desde chatbots inteligentes até sistemas complexos de análise preditiva.
                   Empresas estão usando machine learning para:
@@ -224,8 +261,22 @@ export default function Artigo() {
                   <li>Automatizar atendimento ao cliente</li>
                   <li>Prever tendências de mercado</li>
                 </ul>
+              </div>
+            </RevealOnScroll>
 
-                <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">Desafios e Oportunidades</h2>
+            {/* Mid-Content Ad #2 - After practical applications (50% through content) */}
+            <div className="my-8 not-prose">
+              <DynamicAd 
+                slot="article-mid-content-2" 
+                format="horizontal"
+                position={4}
+                className="w-full"
+              />
+            </div>
+
+            <RevealOnScroll>
+              <div className="prose prose-lg max-w-none article-content">
+                <h2 className="text-2xl md:text-3xl font-bold mt-8 mb-4">Desafios e Oportunidades</h2>
                 <p>
                   Apesar dos benefícios claros, a implementação de IA traz desafios significativos. Questões éticas,
                   privacidade de dados e a necessidade de upskilling das equipes são apenas algumas das barreiras
@@ -235,8 +286,22 @@ export default function Artigo() {
                   No entanto, as oportunidades superam os desafios. Empresas que abraçam a transformação digital
                   com IA estão ganhando vantagem competitiva significativa em seus mercados.
                 </p>
+              </div>
+            </RevealOnScroll>
 
-                <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">O Futuro é Agora</h2>
+            {/* Mid-Content Ad #3 - Before conclusion (75% through content) */}
+            <div className="my-8 not-prose">
+              <DynamicAd 
+                slot="article-mid-content-3" 
+                format="horizontal"
+                position={5}
+                className="w-full"
+              />
+            </div>
+
+            <RevealOnScroll>
+              <div className="prose prose-lg max-w-none article-content">
+                <h2 className="text-2xl md:text-3xl font-bold mt-8 mb-4">O Futuro é Agora</h2>
                 <p>
                   O futuro da IA nas empresas não é uma questão de "se", mas de "quando" e "como". Organizações
                   que começarem sua jornada de transformação digital hoje estarão melhor posicionadas para
@@ -262,6 +327,16 @@ export default function Artigo() {
               </div>
             </RevealOnScroll>
 
+            {/* Bottom Content Ad - Before author card */}
+            <div className="my-8">
+              <DynamicAd 
+                slot="article-bottom-content" 
+                format="horizontal"
+                position={6}
+                className="w-full"
+              />
+            </div>
+
             {/* Author Card */}
             <RevealOnScroll>
               <div className="mt-12 p-6 rounded-xl glass-effect border border-border/50 hover:border-primary/20 transition-all">
@@ -286,52 +361,88 @@ export default function Artigo() {
             </RevealOnScroll>
           </article>
 
-          {/* Sidebar */}
+          {/* Sidebar - Desktop Only */}
           <aside className="hidden lg:block">
             <div className="sticky top-6 space-y-6">
-              {/* Ad Space */}
-              <div className="rounded-xl border-2 border-dashed border-border/50 bg-muted/30 h-[600px] flex items-center justify-center">
-                <div className="text-center">
-                  <p className="text-sm font-semibold text-muted-foreground">Publicidade</p>
-                  <p className="text-xs text-muted-foreground mt-1">300 x 600</p>
-                </div>
-              </div>
+              {/* Sticky Sidebar Ad #1 - High viewability */}
+              <DynamicAd 
+                slot="article-sidebar-top" 
+                format="vertical"
+                position={7}
+                className="h-[600px] w-full"
+              />
+              
+              {/* Sticky Sidebar Ad #2 - Extended scroll */}
+              <DynamicAd 
+                slot="article-sidebar-bottom" 
+                format="rectangle"
+                position={8}
+                className="w-full"
+              />
             </div>
           </aside>
         </div>
+
+        {/* Mobile Bottom Ad - Before related articles */}
+        <div className="lg:hidden w-full px-4 py-6">
+          <DynamicAd 
+            slot="article-before-related-mobile" 
+            format="horizontal"
+            position={9}
+            className="w-full"
+          />
+        </div>
       </div>
 
-      {/* Related Articles - Same style as FeaturedHighlights */}
-      <section className="wide-container py-8 mt-16">
-        <h2 className="text-3xl font-bold mb-6">Leia Também</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {relatedArticles.slice(0, 4).map((relatedArticle) => (
-            <article key={relatedArticle.slug} className="group">
-              <Link to={`/artigo/${relatedArticle.slug}`}>
-                {/* Image Container */}
-                <div className="relative overflow-hidden rounded-md mb-3 aspect-video bg-muted">
-                  <img
-                    src={relatedArticle.image}
-                    alt={relatedArticle.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
+      {/* Related Articles - With ads integrated */}
+      <section className="wide-container py-8 mt-8 lg:mt-16">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6">Leia Também</h2>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 w-full max-w-full">
+          <ContentWithViewportAds
+            adSlot="article-related-ads"
+            adFormat="horizontal"
+            itemsPerViewport={2}
+          >
+            {relatedArticles.slice(0, 4).map((relatedArticle) => (
+              <article key={relatedArticle.slug} className="group w-full max-w-full">
+                <Link to={`/artigo/${relatedArticle.slug}`}>
+                  {/* Image Container */}
+                  <div className="relative overflow-hidden rounded-md mb-3 aspect-video bg-muted">
+                    <img
+                      src={relatedArticle.image}
+                      alt={relatedArticle.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    
+                    {/* Category Badge */}
+                    <span className="absolute top-2 left-2 bg-primary text-primary-foreground text-xs font-bold px-2.5 py-1 rounded uppercase tracking-wide">
+                      {relatedArticle.category}
+                    </span>
+                  </div>
                   
-                  {/* Category Badge */}
-                  <span className="absolute top-2 left-2 bg-primary text-primary-foreground text-xs font-bold px-2.5 py-1 rounded uppercase tracking-wide">
-                    {relatedArticle.category}
-                  </span>
-                </div>
-                
-                {/* Title */}
-                <h3 className="text-sm md:text-base font-bold leading-tight text-foreground group-hover:text-primary transition-colors line-clamp-3">
-                  {relatedArticle.title}
-                </h3>
-              </Link>
-            </article>
-          ))}
+                  {/* Title */}
+                  <h3 className="text-sm md:text-base font-bold leading-tight text-foreground group-hover:text-primary transition-colors line-clamp-3">
+                    {relatedArticle.title}
+                  </h3>
+                </Link>
+              </article>
+            ))}
+          </ContentWithViewportAds>
         </div>
       </section>
+
+      {/* Final Bottom Ad - Maximum scroll depth */}
+      <div className="wide-container py-6">
+        <DynamicAd 
+          slot="article-final-bottom" 
+          format="horizontal"
+          position={10}
+          className="w-full"
+        />
+      </div>
+      </div>
     </div>
   );
 }
