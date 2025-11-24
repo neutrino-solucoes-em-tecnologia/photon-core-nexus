@@ -8,7 +8,6 @@ import ScrollProgress from '@/components/ScrollProgress';
 import FloatingShare from '@/components/FloatingShare';
 import RevealOnScroll from '@/components/RevealOnScroll';
 import DynamicAd from '@/components/DynamicAd';
-import ContentWithViewportAds from '@/components/ContentWithViewportAds';
 import heroImage from '@/assets/hero-ai-1.jpg';
 import techImage from '@/assets/article-tech.jpg';
 import businessImage from '@/assets/article-business.jpg';
@@ -120,11 +119,9 @@ export default function Artigo() {
       </RevealOnScroll>
 
       {/* Main Container */}
-      <div className="relative max-w-7xl mx-auto px-6 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8 items-start">
-          
+      <div className="relative max-w-4xl mx-auto px-6 py-8">
           {/* Main Content */}
-          <article className="min-w-0">
+          <article className="w-full">
             
             {/* Article Header */}
             <RevealOnScroll>
@@ -133,16 +130,6 @@ export default function Artigo() {
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-4">
                   {article.title}
                 </h1>
-                
-                {/* Mobile Top Ad - Below title for high engagement */}
-                <div className="lg:hidden my-6">
-                  <DynamicAd 
-                    slot="article-top-mobile" 
-                    format="horizontal"
-                    position={1}
-                    className="w-full"
-                  />
-                </div>
 
                 {/* Subtitle */}
                 <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
@@ -359,42 +346,13 @@ export default function Artigo() {
               </div>
             </RevealOnScroll>
           </article>
-
-          {/* Sidebar */}
-          <aside className="hidden lg:block">
-            <div className="sticky top-20 w-full">
-              {/* Sidebar Ad - Follows scroll */}
-              <DynamicAd 
-                slot="article-sidebar-top" 
-                format="vertical"
-                position={7}
-                className="w-[300px] h-[600px]"
-              />
-            </div>
-          </aside>
-        </div>
       </div>
 
-      {/* Mobile Bottom Ad - Before related articles */}
-      <div className="lg:hidden w-full px-4 py-6">
-        <DynamicAd 
-          slot="article-before-related-mobile" 
-          format="horizontal"
-          position={9}
-          className="w-full"
-        />
-      </div>
-
-      {/* Related Articles - With ads integrated */}
+      {/* Related Articles */}
       <section className="wide-container py-8 mt-8 lg:mt-16">
         <h2 className="text-2xl md:text-3xl font-bold mb-6">Leia Também</h2>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 w-full max-w-full">
-          <ContentWithViewportAds
-            adSlot="article-related-ads"
-            adFormat="horizontal"
-            itemsPerViewport={2}
-          >
             {relatedArticles.slice(0, 4).map((relatedArticle) => (
               <article key={relatedArticle.slug} className="group w-full max-w-full">
                 <Link to={`/artigo/${relatedArticle.slug}`}>
@@ -420,19 +378,8 @@ export default function Artigo() {
                 </Link>
               </article>
             ))}
-          </ContentWithViewportAds>
         </div>
       </section>
-
-      {/* Final Bottom Ad - Maximum scroll depth */}
-      <div className="wide-container py-6">
-        <DynamicAd 
-          slot="article-final-bottom" 
-          format="horizontal"
-          position={10}
-          className="w-full"
-        />
-      </div>
     </div>
   );
 }

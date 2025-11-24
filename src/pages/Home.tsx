@@ -6,7 +6,6 @@ import RevealOnScroll from '@/components/RevealOnScroll';
 import HeroSection from '@/components/HeroSection';
 import FeaturedHighlights from '@/components/FeaturedHighlights';
 import NewsFeed from '@/components/NewsFeed';
-import ContentWithViewportAds from '@/components/ContentWithViewportAds';
 import techImage from '@/assets/article-tech.jpg';
 import businessImage from '@/assets/article-business.jpg';
 
@@ -46,13 +45,8 @@ const featuredArticles = [
 export default function Home() {
   return (
     <div className="pb-8 w-full max-w-full overflow-x-hidden">
-      <ContentWithViewportAds
-        adSlot="6721278442"
-        adFormat="auto"
-        itemsPerViewport={1}
-      >
-        {/* Hero Section */}
-        <HeroSection />
+      {/* Hero Section */}
+      <HeroSection />
 
         {/* Featured Highlights - Mais destaques */}
         <FeaturedHighlights />
@@ -109,7 +103,6 @@ export default function Home() {
             </div>
           </section>
         </RevealOnScroll>
-      </ContentWithViewportAds>
     </div>
   );
 }

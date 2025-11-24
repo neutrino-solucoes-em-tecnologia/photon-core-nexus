@@ -14,8 +14,6 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import RevealOnScroll from '@/components/RevealOnScroll';
-import DynamicAd from '@/components/DynamicAd';
-import ContentWithViewportAds from '@/components/ContentWithViewportAds';
 import techImage from '@/assets/article-tech.jpg';
 import businessImage from '@/assets/article-business.jpg';
 
@@ -468,12 +466,8 @@ export default function Categoria() {
               </div>
             </RevealOnScroll>
 
-            {/* Articles List com Ads entre os itens */}
-            <ContentWithViewportAds
-              adSlot="category-viewport-ads"
-              adFormat="horizontal"
-              itemsPerViewport={6}
-            >
+            {/* Articles List */}
+            <div className="space-y-6">
               {articles.map((article, index) => (
                 <article 
                   key={article.slug}
@@ -563,7 +557,7 @@ export default function Categoria() {
                   </div>
                 </article>
               ))}
-            </ContentWithViewportAds>
+            </div>
 
             {/* Load More */}
             <RevealOnScroll>
@@ -578,67 +572,6 @@ export default function Categoria() {
               </div>
             </RevealOnScroll>
           </div>
-
-          {/* Sidebar - Popular Articles & Ad */}
-          <aside className="hidden lg:block space-y-6">
-            <RevealOnScroll>
-              <Card className="p-6 glass-effect">
-                <div className="flex items-center gap-2 mb-6 pb-4 border-b border-border/50">
-                  <TrendingUp className="h-5 w-5 text-primary" />
-                  <h3 className="font-bold text-lg">Mais Populares</h3>
-                </div>
-                
-                <div className="space-y-4">
-                  {popularArticles.map((article) => (
-                    <a 
-                      key={article.slug}
-                      href={`/artigo/${article.slug}`}
-                      className="group block p-3 rounded-lg hover:bg-muted/50 transition-all duration-300 hover-lift"
-                    >
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0">
-                          <div className={`
-                            w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm
-                            ${article.position === 1 ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground'}
-                          `}>
-                            {article.position}
-                          </div>
-                        </div>
-                        
-                        <div className="flex-1 min-w-0">
-                          <h4 className="font-semibold text-sm mb-2 line-clamp-2 group-hover:text-primary transition-colors">
-                            {article.title}
-                          </h4>
-                          <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                            <span className="flex items-center gap-1">
-                              <Eye className="h-3 w-3" />
-                              {article.views}
-                            </span>
-                            <span className="flex items-center gap-1">
-                              <Clock className="h-3 w-3" />
-                              {article.readTime}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  ))}
-                </div>
-              </Card>
-            </RevealOnScroll>
-
-            {/* Ad Space - 300x600 - Sticky */}
-            <div className="sticky top-6">
-              <RevealOnScroll>
-                <DynamicAd 
-                  slot="category-sidebar" 
-                  format="vertical" 
-                  position={3}
-                  className="h-[600px]"
-                />
-              </RevealOnScroll>
-            </div>
-          </aside>
         </div>
       </div>
     </div>
