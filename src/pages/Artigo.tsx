@@ -117,7 +117,7 @@ export default function Artigo() {
       
       {/* Breadcrumbs */}
       <RevealOnScroll>
-        <div className="max-w-5xl mx-auto px-6 pt-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-8">
           <nav className="flex items-center space-x-2 text-sm">
             <Link to="/" className="text-primary hover:underline font-semibold transition-colors">
               Início
@@ -133,7 +133,7 @@ export default function Artigo() {
       </RevealOnScroll>
 
       {/* Main Container */}
-      <div className="relative max-w-4xl mx-auto px-6 py-8">
+      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 py-8">
           {/* Main Content */}
           <article className="w-full">
             
