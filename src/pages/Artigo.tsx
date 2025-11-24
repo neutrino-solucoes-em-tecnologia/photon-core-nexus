@@ -291,7 +291,7 @@ export default function Artigo() {
               <div className="flex flex-wrap gap-2 mt-12 pt-8 border-t border-border/50">
                 <Tag className="h-4 w-4 text-muted-foreground mr-2" />
                 {article.tags.map((tag) => (
-                  <Link key={tag} to={`/tag/${tag.toLowerCase().replace(/ /g, '-')}`}>
+                  <Link key={tag} to={`/tag/${tag.toLowerCase().split(' ').join('-')}`}>
                     <Badge 
                       variant="outline" 
                       className="hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer hover-lift px-3 py-1"
