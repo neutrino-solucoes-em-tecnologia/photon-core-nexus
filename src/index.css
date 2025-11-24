@@ -598,6 +598,8 @@ All colors MUST be HSL.
     overflow: visible !important;
     min-width: 100% !important;
     width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   /* Container for ads - prevent overflow clipping */
@@ -610,6 +612,8 @@ All colors MUST be HSL.
   ins.adsbygoogle {
     overflow: visible !important;
     position: relative !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   /* Fix for in-article ads */
@@ -618,5 +622,15 @@ All colors MUST be HSL.
     display: block !important;
     text-align: center !important;
     overflow: visible !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Wrapper div for ads - ensure centering */
+  .my-8.not-prose {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
   }
 }
