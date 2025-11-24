@@ -101,6 +101,7 @@ export default function Artigo() {
       setTimeout(() => {
         (window.adsbygoogle = window.adsbygoogle || []).push({});
         (window.adsbygoogle = window.adsbygoogle || []).push({});
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
       }, 100);
     } catch (err) {
       console.error('AdSense error:', err);
@@ -279,6 +280,18 @@ export default function Artigo() {
                 </p>
               </div>
             </RevealOnScroll>
+
+            {/* ARTIGO-TITULO-03 */}
+            <div className="mb-8 not-prose">
+              <ins 
+                className="adsbygoogle"
+                style={{ display: 'block' }}
+                data-ad-client={import.meta.env.VITE_ADSENSE_CLIENT_ID}
+                data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_TITULO_03}
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+              />
+            </div>
 
             <RevealOnScroll>
               <div className="prose prose-lg max-w-none article-content">
