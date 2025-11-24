@@ -376,7 +376,9 @@ export default function Categoria() {
         (window.adsbygoogle = window.adsbygoogle || []).push({});
       }, 100);
     } catch (err) {
-      console.error('AdSense error:', err);
+      if (import.meta.env.VITE_SHOW_ADSENSE_ERRORS === 'true') {
+        console.error('AdSense error:', err);
+      }
     }
   }, []);
 
