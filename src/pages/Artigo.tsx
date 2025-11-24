@@ -290,23 +290,20 @@ export default function Artigo() {
             <RevealOnScroll>
               <div className="flex flex-wrap gap-2 mt-12 pt-8 border-t border-border/50">
                 <Tag className="h-4 w-4 text-muted-foreground mr-2" />
-                {article.tags.map((tag) => {
-                  const tagSlug = tag.toLowerCase().split(' ').join('-');
-                  return (
-                    <Link key={tag} to={`/tag/${tagSlug}`}>
-                      <Badge 
-                        variant="outline" 
-                        className="hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer hover-lift px-3 py-1"
-                      >
-                        {tag}
-                      </Badge>
-                    </Link>
-                  );
-                })}
+                {article.tags.map((tag) => (
+                  <Link key={tag} to={`/tag/${tag.toLowerCase().replace(/ /g, '-')}`}>
+                    <Badge 
+                      variant="outline" 
+                      className="hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer hover-lift px-3 py-1"
+                    >
+                      {tag}
+                    </Badge>
+                  </Link>
+                ))}
               </div>
             </RevealOnScroll>
 
-            {/* Author Card */
+            {/* Author Card */}
             <RevealOnScroll>
               <div className="mt-12 p-6 rounded-xl glass-effect border border-border/50 hover:border-primary/20 transition-all">
                 <div className="flex items-start space-x-4">
