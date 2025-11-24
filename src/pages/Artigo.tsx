@@ -226,7 +226,23 @@ export default function Artigo() {
                 <p className="lead text-xl mb-6 font-medium">
                   {article.subtitle}
                 </p>
+              </div>
+            </RevealOnScroll>
 
+            {/* ARTIGO-TITULO-02 - Após primeiro parágrafo */}
+            <div className="mb-8 not-prose">
+              <ins 
+                className="adsbygoogle"
+                style={{ display: 'block' }}
+                data-ad-client={import.meta.env.VITE_ADSENSE_CLIENT_ID}
+                data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_TITULO_02}
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+              />
+            </div>
+
+            <RevealOnScroll>
+              <div className="prose prose-lg max-w-none article-content">
                 <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">A Revolução Silenciosa</h2>
                 <p>
                   A inteligência artificial não é mais ficção científica. Ela está presente no dia a dia das empresas,
@@ -238,18 +254,6 @@ export default function Artigo() {
                 </p>
               </div>
             </RevealOnScroll>
-
-            {/* ARTIGO-TITULO-02 */}
-            <div className="mb-8 not-prose">
-              <ins 
-                className="adsbygoogle"
-                style={{ display: 'block' }}
-                data-ad-client={import.meta.env.VITE_ADSENSE_CLIENT_ID}
-                data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_TITULO_02}
-                data-ad-format="auto"
-                data-full-width-responsive="true"
-              />
-            </div>
 
             <RevealOnScroll>
               <div className="prose prose-lg max-w-none article-content">
