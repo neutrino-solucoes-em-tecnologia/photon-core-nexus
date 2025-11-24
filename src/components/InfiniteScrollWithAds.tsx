@@ -18,7 +18,7 @@ export default function InfiniteScrollWithAds<T>({
   renderItem,
   itemsBetweenAds = 6,
   adSlot,
-  adClient = 'ca-pub-XXXXXXXXXXXXXXXX',
+  adClient = 'ca-pub-8616282875609147',
   adFormat = 'auto',
   containerClassName = '',
   itemClassName = '',
