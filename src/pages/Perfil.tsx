@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { User, Mail, Phone, MapPin, Calendar, Settings, Bell, Shield, Bookmark, Clock, Eye, Pencil, Camera, Save, Lock, Palette, Globe, Smartphone, EyeOff, Trash2, Download, Upload, AlertTriangle } from 'lucide-react';
+import { User, Mail, Phone, MapPin, Calendar, Settings, Bell, Shield, Bookmark, Clock, Eye, Pencil, Camera, Save, Lock, Palette, Globe, Smartphone, EyeOff, Trash2, Download, Upload, AlertTriangle, BookOpen, Share2, CheckCircle2, RotateCcw, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -122,6 +122,7 @@ export default function Perfil() {
       category: 'Tecnologia',
       date: '2 dias atrás',
       readTime: '5 min',
+      excerpt: 'Análise completa sobre como a IA está se desenvolvendo e impactando diversos setores no país.',
     },
     {
       id: 2,
@@ -129,6 +130,7 @@ export default function Perfil() {
       category: 'Negócios',
       date: '1 semana atrás',
       readTime: '8 min',
+      excerpt: 'Conheça as empresas inovadoras que estão revolucionando o mercado brasileiro.',
     },
     {
       id: 3,
@@ -136,6 +138,7 @@ export default function Perfil() {
       category: 'Inovação',
       date: '2 semanas atrás',
       readTime: '6 min',
+      excerpt: 'Descubra as últimas tecnologias em energia limpa e sustentável para o futuro.',
     },
   ];
 
@@ -146,6 +149,8 @@ export default function Perfil() {
       category: 'Tecnologia',
       date: 'Hoje às 14:30',
       progress: 100,
+      readTime: '8 min',
+      excerpt: 'Descubra como a inteligência artificial está revolucionando métodos de ensino e aprendizado em todo o mundo.',
     },
     {
       id: 2,
@@ -153,6 +158,8 @@ export default function Perfil() {
       category: 'Negócios',
       date: 'Ontem às 09:15',
       progress: 75,
+      readTime: '12 min',
+      excerpt: 'Prepare-se para as principais tendências que moldarão o futuro do marketing digital nos próximos anos.',
     },
     {
       id: 3,
@@ -160,6 +167,17 @@ export default function Perfil() {
       category: 'Inovação',
       date: 'Há 2 dias',
       progress: 50,
+      readTime: '10 min',
+      excerpt: 'Explore as aplicações práticas da tecnologia blockchain em diversos setores além das moedas digitais.',
+    },
+    {
+      id: 4,
+      title: 'O Futuro do Trabalho Remoto',
+      category: 'Carreira',
+      date: 'Há 3 dias',
+      progress: 30,
+      readTime: '7 min',
+      excerpt: 'Análise das mudanças permanentes no mercado de trabalho e como se adaptar a essa nova realidade.',
     },
   ];
 
@@ -390,92 +408,249 @@ export default function Perfil() {
 
             {/* Artigos Salvos */}
             <TabsContent value="saved">
-              <div className="max-w-3xl mx-auto space-y-4">
-                <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Bookmark className="h-5 w-5 text-primary" />
-                      Artigos Salvos ({savedArticles.length})
-                    </CardTitle>
-                    <CardDescription>
-                      Seus artigos favoritos para ler mais tarde
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    {savedArticles.map((article) => (
-                      <div
-                        key={article.id}
-                        className="flex items-start justify-between p-4 rounded-lg border border-border/50 hover:border-primary/20 hover:bg-accent/5 transition-all cursor-pointer group"
-                      >
-                        <div className="flex-1">
-                          <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">
-                            {article.title}
-                          </h3>
-                          <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                            <Badge variant="secondary">{article.category}</Badge>
-                            <span className="flex items-center gap-1">
-                              <Clock className="h-3 w-3" />
-                              {article.readTime}
-                            </span>
-                            <span>{article.date}</span>
+              <div className="max-w-4xl mx-auto space-y-6">
+                <div className="flex items-center justify-between mb-6">
+                  <div>
+                    <h2 className="text-2xl font-bold">Artigos Salvos</h2>
+                    <p className="text-muted-foreground mt-1">
+                      {savedArticles.length} {savedArticles.length === 1 ? 'artigo salvo' : 'artigos salvos'} para ler mais tarde
+                    </p>
+                  </div>
+                  <Button variant="outline" size="sm">
+                    <Trash2 className="h-4 w-4 mr-2" />
+                    Limpar Salvos
+                  </Button>
+                </div>
+
+                {/* Saved articles cards */}
+                <div className="space-y-4">
+                  {savedArticles.map((article, index) => (
+                    <RevealOnScroll key={article.id} delay={0.08 * index}>
+                      <Card className="border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg hover:border-primary/30 transition-all group">
+                        <CardContent className="p-4">
+                          <div className="flex flex-col sm:flex-row gap-4 sm:h-32">
+                            {/* Thumbnail */}
+                            <div className="relative flex-shrink-0 w-full sm:w-48 h-32 rounded-lg overflow-hidden bg-gradient-to-br from-primary/20 via-accent/20 to-secondary/20 group-hover:scale-[1.02] transition-transform">
+                              <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center">
+                                  <Bookmark className="h-8 w-8 text-primary/60" />
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Content */}
+                            <div className="flex-1 flex flex-col justify-between min-h-0">
+                              <div className="space-y-1.5">
+                                <h3 className="text-base font-semibold group-hover:text-primary transition-colors line-clamp-1">
+                                  {article.title}
+                                </h3>
+                                <p className="text-xs text-muted-foreground line-clamp-1">
+                                  {article.excerpt}
+                                </p>
+                                <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                                  <Badge variant="secondary" className="text-xs h-5 px-2">
+                                    {article.category}
+                                  </Badge>
+                                  <div className="flex items-center gap-1">
+                                    <Clock className="h-3 w-3" />
+                                    <span>{article.readTime}</span>
+                                  </div>
+                                  <div className="flex items-center gap-1">
+                                    <Calendar className="h-3 w-3" />
+                                    <span>{article.date}</span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              {/* Actions */}
+                              <div className="flex items-center gap-2 pt-2">
+                                <Button variant="outline" size="sm" className="h-7 px-2 border-primary/50 text-primary hover:bg-primary/10">
+                                  <BookOpen className="h-3 w-3" />
+                                </Button>
+                                <Button variant="outline" size="sm" className="h-7 px-2">
+                                  <Bookmark className="h-3 w-3" />
+                                </Button>
+                                <Button variant="outline" size="sm" className="h-7 px-2">
+                                  <Share2 className="h-3 w-3" />
+                                </Button>
+                                <Button 
+                                  variant="ghost" 
+                                  size="sm"
+                                  className="h-7 px-2 text-muted-foreground hover:text-destructive hover:bg-destructive/10"
+                                >
+                                  <X className="h-3 w-3" />
+                                </Button>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                        <Button variant="ghost" size="icon" className="flex-shrink-0">
-                          <Bookmark className="h-4 w-4 fill-primary text-primary" />
-                        </Button>
+                        </CardContent>
+                      </Card>
+                    </RevealOnScroll>
+                  ))}
+                </div>
+
+                {/* Empty state */}
+                {savedArticles.length === 0 && (
+                  <Card className="border-dashed border-2 border-border/50">
+                    <CardContent className="flex flex-col items-center justify-center py-16 text-center">
+                      <div className="rounded-full bg-muted/50 p-6 mb-4">
+                        <Bookmark className="h-12 w-12 text-muted-foreground" />
                       </div>
-                    ))}
-                  </CardContent>
-                </Card>
+                      <h3 className="text-xl font-semibold mb-2">Nenhum artigo salvo</h3>
+                      <p className="text-muted-foreground mb-6 max-w-sm">
+                        Comece a salvar artigos interessantes para ler mais tarde
+                      </p>
+                      <Button>
+                        Explorar Artigos
+                      </Button>
+                    </CardContent>
+                  </Card>
+                )}
               </div>
             </TabsContent>
 
             {/* Histórico de Leitura */}
             <TabsContent value="history">
-              <div className="max-w-3xl mx-auto space-y-4">
-                <Card className="border-border/50 bg-card/50 backdrop-blur-sm">
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Clock className="h-5 w-5 text-primary" />
-                      Histórico de Leitura
-                    </CardTitle>
-                    <CardDescription>
-                      Artigos que você leu recentemente
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    {readingHistory.map((article) => (
-                      <div
-                        key={article.id}
-                        className="p-4 rounded-lg border border-border/50 hover:border-primary/20 hover:bg-accent/5 transition-all cursor-pointer group"
-                      >
-                        <div className="flex items-start justify-between mb-3">
-                          <div className="flex-1">
-                            <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">
-                              {article.title}
-                            </h3>
-                            <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                              <Badge variant="secondary">{article.category}</Badge>
-                              <span>{article.date}</span>
+              <div className="max-w-4xl mx-auto space-y-6">
+                <div className="flex items-center justify-between mb-6">
+                  <div>
+                    <h2 className="text-2xl font-bold">Histórico de Leitura</h2>
+                    <p className="text-muted-foreground mt-1">
+                      Acompanhe seu progresso e retome onde parou
+                    </p>
+                  </div>
+                  <Button variant="outline" size="sm">
+                    <Trash2 className="h-4 w-4 mr-2" />
+                    Limpar Histórico
+                  </Button>
+                </div>
+
+                {/* Reading history cards */}
+                <div className="space-y-4">
+                  {readingHistory.map((article, index) => (
+                    <RevealOnScroll key={article.id} delay={0.08 * index}>
+                      <Card className="border-border/50 bg-card/50 backdrop-blur-sm hover:shadow-lg hover:border-primary/30 transition-all group">
+                        <CardContent className="p-4">
+                          <div className="flex flex-col sm:flex-row gap-4 sm:h-32">
+                            {/* Thumbnail */}
+                            <div className="relative flex-shrink-0 w-full sm:w-48 h-32 rounded-lg overflow-hidden bg-gradient-to-br from-primary/20 via-accent/20 to-secondary/20 group-hover:scale-[1.02] transition-transform">
+                              <div className="absolute inset-0 flex items-center justify-center">
+                                <div className={`w-16 h-16 rounded-full ${
+                                  article.progress === 100 
+                                    ? 'bg-green-500/20' 
+                                    : article.progress >= 50 
+                                    ? 'bg-blue-500/20' 
+                                    : 'bg-orange-500/20'
+                                } flex items-center justify-center`}>
+                                  {article.progress === 100 ? (
+                                    <CheckCircle2 className="h-8 w-8 text-green-600 dark:text-green-400" />
+                                  ) : (
+                                    <Clock className="h-8 w-8 text-muted-foreground" />
+                                  )}
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Content */}
+                            <div className="flex-1 flex flex-col justify-between min-h-0">
+                              <div className="space-y-1.5">
+                                <h3 className="text-base font-semibold group-hover:text-primary transition-colors line-clamp-1">
+                                  {article.title}
+                                </h3>
+                                <p className="text-xs text-muted-foreground line-clamp-1">
+                                  {article.excerpt}
+                                </p>
+                                <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+                                  <Badge variant="secondary" className="text-xs h-5 px-2">
+                                    {article.category}
+                                  </Badge>
+                                  <div className="flex items-center gap-1">
+                                    <Clock className="h-3 w-3" />
+                                    <span>{article.readTime}</span>
+                                  </div>
+                                  <div className="flex items-center gap-1">
+                                    <Calendar className="h-3 w-3" />
+                                    <span>{article.date}</span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              {/* Progress bar */}
+                              <div className="space-y-1.5">
+                                <div className="flex items-center justify-between text-xs">
+                                  <span className="text-muted-foreground font-medium">Progresso</span>
+                                  <span className={`font-semibold ${
+                                    article.progress === 100 
+                                      ? 'text-green-600 dark:text-green-400' 
+                                      : 'text-primary'
+                                  }`}>
+                                    {article.progress}%
+                                  </span>
+                                </div>
+                                <div className="w-full bg-muted rounded-full h-1.5 overflow-hidden">
+                                  <div
+                                    className={`h-full transition-all duration-500 ${
+                                      article.progress === 100 
+                                        ? 'bg-green-600 dark:bg-green-400' 
+                                        : 'bg-primary'
+                                    }`}
+                                    style={{ width: `${article.progress}%` }}
+                                  />
+                                </div>
+                              </div>
+
+                              {/* Actions */}
+                              <div className="flex items-center gap-2 pt-2">
+                                <Button variant="outline" size="sm" className={`h-7 px-2 ${
+                                  article.progress === 100 
+                                    ? 'border-green-600/50 dark:border-green-400/50 text-green-600 dark:text-green-400 hover:bg-green-500/10' 
+                                    : 'border-primary/50 text-primary hover:bg-primary/10'
+                                }`}>
+                                  {article.progress === 100 ? (
+                                    <RotateCcw className="h-3 w-3" />
+                                  ) : (
+                                    <BookOpen className="h-3 w-3" />
+                                  )}
+                                </Button>
+                                <Button variant="outline" size="sm" className="h-7 px-2">
+                                  <Bookmark className="h-3 w-3" />
+                                </Button>
+                                <Button variant="outline" size="sm" className="h-7 px-2">
+                                  <Share2 className="h-3 w-3" />
+                                </Button>
+                                <Button 
+                                  variant="ghost" 
+                                  size="sm"
+                                  className="h-7 px-2 text-muted-foreground hover:text-destructive hover:bg-destructive/10"
+                                >
+                                  <X className="h-3 w-3" />
+                                </Button>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <div className="space-y-2">
-                          <div className="flex items-center justify-between text-sm">
-                            <span className="text-muted-foreground">Progresso de leitura</span>
-                            <span className="font-medium text-primary">{article.progress}%</span>
-                          </div>
-                          <div className="w-full bg-muted rounded-full h-2 overflow-hidden">
-                            <div
-                              className="bg-primary h-full transition-all duration-300"
-                              style={{ width: `${article.progress}%` }}
-                            />
-                          </div>
-                        </div>
+                        </CardContent>
+                      </Card>
+                    </RevealOnScroll>
+                  ))}
+                </div>
+
+                {/* Empty state */}
+                {readingHistory.length === 0 && (
+                  <Card className="border-dashed border-2 border-border/50">
+                    <CardContent className="flex flex-col items-center justify-center py-16 text-center">
+                      <div className="rounded-full bg-muted/50 p-6 mb-4">
+                        <BookOpen className="h-12 w-12 text-muted-foreground" />
                       </div>
-                    ))}
-                  </CardContent>
-                </Card>
+                      <h3 className="text-xl font-semibold mb-2">Nenhum histórico de leitura</h3>
+                      <p className="text-muted-foreground mb-6 max-w-sm">
+                        Comece a ler artigos e seu progresso será registrado aqui
+                      </p>
+                      <Button>
+                        Explorar Artigos
+                      </Button>
+                    </CardContent>
+                  </Card>
+                )}
               </div>
             </TabsContent>
 
