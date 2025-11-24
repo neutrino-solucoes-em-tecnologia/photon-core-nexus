@@ -99,12 +99,21 @@ export default function Artigo() {
   // Inicializa AdSense após o componente montar
   useEffect(() => {
     try {
-      // Inicializa os 3 anúncios in-article
-      const ads = document.querySelectorAll('.adsbygoogle');
-      ads.forEach(() => {
-        // @ts-ignore
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-      });
+      // Delay para garantir que o DOM está pronto
+      setTimeout(() => {
+        const ads = document.querySelectorAll('.adsbygoogle');
+        console.log(`[Artigo] Encontrados ${ads.length} anúncios para inicializar`);
+        
+        ads.forEach((ad, index) => {
+          if (!ad.getAttribute('data-adsbygoogle-status')) {
+            // @ts-ignore
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            console.log(`[Artigo] Anúncio ${index + 1} inicializado`);
+          } else {
+            console.log(`[Artigo] Anúncio ${index + 1} já estava inicializado`);
+          }
+        });
+      }, 500);
     } catch (err) {
       console.error('AdSense error:', err);
     }
