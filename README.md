@@ -32,7 +32,11 @@ cd <YOUR_PROJECT_NAME>
 # Step 3: Install the necessary dependencies.
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Configure environment variables.
+cp .env.example .env
+# Edit .env and add your Google AdSense Client ID
+
+# Step 5: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
 
@@ -59,6 +63,17 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
+- Google AdSense (for monetization)
+
+## Environment Variables
+
+This project uses environment variables for sensitive configuration. See [ENVIRONMENT.md](./ENVIRONMENT.md) for detailed setup instructions.
+
+**Quick setup:**
+```bash
+cp .env.example .env
+# Edit .env with your Google AdSense Client ID
+```
 
 ## How can I deploy this project?
 

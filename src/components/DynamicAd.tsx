@@ -22,7 +22,7 @@ export default function DynamicAd({
   className = '', 
   format = 'auto',
   position = 0,
-  client = 'ca-pub-8616282875609147', // Substitua pelo seu client ID
+  client = import.meta.env.VITE_ADSENSE_CLIENT_ID || 'ca-pub-8616282875609147',
   infiniteScroll = false,
   itemsBetweenAds = 6,
 }: DynamicAdProps) {
