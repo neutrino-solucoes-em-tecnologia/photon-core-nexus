@@ -48,6 +48,7 @@ export default function Home() {
     try {
       setTimeout(() => {
         (window.adsbygoogle = window.adsbygoogle || []).push({});
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
       }, 100);
     } catch (err) {
       if (import.meta.env.VITE_SHOW_ADSENSE_ERRORS === 'true') {
@@ -79,6 +80,22 @@ export default function Home() {
 
         {/* Featured Highlights - Mais destaques */}
         <FeaturedHighlights />
+
+      {/* HOME-DISPLAY-02 - Ad after Featured Highlights */}
+      <RevealOnScroll>
+        <div className="wide-container py-4 md:py-6">
+          <div className="not-prose">
+            <ins 
+              className="adsbygoogle"
+              style={{ display: 'block' }}
+              data-ad-client={import.meta.env.VITE_ADSENSE_CLIENT_ID}
+              data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_02}
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            />
+          </div>
+        </div>
+      </RevealOnScroll>
 
         {/* News Feed - Feed de Notícias */}
         <RevealOnScroll>
