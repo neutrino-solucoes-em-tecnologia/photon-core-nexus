@@ -29,7 +29,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <SidebarProvider defaultOpen={true}>
+        <SidebarProvider>
           <AppSidebar />
           <SidebarInset>
             <div className="flex flex-col min-h-screen w-full max-w-full overflow-x-hidden group">
