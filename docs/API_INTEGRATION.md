@@ -21,7 +21,6 @@ Lista artigos com paginação e filtros.
 - `page` (int) - Página atual (default: 1)
 - `per_page` (int) - Itens por página (default: 12, max: 50)
 - `category` (string) - Slug da categoria
-- `author` (int) - ID do autor
 - `tag` (string) - Slug da tag
 - `search` (string) - Busca por título/conteúdo
 - `sort` (string) - `latest`, `oldest`, `popular`, `trending`
@@ -48,12 +47,6 @@ GET /articles?page=1&per_page=12&category=tecnologia&sort=latest
         "slug": "tecnologia",
         "name": "Tecnologia",
         "color": "#0C4767"
-      },
-      "author": {
-        "id": 1,
-        "name": "Ana Silva",
-        "avatar": "https://cdn.photonmedia.com.br/avatars/1.jpg",
-        "bio": "Jornalista especializada em tecnologia"
       },
       "tags": [
         { "id": 1, "slug": "ia", "name": "Inteligência Artificial" },
@@ -107,18 +100,7 @@ Obtém detalhes completos de um artigo.
     "description": "Últimas novidades em tecnologia e inovação",
     "icon": "cpu",
     "color": "#0C4767"
-  },
-  "author": {
-    "id": 1,
-    "name": "Ana Silva",
-    "email": "ana@photonmedia.com.br",
-    "avatar": "https://cdn.photonmedia.com.br/avatars/1.jpg",
-    "bio": "Jornalista especializada em tecnologia com 10 anos de experiência",
-    "website": "https://anasilva.com.br",
-    "social": {
-      "twitter": "@anasilva",
-      "linkedin": "anasilva"
-    }
+  }
   },
   "tags": [
     { "id": 1, "slug": "ia", "name": "Inteligência Artificial" },
@@ -166,11 +148,6 @@ Obtém artigos em destaque para a Home (Hero Section).
         "name": "Tecnologia",
         "color": "#0C4767"
       },
-      "author": {
-        "id": 1,
-        "name": "Ana Silva",
-        "avatar": "https://cdn.photonmedia.com.br/avatars/1.jpg"
-      },
       "read_time": "5 min",
       "views": 2341,
       "published_at": "2025-01-15T10:30:00.000000Z"
@@ -213,10 +190,6 @@ Obtém últimas notícias (News Feed).
         "name": "Tecnologia",
         "color": "#0C4767"
       },
-      "author": {
-        "name": "Carlos Santos",
-        "avatar": "https://cdn.photonmedia.com.br/avatars/2.jpg"
-      },
       "read_time": "6 min",
       "views": 3421,
       "published_at": "2025-01-15T14:20:00.000000Z"
@@ -246,10 +219,6 @@ Obtém artigos relacionados a um artigo específico.
       "category": {
         "slug": "tecnologia",
         "name": "Tecnologia"
-      },
-      "author": {
-        "name": "Ana Silva",
-        "avatar": "https://cdn.photonmedia.com.br/avatars/1.jpg"
       },
       "read_time": "7 min",
       "views": 1823,
@@ -444,7 +413,6 @@ Busca global por artigos, categorias e tags.
       "excerpt": "Descubra como a IA...",
       "featured_image": "https://...",
       "category": { "slug": "tecnologia", "name": "Tecnologia" },
-      "author": { "name": "Ana Silva" },
       "published_at": "2025-01-15T10:30:00.000000Z"
     }
   ],

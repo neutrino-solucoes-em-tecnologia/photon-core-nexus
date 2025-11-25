@@ -33,7 +33,6 @@ const articles = [
     excerpt: 'Como a inteligência artificial está revolucionando processos empresariais e criando novas oportunidades de negócio.',
     image: techImage,
     category: 'Tecnologia',
-    author: 'Ana Silva',
     readTime: '8 min',
     date: '15 Jan 2025',
   },
@@ -43,7 +42,6 @@ const articles = [
     excerpt: 'Entenda como ESG e sustentabilidade estão moldando o futuro dos investimentos globais.',
     image: businessImage,
     category: 'Negócios',
-    author: 'Carlos Mendes',
     readTime: '6 min',
     date: '14 Jan 2025',
   },
@@ -53,7 +51,6 @@ const articles = [
     excerpt: 'Explore como a computação quântica promete resolver problemas impossíveis para computadores clássicos.',
     image: techImage,
     category: 'Tecnologia',
-    author: 'Pedro Costa',
     readTime: '12 min',
     date: '12 Jan 2025',
   },
@@ -63,7 +60,6 @@ const articles = [
     excerpt: 'Descubra as melhores práticas e ferramentas para construir negócios digitais de sucesso.',
     image: businessImage,
     category: 'Negócios',
-    author: 'Julia Martins',
     readTime: '7 min',
     date: '11 Jan 2025',
   },
@@ -73,7 +69,6 @@ const articles = [
     excerpt: 'As principais ameaças e soluções em segurança digital que toda empresa precisa conhecer.',
     image: techImage,
     category: 'Tecnologia',
-    author: 'Roberto Lima',
     readTime: '9 min',
     date: '10 Jan 2025',
   },
@@ -83,7 +78,6 @@ const articles = [
     excerpt: 'Como liderar times distribuídos com eficiência e manter a cultura organizacional forte.',
     image: businessImage,
     category: 'Negócios',
-    author: 'Fernanda Souza',
     readTime: '5 min',
     date: '9 Jan 2025',
   },
@@ -93,7 +87,6 @@ const articles = [
     excerpt: 'Descubra como grandes empresas estão usando blockchain para otimizar processos e reduzir custos.',
     image: techImage,
     category: 'Tecnologia',
-    author: 'Ana Silva',
     readTime: '10 min',
     date: '8 Jan 2025',
   },
@@ -103,7 +96,6 @@ const articles = [
     excerpt: 'As principais mudanças no marketing digital e como adaptar sua estratégia para o futuro.',
     image: businessImage,
     category: 'Negócios',
-    author: 'Carlos Mendes',
     readTime: '7 min',
     date: '7 Jan 2025',
   },
@@ -113,7 +105,6 @@ const articles = [
     excerpt: 'Como IoT e IA estão transformando a manufatura e criando fábricas inteligentes.',
     image: techImage,
     category: 'Tecnologia',
-    author: 'Pedro Costa',
     readTime: '11 min',
     date: '6 Jan 2025',
   },
@@ -123,7 +114,6 @@ const articles = [
     excerpt: 'Estratégias e insights de fundadores que transformaram suas startups em unicórnios.',
     image: businessImage,
     category: 'Negócios',
-    author: 'Julia Martins',
     readTime: '9 min',
     date: '5 Jan 2025',
   },
@@ -133,7 +123,6 @@ const articles = [
     excerpt: 'Por que empresas estão adotando múltiplas plataformas de nuvem e como gerenciá-las.',
     image: techImage,
     category: 'Tecnologia',
-    author: 'Roberto Lima',
     readTime: '8 min',
     date: '4 Jan 2025',
   },
@@ -143,7 +132,6 @@ const articles = [
     excerpt: 'Como a tecnologia está revolucionando o recrutamento, treinamento e retenção de talentos.',
     image: businessImage,
     category: 'Negócios',
-    author: 'Fernanda Souza',
     readTime: '6 min',
     date: '3 Jan 2025',
   },
@@ -153,7 +141,6 @@ const articles = [
     excerpt: 'Explore como a rede 5G está acelerando a adoção de IoT e criando novas possibilidades.',
     image: techImage,
     category: 'Tecnologia',
-    author: 'Ana Silva',
     readTime: '10 min',
     date: '2 Jan 2025',
   },
@@ -163,7 +150,6 @@ const articles = [
     excerpt: 'Estratégias financeiras essenciais para escalar seu negócio de forma sustentável.',
     image: businessImage,
     category: 'Negócios',
-    author: 'Carlos Mendes',
     readTime: '8 min',
     date: '1 Jan 2025',
   },
@@ -173,7 +159,6 @@ const articles = [
     excerpt: 'Entenda como edge computing está reduzindo latência e melhorando aplicações em tempo real.',
     image: techImage,
     category: 'Tecnologia',
-    author: 'Pedro Costa',
     readTime: '9 min',
     date: '31 Dez 2024',
   },
@@ -183,7 +168,6 @@ const articles = [
     excerpt: 'Como construir e manter uma cultura forte que impulsiona resultados e atrai talentos.',
     image: businessImage,
     category: 'Negócios',
-    author: 'Julia Martins',
     readTime: '7 min',
     date: '30 Dez 2024',
   },
@@ -193,7 +177,6 @@ const articles = [
     excerpt: 'Os principais obstáculos ao colocar modelos de ML em produção e como superá-los.',
     image: techImage,
     category: 'Tecnologia',
-    author: 'Ana Silva',
     readTime: '11 min',
     date: '29 Dez 2024',
   },
@@ -203,7 +186,6 @@ const articles = [
     excerpt: 'Análise do mercado brasileiro de e-commerce e as melhores estratégias para 2025.',
     image: businessImage,
     category: 'Negócios',
-    author: 'Carlos Mendes',
     readTime: '8 min',
     date: '28 Dez 2024',
   },
@@ -213,7 +195,6 @@ const articles = [
     excerpt: 'Por que DevOps é principalmente sobre cultura e colaboração, não apenas automação.',
     image: techImage,
     category: 'Tecnologia',
-    author: 'Roberto Lima',
     readTime: '9 min',
     date: '27 Dez 2024',
   },
@@ -223,7 +204,6 @@ const articles = [
     excerpt: 'Estratégias comprovadas para conduzir mudanças organizacionais com sucesso.',
     image: businessImage,
     category: 'Negócios',
-    author: 'Fernanda Souza',
     readTime: '6 min',
     date: '26 Dez 2024',
   },
@@ -233,7 +213,6 @@ const articles = [
     excerpt: 'Como a Web3 está redesenhando a internet e criando novas oportunidades de negócio.',
     image: techImage,
     category: 'Tecnologia',
-    author: 'Pedro Costa',
     readTime: '10 min',
     date: '25 Dez 2024',
   },
@@ -243,7 +222,6 @@ const articles = [
     excerpt: 'Como construir e escalar negócios SaaS de forma sustentável e lucrativa.',
     image: businessImage,
     category: 'Negócios',
-    author: 'Julia Martins',
     readTime: '9 min',
     date: '24 Dez 2024',
   },
@@ -253,7 +231,6 @@ const articles = [
     excerpt: 'Guia completo para implementar e gerenciar clusters Kubernetes em produção.',
     image: techImage,
     category: 'Tecnologia',
-    author: 'Ana Silva',
     readTime: '12 min',
     date: '23 Dez 2024',
   },
@@ -263,7 +240,6 @@ const articles = [
     excerpt: 'Como usar análise de dados para tomar decisões estratégicas mais inteligentes.',
     image: businessImage,
     category: 'Negócios',
-    author: 'Carlos Mendes',
     readTime: '7 min',
     date: '22 Dez 2024',
   },
@@ -273,7 +249,6 @@ const articles = [
     excerpt: 'Benefícios e desafios de adotar arquiteturas serverless em aplicações modernas.',
     image: techImage,
     category: 'Tecnologia',
-    author: 'Roberto Lima',
     readTime: '10 min',
     date: '21 Dez 2024',
   },
@@ -283,7 +258,6 @@ const articles = [
     excerpt: 'Como implementar uma estratégia de Customer Success que reduz churn e aumenta LTV.',
     image: businessImage,
     category: 'Negócios',
-    author: 'Fernanda Souza',
     readTime: '8 min',
     date: '20 Dez 2024',
   },
@@ -293,7 +267,6 @@ const articles = [
     excerpt: 'Como a IA generativa está transformando criação de conteúdo, arte e código.',
     image: techImage,
     category: 'Tecnologia',
-    author: 'Pedro Costa',
     readTime: '11 min',
     date: '19 Dez 2024',
   },
@@ -303,7 +276,6 @@ const articles = [
     excerpt: 'Táticas e estratégias de growth hacking que impulsionaram startups de sucesso.',
     image: businessImage,
     category: 'Negócios',
-    author: 'Julia Martins',
     readTime: '9 min',
     date: '18 Dez 2024',
   },
@@ -313,7 +285,6 @@ const articles = [
     excerpt: 'Quando e como migrar de monólito para microserviços sem quebrar tudo.',
     image: techImage,
     category: 'Tecnologia',
-    author: 'Ana Silva',
     readTime: '13 min',
     date: '17 Dez 2024',
   },
@@ -567,17 +538,6 @@ export default function Categoria() {
                         {article.category}
                       </a>
                       
-                      <a 
-                        href={`/autor/${article.author.toLowerCase().replace(' ', '-')}`}
-                        className="hover:underline flex items-center gap-1"
-                      >
-                        <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                          <circle cx="12" cy="7" r="4"/>
-                        </svg>
-                        {article.author}
-                      </a>
-                      
                       <span className="flex items-center gap-1">
                         <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <path d="M12 20h9"/>
@@ -592,9 +552,7 @@ export default function Categoria() {
                       <a href={`/categoria/${article.category.toLowerCase()}`} className="hover:underline">
                         {article.category}
                       </a>
-                      <a href={`/autor/${article.author.toLowerCase().replace(' ', '-')}`} className="hover:underline">
-                        {article.author}
-                      </a>
+                      <span>{article.readTime}</span>
                     </div>
                   </div>
                 </article>

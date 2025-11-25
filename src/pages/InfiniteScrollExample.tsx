@@ -14,7 +14,6 @@ const generateMockArticles = (page: number, perPage: number = 12) => {
     excerpt: `Descrição do artigo ${page * perPage + i + 1}. Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
     image: i % 2 === 0 ? techImage : businessImage,
     category: i % 3 === 0 ? 'Tecnologia' : i % 3 === 1 ? 'Negócios' : 'Inovação',
-    author: i % 2 === 0 ? 'Ana Silva' : 'Carlos Mendes',
     readTime: `${5 + (i % 5)} min`,
     date: `${15 - (i % 15)} Jan 2025`,
   }));

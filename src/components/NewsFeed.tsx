@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { User, MessageSquare } from 'lucide-react';
+import { MessageSquare } from 'lucide-react';
 import { useEffect } from 'react';
 import techImage from '@/assets/article-tech.jpg';
 import businessImage from '@/assets/article-business.jpg';
@@ -12,7 +12,6 @@ const newsArticles = [
     image: techImage,
     slug: 'openai-gpt5-lancamento',
     category: 'Tecnologia',
-    author: 'Ana Silva',
     readTime: '5 min',
     comments: 42
   },
@@ -23,7 +22,6 @@ const newsArticles = [
     image: businessImage,
     slug: 'mercado-acoes-tech-stocks',
     category: 'Negócios',
-    author: 'Carlos Mendes',
     readTime: '4 min',
     comments: 28
   },
@@ -34,7 +32,6 @@ const newsArticles = [
     image: techImage,
     slug: 'blockchain-aplicacoes-praticas',
     category: 'Inovação',
-    author: 'Maria Santos',
     readTime: '7 min',
     comments: 35
   },
@@ -45,7 +42,6 @@ const newsArticles = [
     image: businessImage,
     slug: 'startups-verdes-investimentos',
     category: 'Negócios',
-    author: 'Pedro Costa',
     readTime: '6 min',
     comments: 19
   },
@@ -56,7 +52,6 @@ const newsArticles = [
     image: techImage,
     slug: 'ibm-processador-quantico',
     category: 'Tecnologia',
-    author: 'Ana Silva',
     readTime: '8 min',
     comments: 51
   },
@@ -67,7 +62,6 @@ const newsArticles = [
     image: businessImage,
     slug: 'ecommerce-tendencias-2025',
     category: 'Negócios',
-    author: 'Carlos Mendes',
     readTime: '5 min',
     comments: 23
   }
@@ -140,13 +134,9 @@ export default function NewsFeed() {
                     {article.category}
                   </Link>
                   
-                  <Link 
-                    to={`/autor/${article.author.toLowerCase().replace(' ', '-')}`}
-                    className="hover:underline flex items-center gap-1"
-                  >
-                    <User className="w-3 h-3" />
-                    {article.author}
-                  </Link>
+                  <span className="flex items-center gap-1">
+                    {article.readTime}
+                  </span>
                   
                   <Link 
                     to={`/artigo/${article.slug}#comments`}

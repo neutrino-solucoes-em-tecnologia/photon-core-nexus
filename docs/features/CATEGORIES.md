@@ -122,7 +122,6 @@ Sistema de categorização de conteúdo do Photon Media, permitindo organizaçã
         "slug": "tecnologia",
         "name": "Tecnologia"
       },
-      "author": { /* ... */ },
       "read_time": "5 min",
       "views": 1523,
       "published_at": "2024-11-20T10:00:00Z"

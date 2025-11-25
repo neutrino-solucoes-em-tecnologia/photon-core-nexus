@@ -111,28 +111,6 @@ export interface CategoriesParams {
 }
 ```
 
-### Autor
-
-```typescript
-export interface Author {
-  id: number;
-  name: string;
-  email?: string;
-  avatar?: string;
-  bio?: string;
-  website?: string;
-  social?: {
-    twitter?: string;
-    linkedin?: string;
-    instagram?: string;
-    facebook?: string;
-  };
-  articles_count?: number;
-  created_at: string;
-  updated_at: string;
-}
-```
-
 ### Tag
 
 ```typescript
@@ -160,7 +138,6 @@ export interface Article {
   featured_image: string;
   featured_image_caption?: string;
   category: Category;
-  author: Author;
   tags?: Tag[];
   read_time: string;
   views: number;
@@ -204,11 +181,6 @@ export interface ArticleListItem {
     name: string;
     color?: string;
   };
-  author: {
-    id: number;
-    name: string;
-    avatar?: string;
-  };
   read_time: string;
   views: number;
   comments_count: number;
@@ -219,13 +191,12 @@ export interface ArticleListItem {
 // Parâmetros para listar artigos
 export interface ArticlesParams extends PaginationParams, SortParams, SearchParams {
   category?: string;
-  author?: number;
   tag?: string;
   featured?: boolean;
   highlight?: boolean;
   breaking?: boolean;
   exclude?: number[];
-  include?: ('category' | 'author' | 'tags' | 'meta')[];
+  include?: ('category' | 'tags' | 'meta')[];
 }
 
 // Parâmetros para artigos relacionados
@@ -258,7 +229,6 @@ export interface Comment {
   replies_count: number;
   is_edited: boolean;
   is_pinned: boolean;
-  is_author_reply: boolean;
   created_at: string;
   updated_at: string;
   

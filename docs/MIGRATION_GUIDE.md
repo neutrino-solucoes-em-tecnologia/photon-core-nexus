@@ -137,19 +137,6 @@ export interface Category {
   articles_count?: number;
 }
 
-export interface Author {
-  id: number;
-  name: string;
-  email?: string;
-  avatar?: string;
-  bio?: string;
-  website?: string;
-  social?: {
-    twitter?: string;
-    linkedin?: string;
-  };
-}
-
 export interface Tag {
   id: number;
   slug: string;
@@ -166,7 +153,6 @@ export interface Article {
   content?: string;
   featured_image: string;
   category: Category;
-  author: Author;
   tags?: Tag[];
   read_time: string;
   views: number;
@@ -204,7 +190,6 @@ export interface ArticlesParams {
   page?: number;
   per_page?: number;
   category?: string;
-  author?: number;
   tag?: string;
   search?: string;
   sort?: 'latest' | 'oldest' | 'popular' | 'trending';

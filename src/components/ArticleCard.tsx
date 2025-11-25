@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Clock, User } from 'lucide-react';
+import { Clock } from 'lucide-react';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
@@ -9,7 +9,6 @@ interface ArticleCardProps {
   excerpt: string;
   image: string;
   category: string;
-  author: string;
   readTime: string;
   date: string;
 }
@@ -20,7 +19,6 @@ export default function ArticleCard({
   excerpt,
   image,
   category,
-  author,
   readTime,
   date,
 }: ArticleCardProps) {
@@ -64,8 +62,7 @@ export default function ArticleCard({
       </CardContent>
       <CardFooter className="flex items-center justify-between text-sm text-muted-foreground pt-4 border-t border-border/50">
         <div className="flex items-center space-x-2 group-hover:text-foreground/80 transition-all duration-300 transform group-hover:translate-x-1">
-          <User className="h-4 w-4" />
-          <span className="font-medium">{author}</span>
+          <span className="font-medium">{date}</span>
         </div>
         <div className="flex items-center space-x-2 group-hover:text-foreground/60 transition-all duration-300 transform group-hover:-translate-x-1">
           <Clock className="h-4 w-4" />

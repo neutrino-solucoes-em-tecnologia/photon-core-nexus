@@ -29,7 +29,6 @@ Sistema de listagem, visualização e interação com artigos do Photon Media.
   page?: number;           // Página atual (default: 1)
   per_page?: number;       // Items por página (default: 12)
   category?: string;       // Slug da categoria
-  author?: number;         // ID do autor
   tag?: string;            // Slug da tag
   search?: string;         // Busca por título/conteúdo
   sort?: 'latest' | 'oldest' | 'popular' | 'trending';
@@ -53,11 +52,6 @@ Sistema de listagem, visualização e interação com artigos do Photon Media.
         "slug": "tecnologia",
         "name": "Tecnologia",
         "color": "#3B82F6"
-      },
-      "author": {
-        "id": 1,
-        "name": "João Silva",
-        "avatar": "https://..."
       },
       "read_time": "5 min",
       "views": 1523,
@@ -99,7 +93,6 @@ Sistema de listagem, visualização e interação com artigos do Photon Media.
   "featured_image": "https://...",
   "featured_image_caption": "Imagem ilustrativa",
   "category": { /* ... */ },
-  "author": { /* ... */ },
   "tags": [
     {
       "id": 1,
@@ -193,7 +186,6 @@ export interface Article {
   content?: string;
   featured_image: string;
   category: Category;
-  author: Author;
   tags?: Tag[];
   read_time: string;
   views: number;
@@ -208,7 +200,6 @@ export interface ArticlesParams {
   page?: number;
   per_page?: number;
   category?: string;
-  author?: number;
   tag?: string;
   search?: string;
   sort?: 'latest' | 'oldest' | 'popular' | 'trending';
@@ -557,10 +548,6 @@ interface ArticleCardProps {
     slug: string;
     color?: string;
   };
-  author: {
-    name: string;
-    avatar?: string;
-  };
   read_time: string;
   views: number;
   published_at: string;
@@ -572,7 +559,6 @@ export default function ArticleCard({
   excerpt,
   featured_image,
   category,
-  author,
   read_time,
   views,
   published_at,
@@ -597,14 +583,6 @@ export default function ArticleCard({
             <p className="text-muted-foreground text-sm mb-4">{excerpt}</p>
             
             <div className="flex items-center justify-between text-xs text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <Avatar className="h-6 w-6">
-                  <AvatarImage src={author.avatar} />
-                  <AvatarFallback>{author.name[0]}</AvatarFallback>
-                </Avatar>
-                <span>{author.name}</span>
-              </div>
-              
               <div className="flex items-center gap-3">
                 <span>{read_time}</span>
                 <span>{views} views</span>
