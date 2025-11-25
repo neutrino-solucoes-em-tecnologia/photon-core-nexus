@@ -1,6 +1,4 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, Search } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useSidebar } from '@/components/ui/sidebar';
 
@@ -22,13 +20,6 @@ export default function Header() {
               style={{ display: 'flex', visibility: 'visible', opacity: 1 }}
             >
               <Menu className="h-6 w-6" style={{ display: 'block' }} />
-            </Button>
-          </div>
-
-          {/* Actions */}
-          <div className="flex items-center space-x-2 md:space-x-4">
-            <Button variant="ghost" size="icon">
-              <Search className="h-5 w-5" />
             </Button>
           </div>
         </div>
