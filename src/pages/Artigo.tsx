@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import { Clock, User, Calendar, Share2, BookmarkPlus, Tag, MessageSquare } from 'lucide-react';
+import { Clock, Calendar, Share2, BookmarkPlus, Tag, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
@@ -18,10 +18,6 @@ const article = {
   image: heroImage,
   category: 'Tecnologia',
   categorySlug: 'tecnologia',
-  author: 'Ana Silva',
-  authorSlug: 'ana-silva',
-  authorImage: 'https://i.pravatar.cc/150?img=5',
-  authorBio: 'Jornalista especializada em tecnologia e inovação com mais de 10 anos de experiência',
   readTime: '8 min',
   date: '15 de Janeiro de 2025',
   publishedDate: '15 Jan 2025',
@@ -37,7 +33,6 @@ const relatedArticles = [
     excerpt: 'Explore como a computação quântica promete resolver problemas impossíveis para computadores clássicos.',
     image: techImage,
     category: 'Tecnologia',
-    author: 'Pedro Costa',
     readTime: '12 min',
     date: '12 Jan 2025',
   },
@@ -47,7 +42,6 @@ const relatedArticles = [
     excerpt: 'As principais ameaças e soluções em segurança digital que toda empresa precisa conhecer.',
     image: businessImage,
     category: 'Tecnologia',
-    author: 'Roberto Lima',
     readTime: '9 min',
     date: '10 Jan 2025',
   },
@@ -57,7 +51,6 @@ const relatedArticles = [
     excerpt: 'Descubra como a tecnologia blockchain está transformando cadeias de suprimento e contratos inteligentes.',
     image: techImage,
     category: 'Tecnologia',
-    author: 'Mariana Santos',
     readTime: '10 min',
     date: '8 Jan 2025',
   },
@@ -67,7 +60,6 @@ const relatedArticles = [
     excerpt: 'As estratégias de cloud que estão moldando o futuro da infraestrutura tecnológica empresarial.',
     image: businessImage,
     category: 'Tecnologia',
-    author: 'Carlos Mendes',
     readTime: '11 min',
     date: '6 Jan 2025',
   },
@@ -77,7 +69,6 @@ const relatedArticles = [
     excerpt: 'Exemplos concretos de como empresas estão usando ML para otimizar operações e aumentar receita.',
     image: techImage,
     category: 'Negócios',
-    author: 'Julia Ferreira',
     readTime: '14 min',
     date: '4 Jan 2025',
   },
@@ -87,7 +78,6 @@ const relatedArticles = [
     excerpt: 'Entenda as regulamentações de proteção de dados e como sua empresa pode se adequar.',
     image: businessImage,
     category: 'Tecnologia',
-    author: 'Fernando Souza',
     readTime: '10 min',
     date: '2 Jan 2025',
   },
@@ -150,22 +140,8 @@ export default function Artigo() {
                   {article.subtitle}
                 </p>
 
-                {/* Byline */}
+                {/* Meta Info */}
                 <div className="flex flex-wrap items-center gap-4 py-4 border-y border-border/50">
-                  <div className="flex items-center space-x-3">
-                    <img 
-                      src={article.authorImage} 
-                      alt={article.author}
-                      className="w-10 h-10 rounded-full object-cover ring-2 ring-border"
-                      loading="lazy"
-                    />
-                    <div>
-                      <Link to={`/autor/${article.authorSlug}`} className="font-bold text-sm hover:text-primary transition-colors">
-                        {article.author}
-                      </Link>
-                    </div>
-                  </div>
-                  <Separator orientation="vertical" className="h-6" />
                   <div className="text-xs text-muted-foreground">
                     {article.updatedDate}
                   </div>
@@ -329,29 +305,6 @@ export default function Artigo() {
               </div>
             </RevealOnScroll>
 
-            {/* Author Card */}
-            <RevealOnScroll>
-              <div className="mt-12 p-6 rounded-xl glass-effect border border-border/50 hover:border-primary/20 transition-all">
-                <div className="flex items-start space-x-4">
-                  <Link to={`/autor/${article.authorSlug}`}>
-                    <img 
-                      src={article.authorImage} 
-                      alt={article.author}
-                      className="w-20 h-20 rounded-full object-cover ring-2 ring-border hover-lift transition-transform"
-                      loading="lazy"
-                    />
-                  </Link>
-                  <div className="flex-1">
-                    <Link to={`/autor/${article.authorSlug}`} className="font-bold text-lg mb-2 hover:text-primary transition-colors inline-block">
-                      {article.author}
-                    </Link>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {article.authorBio}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </RevealOnScroll>
           </article>
       </div>
 
