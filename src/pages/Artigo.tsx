@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import { Clock, Calendar, Share2, BookmarkPlus, Tag, MessageSquare } from 'lucide-react';
+import { Clock, Calendar, Share2, Tag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
@@ -181,18 +181,11 @@ export default function Artigo() {
                     <Clock className="h-4 w-4" />
                     <span>{article.readTime}</span>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <MessageSquare className="h-4 w-4" />
-                    <span>{article.comments} comentários</span>
-                  </div>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Button variant="outline" size="sm" className="hover-lift">
                     <Share2 className="mr-2 h-4 w-4" />
                     Compartilhar
-                  </Button>
-                  <Button variant="outline" size="sm" className="hover-lift">
-                    <BookmarkPlus className="h-4 w-4" />
                   </Button>
                 </div>
               </div>
