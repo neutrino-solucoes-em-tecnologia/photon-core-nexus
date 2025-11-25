@@ -79,12 +79,19 @@ const moreItems = [
 ];
 
 export function AppSidebar() {
-  const { state, toggleSidebar, setOpen } = useSidebar();
+  const { state, toggleSidebar, setOpen, isMobile, setOpenMobile } = useSidebar();
   const { theme, setTheme } = useTheme();
   const isCollapsed = state === 'collapsed';
   const [searchQuery, setSearchQuery] = useState('');
   const [showMore, setShowMore] = useState(false);
   const [isInitialized, setIsInitialized] = useState(false);
+
+  // Função para fechar sidebar no mobile ao clicar em um link
+  const handleLinkClick = () => {
+    if (isMobile) {
+      setOpenMobile(false);
+    }
+  };
 
   // Carregar o estado salvo da sidebar apenas na primeira montagem
   useEffect(() => {
@@ -181,6 +188,7 @@ export function AppSidebar() {
                         <NavLink
                           to={item.href}
                           end={item.href === '/'}
+                          onClick={handleLinkClick}
                         >
                           {({ isActive }) => (
                             <button
@@ -204,6 +212,7 @@ export function AppSidebar() {
                         <NavLink
                           to={item.href}
                           end={item.href === '/'}
+                          onClick={handleLinkClick}
                           className={({ isActive }) =>
                             `group flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 relative ${
                               isActive
@@ -257,6 +266,7 @@ export function AppSidebar() {
                         <NavLink
                           key={item.name}
                           to={item.href}
+                          onClick={handleLinkClick}
                           className="flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 text-foreground hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary text-sm"
                         >
                           <span>{item.name}</span>
