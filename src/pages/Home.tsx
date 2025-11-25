@@ -49,6 +49,7 @@ export default function Home() {
       setTimeout(() => {
         (window.adsbygoogle = window.adsbygoogle || []).push({});
         (window.adsbygoogle = window.adsbygoogle || []).push({});
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
       }, 100);
     } catch (err) {
       if (import.meta.env.VITE_SHOW_ADSENSE_ERRORS === 'true') {

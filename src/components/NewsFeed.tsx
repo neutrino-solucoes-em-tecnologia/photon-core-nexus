@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { User, MessageSquare } from 'lucide-react';
+import { useEffect } from 'react';
 import techImage from '@/assets/article-tech.jpg';
 import businessImage from '@/assets/article-business.jpg';
 
@@ -73,14 +74,26 @@ const newsArticles = [
 ];
 
 export default function NewsFeed() {
+  useEffect(() => {
+    try {
+      setTimeout(() => {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      }, 100);
+    } catch (err) {
+      if (import.meta.env.VITE_SHOW_ADSENSE_ERRORS === 'true') {
+        console.error('AdSense error:', err);
+      }
+    }
+  }, []);
+
   return (
     <section className="wide-container py-4 md:py-6">
       <h2 className="text-xl md:text-3xl font-bold mb-4 md:mb-6">Últimas Notícias</h2>
       
       <div className="w-full max-w-full overflow-hidden">
-        {newsArticles.map((article) => (
+        {newsArticles.map((article, index) => (
+          <div key={article.id}>
               <article 
-                key={article.id} 
                 className="group grid grid-cols-[100px_1fr] md:grid-cols-[200px_1fr] lg:grid-cols-[280px_1fr] gap-3 md:gap-4 lg:gap-6 pb-4 md:pb-6 border-b border-border w-full max-w-full"
               >
               {/* Thumbnail */}
@@ -157,6 +170,23 @@ export default function NewsFeed() {
                 </div>
               </div>
             </article>
+
+            {/* HOME-DISPLAY-03 - Ad after first item and before second-to-last item */}
+            {(index === 0 || index === newsArticles.length - 2) && (
+              <div className="py-4 md:py-6 border-b border-border">
+                <div className="not-prose">
+                  <ins 
+                    className="adsbygoogle"
+                    style={{ display: 'block' }}
+                    data-ad-client={import.meta.env.VITE_ADSENSE_CLIENT_ID}
+                    data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_03}
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"
+                  />
+                </div>
+              </div>
+            )}
+          </div>
           ))}
       </div>
     </section>
