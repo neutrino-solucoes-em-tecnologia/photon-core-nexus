@@ -14,9 +14,7 @@ import {
   Video,
   Image as ImageIcon,
   TrendingUp,
-  Bell,
   Settings,
-  User,
   LogOut,
   Moon,
   Sun,
@@ -31,7 +29,6 @@ import {
   SidebarGroupLabel,
   useSidebar,
   SidebarHeader,
-  SidebarFooter,
 } from '@/components/ui/sidebar';
 import {
   Tooltip,
@@ -41,7 +38,6 @@ import {
 } from '@/components/ui/tooltip';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -309,18 +305,6 @@ export function AppSidebar() {
             </SidebarGroupLabel>
             <SidebarGroupContent>
               <div className="flex gap-2 px-1">
-                <NavLink to="/notificacoes" className="flex-1">
-                  <button className="w-full flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
-                    <Bell className="h-4 w-4 text-foreground/70 group-hover:text-primary transition-colors" />
-                    <span className="text-[10px] font-medium text-foreground/70 group-hover:text-primary transition-colors">Notificações</span>
-                  </button>
-                </NavLink>
-                <NavLink to="/perfil" className="flex-1">
-                  <button className="w-full flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
-                    <User className="h-4 w-4 text-foreground/70 group-hover:text-primary transition-colors" />
-                    <span className="text-[10px] font-medium text-foreground/70 group-hover:text-primary transition-colors">Perfil</span>
-                  </button>
-                </NavLink>
                 <button onClick={toggleTheme} className="flex-1 flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
                   {theme === 'dark' ? (
                     <Sun className="h-4 w-4 text-foreground/70 group-hover:text-primary transition-colors" />
@@ -339,38 +323,7 @@ export function AppSidebar() {
                 <TooltipProvider delayDuration={0}>
                   <Tooltip>
                     <TooltipTrigger asChild>
-                      <NavLink to="/notificacoes">
-                        <button className="w-full flex items-center justify-center p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group relative">
-                          <Bell className="h-5 w-5 text-foreground/70 group-hover:text-primary transition-colors" />
-                          <div className="absolute top-1.5 right-1.5 w-2 h-2 bg-destructive rounded-full border border-white shadow-sm" />
-                        </button>
-                      </NavLink>
-                    </TooltipTrigger>
-                    <TooltipContent side="right" className="whitespace-nowrap">
-                      <p>Notificações</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-                
-                <TooltipProvider delayDuration={0}>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <NavLink to="/perfil">
-                        <button className="w-full flex items-center justify-center p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
-                          <User className="h-5 w-5 text-foreground/70 group-hover:text-primary transition-colors" />
-                        </button>
-                      </NavLink>
-                    </TooltipTrigger>
-                    <TooltipContent side="right" className="whitespace-nowrap">
-                      <p>Perfil</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-                
-                <TooltipProvider delayDuration={0}>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <button onClick={toggleTheme} className="flex items-center justify-center p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
+                      <button onClick={toggleTheme} className="w-full flex items-center justify-center p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors group">
                         {theme === 'dark' ? (
                           <Sun className="h-5 w-5 text-foreground/70 group-hover:text-primary transition-colors" />
                         ) : (
@@ -389,38 +342,7 @@ export function AppSidebar() {
         )}
       </SidebarContent>
 
-      {/* User Profile Footer */}
-      <SidebarFooter className="border-t border-border/25 bg-muted/10">
-        {!isCollapsed ? (
-          <div className="flex items-center gap-3 w-full p-3">
-            <Avatar className="h-9 w-9 ring-2 ring-primary/20">
-              <AvatarImage src="https://github.com/shadcn.png" alt="User" />
-              <AvatarFallback className="bg-primary/10 text-primary font-bold">PH</AvatarFallback>
-            </Avatar>
-            <div className="flex-1 text-left">
-              <p className="text-sm font-semibold text-foreground">Photon User</p>
-              <p className="text-xs text-muted-foreground">user@photon.com</p>
-            </div>
-          </div>
-        ) : (
-          <TooltipProvider delayDuration={0}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <div className="flex items-center justify-center p-3">
-                  <Avatar className="h-9 w-9 ring-2 ring-primary/20">
-                    <AvatarImage src="https://github.com/shadcn.png" alt="User" />
-                    <AvatarFallback className="bg-primary/10 text-primary font-bold">PH</AvatarFallback>
-                  </Avatar>
-                </div>
-              </TooltipTrigger>
-              <TooltipContent side="right" className="whitespace-nowrap">
-                <p className="font-semibold">Photon User</p>
-                <p className="text-xs text-muted-foreground">user@photon.com</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        )}
-      </SidebarFooter>
+
     </Sidebar>
   );
 }

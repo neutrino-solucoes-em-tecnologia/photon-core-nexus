@@ -17,8 +17,6 @@ import Imprensa from "./pages/Imprensa";
 import Termos from "./pages/Termos";
 import Privacidade from "./pages/Privacidade";
 import Cookies from "./pages/Cookies";
-import Perfil from "./pages/Perfil";
-import Notificacoes from "./pages/Notificacoes";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -46,8 +44,6 @@ const App = () => (
                     <Route path="/termos" element={<Termos />} />
                     <Route path="/privacidade" element={<Privacidade />} />
                     <Route path="/cookies" element={<Cookies />} />
-                    <Route path="/perfil" element={<Perfil />} />
-                    <Route path="/notificacoes" element={<Notificacoes />} />
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </MainContent>
