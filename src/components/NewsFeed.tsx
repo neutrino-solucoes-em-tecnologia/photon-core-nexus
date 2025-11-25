@@ -87,7 +87,7 @@ export default function NewsFeed() {
   }, []);
 
   return (
-    <section className="wide-container py-4 md:py-6">
+    <section className="py-4 md:py-6 px-4 sm:px-6">
       <h2 className="text-xl md:text-3xl font-bold mb-4 md:mb-6">Últimas Notícias</h2>
       
       <div className="w-full max-w-full overflow-hidden">

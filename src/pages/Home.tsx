@@ -59,13 +59,13 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="pb-8 w-full max-w-full overflow-x-hidden">
+    <div className="pb-8 w-full">
       {/* Hero Section */}
       <HeroSection />
 
       {/* HOME-DISPLAY-01 - Ad below Hero Section */}
       <RevealOnScroll>
-        <div className="wide-container py-4 md:py-6">
+        <div className="py-4 md:py-6 px-4 sm:px-6">
           <div className="not-prose">
             <ins 
               className="adsbygoogle"
@@ -84,7 +84,7 @@ export default function Home() {
 
       {/* HOME-DISPLAY-02 - Ad after Featured Highlights */}
       <RevealOnScroll>
-        <div className="wide-container py-4 md:py-6">
+        <div className="py-4 md:py-6 px-4 sm:px-6">
           <div className="not-prose">
             <ins 
               className="adsbygoogle"
@@ -105,7 +105,7 @@ export default function Home() {
 
         {/* Featured Articles */}
         <RevealOnScroll>
-          <section className="wide-container py-8 md:py-12">
+          <section className="py-8 md:py-12 px-4 sm:px-6">
             <div className="flex items-center justify-between mb-4 md:mb-6">
               <h2 className="text-xl md:text-3xl font-bold">Destaques da Semana</h2>
               <Button variant="ghost" asChild className="hover-glow text-sm md:text-base">
@@ -128,7 +128,7 @@ export default function Home() {
 
         {/* Newsletter CTA */}
         <RevealOnScroll>
-          <section className="wide-container py-8 md:py-12">
+          <section className="py-8 md:py-12 px-4 sm:px-6">
             <div className="rounded-xl md:rounded-2xl hero-gradient-rich p-6 md:p-12 text-center text-white shadow-xl md:shadow-2xl relative overflow-hidden w-full max-w-full">
               <div className="absolute inset-0 opacity-10">
                 <div className="absolute top-0 left-0 w-40 h-40 bg-white rounded-full blur-3xl" />

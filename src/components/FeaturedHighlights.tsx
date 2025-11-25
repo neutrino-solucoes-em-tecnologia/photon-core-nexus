@@ -35,8 +35,8 @@ const highlights = [
 
 export default function FeaturedHighlights() {
   return (
-    <section className="wide-container py-4 md:py-6">
-      <h2 className="text-xl md:text-3xl font-bold mb-4 md:mb-6">Mais destaques</h2>
+    <section className="py-4 md:py-6 px-4 sm:px-6">
+      <h2 className="text-xl md:text-3xl font-bold mb-4 md:mb-6">Mais Destaques</h2>
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6 w-full max-w-full overflow-hidden">
         {highlights.map((article) => (
           <article key={article.id} className="group w-full max-w-full">

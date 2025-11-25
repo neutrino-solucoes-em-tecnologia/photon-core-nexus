@@ -37,7 +37,7 @@ const heroArticles = [
 
 export default function HeroSection() {
   return (
-    <section className="wide-container py-4 md:py-6">
+    <section className="py-4 md:py-6 px-4 sm:px-6">
       <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6 stagger-fade-in w-full max-w-full overflow-hidden">
         {heroArticles.map((article, index) => (
           <article key={article.id} className="group relative w-full max-w-full" style={{ animationDelay: `${index * 0.1}s` }}>

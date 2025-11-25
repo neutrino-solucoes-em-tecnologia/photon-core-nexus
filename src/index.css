@@ -144,8 +144,23 @@ All colors MUST be HSL.
   }
   
   .wide-container {
-    @apply w-full mx-auto px-4 sm:px-6 lg:px-8;
-    max-width: min(80rem, 100vw);
+    @apply w-full mx-auto px-4 sm:px-6;
+    max-width: 960px;
+  }
+
+  @media (max-width: 768px) {
+    .wide-container {
+      max-width: 100%;
+    }
+  }
+
+  /* Boxed content sections for better visual harmony */
+  .content-box {
+    @apply bg-card rounded-lg shadow-md p-4 md:p-6 border border-border;
+  }
+
+  .content-box-subtle {
+    @apply bg-muted/30 rounded-lg p-4 md:p-6 border border-transparent;
   }
   
   .hero-gradient {
