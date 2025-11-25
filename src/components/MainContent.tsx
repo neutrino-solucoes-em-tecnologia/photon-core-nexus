@@ -1,6 +1,8 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import ScrollProgress from './ScrollProgress';
+import Header from './Header';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface MainContentProps {
   children: ReactNode;
@@ -9,6 +11,7 @@ interface MainContentProps {
 export default function MainContent({ children }: MainContentProps) {
   const location = useLocation();
   const [isAnimating, setIsAnimating] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     setIsAnimating(true);
@@ -18,6 +21,8 @@ export default function MainContent({ children }: MainContentProps) {
 
   return (
     <>
+      {/* Header only on mobile */}
+      {isMobile && <Header />}
       <ScrollProgress />
       <div 
         className={`
