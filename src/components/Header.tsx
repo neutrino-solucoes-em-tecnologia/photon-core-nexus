@@ -33,45 +33,24 @@ export default function Header() {
       <nav className="wide-container">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-4">
+            {/* Sidebar trigger - works on both mobile and desktop */}
             <SidebarTrigger />
+            
             <Link to="/" className="flex items-center space-x-2">
               <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary">
                 <span className="text-xl font-bold text-primary-foreground">P</span>
               </div>
-              <span className="text-xl font-bold tracking-tight">
+              <span className="text-xl font-bold tracking-tight hidden sm:inline-block">
                 Photon <span className="text-primary">Media</span>
               </span>
             </Link>
           </div>
 
           {/* Actions */}
-          <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="icon" className="hidden md:flex">
+          <div className="flex items-center space-x-2 md:space-x-4">
+            <Button variant="ghost" size="icon">
               <Search className="h-5 w-5" />
             </Button>
-
-            {/* Mobile Menu */}
-            <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger asChild className="md:hidden">
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-6 w-6" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                <div className="flex flex-col space-y-4 mt-8">
-                  {navigation.map((item) => (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      onClick={() => setIsOpen(false)}
-                      className="text-lg font-medium hover:text-primary transition-colors"
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-              </SheetContent>
-            </Sheet>
           </div>
         </div>
       </nav>
