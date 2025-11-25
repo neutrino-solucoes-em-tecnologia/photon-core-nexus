@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import ArticleCard from '@/components/ArticleCard';
 import RevealOnScroll from '@/components/RevealOnScroll';
@@ -43,10 +44,38 @@ const featuredArticles = [
 ];
 
 export default function Home() {
+  useEffect(() => {
+    try {
+      setTimeout(() => {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      }, 100);
+    } catch (err) {
+      if (import.meta.env.VITE_SHOW_ADSENSE_ERRORS === 'true') {
+        console.error('AdSense error:', err);
+      }
+    }
+  }, []);
+
   return (
     <div className="pb-8 w-full max-w-full overflow-x-hidden">
       {/* Hero Section */}
       <HeroSection />
+
+      {/* HOME-DISPLAY-01 - Ad below Hero Section */}
+      <RevealOnScroll>
+        <div className="wide-container py-4 md:py-6">
+          <div className="not-prose">
+            <ins 
+              className="adsbygoogle"
+              style={{ display: 'block' }}
+              data-ad-client={import.meta.env.VITE_ADSENSE_CLIENT_ID}
+              data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_01}
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            />
+          </div>
+        </div>
+      </RevealOnScroll>
 
         {/* Featured Highlights - Mais destaques */}
         <FeaturedHighlights />
