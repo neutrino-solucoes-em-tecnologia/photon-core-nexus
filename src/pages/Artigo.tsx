@@ -86,6 +86,26 @@ const relatedArticles = [
 export default function Artigo() {
   const { slug } = useParams();
 
+  const handleShare = async () => {
+    const shareData = {
+      title: article.title,
+      text: article.subtitle,
+      url: window.location.href,
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        // Fallback: copy to clipboard
+        await navigator.clipboard.writeText(window.location.href);
+        alert('Link copiado para a área de transferência!');
+      }
+    } catch (err) {
+      console.error('Error sharing:', err);
+    }
+  };
+
   useEffect(() => {
     try {
       setTimeout(() => {
@@ -183,7 +203,7 @@ export default function Artigo() {
                   </div>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Button variant="outline" size="sm" className="hover-lift">
+                  <Button variant="outline" size="sm" className="hover-lift" onClick={handleShare}>
                     <Share2 className="mr-2 h-4 w-4" />
                     Compartilhar
                   </Button>
