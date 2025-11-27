@@ -2,6 +2,7 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import ArticleCard from '@/components/ArticleCard';
+import ArticleCardSkeleton from '@/components/ArticleCardSkeleton';
 import RevealOnScroll from '@/components/RevealOnScroll';
 import HeroSection from '@/components/HeroSection';
 import FeaturedHighlights from '@/components/FeaturedHighlights';
@@ -43,6 +44,10 @@ const featuredArticles = [
 export default function Home() {
   const { isEnabled, clientId } = useAdSense();
   useAdSenseInit(2);
+  
+  // Simulated loading state for demonstration
+  // In real app, this would come from API hooks like useArticles()
+  const isLoading = false;
 
   return (
     <div className="pb-8 w-full">
@@ -107,11 +112,21 @@ export default function Home() {
               </Button>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full max-w-full">
-              {featuredArticles.map((article, index) => (
-                <RevealOnScroll key={article.slug} delay={index * 150}>
-                  <ArticleCard {...article} />
-                </RevealOnScroll>
-              ))}
+              {isLoading ? (
+                // Skeleton loading state
+                Array(3).fill(null).map((_, index) => (
+                  <RevealOnScroll key={`skeleton-${index}`} delay={index * 150}>
+                    <ArticleCardSkeleton />
+                  </RevealOnScroll>
+                ))
+              ) : (
+                // Actual articles
+                featuredArticles.map((article, index) => (
+                  <RevealOnScroll key={article.slug} delay={index * 150}>
+                    <ArticleCard {...article} />
+                  </RevealOnScroll>
+                ))
+              )}
             </div>
           </section>
         </RevealOnScroll>

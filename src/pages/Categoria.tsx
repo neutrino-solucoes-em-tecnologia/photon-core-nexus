@@ -13,6 +13,7 @@ import {
 import { Checkbox } from '@/components/ui/checkbox';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
+import { Skeleton } from '@/components/ui/skeleton';
 import {
   Pagination,
   PaginationContent,
@@ -351,6 +352,10 @@ export default function Categoria() {
   const [currentPage, setCurrentPage] = useState(1);
   const { isEnabled, clientId, initializeAds } = useAdSense();
   const itemsPerPage = 12;
+  
+  // Simulated loading state for demonstration
+  // In real app, this would come from API hooks like useCategoryArticles(slug)
+  const isLoading = false;
 
   // Calcular paginação
   const totalPages = Math.ceil(articles.length / itemsPerPage);
@@ -474,7 +479,52 @@ export default function Categoria() {
 
             {/* Articles List */}
             <div className="space-y-6">
-              {currentArticles.map((article, index) => (
+              {isLoading ? (
+                // Skeleton loading state
+                Array(itemsPerPage).fill(null).map((_, index) => (
+                  <article 
+                    key={`skeleton-${index}`}
+                    className="grid md:grid-cols-[280px_1fr] gap-6 pb-6 border-b border-border"
+                  >
+                    {/* Thumbnail skeleton */}
+                    <Skeleton className="w-full aspect-video rounded-md" />
+
+                    {/* Content skeleton */}
+                    <div className="flex flex-col justify-center min-h-[166px] space-y-3">
+                      {/* Meta info skeleton - Mobile */}
+                      <div className="flex items-center gap-3 md:hidden">
+                        <Skeleton className="h-3 w-16" />
+                      </div>
+
+                      {/* Title skeleton */}
+                      <div className="space-y-2">
+                        <Skeleton className="h-5 w-full" />
+                        <Skeleton className="h-5 w-3/4" />
+                      </div>
+
+                      {/* Excerpt skeleton - Desktop */}
+                      <div className="hidden md:block space-y-2">
+                        <Skeleton className="h-4 w-full" />
+                        <Skeleton className="h-4 w-2/3" />
+                      </div>
+
+                      {/* Meta info skeleton - Desktop */}
+                      <div className="hidden md:flex items-center gap-4">
+                        <Skeleton className="h-3 w-20" />
+                        <Skeleton className="h-3 w-16" />
+                      </div>
+
+                      {/* Meta info skeleton - Mobile bottom */}
+                      <div className="flex md:hidden items-center gap-4">
+                        <Skeleton className="h-3 w-20" />
+                        <Skeleton className="h-3 w-16" />
+                      </div>
+                    </div>
+                  </article>
+                ))
+              ) : (
+                // Actual articles
+                currentArticles.map((article, index) => (
                 <>
                   <article 
                   key={article.slug}
@@ -593,7 +643,8 @@ export default function Categoria() {
                   </div>
                 )}
                 </>
-              ))}
+              ))
+              )}
             </div>
 
             {/* Pagination */}

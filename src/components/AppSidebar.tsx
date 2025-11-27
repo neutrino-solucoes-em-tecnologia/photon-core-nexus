@@ -39,6 +39,7 @@ import {
 } from '@/components/ui/tooltip';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
+import { Skeleton } from '@/components/ui/skeleton';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -76,17 +77,8 @@ export function AppSidebar() {
   const [showMore, setShowMore] = useState(false);
   const [isInitialized, setIsInitialized] = useState(false);
 
-  // Combinar itens fixos com categorias da API
-  const menuItems = [
-    ...fixedMenuItems,
-    ...(categories?.map(category => ({
-      name: category.name,
-      href: `/categoria/${category.slug}`,
-      badge: category.articles_count ? String(category.articles_count) : undefined,
-      isCategory: true, // Flag para identificar categorias
-    })) || []),
-    ...additionalMenuItems,
-  ];
+  // Skeleton items para quando está carregando
+  const skeletonItems = Array(5).fill(null);
 
   // Função para fechar sidebar no mobile ao clicar em um link
   const handleLinkClick = () => {
@@ -182,7 +174,8 @@ export function AppSidebar() {
         <SidebarGroup className={`py-4 ${isCollapsed ? 'px-2' : 'px-2'}`}>
           <SidebarGroupContent>
             <div className="flex flex-col gap-1">
-              {menuItems.map((item) => (
+              {/* Fixed menu items sempre visíveis */}
+              {fixedMenuItems.map((item) => (
                 <TooltipProvider key={item.name} delayDuration={0}>
                   <Tooltip>
                     <TooltipTrigger asChild>
@@ -201,11 +194,6 @@ export function AppSidebar() {
                             }`}
                             >
                               {item.icon && <item.icon className="h-5 w-5 transition-colors" />}
-                              {!item.icon && (
-                                <div className="flex items-center justify-center w-5 h-5 text-xs font-bold text-foreground/70">
-                                  {item.name.charAt(0)}
-                                </div>
-                              )}
                               {isActive && (
                                 <div className="absolute top-1.5 right-1.5 w-2 h-2 bg-primary rounded-full animate-pulse" />
                               )}
@@ -234,7 +222,7 @@ export function AppSidebar() {
                                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r-full shadow-lg shadow-primary/50" />
                               )}
                               {item.icon && <item.icon className="flex-shrink-0 h-5 w-5" />}
-                              <span className={`flex-1 text-sm font-medium ${!item.icon ? 'ml-0' : ''}`}>{item.name}</span>
+                              <span className="flex-1 text-sm font-medium">{item.name}</span>
                               {item.badge && (
                                 <Badge variant="secondary" className="ml-auto text-xs px-1.5 py-0 h-5 bg-primary/10 text-primary border-primary/20">
                                   {item.badge}
@@ -253,6 +241,92 @@ export function AppSidebar() {
                   </Tooltip>
                 </TooltipProvider>
               ))}
+
+              {/* Categories from API with loading state */}
+              {categoriesLoading ? (
+                // Skeleton loading state
+                skeletonItems.map((_, index) => (
+                  <div key={`skeleton-${index}`}>
+                    {isCollapsed ? (
+                      <div className="flex items-center justify-center p-2.5 rounded-lg">
+                        <Skeleton className="h-5 w-5 rounded-md" />
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-3 px-3 py-2.5 rounded-lg">
+                        <Skeleton className="h-4 w-full max-w-[120px] rounded-md" />
+                        <Skeleton className="h-5 w-8 rounded-md ml-auto" />
+                      </div>
+                    )}
+                  </div>
+                ))
+              ) : (
+                // Actual categories
+                categories?.map((category) => (
+                  <TooltipProvider key={category.slug} delayDuration={0}>
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        {isCollapsed ? (
+                          <NavLink
+                            to={`/categoria/${category.slug}`}
+                            onClick={handleLinkClick}
+                          >
+                            {({ isActive }) => (
+                              <button
+                                className={`flex items-center justify-center p-2.5 rounded-lg transition-colors group relative w-full ${
+                                  isActive
+                                    ? 'bg-gradient-to-r from-primary/20 to-primary/10 text-primary'
+                                    : 'text-foreground/70 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary'
+                                }`}
+                              >
+                                <div className="flex items-center justify-center w-5 h-5 text-xs font-bold text-foreground/70">
+                                  {category.name.charAt(0)}
+                                </div>
+                                {isActive && (
+                                  <div className="absolute top-1.5 right-1.5 w-2 h-2 bg-primary rounded-full animate-pulse" />
+                                )}
+                                {category.articles_count && (
+                                  <div className="absolute top-1 right-1 w-2.5 h-2.5 bg-destructive rounded-full border-2 border-white" />
+                                )}
+                              </button>
+                            )}
+                          </NavLink>
+                        ) : (
+                          <NavLink
+                            to={`/categoria/${category.slug}`}
+                            onClick={handleLinkClick}
+                            className={({ isActive }) =>
+                              `group flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 relative ${
+                                isActive
+                                  ? 'bg-gradient-to-r from-primary/20 to-primary/10 text-primary font-bold'
+                                  : 'text-foreground hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary'
+                              }`
+                            }
+                          >
+                            {({ isActive }) => (
+                              <>
+                                {isActive && (
+                                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r-full shadow-lg shadow-primary/50" />
+                                )}
+                                <span className="flex-1 text-sm font-medium">{category.name}</span>
+                                {category.articles_count && (
+                                  <Badge variant="secondary" className="ml-auto text-xs px-1.5 py-0 h-5 bg-primary/10 text-primary border-primary/20">
+                                    {category.articles_count}
+                                  </Badge>
+                                )}
+                              </>
+                            )}
+                          </NavLink>
+                        )}
+                      </TooltipTrigger>
+                      {isCollapsed && (
+                        <TooltipContent side="right" className="whitespace-nowrap">
+                          <p>{category.name} {category.articles_count && <span className="text-xs text-muted-foreground ml-1">{category.articles_count}</span>}</p>
+                        </TooltipContent>
+                      )}
+                    </Tooltip>
+                  </TooltipProvider>
+                ))
+              )}
 
               {/* Ver Mais */}
               {!isCollapsed && (

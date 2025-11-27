@@ -3,6 +3,7 @@ import { Clock, Calendar, Share2, Tag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
+import { Skeleton } from '@/components/ui/skeleton';
 import ArticleCard from '@/components/ArticleCard';
 import ScrollProgress from '@/components/ScrollProgress';
 import FloatingShare from '@/components/FloatingShare';
@@ -87,6 +88,10 @@ export default function Artigo() {
   const { slug } = useParams();
   const { isEnabled } = useAdSenseInit(3);
   const { clientId } = useAdSense();
+  
+  // Simulated loading state for demonstration
+  // In real app, this would come from API hooks like useArticle(slug)
+  const isLoading = false;
 
   const handleShare = async () => {
     const shareData = {
@@ -135,6 +140,79 @@ export default function Artigo() {
           {/* Main Content */}
           <article className="w-full">
             
+            {isLoading ? (
+              // Skeleton Loading State
+              <>
+                {/* Header Skeleton */}
+                <RevealOnScroll>
+                  <header className="mb-8 space-y-6">
+                    {/* Title skeleton */}
+                    <div className="space-y-3">
+                      <Skeleton className="h-10 w-full" />
+                      <Skeleton className="h-10 w-4/5" />
+                    </div>
+
+                    {/* Subtitle skeleton */}
+                    <div className="space-y-2">
+                      <Skeleton className="h-6 w-full" />
+                      <Skeleton className="h-6 w-3/4" />
+                    </div>
+
+                    {/* Meta info skeleton */}
+                    <div className="py-4 border-y border-border/50">
+                      <Skeleton className="h-4 w-48" />
+                    </div>
+                  </header>
+                </RevealOnScroll>
+
+                {/* Hero Image Skeleton */}
+                <RevealOnScroll>
+                  <Skeleton className="w-full aspect-video rounded-xl mb-8" />
+                </RevealOnScroll>
+
+                {/* Article Actions Skeleton */}
+                <RevealOnScroll>
+                  <div className="flex items-center justify-between mb-8 pb-6 border-b border-border/50">
+                    <Skeleton className="h-4 w-20" />
+                    <Skeleton className="h-9 w-32" />
+                  </div>
+                </RevealOnScroll>
+
+                {/* Article Body Skeleton */}
+                <RevealOnScroll>
+                  <div className="space-y-4 mb-8">
+                    <Skeleton className="h-6 w-full" />
+                    <Skeleton className="h-6 w-full" />
+                    <Skeleton className="h-6 w-3/4" />
+                    <div className="pt-4 space-y-3">
+                      <Skeleton className="h-4 w-full" />
+                      <Skeleton className="h-4 w-full" />
+                      <Skeleton className="h-4 w-full" />
+                      <Skeleton className="h-4 w-5/6" />
+                    </div>
+                    <div className="pt-4 space-y-3">
+                      <Skeleton className="h-4 w-full" />
+                      <Skeleton className="h-4 w-full" />
+                      <Skeleton className="h-4 w-4/5" />
+                    </div>
+                  </div>
+                </RevealOnScroll>
+
+                {/* Tags Skeleton */}
+                <RevealOnScroll>
+                  <div className="mt-12 pt-8 border-t border-border/50">
+                    <div className="flex flex-wrap gap-2">
+                      <Skeleton className="h-8 w-24 rounded-full" />
+                      <Skeleton className="h-8 w-32 rounded-full" />
+                      <Skeleton className="h-8 w-20 rounded-full" />
+                      <Skeleton className="h-8 w-28 rounded-full" />
+                    </div>
+                  </div>
+                </RevealOnScroll>
+              </>
+            ) : (
+              // Actual Article Content
+              <>
             {/* Article Header */}
             <RevealOnScroll>
               <header className="mb-8">
@@ -311,6 +389,8 @@ export default function Artigo() {
                 ))}
               </div>
             </RevealOnScroll>
+            </>
+            )}
 
           </article>
       </div>
