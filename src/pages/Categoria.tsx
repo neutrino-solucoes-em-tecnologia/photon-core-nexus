@@ -23,6 +23,7 @@ import {
   PaginationPrevious,
 } from '@/components/ui/pagination';
 import RevealOnScroll from '@/components/RevealOnScroll';
+import { useAdSense } from '@/hooks/use-adsense';
 import techImage from '@/assets/article-tech.jpg';
 import businessImage from '@/assets/article-business.jpg';
 
@@ -348,6 +349,7 @@ export default function Categoria() {
   const category = categories[slug as keyof typeof categories] || categories.tecnologia;
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const { isEnabled, clientId, initializeAds } = useAdSense();
   const itemsPerPage = 12;
 
   // Calcular paginação
@@ -363,18 +365,10 @@ export default function Categoria() {
 
   // Inicializar anúncios quando a página muda
   useEffect(() => {
-    try {
-      setTimeout(() => {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-      }, 100);
-    } catch (err) {
-      if (import.meta.env.VITE_SHOW_ADSENSE_ERRORS === 'true') {
-        console.error('AdSense error:', err);
-      }
+    if (isEnabled) {
+      initializeAds(3);
     }
-  }, [currentPage]);
+  }, [currentPage, isEnabled]);
 
   return (
     <div className="page-transition">
@@ -558,42 +552,42 @@ export default function Categoria() {
                 </article>
 
                 {/* CATEGORIA-01 - Após 1º artigo */}
-                {index === 0 && (
+                {index === 0 && isEnabled && (
                   <div className="my-8 not-prose">
                     <ins 
                       className="adsbygoogle"
                       style={{ display: 'block' }}
                       data-ad-format="fluid"
                       data-ad-layout-key="-62+dr+1e-1m+57"
-                      data-ad-client={import.meta.env.VITE_ADSENSE_CLIENT_ID}
+                      data-ad-client={clientId}
                       data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_01}
                     />
                   </div>
                 )}
 
                 {/* CATEGORIA-02 - Após 5º artigo */}
-                {index === 4 && (
+                {index === 4 && isEnabled && (
                   <div className="my-8 not-prose">
                     <ins 
                       className="adsbygoogle"
                       style={{ display: 'block' }}
                       data-ad-format="fluid"
                       data-ad-layout-key="-62+dr+1e-1m+57"
-                      data-ad-client={import.meta.env.VITE_ADSENSE_CLIENT_ID}
+                      data-ad-client={clientId}
                       data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_02}
                     />
                   </div>
                 )}
 
                 {/* CATEGORIA-03 - Antes do penúltimo artigo */}
-                {index === currentArticles.length - 2 && currentArticles.length >= 2 && (
+                {index === currentArticles.length - 2 && currentArticles.length >= 2 && isEnabled && (
                   <div className="my-8 not-prose">
                     <ins 
                       className="adsbygoogle"
                       style={{ display: 'block' }}
                       data-ad-format="fluid"
                       data-ad-layout-key="-62+dr+1e-1m+57"
-                      data-ad-client={import.meta.env.VITE_ADSENSE_CLIENT_ID}
+                      data-ad-client={clientId}
                       data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_03}
                     />
                   </div>

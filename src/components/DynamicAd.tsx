@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
+import { useAdSense } from '@/hooks/use-adsense';
 
 interface DynamicAdProps {
   slot: string;
@@ -22,10 +23,12 @@ export default function DynamicAd({
   className = '', 
   format = 'auto',
   position = 0,
-  client = import.meta.env.VITE_ADSENSE_CLIENT_ID || 'ca-pub-8616282875609147',
+  client,
   infiniteScroll = false,
   itemsBetweenAds = 6,
 }: DynamicAdProps) {
+  const { isEnabled, clientId } = useAdSense();
+  const finalClient = client || clientId;
   const adRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [loadCount, setLoadCount] = useState(0);
@@ -36,6 +39,11 @@ export default function DynamicAd({
   const adInstanceRef = useRef<string>(`ad-${slot}-${Date.now()}`);
 
   const MIN_RELOAD_INTERVAL = 45000; // 45 segundos em milissegundos
+
+  // Se AdSense não está habilitado, não renderiza nada
+  if (!isEnabled) {
+    return null;
+  }
 
   // Dimensões e estilos baseados no formato para AdSense
   const adFormats = {
@@ -131,7 +139,7 @@ export default function DynamicAd({
           minWidth: '100%',
           minHeight: '90px',
         }}
-        data-ad-client={client}
+        data-ad-client={finalClient}
         data-ad-slot={slot}
         data-ad-format={adConfig.dataAdFormat}
         data-full-width-responsive={adConfig.dataFullWidthResponsive}

@@ -1,5 +1,4 @@
 import { useParams, Link } from 'react-router-dom';
-import { useEffect } from 'react';
 import { Clock, Calendar, Share2, Tag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -8,6 +7,7 @@ import ArticleCard from '@/components/ArticleCard';
 import ScrollProgress from '@/components/ScrollProgress';
 import FloatingShare from '@/components/FloatingShare';
 import RevealOnScroll from '@/components/RevealOnScroll';
+import { useAdSenseInit, useAdSense } from '@/hooks/use-adsense';
 import heroImage from '@/assets/hero-ai-1.jpg';
 import techImage from '@/assets/article-tech.jpg';
 import businessImage from '@/assets/article-business.jpg';
@@ -85,6 +85,8 @@ const relatedArticles = [
 
 export default function Artigo() {
   const { slug } = useParams();
+  const { isEnabled } = useAdSenseInit(3);
+  const { clientId } = useAdSense();
 
   const handleShare = async () => {
     const shareData = {
@@ -105,20 +107,6 @@ export default function Artigo() {
       console.error('Error sharing:', err);
     }
   };
-
-  useEffect(() => {
-    try {
-      setTimeout(() => {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-      }, 100);
-    } catch (err) {
-      if (import.meta.env.VITE_SHOW_ADSENSE_ERRORS === 'true') {
-        console.error('AdSense error:', err);
-      }
-    }
-  }, []);
 
   return (
     <div className="page-transition min-h-screen">
@@ -170,16 +158,18 @@ export default function Artigo() {
             </RevealOnScroll>
 
             {/* ARTIGO-TITULO-01 */}
-            <div className="mb-8 not-prose">
-              <ins 
-                className="adsbygoogle"
-                style={{ display: 'block' }}
-                data-ad-client={import.meta.env.VITE_ADSENSE_CLIENT_ID}
-                data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_TITULO_01}
-                data-ad-format="auto"
-                data-full-width-responsive="true"
-              />
-            </div>
+            {isEnabled && (
+              <div className="mb-8 not-prose">
+                <ins 
+                  className="adsbygoogle"
+                  style={{ display: 'block' }}
+                  data-ad-client={clientId}
+                  data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_TITULO_01}
+                  data-ad-format="auto"
+                  data-full-width-responsive="true"
+                />
+              </div>
+            )}
 
             {/* Hero Image */}
             <RevealOnScroll>
@@ -221,16 +211,18 @@ export default function Artigo() {
             </RevealOnScroll>
 
             {/* ARTIGO-TITULO-02 - Após primeiro parágrafo */}
-            <div className="mb-8 not-prose">
-              <ins 
-                className="adsbygoogle"
-                style={{ display: 'block' }}
-                data-ad-client={import.meta.env.VITE_ADSENSE_CLIENT_ID}
-                data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_TITULO_02}
-                data-ad-format="auto"
-                data-full-width-responsive="true"
-              />
-            </div>
+            {isEnabled && (
+              <div className="mb-8 not-prose">
+                <ins 
+                  className="adsbygoogle"
+                  style={{ display: 'block' }}
+                  data-ad-client={clientId}
+                  data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_TITULO_02}
+                  data-ad-format="auto"
+                  data-full-width-responsive="true"
+                />
+              </div>
+            )}
 
             <RevealOnScroll>
               <div className="prose prose-lg max-w-none article-content">
@@ -279,16 +271,18 @@ export default function Artigo() {
             </RevealOnScroll>
 
             {/* ARTIGO-TITULO-03 */}
-            <div className="mb-8 not-prose">
-              <ins 
-                className="adsbygoogle"
-                style={{ display: 'block' }}
-                data-ad-client={import.meta.env.VITE_ADSENSE_CLIENT_ID}
-                data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_TITULO_03}
-                data-ad-format="auto"
-                data-full-width-responsive="true"
-              />
-            </div>
+            {isEnabled && (
+              <div className="mb-8 not-prose">
+                <ins 
+                  className="adsbygoogle"
+                  style={{ display: 'block' }}
+                  data-ad-client={clientId}
+                  data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_TITULO_03}
+                  data-ad-format="auto"
+                  data-full-width-responsive="true"
+                />
+              </div>
+            )}
 
             <RevealOnScroll>
               <div className="prose prose-lg max-w-none article-content">

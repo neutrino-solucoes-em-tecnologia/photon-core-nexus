@@ -1,12 +1,12 @@
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import ArticleCard from '@/components/ArticleCard';
 import RevealOnScroll from '@/components/RevealOnScroll';
 import HeroSection from '@/components/HeroSection';
 import FeaturedHighlights from '@/components/FeaturedHighlights';
 import NewsFeed from '@/components/NewsFeed';
+import { useAdSenseInit, useAdSense } from '@/hooks/use-adsense';
 import techImage from '@/assets/article-tech.jpg';
 import businessImage from '@/assets/article-business.jpg';
 
@@ -41,19 +41,8 @@ const featuredArticles = [
 ];
 
 export default function Home() {
-  useEffect(() => {
-    try {
-      setTimeout(() => {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-      }, 100);
-    } catch (err) {
-      if (import.meta.env.VITE_SHOW_ADSENSE_ERRORS === 'true') {
-        console.error('AdSense error:', err);
-      }
-    }
-  }, []);
+  const { isEnabled, clientId } = useAdSense();
+  useAdSenseInit(2);
 
   return (
     <div className="pb-8 w-full">
@@ -61,39 +50,43 @@ export default function Home() {
       <HeroSection />
 
       {/* HOME-DISPLAY-01 - Ad below Hero Section */}
-      <RevealOnScroll>
-        <div className="py-4 md:py-6 px-4 sm:px-6">
-          <div className="not-prose">
-            <ins 
-              className="adsbygoogle"
-              style={{ display: 'block' }}
-              data-ad-client={import.meta.env.VITE_ADSENSE_CLIENT_ID}
-              data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_01}
-              data-ad-format="auto"
-              data-full-width-responsive="true"
-            />
+      {isEnabled && (
+        <RevealOnScroll>
+          <div className="py-4 md:py-6 px-4 sm:px-6">
+            <div className="not-prose">
+              <ins 
+                className="adsbygoogle"
+                style={{ display: 'block' }}
+                data-ad-client={clientId}
+                data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_01}
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+              />
+            </div>
           </div>
-        </div>
-      </RevealOnScroll>
+        </RevealOnScroll>
+      )}
 
         {/* Featured Highlights - Mais destaques */}
         <FeaturedHighlights />
 
       {/* HOME-DISPLAY-02 - Ad after Featured Highlights */}
-      <RevealOnScroll>
-        <div className="py-4 md:py-6 px-4 sm:px-6">
-          <div className="not-prose">
-            <ins 
-              className="adsbygoogle"
-              style={{ display: 'block' }}
-              data-ad-client={import.meta.env.VITE_ADSENSE_CLIENT_ID}
-              data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_02}
-              data-ad-format="auto"
-              data-full-width-responsive="true"
-            />
+      {isEnabled && (
+        <RevealOnScroll>
+          <div className="py-4 md:py-6 px-4 sm:px-6">
+            <div className="not-prose">
+              <ins 
+                className="adsbygoogle"
+                style={{ display: 'block' }}
+                data-ad-client={clientId}
+                data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_02}
+                data-ad-format="auto"
+                data-full-width-responsive="true"
+              />
+            </div>
           </div>
-        </div>
-      </RevealOnScroll>
+        </RevealOnScroll>
+      )}
 
         {/* News Feed - Feed de Notícias */}
         <RevealOnScroll>
