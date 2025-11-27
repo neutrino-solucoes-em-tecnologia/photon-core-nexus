@@ -21,6 +21,7 @@ import {
 } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useCategories } from '@/hooks/use-categories';
 import {
   Sidebar,
   SidebarContent,
@@ -49,18 +50,13 @@ import {
 import { useTheme } from '@/components/theme-provider';
 import photonLogoUrl from '@/assets/photon-logo.svg';
 
-// Menu items da navegação principal
-const menuItems = [
+// Menu items da navegação principal (fixos)
+const fixedMenuItems = [
   { name: 'Início', icon: Home, href: '/' },
   { name: 'Trending', icon: TrendingUp, href: '/trending', badge: '🔥' },
-  { name: 'PS5', icon: Gamepad2, href: '/categoria/ps5', badge: 'NEW' },
-  { name: 'Xbox Series X/S', icon: Gamepad2, href: '/categoria/xbox-series-x' },
-  { name: 'Switch', icon: Gamepad2, href: '/categoria/nintendo-switch' },
-  { name: 'Reviews', icon: FileText, href: '/categoria/reviews', badge: '24' },
-  { name: 'Tabletop', icon: Dice5, href: '/categoria/tabletop' },
-  { name: 'Cinema & TV', icon: Film, href: '/categoria/cinema-tv' },
-  { name: 'Anime', icon: Sparkles, href: '/categoria/anime' },
-  { name: 'Tech', icon: Cpu, href: '/categoria/tech' },
+];
+
+const additionalMenuItems = [
   { name: 'Descontos', icon: Tag, href: '/descontos', badge: '70%' },
   { name: 'Vídeos', icon: Video, href: '/videos' },
   { name: 'Galerias', icon: ImageIcon, href: '/galerias' },
@@ -77,10 +73,23 @@ const moreItems = [
 export function AppSidebar() {
   const { state, toggleSidebar, setOpen, isMobile, setOpenMobile } = useSidebar();
   const { theme, setTheme } = useTheme();
+  const { data: categories, isLoading: categoriesLoading } = useCategories();
   const isCollapsed = state === 'collapsed';
   const [searchQuery, setSearchQuery] = useState('');
   const [showMore, setShowMore] = useState(false);
   const [isInitialized, setIsInitialized] = useState(false);
+
+  // Combinar itens fixos com categorias da API
+  const menuItems = [
+    ...fixedMenuItems,
+    ...(categories?.map(category => ({
+      name: category.name,
+      icon: FileText, // Ícone padrão para categorias
+      href: `/categoria/${category.slug}`,
+      badge: category.articles_count ? String(category.articles_count) : undefined,
+    })) || []),
+    ...additionalMenuItems,
+  ];
 
   // Função para fechar sidebar no mobile ao clicar em um link
   const handleLinkClick = () => {
