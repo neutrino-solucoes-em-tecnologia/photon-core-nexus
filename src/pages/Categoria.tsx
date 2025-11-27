@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { SlidersHorizontal, TrendingUp, Clock, Eye } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -25,10 +25,12 @@ import {
 } from '@/components/ui/pagination';
 import RevealOnScroll from '@/components/RevealOnScroll';
 import { useAdSense } from '@/hooks/use-adsense';
+import { useCategoryArticles } from '@/hooks/use-articles';
 import techImage from '@/assets/article-tech.jpg';
 import businessImage from '@/assets/article-business.jpg';
 
-const articles = [
+// Mock articles as fallback
+const mockArticles = [
   {
     slug: 'futuro-ia-empresas',
     title: 'O Futuro da IA nas Empresas: Transformação Digital em 2025',
@@ -330,7 +332,7 @@ const popularArticles = [
   },
 ];
 
-const categories = {
+const mockCategories: Record<string, { title: string; description: string }> = {
   tecnologia: {
     title: 'Tecnologia',
     description: 'As últimas tendências e inovações do mundo tech',
@@ -347,21 +349,24 @@ const categories = {
 
 export default function Categoria() {
   const { slug } = useParams<{ slug: string }>();
-  const category = categories[slug as keyof typeof categories] || categories.tecnologia;
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const { isEnabled, clientId, initializeAds } = useAdSense();
   const itemsPerPage = 12;
   
-  // Simulated loading state for demonstration
-  // In real app, this would come from API hooks like useCategoryArticles(slug)
-  const isLoading = false;
-
-  // Calcular paginação
-  const totalPages = Math.ceil(articles.length / itemsPerPage);
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const currentArticles = articles.slice(startIndex, endIndex);
+  // Fetch articles from API
+  const { data: articlesData, isLoading, error } = useCategoryArticles(
+    slug || '',
+    currentPage,
+    itemsPerPage
+  );
+  
+  // Get category info from first article or use fallback
+  const categoryFromApi = articlesData?.data[0]?.category;
+  const categoryTitle = categoryFromApi?.name || mockCategories[slug || 'tecnologia']?.title || 'Categoria';
+  const categoryDescription = categoryFromApi?.description || mockCategories[slug || 'tecnologia']?.description || '';
+  const currentArticles = articlesData?.data || [];
+  const totalPages = articlesData?.meta.last_page || 1;
 
   // Scroll to top ao mudar de página
   useEffect(() => {
@@ -391,10 +396,10 @@ export default function Categoria() {
                 Categoria
               </Badge>
               <h1 className="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                {category.title}
+                {categoryTitle}
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                {category.description}
+                {categoryDescription}
               </p>
             </div>
           </RevealOnScroll>
@@ -402,7 +407,6 @@ export default function Categoria() {
       </div>
 
       <div className="wide-container py-12">
-        <div className="grid lg:grid-cols-[1fr_320px] gap-8">
           {/* Main Content */}
           <div>
             {/* Filter Bar */}
@@ -410,7 +414,9 @@ export default function Categoria() {
               <div className="flex items-center justify-between mb-8 pb-6 border-b border-border/50">
                 <div className="flex items-center gap-3">
                   <p className="text-muted-foreground font-medium">
-                    <span className="text-foreground font-bold">{articles.length}</span> artigos encontrados
+                    <span className="text-foreground font-bold">
+                      {articlesData?.meta.total || 0}
+                    </span> artigos encontrados
                   </p>
                   <span className="text-muted-foreground/50">•</span>
                   <p className="text-muted-foreground text-sm">
@@ -479,7 +485,20 @@ export default function Categoria() {
 
             {/* Articles List */}
             <div className="space-y-6">
-              {isLoading ? (
+              {error ? (
+                // Error state
+                <div className="text-center py-12">
+                  <p className="text-lg text-muted-foreground mb-4">
+                    Erro ao carregar artigos. Por favor, tente novamente.
+                  </p>
+                  <Button
+                    onClick={() => window.location.reload()}
+                    variant="outline"
+                  >
+                    Recarregar página
+                  </Button>
+                </div>
+              ) : isLoading ? (
                 // Skeleton loading state
                 Array(itemsPerPage).fill(null).map((_, index) => (
                   <article 
@@ -522,13 +541,36 @@ export default function Categoria() {
                     </div>
                   </article>
                 ))
+              ) : currentArticles.length === 0 ? (
+                // Empty state
+                <div className="text-center py-12">
+                  <p className="text-lg text-muted-foreground">
+                    Nenhum artigo encontrado nesta categoria.
+                  </p>
+                </div>
               ) : (
                 // Actual articles
-                currentArticles.map((article, index) => (
-                <>
-                  <article 
-                  key={article.slug}
-                  className="group grid md:grid-cols-[280px_1fr] gap-6 pb-6 border-b border-border"
+                currentArticles.map((article, index) => {
+                  // Format published date
+                  const publishedDate = article.published_at 
+                    ? new Date(article.published_at).toLocaleDateString('pt-BR', { 
+                        day: 'numeric', 
+                        month: 'short', 
+                        year: 'numeric' 
+                      })
+                    : 'Data não disponível';
+                  
+                  // Calculate read time (aproximação: 200 palavras por minuto)
+                  const wordCount = article.paragraphs?.reduce((total, p) => {
+                    const text = p.content.replace(/<[^>]*>/g, ''); // Remove HTML tags
+                    return total + text.split(/\s+/).length;
+                  }, 0) || 0;
+                  const readTime = Math.max(1, Math.ceil(wordCount / 200));
+                  
+                  return (
+                  <React.Fragment key={article.slug}>
+                  <article
+                  className="group grid grid-cols-[100px_1fr] md:grid-cols-[200px_1fr] lg:grid-cols-[280px_1fr] gap-3 md:gap-4 lg:gap-6 pb-4 md:pb-6 border-b border-border"
                   style={{ 
                     animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
                   }}
@@ -538,19 +580,27 @@ export default function Categoria() {
                     href={`/artigo/${article.slug}`}
                     className="relative overflow-hidden rounded-md aspect-video bg-muted"
                   >
-                    <img
-                      src={article.image}
-                      alt={article.title}
-                      className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-85"
-                      loading="lazy"
-                    />
+                    {article.image_url ? (
+                      <img
+                        src={article.image_url}
+                        alt={article.image_alt || article.title}
+                        className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-85"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-muted text-muted-foreground">
+                        <span className="text-4xl font-bold opacity-20">
+                          {article.title.charAt(0)}
+                        </span>
+                      </div>
+                    )}
                   </a>
 
                   {/* Content */}
                   <div className="flex flex-col justify-center min-h-[166px]">
                     {/* Meta Info - Mobile */}
                     <div className="flex items-center gap-3 text-xs text-primary font-bold uppercase tracking-wide mb-2 md:hidden">
-                      <span>{article.readTime}</span>
+                      <span>{readTime} min</span>
                     </div>
 
                     {/* Title */}
@@ -564,39 +614,45 @@ export default function Categoria() {
                     </h3>
 
                     {/* Excerpt - Desktop */}
-                    <p className="hidden md:block text-sm text-muted-foreground mb-3 line-clamp-2">
-                      {article.excerpt}
-                    </p>
+                    {article.description && (
+                      <p className="hidden md:block text-sm text-muted-foreground mb-3 line-clamp-2">
+                        {article.description}
+                      </p>
+                    )}
 
                     {/* Meta Info - Desktop */}
                     <div className="hidden md:flex items-center gap-4 text-xs text-primary font-bold uppercase tracking-wide">
-                      <a 
-                        href={`/categoria/${article.category.toLowerCase()}`}
-                        className="hover:underline flex items-center gap-1"
-                      >
-                        <span className="w-3 h-3 inline-block">
-                          <svg viewBox="0 0 12 12" fill="currentColor">
-                            <path fillRule="evenodd" clipRule="evenodd" d="M8 0.5C8 0.223858 7.77614 0 7.5 0H4.5C4.22386 0 4 0.223858 4 0.5V3.5C4 3.77614 3.77614 4 3.5 4L0.5 4C0.223858 4 0 4.22386 0 4.5V7.5C0 7.77614 0.223858 8 0.5 8H3.5C3.77614 8 4 8.22386 4 8.5V11.5C4 11.7761 4.22386 12 4.5 12H7.5C7.77614 12 8 11.7761 8 11.5V8.5C8 8.22386 8.22386 8 8.5 8H11.5C11.7761 8 12 7.77614 12 7.5V4.5C12 4.22386 11.7761 4 11.5 4L8.5 4C8.22386 4 8 3.77614 8 3.5V0.5Z"/>
-                          </svg>
-                        </span>
-                        {article.category}
-                      </a>
+                      {article.category && (
+                        <a 
+                          href={`/categoria/${article.category.slug}`}
+                          className="hover:underline flex items-center gap-1"
+                        >
+                          <span className="w-3 h-3 inline-block">
+                            <svg viewBox="0 0 12 12" fill="currentColor">
+                              <path fillRule="evenodd" clipRule="evenodd" d="M8 0.5C8 0.223858 7.77614 0 7.5 0H4.5C4.22386 0 4 0.223858 4 0.5V3.5C4 3.77614 3.77614 4 3.5 4L0.5 4C0.223858 4 0 4.22386 0 4.5V7.5C0 7.77614 0.223858 8 0.5 8H3.5C3.77614 8 4 8.22386 4 8.5V11.5C4 11.7761 4.22386 12 4.5 12H7.5C7.77614 12 8 11.7761 8 11.5V8.5C8 8.22386 8.22386 8 8.5 8H11.5C11.7761 8 12 7.77614 12 7.5V4.5C12 4.22386 11.7761 4 11.5 4L8.5 4C8.22386 4 8 3.77614 8 3.5V0.5Z"/>
+                            </svg>
+                          </span>
+                          {article.category.name}
+                        </a>
+                      )}
                       
                       <span className="flex items-center gap-1">
                         <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <path d="M12 20h9"/>
                           <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
                         </svg>
-                        {article.readTime}
+                        {readTime} min
                       </span>
                     </div>
 
                     {/* Meta Info Mobile - Bottom */}
                     <div className="flex md:hidden items-center gap-4 text-xs text-primary font-bold uppercase tracking-wide mt-2">
-                      <a href={`/categoria/${article.category.toLowerCase()}`} className="hover:underline">
-                        {article.category}
-                      </a>
-                      <span>{article.readTime}</span>
+                      {article.category && (
+                        <a href={`/categoria/${article.category.slug}`} className="hover:underline">
+                          {article.category.name}
+                        </a>
+                      )}
+                      <span>{readTime} min</span>
                     </div>
                   </div>
                 </article>
@@ -642,8 +698,9 @@ export default function Categoria() {
                     />
                   </div>
                 )}
-                </>
-              ))
+              </React.Fragment>
+              );
+                })
               )}
             </div>
 
@@ -714,7 +771,6 @@ export default function Categoria() {
               </div>
             </RevealOnScroll>
           </div>
-        </div>
       </div>
     </div>
   );
