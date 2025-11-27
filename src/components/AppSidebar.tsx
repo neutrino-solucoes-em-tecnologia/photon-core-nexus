@@ -54,13 +54,10 @@ import photonLogoUrl from '@/assets/photon-logo.svg';
 const fixedMenuItems = [
   { name: 'Início', icon: Home, href: '/' },
   { name: 'Trending', icon: TrendingUp, href: '/trending', badge: '🔥' },
+  { name: 'Descontos', icon: Tag, href: '/descontos', badge: '70%' },
 ];
 
-const additionalMenuItems = [
-  { name: 'Descontos', icon: Tag, href: '/descontos', badge: '70%' },
-  { name: 'Vídeos', icon: Video, href: '/videos' },
-  { name: 'Galerias', icon: ImageIcon, href: '/galerias' },
-];
+const additionalMenuItems: typeof fixedMenuItems = [];
 
 const moreItems = [
   { name: 'Fale Conosco', href: '/fale-conosco' },
@@ -84,9 +81,9 @@ export function AppSidebar() {
     ...fixedMenuItems,
     ...(categories?.map(category => ({
       name: category.name,
-      icon: FileText, // Ícone padrão para categorias
       href: `/categoria/${category.slug}`,
       badge: category.articles_count ? String(category.articles_count) : undefined,
+      isCategory: true, // Flag para identificar categorias
     })) || []),
     ...additionalMenuItems,
   ];
@@ -203,7 +200,12 @@ export function AppSidebar() {
                                 : 'text-foreground/70 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary'
                             }`}
                             >
-                              <item.icon className="h-5 w-5 transition-colors" />
+                              {item.icon && <item.icon className="h-5 w-5 transition-colors" />}
+                              {!item.icon && (
+                                <div className="flex items-center justify-center w-5 h-5 text-xs font-bold text-foreground/70">
+                                  {item.name.charAt(0)}
+                                </div>
+                              )}
                               {isActive && (
                                 <div className="absolute top-1.5 right-1.5 w-2 h-2 bg-primary rounded-full animate-pulse" />
                               )}
@@ -231,8 +233,8 @@ export function AppSidebar() {
                               {isActive && (
                                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary rounded-r-full shadow-lg shadow-primary/50" />
                               )}
-                              <item.icon className="flex-shrink-0 h-5 w-5" />
-                              <span className="flex-1 text-sm font-medium">{item.name}</span>
+                              {item.icon && <item.icon className="flex-shrink-0 h-5 w-5" />}
+                              <span className={`flex-1 text-sm font-medium ${!item.icon ? 'ml-0' : ''}`}>{item.name}</span>
                               {item.badge && (
                                 <Badge variant="secondary" className="ml-auto text-xs px-1.5 py-0 h-5 bg-primary/10 text-primary border-primary/20">
                                   {item.badge}
