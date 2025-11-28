@@ -1,5 +1,6 @@
+import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Clock, Calendar, Share2, Tag } from 'lucide-react';
+import { Clock, Calendar, Share2, Tag, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
@@ -9,11 +10,13 @@ import ScrollProgress from '@/components/ScrollProgress';
 import FloatingShare from '@/components/FloatingShare';
 import RevealOnScroll from '@/components/RevealOnScroll';
 import { useAdSenseInit, useAdSense } from '@/hooks/use-adsense';
+import { useArticle, useRelatedArticles } from '@/hooks/use-articles';
 import heroImage from '@/assets/hero-ai-1.jpg';
 import techImage from '@/assets/article-tech.jpg';
 import businessImage from '@/assets/article-business.jpg';
 
-const article = {
+// Mock data as fallback
+const mockArticle = {
   title: 'O Futuro da IA nas Empresas: Transformação Digital em 2025',
   subtitle: 'Como a inteligência artificial está revolucionando processos empresariais e criando novas oportunidades de negócio',
   image: heroImage,
@@ -27,7 +30,7 @@ const article = {
   tags: ['Inteligência Artificial', 'Transformação Digital', 'Empresas', 'Inovação'],
 };
 
-const relatedArticles = [
+const mockRelatedArticles = [
   {
     slug: 'quantum-computing',
     title: 'Computação Quântica: A Próxima Revolução Tecnológica',
@@ -55,33 +58,6 @@ const relatedArticles = [
     readTime: '10 min',
     date: '8 Jan 2025',
   },
-  {
-    slug: 'cloud-computing-2025',
-    title: 'Cloud Computing em 2025: Multicloud e Edge Computing',
-    excerpt: 'As estratégias de cloud que estão moldando o futuro da infraestrutura tecnológica empresarial.',
-    image: businessImage,
-    category: 'Tecnologia',
-    readTime: '11 min',
-    date: '6 Jan 2025',
-  },
-  {
-    slug: 'machine-learning-business',
-    title: 'Machine Learning na Prática: Casos de Uso Reais',
-    excerpt: 'Exemplos concretos de como empresas estão usando ML para otimizar operações e aumentar receita.',
-    image: techImage,
-    category: 'Negócios',
-    readTime: '14 min',
-    date: '4 Jan 2025',
-  },
-  {
-    slug: 'data-privacy-gdpr',
-    title: 'Privacidade de Dados: LGPD e GDPR na Era Digital',
-    excerpt: 'Entenda as regulamentações de proteção de dados e como sua empresa pode se adequar.',
-    image: businessImage,
-    category: 'Tecnologia',
-    readTime: '10 min',
-    date: '2 Jan 2025',
-  },
 ];
 
 export default function Artigo() {
@@ -89,14 +65,55 @@ export default function Artigo() {
   const { isEnabled } = useAdSenseInit(3);
   const { clientId } = useAdSense();
   
-  // Simulated loading state for demonstration
-  // In real app, this would come from API hooks like useArticle(slug)
-  const isLoading = false;
+  // Fetch article data from API
+  const { data: article, isLoading: articleLoading, error: articleError } = useArticle(slug || '');
+  const { data: relatedArticles = [], isLoading: relatedLoading } = useRelatedArticles(slug || '');
+  
+  const isLoading = articleLoading;
+  
+  // Calculate read time from paragraphs
+  const readTime = article?.paragraphs ? (() => {
+    const wordCount = article.paragraphs.reduce((total, p) => {
+      const text = p.content.replace(/<[^>]*>/g, '');
+      return total + text.split(/\s+/).length;
+    }, 0);
+    return Math.max(1, Math.ceil(wordCount / 200));
+  })() : 8;
+  
+  // Format dates
+  const formattedDate = article?.published_at
+    ? new Date(article.published_at).toLocaleDateString('pt-BR', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      })
+    : '';
+  
+  const formattedShortDate = article?.published_at
+    ? new Date(article.published_at).toLocaleDateString('pt-BR', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric'
+      })
+    : '';
+  
+  const formattedUpdatedDate = article?.updated_at
+    ? `Atualizado: ${new Date(article.updated_at).toLocaleDateString('pt-BR', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+      })} às ${new Date(article.updated_at).toLocaleTimeString('pt-BR', {
+        hour: '2-digit',
+        minute: '2-digit'
+      })}`
+    : '';
 
   const handleShare = async () => {
+    if (!article) return;
+    
     const shareData = {
       title: article.title,
-      text: article.subtitle,
+      text: article.description || article.title,
       url: window.location.href,
     };
 
@@ -118,7 +135,24 @@ export default function Artigo() {
       <ScrollProgress />
       <FloatingShare />
       
+      {/* Error State */}
+      {articleError && (
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+          <div className="text-center space-y-4">
+            <AlertCircle className="w-16 h-16 mx-auto text-destructive" />
+            <h2 className="text-2xl font-bold">Artigo não encontrado</h2>
+            <p className="text-muted-foreground">
+              O artigo que você está procurando não existe ou foi removido.
+            </p>
+            <Button asChild>
+              <Link to="/">Voltar para o início</Link>
+            </Button>
+          </div>
+        </div>
+      )}
+      
       {/* Breadcrumbs */}
+      {!articleError && (
       <RevealOnScroll>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-8">
           <nav className="flex items-center space-x-2 text-sm">
@@ -126,16 +160,18 @@ export default function Artigo() {
               Início
             </Link>
             <span className="text-muted-foreground">/</span>
-            <Link to={`/categoria/${article.categorySlug}`} className="text-primary hover:underline font-semibold transition-colors">
-              {article.category}
+            <Link to={`/categoria/${article?.category?.slug || 'tecnologia'}`} className="text-primary hover:underline font-semibold transition-colors">
+              {article?.category?.name || 'Categoria'}
             </Link>
             <span className="text-muted-foreground">/</span>
-            <span className="text-muted-foreground">Review</span>
+            <span className="text-muted-foreground">Artigo</span>
           </nav>
         </div>
       </RevealOnScroll>
+      )}
 
       {/* Main Container */}
+      {!articleError && (
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 py-8">
           {/* Main Content */}
           <article className="w-full">
@@ -210,7 +246,7 @@ export default function Artigo() {
                   </div>
                 </RevealOnScroll>
               </>
-            ) : (
+            ) : article ? (
               // Actual Article Content
               <>
             {/* Article Header */}
@@ -221,15 +257,17 @@ export default function Artigo() {
                   {article.title}
                 </h1>
 
-                {/* Subtitle */}
+                {/* Subtitle/Description */}
+                {article.description && (
                 <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
-                  {article.subtitle}
+                  {article.description}
                 </p>
+                )}
 
                 {/* Meta Info */}
                 <div className="flex flex-wrap items-center gap-4 py-4 border-y border-border/50">
                   <div className="text-xs text-muted-foreground">
-                    {article.updatedDate}
+                    {formattedUpdatedDate || formattedDate}
                   </div>
                 </div>
               </header>
@@ -250,16 +288,18 @@ export default function Artigo() {
             )}
 
             {/* Hero Image */}
+            {article.image_url && (
             <RevealOnScroll>
               <div className="mb-8 rounded-xl overflow-hidden">
                 <img
-                  src={article.image}
-                  alt={article.title}
+                  src={article.image_url}
+                  alt={article.image_alt || article.title}
                   className="w-full aspect-video object-cover"
-                  fetchPriority="high"
+                  {...({ fetchpriority: "high" } as React.ImgHTMLAttributes<HTMLImageElement>)}
                 />
               </div>
             </RevealOnScroll>
+            )}
 
             {/* Article Actions */}
             <RevealOnScroll>
@@ -267,7 +307,11 @@ export default function Artigo() {
                 <div className="flex items-center gap-6 text-sm text-muted-foreground">
                   <div className="flex items-center space-x-2">
                     <Clock className="h-4 w-4" />
-                    <span>{article.readTime}</span>
+                    <span>{readTime} min</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Calendar className="h-4 w-4" />
+                    <span>{formattedShortDate}</span>
                   </div>
                 </div>
                 <div className="flex items-center space-x-2">
@@ -279,105 +323,62 @@ export default function Artigo() {
               </div>
             </RevealOnScroll>
 
-            {/* Article Body - Editorial Style with Strategic Ad Placements */}
-            <RevealOnScroll>
-              <div className="prose prose-lg max-w-none article-content">
-                <p className="lead text-xl mb-6 font-medium">
-                  {article.subtitle}
-                </p>
-              </div>
-            </RevealOnScroll>
-
-            {/* ARTIGO-TITULO-02 - Após primeiro parágrafo */}
-            {isEnabled && (
-              <div className="mb-8 not-prose">
-                <ins 
-                  className="adsbygoogle"
-                  style={{ display: 'block' }}
-                  data-ad-client={clientId}
-                  data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_TITULO_02}
-                  data-ad-format="auto"
-                  data-full-width-responsive="true"
-                />
-              </div>
+            {/* Article Body - Paragraphs from API */}
+            {article.paragraphs && article.paragraphs.length > 0 ? (
+              article.paragraphs
+                .sort((a, b) => a.order - b.order)
+                .map((paragraph, index) => (
+                  <React.Fragment key={paragraph.id}>
+                    <RevealOnScroll>
+                      <div 
+                        className="prose prose-lg max-w-none article-content mb-6"
+                        dangerouslySetInnerHTML={{ __html: paragraph.content }}
+                      />
+                    </RevealOnScroll>
+                    
+                    {/* ARTIGO-TITULO-02 - Após primeiro parágrafo */}
+                    {index === 0 && isEnabled && (
+                      <div className="my-8 not-prose">
+                        <ins 
+                          className="adsbygoogle"
+                          style={{ display: 'block' }}
+                          data-ad-client={clientId}
+                          data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_TITULO_02}
+                          data-ad-format="auto"
+                          data-full-width-responsive="true"
+                        />
+                      </div>
+                    )}
+                    
+                    {/* ARTIGO-CORPO-01 - No meio do artigo */}
+                    {index === Math.floor(article.paragraphs.length / 2) && isEnabled && (
+                      <div className="my-8 not-prose">
+                        <ins 
+                          className="adsbygoogle"
+                          style={{ display: 'block' }}
+                          data-ad-client={clientId}
+                          data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_CORPO_01}
+                          data-ad-format="auto"
+                          data-full-width-responsive="true"
+                        />
+                      </div>
+                    )}
+                  </React.Fragment>
+                ))
+            ) : (
+              <RevealOnScroll>
+                <div className="prose prose-lg max-w-none article-content">
+                  <p>Conteúdo não disponível.</p>
+                </div>
+              </RevealOnScroll>
             )}
-
-            <RevealOnScroll>
-              <div className="prose prose-lg max-w-none article-content">
-                <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-4">A Revolução Silenciosa</h2>
-                <p>
-                  A inteligência artificial não é mais ficção científica. Ela está presente no dia a dia das empresas,
-                  automatizando processos, oferecendo insights valiosos e criando experiências personalizadas para clientes.
-                </p>
-                <p>
-                  De acordo com pesquisas recentes, mais de 70% das empresas globais já implementaram alguma forma de IA
-                  em suas operações. Este número deve crescer exponencialmente nos próximos anos.
-                </p>
-              </div>
-            </RevealOnScroll>
-
-            <RevealOnScroll>
-              <div className="prose prose-lg max-w-none article-content">
-                <h2 className="text-2xl md:text-3xl font-bold mt-8 mb-4">Aplicações Práticas</h2>
-                <p>
-                  As aplicações de IA vão desde chatbots inteligentes até sistemas complexos de análise preditiva.
-                  Empresas estão usando machine learning para:
-                </p>
-                <ul className="space-y-2 my-6">
-                  <li>Otimizar cadeias de suprimento</li>
-                  <li>Personalizar experiências de usuário</li>
-                  <li>Detectar fraudes em tempo real</li>
-                  <li>Automatizar atendimento ao cliente</li>
-                  <li>Prever tendências de mercado</li>
-                </ul>
-              </div>
-            </RevealOnScroll>
-
-            <RevealOnScroll>
-              <div className="prose prose-lg max-w-none article-content">
-                <h2 className="text-2xl md:text-3xl font-bold mt-8 mb-4">Desafios e Oportunidades</h2>
-                <p>
-                  Apesar dos benefícios claros, a implementação de IA traz desafios significativos. Questões éticas,
-                  privacidade de dados e a necessidade de upskilling das equipes são apenas algumas das barreiras
-                  que empresas precisam superar.
-                </p>
-                <p>
-                  No entanto, as oportunidades superam os desafios. Empresas que abraçam a transformação digital
-                  com IA estão ganhando vantagem competitiva significativa em seus mercados.
-                </p>
-              </div>
-            </RevealOnScroll>
-
-            {/* ARTIGO-TITULO-03 */}
-            {isEnabled && (
-              <div className="mb-8 not-prose">
-                <ins 
-                  className="adsbygoogle"
-                  style={{ display: 'block' }}
-                  data-ad-client={clientId}
-                  data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_TITULO_03}
-                  data-ad-format="auto"
-                  data-full-width-responsive="true"
-                />
-              </div>
-            )}
-
-            <RevealOnScroll>
-              <div className="prose prose-lg max-w-none article-content">
-                <h2 className="text-2xl md:text-3xl font-bold mt-8 mb-4">O Futuro é Agora</h2>
-                <p>
-                  O futuro da IA nas empresas não é uma questão de "se", mas de "quando" e "como". Organizações
-                  que começarem sua jornada de transformação digital hoje estarão melhor posicionadas para
-                  prosperar no mercado cada vez mais competitivo e orientado por dados.
-                </p>
-              </div>
-            </RevealOnScroll>
 
             {/* Tags */}
+            {article.metadata?.tags && Array.isArray(article.metadata.tags) && article.metadata.tags.length > 0 && (
             <RevealOnScroll>
               <div className="flex flex-wrap gap-2 mt-12 pt-8 border-t border-border/50">
                 <Tag className="h-4 w-4 text-muted-foreground mr-2" />
-                {article.tags.map((tag) => (
+                {article.metadata.tags.map((tag: string) => (
                   <Link key={tag} to={`/tag/${tag.toLowerCase().replace(/ /g, '-')}`}>
                     <Badge 
                       variant="outline" 
@@ -389,44 +390,85 @@ export default function Artigo() {
                 ))}
               </div>
             </RevealOnScroll>
-            </>
             )}
+            </>
+            ) : null}
 
           </article>
       </div>
+      )}
 
       {/* Related Articles */}
+      {!articleError && relatedArticles.length > 0 && (
       <section className="wide-container py-8 mt-8 lg:mt-16">
         <h2 className="text-2xl md:text-3xl font-bold mb-6">Leia Também</h2>
         
+        {relatedLoading ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            {Array(4).fill(null).map((_, index) => (
+              <div key={index} className="space-y-3">
+                <Skeleton className="w-full aspect-video rounded-md" />
+                <Skeleton className="h-4 w-full" />
+                <Skeleton className="h-4 w-3/4" />
+              </div>
+            ))}
+          </div>
+        ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 w-full max-w-full">
-            {relatedArticles.slice(0, 4).map((relatedArticle) => (
+            {relatedArticles.slice(0, 4).map((relatedArticle) => {
+              const relatedReadTime = relatedArticle.paragraphs ? (() => {
+                const wordCount = relatedArticle.paragraphs.reduce((total, p) => {
+                  const text = p.content.replace(/<[^>]*>/g, '');
+                  return total + text.split(/\\s+/).length;
+                }, 0);
+                return Math.max(1, Math.ceil(wordCount / 200));
+              })() : 5;
+              
+              return (
               <article key={relatedArticle.slug} className="group w-full max-w-full">
                 <Link to={`/artigo/${relatedArticle.slug}`}>
                   {/* Image Container */}
                   <div className="relative overflow-hidden rounded-md mb-3 aspect-video bg-muted">
+                    {relatedArticle.image_url ? (
                     <img
-                      src={relatedArticle.image}
-                      alt={relatedArticle.title}
+                      src={relatedArticle.image_url}
+                      alt={relatedArticle.image_alt || relatedArticle.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
                     />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-muted text-muted-foreground">
+                        <span className="text-4xl font-bold opacity-20">
+                          {relatedArticle.title.charAt(0)}
+                        </span>
+                      </div>
+                    )}
                     
                     {/* Category Badge */}
+                    {relatedArticle.category && (
                     <span className="absolute top-2 left-2 bg-primary text-primary-foreground text-xs font-bold px-2.5 py-1 rounded uppercase tracking-wide">
-                      {relatedArticle.category}
+                      {relatedArticle.category.name}
                     </span>
+                    )}
                   </div>
                   
                   {/* Title */}
-                  <h3 className="text-sm md:text-base font-bold leading-tight text-foreground group-hover:text-primary transition-colors line-clamp-3">
+                  <h3 className="text-sm md:text-base font-bold leading-tight text-foreground group-hover:text-primary transition-colors line-clamp-3 mb-2">
                     {relatedArticle.title}
                   </h3>
+                  
+                  {/* Meta */}
+                  <div className="text-xs text-muted-foreground">
+                    {relatedReadTime} min de leitura
+                  </div>
                 </Link>
               </article>
-            ))}
+              );
+            })}
         </div>
+        )}
       </section>
+      )}
     </div>
   );
 }
