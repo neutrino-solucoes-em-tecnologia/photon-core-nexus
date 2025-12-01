@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Clock, Calendar, Share2, Tag, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -11,59 +11,16 @@ import FloatingShare from '@/components/FloatingShare';
 import RevealOnScroll from '@/components/RevealOnScroll';
 import { useAdSenseInit, useAdSense } from '@/hooks/use-adsense';
 import { useArticle, useRelatedArticles } from '@/hooks/use-articles';
-import heroImage from '@/assets/hero-ai-1.jpg';
-import techImage from '@/assets/article-tech.jpg';
-import businessImage from '@/assets/article-business.jpg';
-
-// Mock data as fallback
-const mockArticle = {
-  title: 'O Futuro da IA nas Empresas: Transformação Digital em 2025',
-  subtitle: 'Como a inteligência artificial está revolucionando processos empresariais e criando novas oportunidades de negócio',
-  image: heroImage,
-  category: 'Tecnologia',
-  categorySlug: 'tecnologia',
-  readTime: '8 min',
-  date: '15 de Janeiro de 2025',
-  publishedDate: '15 Jan 2025',
-  updatedDate: 'Atualizado: 15 de Janeiro de 2025 às 14:30',
-  comments: 24,
-  tags: ['Inteligência Artificial', 'Transformação Digital', 'Empresas', 'Inovação'],
-};
-
-const mockRelatedArticles = [
-  {
-    slug: 'quantum-computing',
-    title: 'Computação Quântica: A Próxima Revolução Tecnológica',
-    excerpt: 'Explore como a computação quântica promete resolver problemas impossíveis para computadores clássicos.',
-    image: techImage,
-    category: 'Tecnologia',
-    readTime: '12 min',
-    date: '12 Jan 2025',
-  },
-  {
-    slug: 'cybersecurity-trends',
-    title: 'Tendências em Cibersegurança para Empresas',
-    excerpt: 'As principais ameaças e soluções em segurança digital que toda empresa precisa conhecer.',
-    image: businessImage,
-    category: 'Tecnologia',
-    readTime: '9 min',
-    date: '10 Jan 2025',
-  },
-  {
-    slug: 'blockchain-enterprise',
-    title: 'Blockchain Além das Criptomoedas: Aplicações Empresariais',
-    excerpt: 'Descubra como a tecnologia blockchain está transformando cadeias de suprimento e contratos inteligentes.',
-    image: techImage,
-    category: 'Tecnologia',
-    readTime: '10 min',
-    date: '8 Jan 2025',
-  },
-];
 
 export default function Artigo() {
   const { slug } = useParams();
   const { isEnabled } = useAdSenseInit(3);
   const { clientId } = useAdSense();
+  
+  // Scroll to top when slug changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [slug]);
   
   // Fetch article data from API
   const { data: article, isLoading: articleLoading, error: articleError } = useArticle(slug || '');

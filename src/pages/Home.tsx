@@ -8,46 +8,15 @@ import HeroSection from '@/components/HeroSection';
 import FeaturedHighlights from '@/components/FeaturedHighlights';
 import NewsFeed from '@/components/NewsFeed';
 import { useAdSenseInit, useAdSense } from '@/hooks/use-adsense';
-import techImage from '@/assets/article-tech.jpg';
-import businessImage from '@/assets/article-business.jpg';
-
-const featuredArticles = [
-  {
-    slug: 'futuro-ia-empresas',
-    title: 'O Futuro da IA nas Empresas: Transformação Digital em 2025',
-    excerpt: 'Como a inteligência artificial está revolucionando processos empresariais e criando novas oportunidades de negócio.',
-    image: techImage,
-    category: 'Tecnologia',
-    readTime: '8 min',
-    date: '15 Jan 2025',
-  },
-  {
-    slug: 'investimentos-sustentaveis',
-    title: 'Investimentos Sustentáveis: A Nova Fronteira do Capital',
-    excerpt: 'Entenda como ESG e sustentabilidade estão moldando o futuro dos investimentos globais.',
-    image: businessImage,
-    category: 'Negócios',
-    readTime: '6 min',
-    date: '14 Jan 2025',
-  },
-  {
-    slug: 'inovacao-blockchain',
-    title: 'Blockchain Além das Criptomoedas: Casos de Uso Reais',
-    excerpt: 'Descubra aplicações práticas da tecnologia blockchain em diversos setores da economia.',
-    image: techImage,
-    category: 'Inovação',
-    readTime: '10 min',
-    date: '13 Jan 2025',
-  },
-];
+import { useArticles } from '@/hooks/use-articles';
 
 export default function Home() {
   const { isEnabled, clientId } = useAdSense();
   useAdSenseInit(2);
   
-  // Simulated loading state for demonstration
-  // In real app, this would come from API hooks like useArticles()
-  const isLoading = false;
+  // Fetch featured articles from API
+  const { data: articlesData, isLoading } = useArticles(1, 3);
+  const featuredArticles = articlesData?.data || [];
 
   return (
     <div className="pb-8 w-full">
@@ -121,11 +90,38 @@ export default function Home() {
                 ))
               ) : (
                 // Actual articles
-                featuredArticles.map((article, index) => (
-                  <RevealOnScroll key={article.slug} delay={index * 150}>
-                    <ArticleCard {...article} />
-                  </RevealOnScroll>
-                ))
+                featuredArticles.map((article, index) => {
+                  // Calculate read time from paragraphs
+                  const readTime = article.paragraphs ? (() => {
+                    const wordCount = article.paragraphs.reduce((total: number, p: any) => {
+                      const text = p.content.replace(/<[^>]*>/g, '');
+                      return total + text.split(/\s+/).length;
+                    }, 0);
+                    return Math.max(1, Math.ceil(wordCount / 200));
+                  })() : 5;
+                  
+                  const formattedDate = article.published_at
+                    ? new Date(article.published_at).toLocaleDateString('pt-BR', {
+                        day: 'numeric',
+                        month: 'short',
+                        year: 'numeric'
+                      })
+                    : '';
+                  
+                  return (
+                    <RevealOnScroll key={article.slug} delay={index * 150}>
+                      <ArticleCard 
+                        slug={article.slug}
+                        title={article.title}
+                        excerpt={article.description || ''}
+                        image={article.image_url || ''}
+                        category={article.category?.name || 'Geral'}
+                        readTime={`${readTime} min`}
+                        date={formattedDate}
+                      />
+                    </RevealOnScroll>
+                  );
+                })
               )}
             </div>
           </section>
