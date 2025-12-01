@@ -134,6 +134,68 @@ All colors MUST be HSL.
   article p {
     @apply text-base md:text-lg leading-relaxed mb-6;
   }
+  
+  /* Editorial Reading Styles */
+  .article-content {
+    @apply text-foreground/90;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    letter-spacing: -0.003em;
+  }
+  
+  .article-content p {
+    @apply mb-8 leading-relaxed;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .article-content h2 {
+    @apply text-2xl md:text-3xl font-bold mt-12 mb-6 text-foreground;
+    letter-spacing: -0.02em;
+  }
+  
+  .article-content h3 {
+    @apply text-xl md:text-2xl font-semibold mt-10 mb-4 text-foreground;
+  }
+  
+  .article-content ul, .article-content ol {
+    @apply my-6 space-y-3 pl-6;
+  }
+  
+  .article-content li {
+    @apply leading-relaxed;
+  }
+  
+  .article-content blockquote {
+    @apply border-l-4 border-primary/30 pl-6 my-8 italic text-lg;
+    color: hsl(var(--muted-foreground));
+  }
+  
+  .article-content a {
+    @apply text-primary underline-offset-4 hover:underline transition-colors;
+  }
+  
+  .article-content strong {
+    @apply font-semibold text-foreground;
+  }
+  
+  .article-content em {
+    @apply italic;
+  }
+  
+  /* Drop cap - primeira letra grande */
+  .article-content .drop-cap::first-letter {
+    @apply float-left text-6xl font-bold leading-none mr-3 mt-1;
+    color: hsl(var(--primary));
+  }
+  
+  .article-content code {
+    @apply bg-muted px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+  
+  .article-content pre {
+    @apply bg-muted p-4 rounded-lg overflow-x-auto my-6;
+  }
 }
 
 @layer utilities {
@@ -605,6 +667,99 @@ All colors MUST be HSL.
   .backdrop-blur-subtle {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
+  }
+
+  /* Pull Quote - Destaque editorial */
+  .pull-quote {
+    @apply my-12 py-8 px-6 md:px-10;
+    background: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--muted)/50) 100%);
+    border-left: 4px solid hsl(var(--primary));
+    border-radius: 0 0.75rem 0.75rem 0;
+    position: relative;
+  }
+  
+  .pull-quote::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    font-size: 6rem;
+    line-height: 1;
+    color: hsl(var(--primary)/20);
+    font-family: Georgia, serif;
+  }
+  
+  .pull-quote p {
+    @apply text-xl md:text-2xl font-medium leading-relaxed mb-0;
+    color: hsl(var(--foreground));
+  }
+  
+  .pull-quote cite {
+    @apply block mt-4 text-sm text-muted-foreground not-italic;
+  }
+  
+  /* Article Meta Badge */
+  .article-meta-badge {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full;
+    background: hsl(var(--muted)/50);
+    border: 1px solid hsl(var(--border));
+    backdrop-filter: blur(8px);
+  }
+  
+  /* Reading Progress Bar */
+  .reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)));
+    transform-origin: left;
+    z-index: 100;
+  }
+  
+  /* Article Image Caption */
+  .article-image-caption {
+    @apply text-sm text-muted-foreground italic mt-3 text-center;
+  }
+  
+  /* Highlight Box - Para informações importantes */
+  .highlight-box {
+    @apply my-8 p-6 rounded-xl border-2;
+    background: linear-gradient(135deg, hsl(var(--accent)/10) 0%, hsl(var(--accent)/5) 100%);
+    border-color: hsl(var(--accent)/30);
+  }
+  
+  .highlight-box-title {
+    @apply font-bold text-lg mb-3 flex items-center gap-2;
+    color: hsl(var(--accent));
+  }
+  
+  /* Social Share Sticky */
+  .social-share-sticky {
+    @apply sticky top-24 flex flex-col gap-3;
+  }
+  
+  @media (max-width: 1024px) {
+    .social-share-sticky {
+      @apply static flex-row justify-center mt-8;
+    }
+  }
+  
+  /* Article Section Divider */
+  .section-divider {
+    @apply my-12 flex items-center justify-center;
+  }
+  
+  .section-divider::before,
+  .section-divider::after {
+    content: '';
+    @apply flex-1 h-px;
+    background: linear-gradient(90deg, transparent, hsl(var(--border)), transparent);
+  }
+  
+  .section-divider span {
+    @apply px-4 text-xs uppercase tracking-widest text-muted-foreground font-semibold;
   }
 
   /* AdSense ads - ensure full visibility and prevent clipping */

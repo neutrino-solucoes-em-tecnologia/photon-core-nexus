@@ -251,24 +251,48 @@ export default function Artigo() {
               <>
             {/* Article Header */}
             <RevealOnScroll>
-              <header className="mb-8">
+              <header className="mb-10">
+                {/* Category Badge */}
+                {article.category && (
+                  <div className="mb-6">
+                    <Link to={`/categoria/${article.category.slug}`}>
+                      <Badge 
+                        variant="outline" 
+                        className="px-4 py-1.5 text-sm font-semibold uppercase tracking-wide bg-primary/10 text-primary border-primary/20 hover:bg-primary hover:text-primary-foreground transition-colors"
+                      >
+                        {article.category.name}
+                      </Badge>
+                    </Link>
+                  </div>
+                )}
+
                 {/* Title */}
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-black leading-tight mb-4">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-[1.1] mb-6 tracking-tight">
                   {article.title}
                 </h1>
 
                 {/* Subtitle/Description */}
                 {article.description && (
-                <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed font-light">
                   {article.description}
                 </p>
                 )}
 
-                {/* Meta Info */}
-                <div className="flex flex-wrap items-center gap-4 py-4 border-y border-border/50">
-                  <div className="text-xs text-muted-foreground">
-                    {formattedUpdatedDate || formattedDate}
+                {/* Meta Info - Enhanced */}
+                <div className="flex flex-wrap items-center gap-6 py-6 border-y border-border/50">
+                  <div className="flex items-center gap-2 article-meta-badge">
+                    <Calendar className="h-4 w-4 text-primary" />
+                    <span className="text-sm font-medium">{formattedShortDate}</span>
                   </div>
+                  <div className="flex items-center gap-2 article-meta-badge">
+                    <Clock className="h-4 w-4 text-primary" />
+                    <span className="text-sm font-medium">{readTime} min de leitura</span>
+                  </div>
+                  {formattedUpdatedDate && (
+                    <div className="text-xs text-muted-foreground hidden md:block">
+                      {formattedUpdatedDate}
+                    </div>
+                  )}
                 </div>
               </header>
             </RevealOnScroll>
@@ -290,35 +314,29 @@ export default function Artigo() {
             {/* Hero Image */}
             {article.image_url && (
             <RevealOnScroll>
-              <div className="mb-8 rounded-xl overflow-hidden">
-                <img
-                  src={article.image_url}
-                  alt={article.image_alt || article.title}
-                  className="w-full aspect-video object-cover"
-                  {...({ fetchpriority: "high" } as React.ImgHTMLAttributes<HTMLImageElement>)}
-                />
-              </div>
+              <figure className="mb-12">
+                <div className="rounded-2xl overflow-hidden shadow-2xl">
+                  <img
+                    src={article.image_url}
+                    alt={article.image_alt || article.title}
+                    className="w-full aspect-video object-cover transform hover:scale-105 transition-transform duration-700"
+                    {...({ fetchpriority: "high" } as React.ImgHTMLAttributes<HTMLImageElement>)}
+                  />
+                </div>
+                {article.image_alt && (
+                  <figcaption className="article-image-caption mt-4">
+                    {article.image_alt}
+                  </figcaption>
+                )}
+              </figure>
             </RevealOnScroll>
             )}
 
-            {/* Article Actions */}
+            {/* Introductory Section */}
             <RevealOnScroll>
-              <div className="flex items-center justify-between mb-8 pb-6 border-b border-border/50">
-                <div className="flex items-center gap-6 text-sm text-muted-foreground">
-                  <div className="flex items-center space-x-2">
-                    <Clock className="h-4 w-4" />
-                    <span>{readTime} min</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Calendar className="h-4 w-4" />
-                    <span>{formattedShortDate}</span>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Button variant="outline" size="sm" className="hover-lift" onClick={handleShare}>
-                    <Share2 className="mr-2 h-4 w-4" />
-                    Compartilhar
-                  </Button>
+              <div className="mb-12">
+                <div className="section-divider">
+                  <span>Artigo</span>
                 </div>
               </div>
             </RevealOnScroll>
@@ -331,7 +349,7 @@ export default function Artigo() {
                   <React.Fragment key={paragraph.id}>
                     <RevealOnScroll>
                       <div 
-                        className="prose prose-lg max-w-none article-content mb-6"
+                        className={`prose prose-lg max-w-none article-content ${index === 0 ? 'drop-cap' : ''}`}
                         dangerouslySetInnerHTML={{ __html: paragraph.content }}
                       />
                     </RevealOnScroll>
@@ -373,21 +391,35 @@ export default function Artigo() {
               </RevealOnScroll>
             )}
 
-            {/* Tags */}
+            {/* Tags Section */}
             {article.metadata?.tags && Array.isArray(article.metadata.tags) && article.metadata.tags.length > 0 && (
             <RevealOnScroll>
-              <div className="flex flex-wrap gap-2 mt-12 pt-8 border-t border-border/50">
-                <Tag className="h-4 w-4 text-muted-foreground mr-2" />
-                {article.metadata.tags.map((tag: string) => (
-                  <Link key={tag} to={`/tag/${tag.toLowerCase().replace(/ /g, '-')}`}>
-                    <Badge 
-                      variant="outline" 
-                      className="hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer hover-lift px-3 py-1"
-                    >
-                      {tag}
-                    </Badge>
-                  </Link>
-                ))}
+              <div className="mt-16 pt-10 border-t border-border/50">
+                <div className="flex items-center gap-3 mb-6">
+                  <Tag className="h-5 w-5 text-primary" />
+                  <h3 className="text-lg font-semibold">Tópicos deste artigo</h3>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  {article.metadata.tags.map((tag: string) => (
+                    <Link key={tag} to={`/tag/${tag.toLowerCase().replace(/ /g, '-')}`}>
+                      <Badge 
+                        variant="outline" 
+                        className="hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer hover-lift px-4 py-2 text-sm font-medium border-2"
+                      >
+                        #{tag}
+                      </Badge>
+                    </Link>
+                  ))}
+                </div>
+                
+                {/* Share Section */}
+                <div className="mt-10 pt-8 border-t border-border/50 flex items-center justify-between">
+                  <p className="text-sm text-muted-foreground">Gostou deste artigo?</p>
+                  <Button variant="default" size="lg" className="hover-lift" onClick={handleShare}>
+                    <Share2 className="mr-2 h-4 w-4" />
+                    Compartilhar
+                  </Button>
+                </div>
               </div>
             </RevealOnScroll>
             )}
@@ -400,8 +432,11 @@ export default function Artigo() {
 
       {/* Related Articles */}
       {!articleError && relatedArticles.length > 0 && (
-      <section className="wide-container py-8 mt-8 lg:mt-16">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6">Leia Também</h2>
+      <section className="wide-container py-12 mt-16 lg:mt-24">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-black mb-3">Continue Lendo</h2>
+          <p className="text-muted-foreground text-lg">Artigos relacionados que podem te interessar</p>
+        </div>
         
         {relatedLoading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
