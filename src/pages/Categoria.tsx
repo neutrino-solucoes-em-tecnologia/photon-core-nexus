@@ -24,6 +24,7 @@ import {
   PaginationPrevious,
 } from '@/components/ui/pagination';
 import RevealOnScroll from '@/components/RevealOnScroll';
+import AdSlot from '@/components/AdSlot';
 import { useAdSense } from '@/hooks/use-adsense';
 import { useCategoryArticles } from '@/hooks/use-articles';
 import techImage from '@/assets/article-tech.jpg';
@@ -630,43 +631,37 @@ export default function Categoria() {
                 </article>
 
                 {/* CATEGORIA-01 - Após 1º artigo */}
-                {index === 0 && isEnabled && (
+                {index === 0 && (
                   <div className="my-8 not-prose">
-                    <ins 
-                      className="adsbygoogle"
-                      style={{ display: 'block' }}
-                      data-ad-format="fluid"
-                      data-ad-layout-key="-62+dr+1e-1m+57"
-                      data-ad-client={clientId}
-                      data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_01}
+                    <AdSlot
+                      slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_01}
+                      format="auto"
+                      position={1}
+                      mockLabel="CATEGORIA #1"
                     />
                   </div>
                 )}
 
                 {/* CATEGORIA-02 - Após 5º artigo */}
-                {index === 4 && isEnabled && (
+                {index === 4 && (
                   <div className="my-8 not-prose">
-                    <ins 
-                      className="adsbygoogle"
-                      style={{ display: 'block' }}
-                      data-ad-format="fluid"
-                      data-ad-layout-key="-62+dr+1e-1m+57"
-                      data-ad-client={clientId}
-                      data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_02}
+                    <AdSlot
+                      slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_02}
+                      format="auto"
+                      position={2}
+                      mockLabel="CATEGORIA #2"
                     />
                   </div>
                 )}
 
                 {/* CATEGORIA-03 - Antes do penúltimo artigo */}
-                {index === currentArticles.length - 2 && currentArticles.length >= 2 && isEnabled && (
+                {index === currentArticles.length - 2 && currentArticles.length >= 2 && (
                   <div className="my-8 not-prose">
-                    <ins 
-                      className="adsbygoogle"
-                      style={{ display: 'block' }}
-                      data-ad-format="fluid"
-                      data-ad-layout-key="-62+dr+1e-1m+57"
-                      data-ad-client={clientId}
-                      data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_03}
+                    <AdSlot
+                      slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_03}
+                      format="auto"
+                      position={3}
+                      mockLabel="CATEGORIA #3"
                     />
                   </div>
                 )}

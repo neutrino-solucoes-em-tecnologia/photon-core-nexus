@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useArticles } from '@/hooks/use-articles';
 import { Skeleton } from '@/components/ui/skeleton';
+import AdSlot from '@/components/AdSlot';
 
 export default function NewsFeed() {
   const { data: articlesData, isLoading } = useArticles(1, 6);
@@ -110,13 +111,11 @@ export default function NewsFeed() {
                 {(index === 0 || index === newsArticles.length - 2) && (
                   <div className="py-4 md:py-6 border-b border-border/50">
                     <div className="not-prose">
-                      <ins 
-                        className="adsbygoogle"
-                        style={{ display: 'block' }}
-                        data-ad-client={import.meta.env.VITE_ADSENSE_CLIENT_ID}
-                        data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_03}
-                        data-ad-format="auto"
-                        data-full-width-responsive="true"
+                      <AdSlot
+                        slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_03}
+                        format="auto"
+                        position={3}
+                        mockLabel="NEWS FEED AD"
                       />
                     </div>
                   </div>

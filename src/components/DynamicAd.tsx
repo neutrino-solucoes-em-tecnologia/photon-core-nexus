@@ -40,9 +40,41 @@ export default function DynamicAd({
 
   const MIN_RELOAD_INTERVAL = 45000; // 45 segundos em milissegundos
 
-  // Se AdSense não está habilitado, não renderiza nada
+  // Se AdSense não está habilitado, mostra placeholder mock
   if (!isEnabled) {
-    return null;
+    const mockDimensions = {
+      auto: { width: '100%', height: '90px' },
+      horizontal: { width: '100%', height: '90px' },
+      vertical: { width: '300px', height: '600px' },
+      rectangle: { width: '300px', height: '250px' },
+    };
+    
+    const dimensions = mockDimensions[format];
+    
+    return (
+      <div
+        className={`relative bg-muted/30 border-2 border-dashed border-primary/30 rounded-lg flex items-center justify-center ${className}`}
+        style={{ 
+          width: dimensions.width,
+          height: dimensions.height,
+          minHeight: dimensions.height,
+        }}
+      >
+        <div className="text-center p-4">
+          <div className="text-xs font-mono text-primary/70 mb-1">
+            AD POSITION {position}
+          </div>
+          <div className="text-xs font-bold text-primary uppercase mb-1">
+            {format === 'vertical' ? '300x600 Half Page' : 
+             format === 'rectangle' ? '300x250 Rectangle' : 
+             'Responsive Banner'}
+          </div>
+          <div className="text-[10px] text-muted-foreground font-mono">
+            Slot: {slot}
+          </div>
+        </div>
+      </div>
+    );
   }
 
   // Dimensões e estilos baseados no formato para AdSense

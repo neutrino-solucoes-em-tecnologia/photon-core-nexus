@@ -7,6 +7,7 @@ import RevealOnScroll from '@/components/RevealOnScroll';
 import HeroSection from '@/components/HeroSection';
 import FeaturedHighlights from '@/components/FeaturedHighlights';
 import NewsFeed from '@/components/NewsFeed';
+import AdSlot from '@/components/AdSlot';
 import { useAdSenseInit, useAdSense } from '@/hooks/use-adsense';
 import { useArticles } from '@/hooks/use-articles';
 
@@ -24,43 +25,35 @@ export default function Home() {
       <HeroSection />
 
       {/* HOME-DISPLAY-01 - Ad below Hero Section */}
-      {isEnabled && (
-        <RevealOnScroll>
-          <div className="py-4 md:py-6 px-4 sm:px-6">
-            <div className="not-prose">
-              <ins 
-                className="adsbygoogle"
-                style={{ display: 'block' }}
-                data-ad-client={clientId}
-                data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_01}
-                data-ad-format="auto"
-                data-full-width-responsive="true"
-              />
-            </div>
+      <RevealOnScroll>
+        <div className="py-4 md:py-6 px-4 sm:px-6">
+          <div className="not-prose">
+            <AdSlot
+              slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_01}
+              format="auto"
+              position={1}
+              mockLabel="HOME DISPLAY #1"
+            />
           </div>
-        </RevealOnScroll>
-      )}
+        </div>
+      </RevealOnScroll>
 
         {/* Featured Highlights - Mais destaques */}
         <FeaturedHighlights />
 
       {/* HOME-DISPLAY-02 - Ad after Featured Highlights */}
-      {isEnabled && (
-        <RevealOnScroll>
-          <div className="py-4 md:py-6 px-4 sm:px-6">
-            <div className="not-prose">
-              <ins 
-                className="adsbygoogle"
-                style={{ display: 'block' }}
-                data-ad-client={clientId}
-                data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_02}
-                data-ad-format="auto"
-                data-full-width-responsive="true"
-              />
-            </div>
+      <RevealOnScroll>
+        <div className="py-4 md:py-6 px-4 sm:px-6">
+          <div className="not-prose">
+            <AdSlot
+              slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_02}
+              format="auto"
+              position={2}
+              mockLabel="HOME DISPLAY #2"
+            />
           </div>
-        </RevealOnScroll>
-      )}
+        </div>
+      </RevealOnScroll>
 
         {/* News Feed - Feed de Notícias */}
         <RevealOnScroll>

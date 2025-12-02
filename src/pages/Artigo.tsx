@@ -9,6 +9,7 @@ import ArticleCard from '@/components/ArticleCard';
 import ScrollProgress from '@/components/ScrollProgress';
 import FloatingShare from '@/components/FloatingShare';
 import RevealOnScroll from '@/components/RevealOnScroll';
+import AdSlot from '@/components/AdSlot';
 import { useAdSenseInit, useAdSense } from '@/hooks/use-adsense';
 import { useArticle, useRelatedArticles } from '@/hooks/use-articles';
 
@@ -128,16 +129,14 @@ export default function Artigo() {
       )}
 
       {/* POSITION 1 - Top Mobile Ad (Mobile Only) */}
-      {!articleError && isEnabled && (
+      {!articleError && (
         <div className="lg:hidden px-4 sm:px-6 pt-4">
           <div className="not-prose">
-            <ins 
-              className="adsbygoogle"
-              style={{ display: 'block' }}
-              data-ad-client={clientId}
-              data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MOBILE_TOP}
-              data-ad-format="horizontal"
-              data-full-width-responsive="true"
+            <AdSlot
+              slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MOBILE_TOP}
+              format="horizontal"
+              position={1}
+              mockLabel="MOBILE TOP"
             />
           </div>
         </div>
@@ -274,18 +273,14 @@ export default function Artigo() {
             </RevealOnScroll>
 
             {/* POSITION 2 - After Hero Image */}
-            {isEnabled && (
-              <div className="mb-8 not-prose">
-                <ins 
-                  className="adsbygoogle"
-                  style={{ display: 'block' }}
-                  data-ad-client={clientId}
-                  data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_AFTER_HERO}
-                  data-ad-format="auto"
-                  data-full-width-responsive="true"
-                />
-              </div>
-            )}
+            <div className="mb-8 not-prose">
+              <AdSlot
+                slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_AFTER_HERO}
+                format="auto"
+                position={2}
+                mockLabel="AFTER HERO"
+              />
+            </div>
 
             {/* Hero Image */}
             {article.image_url && (
@@ -331,43 +326,37 @@ export default function Artigo() {
                     </RevealOnScroll>
                     
                     {/* POSITION 3 - Mid-Content #1 (~25% of content) */}
-                    {index === 0 && isEnabled && (
+                    {index === 0 && (
                       <div className="my-8 not-prose">
-                        <ins 
-                          className="adsbygoogle"
-                          style={{ display: 'block' }}
-                          data-ad-client={clientId}
-                          data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MID_CONTENT_1}
-                          data-ad-format="auto"
-                          data-full-width-responsive="true"
+                        <AdSlot
+                          slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MID_CONTENT_1}
+                          format="auto"
+                          position={3}
+                          mockLabel="MID-CONTENT #1"
                         />
                       </div>
                     )}
                     
                     {/* POSITION 4 - Mid-Content #2 (~50% of content) */}
-                    {index === Math.floor(article.paragraphs.length / 2) && isEnabled && (
+                    {index === Math.floor(article.paragraphs.length / 2) && (
                       <div className="my-8 not-prose">
-                        <ins 
-                          className="adsbygoogle"
-                          style={{ display: 'block' }}
-                          data-ad-client={clientId}
-                          data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MID_CONTENT_2}
-                          data-ad-format="auto"
-                          data-full-width-responsive="true"
+                        <AdSlot
+                          slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MID_CONTENT_2}
+                          format="auto"
+                          position={4}
+                          mockLabel="MID-CONTENT #2"
                         />
                       </div>
                     )}
                     
                     {/* POSITION 5 - Mid-Content #3 (~75% of content) */}
-                    {index === Math.floor(article.paragraphs.length * 0.75) && isEnabled && (
+                    {index === Math.floor(article.paragraphs.length * 0.75) && (
                       <div className="my-8 not-prose">
-                        <ins 
-                          className="adsbygoogle"
-                          style={{ display: 'block' }}
-                          data-ad-client={clientId}
-                          data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MID_CONTENT_3}
-                          data-ad-format="auto"
-                          data-full-width-responsive="true"
+                        <AdSlot
+                          slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MID_CONTENT_3}
+                          format="auto"
+                          position={5}
+                          mockLabel="MID-CONTENT #3"
                         />
                       </div>
                     )}
@@ -403,20 +392,16 @@ export default function Artigo() {
                 </div>
                 
                 {/* POSITION 6 - Bottom Content Ad */}
-                {isEnabled && (
-                  <div className="mt-10 pt-8 border-t border-border/50">
-                    <div className="not-prose">
-                      <ins 
-                        className="adsbygoogle"
-                        style={{ display: 'block' }}
-                        data-ad-client={clientId}
-                        data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_BOTTOM_CONTENT}
-                        data-ad-format="auto"
-                        data-full-width-responsive="true"
-                      />
-                    </div>
+                <div className="mt-10 pt-8 border-t border-border/50">
+                  <div className="not-prose">
+                    <AdSlot
+                      slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_BOTTOM_CONTENT}
+                      format="auto"
+                      position={6}
+                      mockLabel="BOTTOM CONTENT"
+                    />
                   </div>
-                )}
+                </div>
                 
                 {/* Share Section */}
                 <div className="mt-10 pt-8 border-t border-border/50 flex items-center justify-between">
@@ -436,26 +421,28 @@ export default function Artigo() {
           </div>
           
           {/* Desktop Sticky Sidebar (Positions 7 & 8) */}
-          {!articleError && isEnabled && (
+          {!articleError && (
             <aside className="hidden lg:block">
               <div className="sticky top-24 space-y-6">
                 {/* POSITION 7 - Sidebar Top (300x600 Half Page - Premium) */}
                 <div className="not-prose">
-                  <ins 
-                    className="adsbygoogle"
-                    style={{ display: 'inline-block', width: '300px', height: '600px' }}
-                    data-ad-client={clientId}
-                    data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_SIDEBAR_TOP}
+                  <AdSlot
+                    slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_SIDEBAR_TOP}
+                    format="vertical"
+                    position={7}
+                    mockLabel="SIDEBAR TOP"
+                    style={{ width: '300px', height: '600px' }}
                   />
                 </div>
                 
                 {/* POSITION 8 - Sidebar Bottom (300x250 Medium Rectangle) */}
                 <div className="not-prose">
-                  <ins 
-                    className="adsbygoogle"
-                    style={{ display: 'inline-block', width: '300px', height: '250px' }}
-                    data-ad-client={clientId}
-                    data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_SIDEBAR_BOTTOM}
+                  <AdSlot
+                    slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_SIDEBAR_BOTTOM}
+                    format="rectangle"
+                    position={8}
+                    mockLabel="SIDEBAR BOTTOM"
+                    style={{ width: '300px', height: '250px' }}
                   />
                 </div>
               </div>
@@ -466,16 +453,14 @@ export default function Artigo() {
       )}
 
       {/* POSITION 9 - Before Related Mobile Ad (Mobile Only) */}
-      {!articleError && isEnabled && (
+      {!articleError && (
         <div className="lg:hidden px-4 sm:px-6 py-8">
           <div className="not-prose">
-            <ins 
-              className="adsbygoogle"
-              style={{ display: 'block' }}
-              data-ad-client={clientId}
-              data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_BEFORE_RELATED_MOBILE}
-              data-ad-format="horizontal"
-              data-full-width-responsive="true"
+            <AdSlot
+              slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_BEFORE_RELATED_MOBILE}
+              format="horizontal"
+              position={9}
+              mockLabel="BEFORE RELATED MOBILE"
             />
           </div>
         </div>
@@ -557,16 +542,14 @@ export default function Artigo() {
       )}
       
       {/* POSITION 10 - Final Bottom Ad */}
-      {!articleError && isEnabled && (
+      {!articleError && (
         <div className="wide-container py-8">
           <div className="not-prose">
-            <ins 
-              className="adsbygoogle"
-              style={{ display: 'block' }}
-              data-ad-client={clientId}
-              data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_FINAL_BOTTOM}
-              data-ad-format="auto"
-              data-full-width-responsive="true"
+            <AdSlot
+              slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_FINAL_BOTTOM}
+              format="auto"
+              position={10}
+              mockLabel="FINAL BOTTOM"
             />
           </div>
         </div>
