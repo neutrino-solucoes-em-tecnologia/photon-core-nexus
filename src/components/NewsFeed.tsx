@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useArticles } from '@/hooks/use-articles';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -7,18 +6,6 @@ import AdSlot from '@/components/AdSlot';
 export default function NewsFeed() {
   const { data: articlesData, isLoading } = useArticles(1, 6);
   const newsArticles = articlesData?.data || [];
-
-  useEffect(() => {
-    try {
-      setTimeout(() => {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-      }, 100);
-    } catch (err) {
-      if (import.meta.env.VITE_SHOW_ADSENSE_ERRORS === 'true') {
-        console.error('AdSense error:', err);
-      }
-    }
-  }, []);
 
   return (
     <section className="py-4 md:py-6 px-4 sm:px-6">
