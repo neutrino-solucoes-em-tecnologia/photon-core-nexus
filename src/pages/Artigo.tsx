@@ -14,7 +14,7 @@ import { useArticle, useRelatedArticles } from '@/hooks/use-articles';
 
 export default function Artigo() {
   const { slug } = useParams();
-  const { isEnabled } = useAdSenseInit(3);
+  const { isEnabled } = useAdSenseInit(10);
   const { clientId } = useAdSense();
   
   // Scroll to top when slug changes
@@ -127,9 +127,28 @@ export default function Artigo() {
       </RevealOnScroll>
       )}
 
-      {/* Main Container */}
+      {/* POSITION 1 - Top Mobile Ad (Mobile Only) */}
+      {!articleError && isEnabled && (
+        <div className="lg:hidden px-4 sm:px-6 pt-4">
+          <div className="not-prose">
+            <ins 
+              className="adsbygoogle"
+              style={{ display: 'block' }}
+              data-ad-client={clientId}
+              data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MOBILE_TOP}
+              data-ad-format="horizontal"
+              data-full-width-responsive="true"
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Main Container with Sidebar Layout */}
       {!articleError && (
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 py-8">
+      <div className="relative wide-container py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8">
+          {/* Main Article Column */}
+          <div className="min-w-0">
           {/* Main Content */}
           <article className="w-full">
             
@@ -254,14 +273,14 @@ export default function Artigo() {
               </header>
             </RevealOnScroll>
 
-            {/* ARTIGO-TITULO-01 */}
+            {/* POSITION 2 - After Hero Image */}
             {isEnabled && (
               <div className="mb-8 not-prose">
                 <ins 
                   className="adsbygoogle"
                   style={{ display: 'block' }}
                   data-ad-client={clientId}
-                  data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_TITULO_01}
+                  data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_AFTER_HERO}
                   data-ad-format="auto"
                   data-full-width-responsive="true"
                 />
@@ -311,28 +330,42 @@ export default function Artigo() {
                       />
                     </RevealOnScroll>
                     
-                    {/* ARTIGO-TITULO-02 - Após primeiro parágrafo */}
+                    {/* POSITION 3 - Mid-Content #1 (~25% of content) */}
                     {index === 0 && isEnabled && (
                       <div className="my-8 not-prose">
                         <ins 
                           className="adsbygoogle"
                           style={{ display: 'block' }}
                           data-ad-client={clientId}
-                          data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_TITULO_02}
+                          data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MID_CONTENT_1}
                           data-ad-format="auto"
                           data-full-width-responsive="true"
                         />
                       </div>
                     )}
                     
-                    {/* ARTIGO-CORPO-01 - No meio do artigo */}
+                    {/* POSITION 4 - Mid-Content #2 (~50% of content) */}
                     {index === Math.floor(article.paragraphs.length / 2) && isEnabled && (
                       <div className="my-8 not-prose">
                         <ins 
                           className="adsbygoogle"
                           style={{ display: 'block' }}
                           data-ad-client={clientId}
-                          data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_CORPO_01}
+                          data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MID_CONTENT_2}
+                          data-ad-format="auto"
+                          data-full-width-responsive="true"
+                        />
+                      </div>
+                    )}
+                    
+                    {/* POSITION 5 - Mid-Content #3 (~75% of content) */}
+                    {index === Math.floor(article.paragraphs.length * 0.75) && isEnabled && (
+                      <div className="my-8 not-prose">
+                        <ins 
+                          className="adsbygoogle"
+                          style={{ display: 'block' }}
+                          data-ad-client={clientId}
+                          data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MID_CONTENT_3}
                           data-ad-format="auto"
                           data-full-width-responsive="true"
                         />
@@ -369,6 +402,22 @@ export default function Artigo() {
                   ))}
                 </div>
                 
+                {/* POSITION 6 - Bottom Content Ad */}
+                {isEnabled && (
+                  <div className="mt-10 pt-8 border-t border-border/50">
+                    <div className="not-prose">
+                      <ins 
+                        className="adsbygoogle"
+                        style={{ display: 'block' }}
+                        data-ad-client={clientId}
+                        data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_BOTTOM_CONTENT}
+                        data-ad-format="auto"
+                        data-full-width-responsive="true"
+                      />
+                    </div>
+                  </div>
+                )}
+                
                 {/* Share Section */}
                 <div className="mt-10 pt-8 border-t border-border/50 flex items-center justify-between">
                   <p className="text-sm text-muted-foreground">Gostou deste artigo?</p>
@@ -384,9 +433,54 @@ export default function Artigo() {
             ) : null}
 
           </article>
+          </div>
+          
+          {/* Desktop Sticky Sidebar (Positions 7 & 8) */}
+          {!articleError && isEnabled && (
+            <aside className="hidden lg:block">
+              <div className="sticky top-24 space-y-6">
+                {/* POSITION 7 - Sidebar Top (300x600 Half Page - Premium) */}
+                <div className="not-prose">
+                  <ins 
+                    className="adsbygoogle"
+                    style={{ display: 'inline-block', width: '300px', height: '600px' }}
+                    data-ad-client={clientId}
+                    data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_SIDEBAR_TOP}
+                  />
+                </div>
+                
+                {/* POSITION 8 - Sidebar Bottom (300x250 Medium Rectangle) */}
+                <div className="not-prose">
+                  <ins 
+                    className="adsbygoogle"
+                    style={{ display: 'inline-block', width: '300px', height: '250px' }}
+                    data-ad-client={clientId}
+                    data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_SIDEBAR_BOTTOM}
+                  />
+                </div>
+              </div>
+            </aside>
+          )}
+        </div>
       </div>
       )}
 
+      {/* POSITION 9 - Before Related Mobile Ad (Mobile Only) */}
+      {!articleError && isEnabled && (
+        <div className="lg:hidden px-4 sm:px-6 py-8">
+          <div className="not-prose">
+            <ins 
+              className="adsbygoogle"
+              style={{ display: 'block' }}
+              data-ad-client={clientId}
+              data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_BEFORE_RELATED_MOBILE}
+              data-ad-format="horizontal"
+              data-full-width-responsive="true"
+            />
+          </div>
+        </div>
+      )}
+      
       {/* Related Articles */}
       {!articleError && relatedArticles.length > 0 && (
       <section className="wide-container py-12 mt-16 lg:mt-24">
@@ -460,6 +554,22 @@ export default function Artigo() {
         </div>
         )}
       </section>
+      )}
+      
+      {/* POSITION 10 - Final Bottom Ad */}
+      {!articleError && isEnabled && (
+        <div className="wide-container py-8">
+          <div className="not-prose">
+            <ins 
+              className="adsbygoogle"
+              style={{ display: 'block' }}
+              data-ad-client={clientId}
+              data-ad-slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_FINAL_BOTTOM}
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            />
+          </div>
+        </div>
       )}
     </div>
   );
