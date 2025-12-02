@@ -560,13 +560,6 @@ export default function Categoria() {
                       })
                     : 'Data não disponível';
                   
-                  // Calculate read time (aproximação: 200 palavras por minuto)
-                  const wordCount = article.paragraphs?.reduce((total, p) => {
-                    const text = p.content.replace(/<[^>]*>/g, ''); // Remove HTML tags
-                    return total + text.split(/\s+/).length;
-                  }, 0) || 0;
-                  const readTime = Math.max(1, Math.ceil(wordCount / 200));
-                  
                   return (
                   <React.Fragment key={article.slug}>
                   <article
@@ -578,30 +571,18 @@ export default function Categoria() {
                   {/* Thumbnail */}
                   <a 
                     href={`/artigo/${article.slug}`}
-                    className="relative overflow-hidden rounded-md aspect-video bg-muted"
+                    className="relative overflow-hidden rounded-md aspect-video bg-muted/30 flex-shrink-0"
                   >
-                    {article.image_url ? (
-                      <img
-                        src={article.image_url}
-                        alt={article.image_alt || article.title}
-                        className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-85"
-                        loading="lazy"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-muted text-muted-foreground">
-                        <span className="text-4xl font-bold opacity-20">
-                          {article.title.charAt(0)}
-                        </span>
-                      </div>
-                    )}
+                    <img
+                      src={article.image_url || ''}
+                      alt={article.image_alt || article.title}
+                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110 group-hover:saturate-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
                   </a>
 
                   {/* Content */}
                   <div className="flex flex-col justify-center min-h-[166px]">
-                    {/* Meta Info - Mobile */}
-                    <div className="flex items-center gap-3 text-xs text-primary font-bold uppercase tracking-wide mb-2 md:hidden">
-                      <span>{readTime} min</span>
-                    </div>
 
                     {/* Title */}
                     <h3 className="mb-2">
@@ -635,14 +616,6 @@ export default function Categoria() {
                           {article.category.name}
                         </a>
                       )}
-                      
-                      <span className="flex items-center gap-1">
-                        <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="M12 20h9"/>
-                          <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
-                        </svg>
-                        {readTime} min
-                      </span>
                     </div>
 
                     {/* Meta Info Mobile - Bottom */}
@@ -652,7 +625,6 @@ export default function Categoria() {
                           {article.category.name}
                         </a>
                       )}
-                      <span>{readTime} min</span>
                     </div>
                   </div>
                 </article>
