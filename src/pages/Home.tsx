@@ -8,12 +8,11 @@ import HeroSection from '@/components/HeroSection';
 import FeaturedHighlights from '@/components/FeaturedHighlights';
 import NewsFeed from '@/components/NewsFeed';
 import AdSlot from '@/components/AdSlot';
-import { useAdSenseInit, useAdSense } from '@/hooks/use-adsense';
+import { useAdSense } from '@/hooks/use-adsense';
 import { useArticles } from '@/hooks/use-articles';
 
 export default function Home() {
   const { isEnabled, clientId } = useAdSense();
-  useAdSenseInit(2);
   
   // Fetch featured articles from API
   const { data: articlesData, isLoading } = useArticles(1, 3);

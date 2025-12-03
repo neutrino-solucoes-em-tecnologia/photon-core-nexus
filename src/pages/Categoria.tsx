@@ -25,7 +25,7 @@ import {
 } from '@/components/ui/pagination';
 import RevealOnScroll from '@/components/RevealOnScroll';
 import AdSlot from '@/components/AdSlot';
-import { useAdSense, useAdSenseInit } from '@/hooks/use-adsense';
+import { useAdSense } from '@/hooks/use-adsense';
 import { useCategoryArticles } from '@/hooks/use-articles';
 import techImage from '@/assets/article-tech.jpg';
 import businessImage from '@/assets/article-business.jpg';
@@ -353,7 +353,6 @@ export default function Categoria() {
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const { isEnabled, clientId } = useAdSense();
-  useAdSenseInit(4);
   const itemsPerPage = 12;
   
   // Fetch articles from API

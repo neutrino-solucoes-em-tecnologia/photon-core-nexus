@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useAdSense } from '@/hooks/use-adsense';
 
 interface AdSlotProps {
@@ -18,6 +19,17 @@ export default function AdSlot({
   mockLabel = 'Ad'
 }: AdSlotProps) {
   const { isEnabled, clientId } = useAdSense();
+
+  useEffect(() => {
+    if (isEnabled && slot) {
+      try {
+        // @ts-ignore
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      } catch (err) {
+        // Ignora erro de ad duplicado
+      }
+    }
+  }, [isEnabled, slot]);
 
   // Mock ad placeholder quando desabilitado ou slot indefinido
   if (!isEnabled || !slot) {

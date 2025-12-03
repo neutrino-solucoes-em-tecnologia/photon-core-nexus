@@ -10,13 +10,12 @@ import ScrollProgress from '@/components/ScrollProgress';
 import FloatingShare from '@/components/FloatingShare';
 import RevealOnScroll from '@/components/RevealOnScroll';
 import AdSlot from '@/components/AdSlot';
-import { useAdSenseInit, useAdSense } from '@/hooks/use-adsense';
+import { useAdSense } from '@/hooks/use-adsense';
 import { useArticle, useRelatedArticles } from '@/hooks/use-articles';
 
 export default function Artigo() {
   const { slug } = useParams();
-  const { isEnabled } = useAdSenseInit(10);
-  const { clientId } = useAdSense();
+  const { isEnabled, clientId } = useAdSense();
   
   // Scroll to top when slug changes
   useEffect(() => {
