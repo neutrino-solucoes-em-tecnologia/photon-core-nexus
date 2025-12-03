@@ -106,6 +106,12 @@ export default function Footer() {
                 <span className="text-xl font-bold text-primary-foreground">P</span>
               </div>
               <span className="text-lg font-bold">Photon Media</span>
+            </div>
+            <p className="text-sm text-muted-foreground max-w-xs">
+              O núcleo que move o universo. Conteúdo inteligente para mentes curiosas.
+            </p>
+          </div>
+
           {/* Navegação */}
           <div>
             <h3 className="font-semibold mb-4 text-base">Navegação</h3>
@@ -121,12 +127,6 @@ export default function Footer() {
               {features.trabalheConosco.enabled && (
                 <li><Link to={features.trabalheConosco.route} className="hover:text-foreground transition-colors inline-block">Trabalhe Conosco</Link></li>
               )}
-            </ul>
-          </div>i><Link to="/" className="hover:text-foreground transition-colors inline-block">Início</Link></li>
-              <li><Link to="/sobre" className="hover:text-foreground transition-colors inline-block">Sobre</Link></li>
-              <li><Link to="/imprensa" className="hover:text-foreground transition-colors inline-block">Imprensa</Link></li>
-              <li><Link to="/fale-conosco" className="hover:text-foreground transition-colors inline-block">Fale Conosco</Link></li>
-              <li><Link to="/trabalhe-conosco" className="hover:text-foreground transition-colors inline-block">Trabalhe Conosco</Link></li>
             </ul>
           </div>
 
@@ -165,6 +165,12 @@ export default function Footer() {
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-9 h-9 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
                 <Linkedin className="h-4 w-4" />
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="w-9 h-9 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+                <Youtube className="h-4 w-4" />
+              </a>
+            </div>
+            
             {/* Newsletter - Desktop */}
             <div className="mt-4">
               <p className="text-xs text-muted-foreground mb-2">Receba nossas novidades</p>
@@ -174,12 +180,6 @@ export default function Footer() {
                   Assinar Newsletter
                 </Link>
               )}
-            </div>lassName="mt-4">
-              <p className="text-xs text-muted-foreground mb-2">Receba nossas novidades</p>
-              <Link to="/fale-conosco" className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:underline">
-                <Mail className="h-3.5 w-3.5" />
-                Assinar Newsletter
-              </Link>
             </div>
           </div>
         </div>
