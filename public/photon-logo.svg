@@ -1,0 +1,33 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer ring representing energy/light waves -->
+  <circle cx="20" cy="20" r="18" stroke="url(#gradient1)" stroke-width="2" opacity="0.3"/>
+  <circle cx="20" cy="20" r="15" stroke="url(#gradient1)" stroke-width="1.5" opacity="0.5"/>
+  
+  <!-- Central photon particle symbol -->
+  <circle cx="20" cy="20" r="8" fill="url(#gradient2)"/>
+  
+  <!-- Light rays emanating from center -->
+  <path d="M20 4 L20 12" stroke="url(#gradient1)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M20 28 L20 36" stroke="url(#gradient1)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M4 20 L12 20" stroke="url(#gradient1)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M28 20 L36 20" stroke="url(#gradient1)" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Diagonal rays -->
+  <path d="M8 8 L13.5 13.5" stroke="url(#gradient1)" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  <path d="M26.5 26.5 L32 32" stroke="url(#gradient1)" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  <path d="M32 8 L26.5 13.5" stroke="url(#gradient1)" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  <path d="M13.5 26.5 L8 32" stroke="url(#gradient1)" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="gradient1" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0C4767"/>
+      <stop offset="50%" stop-color="#FA7921"/>
+      <stop offset="100%" stop-color="#B9A44C"/>
+    </linearGradient>
+    <radialGradient id="gradient2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FA7921"/>
+      <stop offset="100%" stop-color="#0C4767"/>
+    </radialGradient>
+  </defs>
+</svg>

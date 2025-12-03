@@ -48,7 +48,8 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { useTheme } from '@/components/theme-provider';
 import { features } from '@/lib/features';
-import photonLogoUrl from '@/assets/photon-logo.svg';
+
+const SITE_LOGO = import.meta.env.VITE_SITE_LOGO || '/photon-logo.svg';
 
 // Menu items da navegação principal (fixos)
 const baseMenuItems = [
@@ -176,7 +177,7 @@ export function AppSidebar() {
                 <TooltipTrigger asChild>
                   <div className="relative group cursor-pointer">
                     <img 
-                      src={photonLogoUrl} 
+                      src={SITE_LOGO} 
                       alt="Photon Logo" 
                       className="flex-shrink-0 transition-all duration-200 group-hover:scale-110 w-10 h-10"
                     />
