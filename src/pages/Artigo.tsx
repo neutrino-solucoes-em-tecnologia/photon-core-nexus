@@ -336,7 +336,7 @@ export default function Artigo() {
                         <div className="py-4 md:py-6 px-4 sm:px-6">
                           <div className="not-prose">
                             <AdSlot
-                              slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_02}
+                              slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_03}
                               format="auto"
                               position={3}
                               mockLabel="ANTES DO ÚLTIMO PARÁGRAFO"
