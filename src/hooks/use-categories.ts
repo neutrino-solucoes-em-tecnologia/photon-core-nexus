@@ -15,6 +15,19 @@ export function useCategories() {
 }
 
 /**
+ * Hook para buscar top categorias (mais artigos) - usado no footer
+ * Cache de 2 horas
+ */
+export function useTopCategories(limit: number = 5) {
+  return useQuery<Category[], Error>({
+    queryKey: ['categories', 'top', limit],
+    queryFn: () => categoryService.getTopCategories(limit),
+    staleTime: 1000 * 60 * 120, // 2 horas
+    gcTime: 1000 * 60 * 180, // 3 horas
+  });
+}
+
+/**
  * Hook para buscar uma categoria por slug
  */
 export function useCategory(slug: string) {

@@ -16,6 +16,27 @@ class CategoryService {
   }
 
   /**
+   * Obtém as top 5 categorias com mais artigos (para footer)
+   * Cache: 2 horas
+   */
+  async getTopCategories(limit: number = 5): Promise<Category[]> {
+    try {
+      const response = await apiClient.get<ApiResponse<Category[]>>('/categories', {
+        params: {
+          sort: 'articles_count',
+          order: 'desc',
+          limit,
+        },
+      });
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching top categories:', error);
+      // Fallback: retorna categorias normais em caso de erro
+      return this.getCategories().then(cats => cats.slice(0, limit));
+    }
+  }
+
+  /**
    * Obtém uma categoria por slug
    */
   async getCategoryBySlug(slug: string): Promise<Category> {

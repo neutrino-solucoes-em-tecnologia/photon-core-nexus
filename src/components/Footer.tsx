@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Linkedin, Youtube, Mail, MapPin, Phone } from 'lucide-react';
 import { features } from '@/lib/features';
+import { useTopCategories } from '@/hooks/use-categories';
 
 export default function Footer() {
+  // Busca top 5 categorias com mais artigos (cache 2h)
+  const { data: topCategories = [] } = useTopCategories(5);
+
   return (
     <footer className="border-t bg-muted/30 mt-12 md:mt-20">
       <div className="wide-container py-8 md:py-12">
@@ -57,11 +61,27 @@ export default function Footer() {
             <div>
               <h3 className="font-semibold mb-3 text-sm">Categorias</h3>
               <ul className="space-y-1.5 text-xs text-muted-foreground">
-                <li><Link to="/categoria/tecnologia" className="hover:text-foreground transition-colors inline-block">Tecnologia</Link></li>
-                <li><Link to="/categoria/negocios" className="hover:text-foreground transition-colors inline-block">Negócios</Link></li>
-                <li><Link to="/categoria/inovacao" className="hover:text-foreground transition-colors inline-block">Inovação</Link></li>
-                <li><Link to="/categoria/ciencia" className="hover:text-foreground transition-colors inline-block">Ciência</Link></li>
-                <li><Link to="/categoria/cultura" className="hover:text-foreground transition-colors inline-block">Cultura</Link></li>
+                {topCategories.length > 0 ? (
+                  topCategories.map((category) => (
+                    <li key={category.slug}>
+                      <Link 
+                        to={`/categoria/${category.slug}`} 
+                        className="hover:text-foreground transition-colors inline-block"
+                      >
+                        {category.name}
+                      </Link>
+                    </li>
+                  ))
+                ) : (
+                  // Fallback enquanto carrega
+                  <>
+                    <li><Link to="/categoria/tecnologia" className="hover:text-foreground transition-colors inline-block">Tecnologia</Link></li>
+                    <li><Link to="/categoria/negocios" className="hover:text-foreground transition-colors inline-block">Negócios</Link></li>
+                    <li><Link to="/categoria/inovacao" className="hover:text-foreground transition-colors inline-block">Inovação</Link></li>
+                    <li><Link to="/categoria/ciencia" className="hover:text-foreground transition-colors inline-block">Ciência</Link></li>
+                    <li><Link to="/categoria/cultura" className="hover:text-foreground transition-colors inline-block">Cultura</Link></li>
+                  </>
+                )}
               </ul>
             </div>
 
@@ -114,17 +134,33 @@ export default function Footer() {
 
           {/* Navegação */}
           <div>
-            <h3 className="font-semibold mb-4 text-base">Navegação</h3>
+          {/* Categorias */}
+          <div>
+            <h3 className="font-semibold mb-4 text-base">Categorias</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/" className="hover:text-foreground transition-colors inline-block">Início</Link></li>
-              <li><Link to="/sobre" className="hover:text-foreground transition-colors inline-block">Sobre</Link></li>
-              {features.imprensa.enabled && (
-                <li><Link to={features.imprensa.route} className="hover:text-foreground transition-colors inline-block">Imprensa</Link></li>
+              {topCategories.length > 0 ? (
+                topCategories.map((category) => (
+                  <li key={category.slug}>
+                    <Link 
+                      to={`/categoria/${category.slug}`} 
+                      className="hover:text-foreground transition-colors inline-block"
+                    >
+                      {category.name}
+                    </Link>
+                  </li>
+                ))
+              ) : (
+                // Fallback enquanto carrega
+                <>
+                  <li><Link to="/categoria/tecnologia" className="hover:text-foreground transition-colors inline-block">Tecnologia</Link></li>
+                  <li><Link to="/categoria/negocios" className="hover:text-foreground transition-colors inline-block">Negócios</Link></li>
+                  <li><Link to="/categoria/inovacao" className="hover:text-foreground transition-colors inline-block">Inovação</Link></li>
+                  <li><Link to="/categoria/ciencia" className="hover:text-foreground transition-colors inline-block">Ciência</Link></li>
+                  <li><Link to="/categoria/cultura" className="hover:text-foreground transition-colors inline-block">Cultura</Link></li>
+                </>
               )}
-              {features.faleConosco.enabled && (
-                <li><Link to={features.faleConosco.route} className="hover:text-foreground transition-colors inline-block">Fale Conosco</Link></li>
-              )}
-              {features.trabalheConosco.enabled && (
+            </ul>
+          </div>eatures.trabalheConosco.enabled && (
                 <li><Link to={features.trabalheConosco.route} className="hover:text-foreground transition-colors inline-block">Trabalhe Conosco</Link></li>
               )}
             </ul>
