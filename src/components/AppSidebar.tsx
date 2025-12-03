@@ -49,13 +49,36 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useTheme } from '@/components/theme-provider';
+import { features } from '@/lib/features';
 import photonLogoUrl from '@/assets/photon-logo.svg';
 
 // Menu items da navegação principal (fixos)
-const fixedMenuItems = [
+const baseMenuItems = [
   { name: 'Início', icon: Home, href: '/' },
-  { name: 'Trending', icon: TrendingUp, href: '/trending', badge: '🔥' },
-  { name: 'Descontos', icon: Tag, href: '/descontos', badge: '70%' },
+];
+
+// Menu items condicionais baseados em feature flags
+const conditionalMenuItems = [
+  { 
+    name: features.trending.menuLabel, 
+    icon: TrendingUp, 
+    href: features.trending.route, 
+    badge: '🔥',
+    enabled: features.trending.enabled,
+  },
+  { 
+    name: features.descontos.menuLabel, 
+    icon: Tag, 
+    href: features.descontos.route, 
+    badge: '70%',
+    enabled: features.descontos.enabled,
+  },
+];
+
+// Combina items fixos + condicionais (filtra desabilitados)
+const fixedMenuItems = [
+  ...baseMenuItems,
+  ...conditionalMenuItems.filter(item => item.enabled),
 ];
 
 const additionalMenuItems: typeof fixedMenuItems = [];

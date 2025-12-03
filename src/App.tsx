@@ -18,6 +18,7 @@ import Termos from "./pages/Termos";
 import Privacidade from "./pages/Privacidade";
 import Cookies from "./pages/Cookies";
 import NotFound from "./pages/NotFound";
+import { features } from "./lib/features";
 import { useEffect } from "react";
 
 const queryClient = new QueryClient();
@@ -56,6 +57,32 @@ const App = () => (
                     <Route path="/termos" element={<Termos />} />
                     <Route path="/privacidade" element={<Privacidade />} />
                     <Route path="/cookies" element={<Cookies />} />
+                    
+                    {/* Rotas condicionais baseadas em feature flags */}
+                    {features.trending.enabled && (
+                      <Route 
+                        path={features.trending.route} 
+                        element={
+                          <div className="p-8 text-center">
+                            <h1 className="text-3xl font-bold mb-4">🔥 Trending Articles</h1>
+                            <p className="text-muted-foreground">Feature em desenvolvimento</p>
+                          </div>
+                        } 
+                      />
+                    )}
+                    
+                    {features.descontos.enabled && (
+                      <Route 
+                        path={features.descontos.route} 
+                        element={
+                          <div className="p-8 text-center">
+                            <h1 className="text-3xl font-bold mb-4">💰 Descontos e Ofertas</h1>
+                            <p className="text-muted-foreground">Feature em desenvolvimento</p>
+                          </div>
+                        } 
+                      />
+                    )}
+                    
                     <Route path="*" element={<NotFound />} />
                   </Routes>
                 </MainContent>

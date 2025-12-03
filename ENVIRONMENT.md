@@ -22,6 +22,28 @@ Este projeto usa variáveis de ambiente para configuração sensível.
 
 ## Variáveis Disponíveis
 
+### Features Toggle
+
+#### `VITE_FEATURE_TRENDING_ENABLED`
+- **Tipo:** Boolean (true/false)
+- **Default:** `false`
+- **Descrição:** Habilita/desabilita a funcionalidade de Trending Articles
+- **Impacto:** 
+  - Exibe/oculta item "Trending" no menu de navegação
+  - Ativa/desativa rota `/trending`
+  - Mostra/esconde widget lateral de artigos em alta
+
+#### `VITE_FEATURE_DESCONTOS_ENABLED`
+- **Tipo:** Boolean (true/false)
+- **Default:** `false`
+- **Descrição:** Habilita/desabilita a funcionalidade de Descontos/Ofertas
+- **Impacto:** 
+  - Exibe/oculta item "Descontos" no menu de navegação
+  - Ativa/desativa rota `/descontos`
+  - Mostra/esconde banners de ofertas no site
+
+### AdSense Configuration
+
 ### `VITE_ADSENSE_CLIENT_ID`
 - **Tipo:** String
 - **Formato:** `ca-pub-XXXXXXXXXXXXXXXX`
