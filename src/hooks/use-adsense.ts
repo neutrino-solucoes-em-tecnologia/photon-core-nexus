@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 /**
  * Hook para controlar a exibição e inicialização de anúncios do Google AdSense
@@ -45,9 +45,12 @@ export function useAdSense() {
  */
 export function useAdSenseInit(count: number = 3) {
   const { isEnabled } = useAdSense();
+  const initialized = useRef(false);
 
   useEffect(() => {
-    if (!isEnabled) return;
+    if (!isEnabled || initialized.current) return;
+
+    initialized.current = true;
 
     try {
       setTimeout(() => {
@@ -58,7 +61,7 @@ export function useAdSenseInit(count: number = 3) {
     } catch (err) {
       // Silenciosamente ignora erros (ads duplicados)
     }
-  }, []); // Executa apenas uma vez ao montar
+  }, [isEnabled, count]);
 
   return { isEnabled };
 }
