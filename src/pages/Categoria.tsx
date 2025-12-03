@@ -632,7 +632,7 @@ export default function Categoria() {
 
                 {/* CATEGORIA-01 - Após 1º artigo */}
                 {index === 0 && (
-                  <div className="my-8 not-prose">
+                  <div className="py-4 md:py-6 not-prose">
                     <AdSlot
                       slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_01}
                       format="auto"
@@ -644,7 +644,7 @@ export default function Categoria() {
 
                 {/* CATEGORIA-02 - Após 5º artigo */}
                 {index === 4 && (
-                  <div className="my-8 not-prose">
+                  <div className="py-4 md:py-6 not-prose">
                     <AdSlot
                       slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_02}
                       format="auto"
@@ -656,7 +656,7 @@ export default function Categoria() {
 
                 {/* CATEGORIA-03 - Antes do penúltimo artigo */}
                 {index === currentArticles.length - 2 && currentArticles.length >= 2 && (
-                  <div className="my-8 not-prose">
+                  <div className="py-4 md:py-6 not-prose">
                     <AdSlot
                       slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_03}
                       format="auto"

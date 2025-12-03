@@ -130,8 +130,8 @@ export default function Artigo() {
 
       {/* POSITION 1 - Top Ad (First Fold - Mobile Priority) */}
       {!articleError && (
-        <div className="px-4 sm:px-6 pt-4">
-          <div className="not-prose max-w-4xl mx-auto">
+        <div className="py-4 md:py-6 px-4 sm:px-6">
+          <div className="not-prose">
             <AdSlot
               slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MOBILE_TOP}
               format="auto"
@@ -271,7 +271,7 @@ export default function Artigo() {
             </RevealOnScroll>
 
             {/* POSITION 2 - After Hero Image */}
-            <div className="mb-8 not-prose">
+            <div className="py-4 md:py-6 not-prose">
               <AdSlot
                 slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_AFTER_HERO}
                 format="auto"
@@ -325,7 +325,7 @@ export default function Artigo() {
                     
                     {/* POSITION 3 - Mid-Content #1 (~25% of content) */}
                     {index === 0 && (
-                      <div className="my-8 not-prose">
+                      <div className="py-4 md:py-6 not-prose">
                         <AdSlot
                           slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MID_CONTENT_1}
                           format="auto"
@@ -337,7 +337,7 @@ export default function Artigo() {
                     
                     {/* POSITION 4 - Mid-Content #2 (~50% of content) */}
                     {index === Math.floor(article.paragraphs.length / 2) && (
-                      <div className="my-8 not-prose">
+                      <div className="py-4 md:py-6 not-prose">
                         <AdSlot
                           slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MID_CONTENT_2}
                           format="auto"
@@ -349,7 +349,7 @@ export default function Artigo() {
                     
                     {/* POSITION 5 - Mid-Content #3 (~75% of content) */}
                     {index === Math.floor(article.paragraphs.length * 0.75) && (
-                      <div className="my-8 not-prose">
+                      <div className="py-4 md:py-6 not-prose">
                         <AdSlot
                           slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MID_CONTENT_3}
                           format="auto"
@@ -390,15 +390,13 @@ export default function Artigo() {
                 </div>
                 
                 {/* POSITION 6 - Bottom Content Ad */}
-                <div className="mt-10 pt-8 border-t border-border/50">
-                  <div className="not-prose">
-                    <AdSlot
-                      slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_BOTTOM_CONTENT}
-                      format="auto"
-                      position={6}
-                      mockLabel="BOTTOM CONTENT"
-                    />
-                  </div>
+                <div className="py-4 md:py-6 not-prose">
+                  <AdSlot
+                    slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_BOTTOM_CONTENT}
+                    format="auto"
+                    position={6}
+                    mockLabel="BOTTOM CONTENT"
+                  />
                 </div>
                 
                 {/* Share Section */}
@@ -422,8 +420,8 @@ export default function Artigo() {
 
       {/* POSITION 9 - Before Related Articles Ad */}
       {!articleError && (
-        <div className="px-4 sm:px-6 py-8">
-          <div className="not-prose max-w-4xl mx-auto">
+        <div className="py-4 md:py-6 px-4 sm:px-6">
+          <div className="not-prose">
             <AdSlot
               slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_BEFORE_RELATED_MOBILE}
               format="auto"
@@ -511,7 +509,7 @@ export default function Artigo() {
       
       {/* POSITION 10 - Final Bottom Ad */}
       {!articleError && (
-        <div className="wide-container py-8">
+        <div className="py-4 md:py-6 px-4 sm:px-6">
           <div className="not-prose">
             <AdSlot
               slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_FINAL_BOTTOM}
