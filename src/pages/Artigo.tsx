@@ -329,22 +329,6 @@ export default function Artigo() {
                         </div>
                       </RevealOnScroll>
                     )}
-                    
-                    {/* POSITION 3 - Antes do último parágrafo */}
-                    {index === article.paragraphs.length - 2 && (
-                      <RevealOnScroll>
-                        <div className="py-4 md:py-6 px-4 sm:px-6">
-                          <div className="not-prose">
-                            <AdSlot
-                              slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_03}
-                              format="auto"
-                              position={3}
-                              mockLabel="ANTES DO ÚLTIMO PARÁGRAFO"
-                            />
-                          </div>
-                        </div>
-                      </RevealOnScroll>
-                    )}
                   </React.Fragment>
                 ))
             ) : (
@@ -402,6 +386,20 @@ export default function Artigo() {
           <h2 className="text-3xl md:text-4xl font-black mb-3">Continue Lendo</h2>
           <p className="text-muted-foreground text-lg">Artigos relacionados que podem te interessar</p>
         </div>
+        
+        {/* Ad antes dos artigos relacionados */}
+        <RevealOnScroll>
+          <div className="py-4 md:py-6 px-4 sm:px-6 mb-8">
+            <div className="not-prose">
+              <AdSlot
+                slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_03}
+                format="auto"
+                position={4}
+                mockLabel="ANTES DE ARTIGOS RELACIONADOS"
+              />
+            </div>
+          </div>
+        </RevealOnScroll>
         
         {relatedLoading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
