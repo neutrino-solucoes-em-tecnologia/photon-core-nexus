@@ -4,6 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <!-- Primary Meta Tags -->
+    <title>%VITE_SITE_TITLE%</title>
+    <meta name="title" content="%VITE_SITE_TITLE%" />
+    <meta name="description" content="%VITE_SITE_DESCRIPTION%" />
+    <meta name="author" content="%VITE_SITE_AUTHOR%" />
+    <meta name="keywords" content="%VITE_SITE_KEYWORDS%" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="%VITE_SITE_URL%" />
+    
+    <!-- Language and Geographic Targeting -->
+    <meta name="language" content="%VITE_SITE_LANGUAGE%" />
+    <meta name="geo.region" content="%VITE_SITE_GEO_REGION%" />
+    <meta name="geo.placename" content="%VITE_SITE_GEO_PLACENAME%" />
+    
     <!-- Security Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
@@ -12,26 +26,64 @@
     <!-- Content Security Policy -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://www.googletagmanager.com https://*.google.com https://*.gstatic.com https://*.doubleclick.net https://*.adtrafficquality.google; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' http://localhost:8000 https://api-photon-media.neutrino.dev.br https://*.google.com https://*.googlesyndication.com https://*.doubleclick.net https://*.adtrafficquality.google; frame-src https://www.google.com https://*.googlesyndication.com https://*.doubleclick.net https://*.adtrafficquality.google; object-src 'none'; base-uri 'self'; form-action 'self';" />
     
-    <title>Photon Media - O núcleo que move o universo</title>
-    <meta name="description" content="Rede internacional de portais de conteúdo inteligente. Análises profundas, tendências e inovação em tecnologia, negócios e muito mais." />
-    <meta name="author" content="Photon Media" />
-    
-    <!-- Preconnect for performance -->
+    <!-- DNS Prefetch & Preconnect for Performance -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://pagead2.googlesyndication.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Photon Media - O núcleo que move o universo" />
-    <meta property="og:description" content="Rede internacional de portais de conteúdo inteligente" />
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:url" content="%VITE_SITE_URL%" />
+    <meta property="og:title" content="%VITE_OG_TITLE%" />
+    <meta property="og:description" content="%VITE_OG_DESCRIPTION%" />
+    <meta property="og:image" content="%VITE_OG_IMAGE%" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="%VITE_OG_TITLE%" />
+    <meta property="og:site_name" content="%VITE_SITE_AUTHOR%" />
+    <meta property="og:locale" content="pt_BR" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="twitter:url" content="%VITE_SITE_URL%" />
+    <meta name="twitter:title" content="%VITE_OG_TITLE%" />
+    <meta name="twitter:description" content="%VITE_OG_DESCRIPTION%" />
+    <meta name="twitter:image" content="%VITE_TWITTER_IMAGE%" />
+    <meta name="twitter:image:alt" content="%VITE_OG_TITLE%" />
+    <meta name="twitter:site" content="%VITE_TWITTER_SITE%" />
+    <meta name="twitter:creator" content="%VITE_TWITTER_SITE%" />
+
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "%VITE_SCHEMA_TYPE%",
+      "name": "%VITE_SITE_TITLE%",
+      "description": "%VITE_SITE_DESCRIPTION%",
+      "url": "%VITE_SITE_URL%",
+      "image": "%VITE_OG_IMAGE%",
+      "inLanguage": "%VITE_SCHEMA_LANGUAGE%",
+      "publisher": {
+        "@type": "Organization",
+        "name": "%VITE_SITE_AUTHOR%",
+        "url": "%VITE_SITE_URL%"
+      }
+    }
+    </script>
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=%VITE_ADSENSE_CLIENT_ID%"

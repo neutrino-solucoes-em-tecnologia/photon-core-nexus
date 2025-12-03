@@ -2,9 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-# Note: Update the sitemap URL in your build process or manually
-# Current: https://www.ozonio.site/sitemap.xml
-Sitemap: https://www.ozonio.site/sitemap.xml
+Sitemap: {{SITE_URL}}/sitemap.xml
 
 # Specific bot rules
 User-agent: Googlebot
