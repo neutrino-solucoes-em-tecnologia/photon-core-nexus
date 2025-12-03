@@ -2,6 +2,7 @@ import { Globe, Zap, Users, TrendingUp } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import AnimatedNumber from '@/components/AnimatedNumber';
 import RevealOnScroll from '@/components/RevealOnScroll';
+import AdSlot from '@/components/AdSlot';
 import { useIntersectionObserver } from '@/hooks/use-intersection-observer';
 
 const values = [
@@ -30,6 +31,18 @@ const values = [
 export default function Sobre() {
   return (
     <div>
+      {/* First Fold Ad */}
+      <div className="py-4 md:py-6 px-4 sm:px-6">
+        <div className="not-prose">
+          <AdSlot
+            slot={import.meta.env.VITE_ADSENSE_SLOT_SOBRE_TOP}
+            format="auto"
+            position={0}
+            mockLabel="SOBRE PRIMEIRA DOBRA"
+          />
+        </div>
+      </div>
+
       {/* Hero */}
       <section className="wide-container py-16 md:py-24">
         <div className="max-w-3xl mx-auto text-center fade-in">

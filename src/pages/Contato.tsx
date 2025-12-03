@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import RevealOnScroll from '@/components/RevealOnScroll';
+import AdSlot from '@/components/AdSlot';
 
 export default function Contato() {
   const { toast } = useToast();
@@ -52,6 +53,18 @@ export default function Contato() {
 
   return (
     <div className="page-transition">
+      {/* First Fold Ad */}
+      <div className="py-4 md:py-6 px-4 sm:px-6">
+        <div className="not-prose">
+          <AdSlot
+            slot={import.meta.env.VITE_ADSENSE_SLOT_CONTATO_TOP}
+            format="auto"
+            position={0}
+            mockLabel="CONTATO PRIMEIRA DOBRA"
+          />
+        </div>
+      </div>
+
       {/* Hero Header */}
       <div className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5 border-b border-border/50">
         <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" style={{

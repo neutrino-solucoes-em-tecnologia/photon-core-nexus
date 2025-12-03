@@ -383,6 +383,18 @@ export default function Categoria() {
 
   return (
     <div className="page-transition">
+      {/* First Fold Ad */}
+      <div className="py-4 md:py-6 px-4 sm:px-6">
+        <div className="not-prose">
+          <AdSlot
+            slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_TOP}
+            format="auto"
+            position={0}
+            mockLabel="CATEGORIA PRIMEIRA DOBRA"
+          />
+        </div>
+      </div>
+
       {/* Hero Header */}
       <div className="relative overflow-hidden bg-gradient-to-br from-muted/30 via-background to-muted/20 border-b border-border/50">
         <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" style={{
