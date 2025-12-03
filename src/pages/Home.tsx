@@ -118,8 +118,6 @@ export default function Home() {
             </div>
           </section>
         </RevealOnScroll>
-          </section>
-        </RevealOnScroll>
 
         {/* Ad 3 - Antes da newsletter */}
         <RevealOnScroll>
@@ -133,7 +131,9 @@ export default function Home() {
               />
             </div>
           </div>
-        </RevealOnScroll>* Newsletter CTA */}
+        </RevealOnScroll>
+
+        {/* Newsletter CTA */}
         <RevealOnScroll>
           <section className="py-8 md:py-12 px-4 sm:px-6">
             <div className="rounded-xl md:rounded-2xl hero-gradient-rich p-6 md:p-12 text-center text-white shadow-xl md:shadow-2xl relative overflow-hidden w-full max-w-full">
