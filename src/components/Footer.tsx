@@ -3,6 +3,7 @@ import { Facebook, Twitter, Linkedin, Youtube, Mail } from 'lucide-react';
 import { features } from '@/lib/features';
 
 const SITE_NAME = import.meta.env.VITE_SITE_NAME || 'Photon Media';
+const SITE_ICON = import.meta.env.VITE_SITE_ICON || '/photon-logo.svg';
 
 export default function Footer() {
   return (
@@ -13,9 +14,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-3">
             <div className="flex items-center space-x-2">
-              <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary">
-                <span className="text-lg font-bold text-primary-foreground">{SITE_NAME.charAt(0)}</span>
-              </div>
+              <img 
+                src={SITE_ICON} 
+                alt={SITE_NAME}
+                className="w-8 h-8 dark:invert dark:brightness-0 dark:contrast-200"
+              />
               <span className="text-base font-bold">{SITE_NAME}</span>
             </div>
             <p className="text-xs text-muted-foreground">
@@ -76,9 +79,11 @@ export default function Footer() {
         <div className="hidden lg:grid lg:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary">
-                <span className="text-xl font-bold text-primary-foreground">{SITE_NAME.charAt(0)}</span>
-              </div>
+              <img 
+                src={SITE_ICON} 
+                alt={SITE_NAME}
+                className="w-10 h-10 dark:invert dark:brightness-0 dark:contrast-200"
+              />
               <span className="text-lg font-bold">{SITE_NAME}</span>
             </div>
             <p className="text-sm text-muted-foreground max-w-xs">
