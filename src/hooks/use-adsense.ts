@@ -44,13 +44,21 @@ export function useAdSense() {
  * @param count número de anúncios a inicializar (padrão: 3)
  */
 export function useAdSenseInit(count: number = 3) {
-  const { isEnabled, initializeAds } = useAdSense();
+  const { isEnabled } = useAdSense();
 
   useEffect(() => {
-    if (isEnabled) {
-      initializeAds(count);
+    if (!isEnabled) return;
+
+    try {
+      setTimeout(() => {
+        for (let i = 0; i < count; i++) {
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        }
+      }, 100);
+    } catch (err) {
+      // Silenciosamente ignora erros (ads duplicados)
     }
-  }, [isEnabled, count]);
+  }, []); // Executa apenas uma vez ao montar
 
   return { isEnabled };
 }
