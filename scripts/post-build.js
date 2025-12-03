@@ -12,6 +12,7 @@ const __dirname = dirname(__filename);
 
 // Read environment variables
 const SITE_URL = process.env.VITE_SITE_URL || 'https://www.ozonio.site';
+const ADSENSE_PUBLISHER_ID = process.env.VITE_ADSENSE_PUBLISHER_ID || 'pub-8616282875609147';
 
 // Update robots.txt
 const robotsPath = join(__dirname, '../dist/robots.txt');
@@ -28,4 +29,15 @@ try {
   console.log('✅ robots.txt updated with SITE_URL:', SITE_URL);
 } catch (error) {
   console.warn('⚠️ Could not update robots.txt:', error.message);
+}
+
+// Update ads.txt
+const adsTxtPath = join(__dirname, '../dist/ads.txt');
+try {
+  const adsTxtContent = `google.com, ${ADSENSE_PUBLISHER_ID}, DIRECT, f08c47fec0942fa0`;
+  
+  writeFileSync(adsTxtPath, adsTxtContent, 'utf-8');
+  console.log('✅ ads.txt generated with PUBLISHER_ID:', ADSENSE_PUBLISHER_ID);
+} catch (error) {
+  console.warn('⚠️ Could not generate ads.txt:', error.message);
 }
