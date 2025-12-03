@@ -1,11 +1,8 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Linkedin, Youtube, Mail, MapPin, Phone } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Youtube, Mail } from 'lucide-react';
 import { features } from '@/lib/features';
-import { useTopCategories } from '@/hooks/use-categories';
 
 export default function Footer() {
-  const { data: topCategories = [] } = useTopCategories(5);
-
   return (
     <footer className="border-t bg-muted/30 mt-12 md:mt-20">
       <div className="wide-container py-8 md:py-12">
@@ -24,8 +21,8 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Navigation, Categories, Legal */}
-          <div className="grid grid-cols-3 gap-4">
+          {/* Navigation & Legal */}
+          <div className="grid grid-cols-2 gap-6">
             <div>
               <h3 className="font-semibold mb-3 text-sm">Navegação</h3>
               <ul className="space-y-1.5 text-xs text-muted-foreground">
@@ -39,29 +36,6 @@ export default function Footer() {
                 )}
                 {features.trabalheConosco.enabled && (
                   <li><Link to={features.trabalheConosco.route} className="hover:text-foreground transition-colors">Carreiras</Link></li>
-                )}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-semibold mb-3 text-sm">Categorias</h3>
-              <ul className="space-y-1.5 text-xs text-muted-foreground">
-                {topCategories.length > 0 ? (
-                  topCategories.map((category) => (
-                    <li key={category.slug}>
-                      <Link to={`/categoria/${category.slug}`} className="hover:text-foreground transition-colors">
-                        {category.name}
-                      </Link>
-                    </li>
-                  ))
-                ) : (
-                  <>
-                    <li><Link to="/categoria/tecnologia" className="hover:text-foreground transition-colors">Tecnologia</Link></li>
-                    <li><Link to="/categoria/negocios" className="hover:text-foreground transition-colors">Negócios</Link></li>
-                    <li><Link to="/categoria/inovacao" className="hover:text-foreground transition-colors">Inovação</Link></li>
-                    <li><Link to="/categoria/ciencia" className="hover:text-foreground transition-colors">Ciência</Link></li>
-                    <li><Link to="/categoria/cultura" className="hover:text-foreground transition-colors">Cultura</Link></li>
-                  </>
                 )}
               </ul>
             </div>
@@ -97,7 +71,7 @@ export default function Footer() {
         </div>
 
         {/* Desktop Layout */}
-        <div className="hidden lg:grid lg:grid-cols-5 gap-8">
+        <div className="hidden lg:grid lg:grid-cols-4 gap-8">
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary">
@@ -123,29 +97,6 @@ export default function Footer() {
               )}
               {features.trabalheConosco.enabled && (
                 <li><Link to={features.trabalheConosco.route} className="hover:text-foreground transition-colors">Trabalhe Conosco</Link></li>
-              )}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-semibold mb-4 text-base">Categorias</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              {topCategories.length > 0 ? (
-                topCategories.map((category) => (
-                  <li key={category.slug}>
-                    <Link to={`/categoria/${category.slug}`} className="hover:text-foreground transition-colors">
-                      {category.name}
-                    </Link>
-                  </li>
-                ))
-              ) : (
-                <>
-                  <li><Link to="/categoria/tecnologia" className="hover:text-foreground transition-colors">Tecnologia</Link></li>
-                  <li><Link to="/categoria/negocios" className="hover:text-foreground transition-colors">Negócios</Link></li>
-                  <li><Link to="/categoria/inovacao" className="hover:text-foreground transition-colors">Inovação</Link></li>
-                  <li><Link to="/categoria/ciencia" className="hover:text-foreground transition-colors">Ciência</Link></li>
-                  <li><Link to="/categoria/cultura" className="hover:text-foreground transition-colors">Cultura</Link></li>
-                </>
               )}
             </ul>
           </div>
