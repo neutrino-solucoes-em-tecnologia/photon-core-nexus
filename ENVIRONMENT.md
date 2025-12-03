@@ -42,6 +42,33 @@ Este projeto usa variáveis de ambiente para configuração sensível.
   - Ativa/desativa rota `/descontos`
   - Mostra/esconde banners de ofertas no site
 
+#### `VITE_FEATURE_IMPRENSA_ENABLED`
+- **Tipo:** Boolean (true/false)
+- **Default:** `false`
+- **Descrição:** Habilita/desabilita a página de Imprensa
+- **Impacto:** 
+  - Exibe/oculta item "Imprensa" no menu "Mais"
+  - Ativa/desativa rota `/imprensa`
+  - Mostra/esconde link no footer
+
+#### `VITE_FEATURE_TRABALHE_CONOSCO_ENABLED`
+- **Tipo:** Boolean (true/false)
+- **Default:** `false`
+- **Descrição:** Habilita/desabilita a página de Trabalhe Conosco
+- **Impacto:** 
+  - Exibe/oculta item "Trabalhe Conosco" no menu "Mais"
+  - Ativa/desativa rota `/trabalhe-conosco`
+  - Mostra/esconde link no footer
+
+#### `VITE_FEATURE_FALE_CONOSCO_ENABLED`
+- **Tipo:** Boolean (true/false)
+- **Default:** `true`
+- **Descrição:** Habilita/desabilita a página de Fale Conosco (Contato)
+- **Impacto:** 
+  - Exibe/oculta item "Fale Conosco" no menu "Mais"
+  - Ativa/desativa rota `/fale-conosco`
+  - Mostra/esconde link no footer e newsletter CTA
+
 ### AdSense Configuration
 
 ### `VITE_ADSENSE_CLIENT_ID`

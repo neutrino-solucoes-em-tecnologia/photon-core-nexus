@@ -35,6 +35,49 @@ export const features = {
     menuLabel: 'Descontos',
     route: '/descontos',
   },
+
+  /**
+   * Imprensa
+   * 
+   * Quando habilitado:
+   * - Exibe item "Imprensa" no menu "Mais"
+   * - Ativa rota `/imprensa`
+   * - Mostra link no footer
+   */
+  imprensa: {
+    enabled: import.meta.env.VITE_FEATURE_IMPRENSA_ENABLED === 'true',
+    menuLabel: 'Imprensa',
+    route: '/imprensa',
+  },
+
+  /**
+   * Trabalhe Conosco
+   * 
+   * Quando habilitado:
+   * - Exibe item "Trabalhe Conosco" no menu "Mais"
+   * - Ativa rota `/trabalhe-conosco`
+   * - Mostra link no footer
+   */
+  trabalheConosco: {
+    enabled: import.meta.env.VITE_FEATURE_TRABALHE_CONOSCO_ENABLED === 'true',
+    menuLabel: 'Trabalhe Conosco',
+    route: '/trabalhe-conosco',
+  },
+
+  /**
+   * Fale Conosco (Contato)
+   * 
+   * Quando habilitado:
+   * - Exibe item "Fale Conosco" no menu "Mais"
+   * - Ativa rota `/fale-conosco`
+   * - Mostra link no footer e formulário de contato
+   * - Exibe CTA de newsletter
+   */
+  faleConosco: {
+    enabled: import.meta.env.VITE_FEATURE_FALE_CONOSCO_ENABLED === 'true',
+    menuLabel: 'Fale Conosco',
+    route: '/fale-conosco',
+  },
 } as const;
 
 /**

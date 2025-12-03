@@ -54,7 +54,7 @@ import photonLogoUrl from '@/assets/photon-logo.svg';
 
 // Menu items da navegação principal (fixos)
 const baseMenuItems = [
-  { name: 'Início', icon: Home, href: '/' },
+  { name: 'Início', icon: Home, href: '/', badge: undefined },
 ];
 
 // Menu items condicionais baseados em feature flags
@@ -63,14 +63,14 @@ const conditionalMenuItems = [
     name: features.trending.menuLabel, 
     icon: TrendingUp, 
     href: features.trending.route, 
-    badge: '🔥',
+    badge: '🔥' as string | undefined,
     enabled: features.trending.enabled,
   },
   { 
     name: features.descontos.menuLabel, 
     icon: Tag, 
     href: features.descontos.route, 
-    badge: '70%',
+    badge: '70%' as string | undefined,
     enabled: features.descontos.enabled,
   },
 ];
@@ -78,17 +78,27 @@ const conditionalMenuItems = [
 // Combina items fixos + condicionais (filtra desabilitados)
 const fixedMenuItems = [
   ...baseMenuItems,
-  ...conditionalMenuItems.filter(item => item.enabled),
+  ...conditionalMenuItems.filter(item => item.enabled).map(({ enabled, ...item }) => item),
 ];
 
 const additionalMenuItems: typeof fixedMenuItems = [];
 
+// More items condicionais baseados em feature flags
+const baseMoreItems = [
+  { name: 'Termos de Utilização', href: '/termos', enabled: true },
+  { name: 'Privacidade', href: '/privacidade', enabled: true },
+];
+
+const conditionalMoreItems = [
+  { name: features.faleConosco.menuLabel, href: features.faleConosco.route, enabled: features.faleConosco.enabled },
+  { name: features.trabalheConosco.menuLabel, href: features.trabalheConosco.route, enabled: features.trabalheConosco.enabled },
+  { name: features.imprensa.menuLabel, href: features.imprensa.route, enabled: features.imprensa.enabled },
+];
+
+// Combina more items fixos + condicionais (filtra desabilitados)
 const moreItems = [
-  { name: 'Fale Conosco', href: '/fale-conosco' },
-  { name: 'Trabalhe Conosco', href: '/trabalhe-conosco' },
-  { name: 'Imprensa', href: '/imprensa' },
-  { name: 'Termos de Utilização', href: '/termos' },
-  { name: 'Privacidade', href: '/privacidade' },
+  ...conditionalMoreItems.filter(item => item.enabled),
+  ...baseMoreItems,
 ];
 
 export function AppSidebar() {
@@ -220,7 +230,7 @@ export function AppSidebar() {
                               {isActive && (
                                 <div className="absolute top-1.5 right-1.5 w-2 h-2 bg-primary rounded-full animate-pulse" />
                               )}
-                              {item.badge && (
+                              {'badge' in item && item.badge && (
                                 <div className="absolute top-1 right-1 w-2.5 h-2.5 bg-destructive rounded-full border-2 border-white" />
                               )}
                             </button>
@@ -246,7 +256,7 @@ export function AppSidebar() {
                               )}
                               {item.icon && <item.icon className="flex-shrink-0 h-5 w-5" />}
                               <span className="flex-1 text-sm font-medium">{item.name}</span>
-                              {item.badge && (
+                              {'badge' in item && item.badge && (
                                 <Badge variant="secondary" className="ml-auto text-xs px-1.5 py-0 h-5 bg-primary/10 text-primary border-primary/20">
                                   {item.badge}
                                 </Badge>
@@ -258,7 +268,7 @@ export function AppSidebar() {
                     </TooltipTrigger>
                     {isCollapsed && (
                       <TooltipContent side="right" className="whitespace-nowrap">
-                        <p>{item.name} {item.badge && <span className="text-xs text-muted-foreground ml-1">{item.badge}</span>}</p>
+                        <p>{item.name} {'badge' in item && item.badge && <span className="text-xs text-muted-foreground ml-1">{item.badge}</span>}</p>
                       </TooltipContent>
                     )}
                   </Tooltip>

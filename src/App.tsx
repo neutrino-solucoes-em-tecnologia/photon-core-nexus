@@ -51,9 +51,19 @@ const App = () => (
                     <Route path="/categoria/:slug" element={<Categoria />} />
                     <Route path="/artigo/:slug" element={<Artigo />} />
                     <Route path="/sobre" element={<Sobre />} />
-                    <Route path="/fale-conosco" element={<Contato />} />
-                    <Route path="/trabalhe-conosco" element={<TrabalheConosco />} />
-                    <Route path="/imprensa" element={<Imprensa />} />
+                    
+                    {/* Páginas condicionais baseadas em feature flags */}
+                    {features.faleConosco.enabled && (
+                      <Route path={features.faleConosco.route} element={<Contato />} />
+                    )}
+                    {features.trabalheConosco.enabled && (
+                      <Route path={features.trabalheConosco.route} element={<TrabalheConosco />} />
+                    )}
+                    {features.imprensa.enabled && (
+                      <Route path={features.imprensa.route} element={<Imprensa />} />
+                    )}
+                    
+                    {/* Páginas fixas */}
                     <Route path="/termos" element={<Termos />} />
                     <Route path="/privacidade" element={<Privacidade />} />
                     <Route path="/cookies" element={<Cookies />} />

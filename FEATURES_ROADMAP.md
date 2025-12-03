@@ -304,7 +304,16 @@ Painel administrativo com métricas editoriais.
 
 ## ✅ Features Já Implementadas
 
-### 1. Sistema de Artigos
+### 1. Sistema de Feature Flags
+- ✅ Trending Articles (habilitável via `VITE_FEATURE_TRENDING_ENABLED`)
+- ✅ Descontos/Ofertas (habilitável via `VITE_FEATURE_DESCONTOS_ENABLED`)
+- ✅ Imprensa (habilitável via `VITE_FEATURE_IMPRENSA_ENABLED`)
+- ✅ Trabalhe Conosco (habilitável via `VITE_FEATURE_TRABALHE_CONOSCO_ENABLED`)
+- ✅ Fale Conosco (habilitável via `VITE_FEATURE_FALE_CONOSCO_ENABLED`)
+- ✅ Menu dinâmico baseado em flags
+- ✅ Rotas condicionais
+
+### 2. Sistema de Artigos
 - ✅ Listagem paginada
 - ✅ Detalhe de artigo
 - ✅ Artigos relacionados
