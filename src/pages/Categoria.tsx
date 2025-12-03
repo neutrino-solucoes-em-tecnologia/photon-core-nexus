@@ -571,7 +571,7 @@ export default function Categoria() {
                   return (
                   <React.Fragment key={article.slug}>
                   <article
-                  className="group grid grid-cols-[100px_1fr] md:grid-cols-[200px_1fr] lg:grid-cols-[280px_1fr] gap-3 md:gap-4 lg:gap-6 pb-4 md:pb-6 border-b border-border"
+                  className="group flex gap-4 md:gap-6 pb-6 mb-6 border-b border-border/50 last:border-0"
                   style={{ 
                     animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
                   }}
@@ -579,24 +579,37 @@ export default function Categoria() {
                   {/* Thumbnail */}
                   <a 
                     href={`/artigo/${article.slug}`}
-                    className="relative overflow-hidden rounded-md aspect-video bg-muted/30 flex-shrink-0"
+                    className="relative overflow-hidden rounded-lg aspect-video bg-muted/30 flex-shrink-0 w-32 sm:w-48 md:w-64 lg:w-80"
                   >
                     <img
                       src={article.image_url || ''}
                       alt={article.image_alt || article.title}
-                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110 group-hover:saturate-110"
+                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
                   </a>
 
                   {/* Content */}
-                  <div className="flex flex-col justify-center min-h-[166px]">
+                  <div className="flex flex-col justify-center flex-1 min-w-0">
+                    {/* Category Badge - Mobile/Desktop */}
+                    {article.category && (
+                      <a 
+                        href={`/categoria/${article.category.slug}`}
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-primary uppercase tracking-wide hover:underline mb-2 w-fit"
+                      >
+                        <span className="w-2.5 h-2.5 inline-block">
+                          <svg viewBox="0 0 12 12" fill="currentColor">
+                            <path fillRule="evenodd" clipRule="evenodd" d="M8 0.5C8 0.223858 7.77614 0 7.5 0H4.5C4.22386 0 4 0.223858 4 0.5V3.5C4 3.77614 3.77614 4 3.5 4L0.5 4C0.223858 4 0 4.22386 0 4.5V7.5C0 7.77614 0.223858 8 0.5 8H3.5C3.77614 8 4 8.22386 4 8.5V11.5C4 11.7761 4.22386 12 4.5 12H7.5C7.77614 12 8 11.7761 8 11.5V8.5C8 8.22386 8.22386 8 8.5 8H11.5C11.7761 8 12 7.77614 12 7.5V4.5C12 4.22386 11.7761 4 11.5 4L8.5 4C8.22386 4 8 3.77614 8 3.5V0.5Z"/>
+                          </svg>
+                        </span>
+                        {article.category.name}
+                      </a>
+                    )}
 
                     {/* Title */}
                     <h3 className="mb-2">
                       <a 
                         href={`/artigo/${article.slug}`}
-                        className="font-bold text-base md:text-lg text-foreground group-hover:underline line-clamp-2"
+                        className="font-bold text-lg md:text-xl lg:text-2xl text-foreground group-hover:text-primary transition-colors line-clamp-2 leading-tight"
                       >
                         {article.title}
                       </a>
@@ -604,35 +617,14 @@ export default function Categoria() {
 
                     {/* Excerpt - Desktop */}
                     {article.description && (
-                      <p className="hidden md:block text-sm text-muted-foreground mb-3 line-clamp-2">
+                      <p className="hidden sm:block text-sm md:text-base text-muted-foreground mb-3 line-clamp-2">
                         {article.description}
                       </p>
                     )}
 
-                    {/* Meta Info - Desktop */}
-                    <div className="hidden md:flex items-center gap-4 text-xs text-primary font-bold uppercase tracking-wide">
-                      {article.category && (
-                        <a 
-                          href={`/categoria/${article.category.slug}`}
-                          className="hover:underline flex items-center gap-1"
-                        >
-                          <span className="w-3 h-3 inline-block">
-                            <svg viewBox="0 0 12 12" fill="currentColor">
-                              <path fillRule="evenodd" clipRule="evenodd" d="M8 0.5C8 0.223858 7.77614 0 7.5 0H4.5C4.22386 0 4 0.223858 4 0.5V3.5C4 3.77614 3.77614 4 3.5 4L0.5 4C0.223858 4 0 4.22386 0 4.5V7.5C0 7.77614 0.223858 8 0.5 8H3.5C3.77614 8 4 8.22386 4 8.5V11.5C4 11.7761 4.22386 12 4.5 12H7.5C7.77614 12 8 11.7761 8 11.5V8.5C8 8.22386 8.22386 8 8.5 8H11.5C11.7761 8 12 7.77614 12 7.5V4.5C12 4.22386 11.7761 4 11.5 4L8.5 4C8.22386 4 8 3.77614 8 3.5V0.5Z"/>
-                            </svg>
-                          </span>
-                          {article.category.name}
-                        </a>
-                      )}
-                    </div>
-
-                    {/* Meta Info Mobile - Bottom */}
-                    <div className="flex md:hidden items-center gap-4 text-xs text-primary font-bold uppercase tracking-wide mt-2">
-                      {article.category && (
-                        <a href={`/categoria/${article.category.slug}`} className="hover:underline">
-                          {article.category.name}
-                        </a>
-                      )}
+                    {/* Published Date */}
+                    <div className="text-xs md:text-sm text-muted-foreground">
+                      {publishedDate}
                     </div>
                   </div>
                 </article>
