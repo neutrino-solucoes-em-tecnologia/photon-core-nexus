@@ -25,7 +25,7 @@ import {
 } from '@/components/ui/pagination';
 import RevealOnScroll from '@/components/RevealOnScroll';
 import AdSlot from '@/components/AdSlot';
-import { useAdSense } from '@/hooks/use-adsense';
+import { useAdSense, useAdSenseInit } from '@/hooks/use-adsense';
 import { useCategoryArticles } from '@/hooks/use-articles';
 import techImage from '@/assets/article-tech.jpg';
 import businessImage from '@/assets/article-business.jpg';
@@ -352,7 +352,8 @@ export default function Categoria() {
   const { slug } = useParams<{ slug: string }>();
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const { isEnabled, clientId, initializeAds } = useAdSense();
+  const { isEnabled, clientId } = useAdSense();
+  useAdSenseInit(4);
   const itemsPerPage = 12;
   
   // Fetch articles from API
@@ -373,13 +374,6 @@ export default function Categoria() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentPage]);
-
-  // Inicializar anúncios quando a página muda
-  useEffect(() => {
-    if (isEnabled) {
-      initializeAds(3);
-    }
-  }, [currentPage, isEnabled]);
 
   return (
     <div className="page-transition">
