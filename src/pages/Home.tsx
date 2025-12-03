@@ -20,10 +20,7 @@ export default function Home() {
 
   return (
     <div className="pb-8 w-full">
-      {/* Hero Section */}
-      <HeroSection />
-
-      {/* HOME-DISPLAY-01 - Ad below Hero Section */}
+      {/* Ad na primeira dobra */}
       <RevealOnScroll>
         <div className="py-4 md:py-6 px-4 sm:px-6">
           <div className="not-prose">
@@ -31,16 +28,19 @@ export default function Home() {
               slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_01}
               format="auto"
               position={1}
-              mockLabel="HOME DISPLAY #1"
+              mockLabel="PRIMEIRA DOBRA"
             />
           </div>
         </div>
       </RevealOnScroll>
 
+      {/* Hero Section */}
+      <HeroSection />
+
         {/* Featured Highlights - Mais destaques */}
         <FeaturedHighlights />
 
-      {/* HOME-DISPLAY-02 - Ad after Featured Highlights */}
+      {/* Ad após Featured Highlights */}
       <RevealOnScroll>
         <div className="py-4 md:py-6 px-4 sm:px-6">
           <div className="not-prose">
@@ -48,7 +48,7 @@ export default function Home() {
               slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_02}
               format="auto"
               position={2}
-              mockLabel="HOME DISPLAY #2"
+              mockLabel="APÓS DESTAQUES"
             />
           </div>
         </div>
