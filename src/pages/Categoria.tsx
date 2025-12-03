@@ -382,7 +382,7 @@ export default function Categoria() {
         <div className="py-4 md:py-6 px-4 sm:px-6">
           <div className="not-prose">
             <AdSlot
-              slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_TOP}
+              slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_01}
               format="auto"
               position={0}
               mockLabel="CATEGORIA PRIMEIRA DOBRA"
@@ -644,7 +644,7 @@ export default function Categoria() {
                     <div className="py-4 md:py-6 px-4 sm:px-6">
                       <div className="not-prose">
                         <AdSlot
-                          slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_01}
+                          slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_01}
                           format="auto"
                           position={1}
                           mockLabel="CATEGORIA #1"
@@ -660,7 +660,7 @@ export default function Categoria() {
                     <div className="py-4 md:py-6 px-4 sm:px-6">
                       <div className="not-prose">
                         <AdSlot
-                          slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_02}
+                          slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_02}
                           format="auto"
                           position={2}
                           mockLabel="CATEGORIA #2"
@@ -676,7 +676,7 @@ export default function Categoria() {
                     <div className="py-4 md:py-6 px-4 sm:px-6">
                       <div className="not-prose">
                         <AdSlot
-                          slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_03}
+                          slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_02}
                           format="auto"
                           position={3}
                           mockLabel="CATEGORIA #3"
