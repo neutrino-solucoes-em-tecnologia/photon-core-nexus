@@ -171,7 +171,7 @@ export function AppSidebar() {
 
         {/* Logo & Header */}
         <SidebarHeader className={`border-b border-border/25 transition-all duration-200 ${isCollapsed ? 'p-4' : 'p-6'}`}>
-          <div className={`flex items-center transition-all duration-200 ${isCollapsed ? 'justify-center' : 'gap-3'}`}>
+          <div className={`flex items-center justify-center transition-all duration-200`}>
             <TooltipProvider delayDuration={0}>
               <Tooltip>
                 <TooltipTrigger asChild>
@@ -181,23 +181,15 @@ export function AppSidebar() {
                       alt="Photon Logo" 
                       className="flex-shrink-0 transition-all duration-200 group-hover:scale-110 w-10 h-10 dark:invert dark:brightness-0 dark:contrast-200"
                     />
-                    {isCollapsed && (
-                      <div className="absolute -inset-1 bg-primary/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 -z-10 blur-sm" />
-                    )}
+                    <div className="absolute -inset-1 bg-primary/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 -z-10 blur-sm" />
                   </div>
                 </TooltipTrigger>
-                {isCollapsed && (
-                  <TooltipContent side="right" className="font-bold whitespace-nowrap">
-                    <p className="text-lg">PHOTON</p>
-                    <p className="text-xs text-muted-foreground">Brasil</p>
-                  </TooltipContent>
-                )}
+                <TooltipContent side="right" className="font-bold whitespace-nowrap">
+                  <p className="text-lg">PHOTON</p>
+                  <p className="text-xs text-muted-foreground">Brasil</p>
+                </TooltipContent>
               </Tooltip>
             </TooltipProvider>
-            <div className={`flex-1 transition-opacity duration-200 ${isCollapsed ? 'opacity-0 hidden' : 'opacity-100'}`}>
-              <h1 className="text-2xl font-black text-primary tracking-tight">PHOTON</h1>
-              <p className="text-xs font-bold text-foreground/80 mt-0.5">Brasil</p>
-            </div>
           </div>
         </SidebarHeader>
 
