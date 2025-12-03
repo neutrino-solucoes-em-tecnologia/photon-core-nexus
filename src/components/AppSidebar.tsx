@@ -50,6 +50,7 @@ import { useTheme } from '@/components/theme-provider';
 import { features } from '@/lib/features';
 
 const SITE_LOGO = import.meta.env.VITE_SITE_LOGO || '/photon-logo.svg';
+const SITE_NAME = import.meta.env.VITE_SITE_NAME || 'Photon Media';
 
 // Menu items da navegação principal (fixos)
 const baseMenuItems = [
@@ -185,8 +186,7 @@ export function AppSidebar() {
                   </div>
                 </TooltipTrigger>
                 <TooltipContent side="right" className="font-bold whitespace-nowrap">
-                  <p className="text-lg">PHOTON</p>
-                  <p className="text-xs text-muted-foreground">Brasil</p>
+                  <p className="text-lg">{SITE_NAME}</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
