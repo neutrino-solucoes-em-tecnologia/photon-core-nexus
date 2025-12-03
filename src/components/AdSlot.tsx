@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useAdSense } from '@/hooks/use-adsense';
 
 interface AdSlotProps {
@@ -19,17 +19,25 @@ export default function AdSlot({
   mockLabel = 'Ad'
 }: AdSlotProps) {
   const { isEnabled, clientId } = useAdSense();
+  const adInitialized = useRef(false);
+  const adRef = useRef<HTMLModElement>(null);
 
   useEffect(() => {
-    if (isEnabled && slot) {
+    if (!isEnabled || !slot || adInitialized.current) return;
+
+    const timer = setTimeout(() => {
       try {
-        // @ts-ignore
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
+        if (adRef.current && window.adsbygoogle) {
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+          adInitialized.current = true;
+        }
       } catch (err) {
-        // Ignora erro de ad duplicado
+        // Silenciosamente ignora erros
       }
-    }
-  }, [isEnabled, slot]);
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   // Mock ad placeholder quando desabilitado ou slot indefinido
   if (!isEnabled || !slot) {
@@ -95,6 +103,7 @@ export default function AdSlot({
 
   return (
     <ins
+      ref={adRef}
       className={`adsbygoogle ${className}`}
       style={{
         display: 'block',

@@ -9,12 +9,10 @@ import FeaturedHighlights from '@/components/FeaturedHighlights';
 import NewsFeed from '@/components/NewsFeed';
 import AdSlot from '@/components/AdSlot';
 import { useAdSense } from '@/hooks/use-adsense';
-import { useScrollAds } from '@/hooks/use-scroll-ads';
 import { useArticles } from '@/hooks/use-articles';
 
 export default function Home() {
   const { isEnabled, clientId } = useAdSense();
-  const visibleAds = useScrollAds(1500, 3); // 1 ad a cada 1500px, máximo 3 ads
   
   // Fetch featured articles from API
   const { data: articlesData, isLoading } = useArticles(1, 3);
@@ -22,21 +20,19 @@ export default function Home() {
 
   return (
     <div className="pb-8 w-full">
-      {/* Ad 1 - Primeira dobra (sempre visível) */}
-      {visibleAds >= 1 && (
-        <RevealOnScroll>
-          <div className="py-4 md:py-6 px-4 sm:px-6">
-            <div className="not-prose">
-              <AdSlot
-                slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_01}
-                format="auto"
-                position={1}
-                mockLabel="AD #1 - PRIMEIRA DOBRA"
-              />
-            </div>
+      {/* Ad 1 - Primeira dobra */}
+      <RevealOnScroll>
+        <div className="py-4 md:py-6 px-4 sm:px-6">
+          <div className="not-prose">
+            <AdSlot
+              slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_01}
+              format="auto"
+              position={1}
+              mockLabel="AD #1 - PRIMEIRA DOBRA"
+            />
           </div>
-        </RevealOnScroll>
-      )}
+        </div>
+      </RevealOnScroll>
 
       {/* Hero Section */}
       <HeroSection />
@@ -44,21 +40,19 @@ export default function Home() {
         {/* Featured Highlights - Mais destaques */}
         <FeaturedHighlights />
 
-      {/* Ad 2 - Aparece após scroll de 1500px */}
-      {visibleAds >= 2 && (
-        <RevealOnScroll>
-          <div className="py-4 md:py-6 px-4 sm:px-6">
-            <div className="not-prose">
-              <AdSlot
-                slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_02}
-                format="auto"
-                position={2}
-                mockLabel="AD #2 - DINÂMICO (1500px)"
-              />
-            </div>
+      {/* Ad 2 - Após destaques */}
+      <RevealOnScroll>
+        <div className="py-4 md:py-6 px-4 sm:px-6">
+          <div className="not-prose">
+            <AdSlot
+              slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_02}
+              format="auto"
+              position={2}
+              mockLabel="AD #2 - APÓS DESTAQUES"
+            />
           </div>
-        </RevealOnScroll>
-      )}
+        </div>
+      </RevealOnScroll>
 
         {/* News Feed - Feed de Notícias */}
         <RevealOnScroll>
@@ -124,24 +118,22 @@ export default function Home() {
             </div>
           </section>
         </RevealOnScroll>
+          </section>
+        </RevealOnScroll>
 
-        {/* Ad 3 - Aparece após scroll de 3000px */}
-        {visibleAds >= 3 && (
-          <RevealOnScroll>
-            <div className="py-4 md:py-6 px-4 sm:px-6">
-              <div className="not-prose">
-                <AdSlot
-                  slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_03}
-                  format="auto"
-                  position={3}
-                  mockLabel="AD #3 - DINÂMICO (3000px)"
-                />
-              </div>
+        {/* Ad 3 - Antes da newsletter */}
+        <RevealOnScroll>
+          <div className="py-4 md:py-6 px-4 sm:px-6">
+            <div className="not-prose">
+              <AdSlot
+                slot={import.meta.env.VITE_ADSENSE_SLOT_HOME_DISPLAY_03}
+                format="auto"
+                position={3}
+                mockLabel="AD #3 - ANTES DA NEWSLETTER"
+              />
             </div>
-          </RevealOnScroll>
-        )}
-
-        {/* Newsletter CTA */}
+          </div>
+        </RevealOnScroll>* Newsletter CTA */}
         <RevealOnScroll>
           <section className="py-8 md:py-12 px-4 sm:px-6">
             <div className="rounded-xl md:rounded-2xl hero-gradient-rich p-6 md:p-12 text-center text-white shadow-xl md:shadow-2xl relative overflow-hidden w-full max-w-full">
