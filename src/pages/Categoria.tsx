@@ -384,16 +384,18 @@ export default function Categoria() {
   return (
     <div className="page-transition">
       {/* First Fold Ad */}
-      <div className="py-4 md:py-6 px-4 sm:px-6">
-        <div className="not-prose">
-          <AdSlot
-            slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_TOP}
-            format="auto"
-            position={0}
-            mockLabel="CATEGORIA PRIMEIRA DOBRA"
-          />
+      <RevealOnScroll>
+        <div className="py-4 md:py-6 px-4 sm:px-6">
+          <div className="not-prose">
+            <AdSlot
+              slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_TOP}
+              format="auto"
+              position={0}
+              mockLabel="CATEGORIA PRIMEIRA DOBRA"
+            />
+          </div>
         </div>
-      </div>
+      </RevealOnScroll>
 
       {/* Hero Header */}
       <div className="relative overflow-hidden bg-gradient-to-br from-muted/30 via-background to-muted/20 border-b border-border/50">
@@ -644,38 +646,50 @@ export default function Categoria() {
 
                 {/* CATEGORIA-01 - Após 1º artigo */}
                 {index === 0 && (
-                  <div className="py-4 md:py-6 not-prose">
-                    <AdSlot
-                      slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_01}
-                      format="auto"
-                      position={1}
-                      mockLabel="CATEGORIA #1"
-                    />
-                  </div>
+                  <RevealOnScroll>
+                    <div className="py-4 md:py-6 px-4 sm:px-6">
+                      <div className="not-prose">
+                        <AdSlot
+                          slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_01}
+                          format="auto"
+                          position={1}
+                          mockLabel="CATEGORIA #1"
+                        />
+                      </div>
+                    </div>
+                  </RevealOnScroll>
                 )}
 
                 {/* CATEGORIA-02 - Após 5º artigo */}
                 {index === 4 && (
-                  <div className="py-4 md:py-6 not-prose">
-                    <AdSlot
-                      slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_02}
-                      format="auto"
-                      position={2}
-                      mockLabel="CATEGORIA #2"
-                    />
-                  </div>
+                  <RevealOnScroll>
+                    <div className="py-4 md:py-6 px-4 sm:px-6">
+                      <div className="not-prose">
+                        <AdSlot
+                          slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_02}
+                          format="auto"
+                          position={2}
+                          mockLabel="CATEGORIA #2"
+                        />
+                      </div>
+                    </div>
+                  </RevealOnScroll>
                 )}
 
                 {/* CATEGORIA-03 - Antes do penúltimo artigo */}
                 {index === currentArticles.length - 2 && currentArticles.length >= 2 && (
-                  <div className="py-4 md:py-6 not-prose">
-                    <AdSlot
-                      slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_03}
-                      format="auto"
-                      position={3}
-                      mockLabel="CATEGORIA #3"
-                    />
-                  </div>
+                  <RevealOnScroll>
+                    <div className="py-4 md:py-6 px-4 sm:px-6">
+                      <div className="not-prose">
+                        <AdSlot
+                          slot={import.meta.env.VITE_ADSENSE_SLOT_CATEGORIA_03}
+                          format="auto"
+                          position={3}
+                          mockLabel="CATEGORIA #3"
+                        />
+                      </div>
+                    </div>
+                  </RevealOnScroll>
                 )}
               </React.Fragment>
               );

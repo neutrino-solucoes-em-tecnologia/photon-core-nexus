@@ -130,16 +130,18 @@ export default function Artigo() {
 
       {/* POSITION 1 - Top Ad (First Fold - Mobile Priority) */}
       {!articleError && (
-        <div className="py-4 md:py-6 px-4 sm:px-6">
-          <div className="not-prose">
-            <AdSlot
-              slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MOBILE_TOP}
-              format="auto"
-              position={1}
-              mockLabel="PRIMEIRA DOBRA"
-            />
+        <RevealOnScroll>
+          <div className="py-4 md:py-6 px-4 sm:px-6">
+            <div className="not-prose">
+              <AdSlot
+                slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MOBILE_TOP}
+                format="auto"
+                position={1}
+                mockLabel="PRIMEIRA DOBRA"
+              />
+            </div>
           </div>
-        </div>
+        </RevealOnScroll>
       )}
 
       {/* Main Container - Full Width */}
@@ -271,14 +273,18 @@ export default function Artigo() {
             </RevealOnScroll>
 
             {/* POSITION 2 - After Hero Image */}
-            <div className="py-4 md:py-6 not-prose">
-              <AdSlot
-                slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_AFTER_HERO}
-                format="auto"
-                position={2}
-                mockLabel="AFTER HERO"
-              />
-            </div>
+            <RevealOnScroll>
+              <div className="py-4 md:py-6 px-4 sm:px-6">
+                <div className="not-prose">
+                  <AdSlot
+                    slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_AFTER_HERO}
+                    format="auto"
+                    position={2}
+                    mockLabel="AFTER HERO"
+                  />
+                </div>
+              </div>
+            </RevealOnScroll>
 
             {/* Hero Image */}
             {article.image_url && (
@@ -325,38 +331,50 @@ export default function Artigo() {
                     
                     {/* POSITION 3 - Mid-Content #1 (~25% of content) */}
                     {index === 0 && (
-                      <div className="py-4 md:py-6 not-prose">
-                        <AdSlot
-                          slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MID_CONTENT_1}
-                          format="auto"
-                          position={3}
-                          mockLabel="MID-CONTENT #1"
-                        />
-                      </div>
+                      <RevealOnScroll>
+                        <div className="py-4 md:py-6 px-4 sm:px-6">
+                          <div className="not-prose">
+                            <AdSlot
+                              slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MID_CONTENT_1}
+                              format="auto"
+                              position={3}
+                              mockLabel="MID-CONTENT #1"
+                            />
+                          </div>
+                        </div>
+                      </RevealOnScroll>
                     )}
                     
                     {/* POSITION 4 - Mid-Content #2 (~50% of content) */}
                     {index === Math.floor(article.paragraphs.length / 2) && (
-                      <div className="py-4 md:py-6 not-prose">
-                        <AdSlot
-                          slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MID_CONTENT_2}
-                          format="auto"
-                          position={4}
-                          mockLabel="MID-CONTENT #2"
-                        />
-                      </div>
+                      <RevealOnScroll>
+                        <div className="py-4 md:py-6 px-4 sm:px-6">
+                          <div className="not-prose">
+                            <AdSlot
+                              slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MID_CONTENT_2}
+                              format="auto"
+                              position={4}
+                              mockLabel="MID-CONTENT #2"
+                            />
+                          </div>
+                        </div>
+                      </RevealOnScroll>
                     )}
                     
                     {/* POSITION 5 - Mid-Content #3 (~75% of content) */}
                     {index === Math.floor(article.paragraphs.length * 0.75) && (
-                      <div className="py-4 md:py-6 not-prose">
-                        <AdSlot
-                          slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MID_CONTENT_3}
-                          format="auto"
-                          position={5}
-                          mockLabel="MID-CONTENT #3"
-                        />
-                      </div>
+                      <RevealOnScroll>
+                        <div className="py-4 md:py-6 px-4 sm:px-6">
+                          <div className="not-prose">
+                            <AdSlot
+                              slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MID_CONTENT_3}
+                              format="auto"
+                              position={5}
+                              mockLabel="MID-CONTENT #3"
+                            />
+                          </div>
+                        </div>
+                      </RevealOnScroll>
                     )}
                   </React.Fragment>
                 ))
@@ -390,14 +408,18 @@ export default function Artigo() {
                 </div>
                 
                 {/* POSITION 6 - Bottom Content Ad */}
-                <div className="py-4 md:py-6 not-prose">
-                  <AdSlot
-                    slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_BOTTOM_CONTENT}
-                    format="auto"
-                    position={6}
-                    mockLabel="BOTTOM CONTENT"
-                  />
-                </div>
+                <RevealOnScroll>
+                  <div className="py-4 md:py-6 px-4 sm:px-6">
+                    <div className="not-prose">
+                      <AdSlot
+                        slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_BOTTOM_CONTENT}
+                        format="auto"
+                        position={6}
+                        mockLabel="BOTTOM CONTENT"
+                      />
+                    </div>
+                  </div>
+                </RevealOnScroll>
                 
                 {/* Share Section */}
                 <div className="mt-10 pt-8 border-t border-border/50 flex items-center justify-between">
@@ -420,16 +442,18 @@ export default function Artigo() {
 
       {/* POSITION 9 - Before Related Articles Ad */}
       {!articleError && (
-        <div className="py-4 md:py-6 px-4 sm:px-6">
-          <div className="not-prose">
-            <AdSlot
-              slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_BEFORE_RELATED_MOBILE}
-              format="auto"
-              position={9}
-              mockLabel="ANTES DE ARTIGOS RELACIONADOS"
-            />
+        <RevealOnScroll>
+          <div className="py-4 md:py-6 px-4 sm:px-6">
+            <div className="not-prose">
+              <AdSlot
+                slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_BEFORE_RELATED_MOBILE}
+                format="auto"
+                position={9}
+                mockLabel="ANTES DE ARTIGOS RELACIONADOS"
+              />
+            </div>
           </div>
-        </div>
+        </RevealOnScroll>
       )}
       
       {/* Related Articles */}
@@ -509,16 +533,18 @@ export default function Artigo() {
       
       {/* POSITION 10 - Final Bottom Ad */}
       {!articleError && (
-        <div className="py-4 md:py-6 px-4 sm:px-6">
-          <div className="not-prose">
-            <AdSlot
-              slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_FINAL_BOTTOM}
-              format="auto"
-              position={10}
-              mockLabel="FINAL BOTTOM"
-            />
+        <RevealOnScroll>
+          <div className="py-4 md:py-6 px-4 sm:px-6">
+            <div className="not-prose">
+              <AdSlot
+                slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_FINAL_BOTTOM}
+                format="auto"
+                position={10}
+                mockLabel="FINAL BOTTOM"
+              />
+            </div>
           </div>
-        </div>
+        </RevealOnScroll>
       )}
     </div>
   );

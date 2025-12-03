@@ -32,16 +32,18 @@ export default function Sobre() {
   return (
     <div>
       {/* First Fold Ad */}
-      <div className="py-4 md:py-6 px-4 sm:px-6">
-        <div className="not-prose">
-          <AdSlot
-            slot={import.meta.env.VITE_ADSENSE_SLOT_SOBRE_TOP}
-            format="auto"
-            position={0}
-            mockLabel="SOBRE PRIMEIRA DOBRA"
-          />
+      <RevealOnScroll>
+        <div className="py-4 md:py-6 px-4 sm:px-6">
+          <div className="not-prose">
+            <AdSlot
+              slot={import.meta.env.VITE_ADSENSE_SLOT_SOBRE_TOP}
+              format="auto"
+              position={0}
+              mockLabel="SOBRE PRIMEIRA DOBRA"
+            />
+          </div>
         </div>
-      </div>
+      </RevealOnScroll>
 
       {/* Hero */}
       <section className="wide-container py-16 md:py-24">
