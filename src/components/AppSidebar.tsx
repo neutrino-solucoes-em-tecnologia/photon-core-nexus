@@ -1,6 +1,5 @@
 import { 
   Home, 
-  Search, 
   ChevronRight, 
   MoreHorizontal, 
   ChevronLeft, 
@@ -37,7 +36,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
 import {
@@ -106,7 +104,6 @@ export function AppSidebar() {
   const { theme, setTheme } = useTheme();
   const { data: categories, isLoading: categoriesLoading } = useCategories();
   const isCollapsed = state === 'collapsed';
-  const [searchQuery, setSearchQuery] = useState('');
   const [showMore, setShowMore] = useState(false);
   const [isInitialized, setIsInitialized] = useState(false);
 
@@ -397,22 +394,6 @@ export function AppSidebar() {
         {/* Divider */}
         {!isCollapsed && (
           <div className="mx-6 border-t border-border/25" />
-        )}
-
-        {/* Search Section */}
-        {!isCollapsed && (
-          <SidebarGroup className="px-3 py-3">
-            <form className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
-              <Input
-                type="search"
-                placeholder="Pesquisar..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-9 bg-muted/30 border-border/50 rounded-lg focus:ring-2 focus:ring-primary/20 transition-all text-sm h-9"
-              />
-            </form>
-          </SidebarGroup>
         )}
 
         {/* Quick Actions */}
