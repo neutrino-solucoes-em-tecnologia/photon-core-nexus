@@ -160,21 +160,33 @@ export default function Footer() {
                 </>
               )}
             </ul>
-          </div>eatures.trabalheConosco.enabled && (
-                <li><Link to={features.trabalheConosco.route} className="hover:text-foreground transition-colors inline-block">Trabalhe Conosco</Link></li>
-              )}
-            </ul>
           </div>
 
           {/* Categorias */}
           <div>
             <h3 className="font-semibold mb-4 text-base">Categorias</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link to="/categoria/tecnologia" className="hover:text-foreground transition-colors inline-block">Tecnologia</Link></li>
-              <li><Link to="/categoria/negocios" className="hover:text-foreground transition-colors inline-block">Negócios</Link></li>
-              <li><Link to="/categoria/inovacao" className="hover:text-foreground transition-colors inline-block">Inovação</Link></li>
-              <li><Link to="/categoria/ciencia" className="hover:text-foreground transition-colors inline-block">Ciência</Link></li>
-              <li><Link to="/categoria/cultura" className="hover:text-foreground transition-colors inline-block">Cultura</Link></li>
+              {topCategories.length > 0 ? (
+                topCategories.map((category) => (
+                  <li key={category.slug}>
+                    <Link 
+                      to={`/categoria/${category.slug}`} 
+                      className="hover:text-foreground transition-colors inline-block"
+                    >
+                      {category.name}
+                    </Link>
+                  </li>
+                ))
+              ) : (
+                // Fallback enquanto carrega
+                <>
+                  <li><Link to="/categoria/tecnologia" className="hover:text-foreground transition-colors inline-block">Tecnologia</Link></li>
+                  <li><Link to="/categoria/negocios" className="hover:text-foreground transition-colors inline-block">Negócios</Link></li>
+                  <li><Link to="/categoria/inovacao" className="hover:text-foreground transition-colors inline-block">Inovação</Link></li>
+                  <li><Link to="/categoria/ciencia" className="hover:text-foreground transition-colors inline-block">Ciência</Link></li>
+                  <li><Link to="/categoria/cultura" className="hover:text-foreground transition-colors inline-block">Cultura</Link></li>
+                </>
+              )}
             </ul>
           </div>
 
