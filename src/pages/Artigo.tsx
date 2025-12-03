@@ -128,26 +128,24 @@ export default function Artigo() {
       </RevealOnScroll>
       )}
 
-      {/* POSITION 1 - Top Mobile Ad (Mobile Only) */}
+      {/* POSITION 1 - Top Ad (First Fold - Mobile Priority) */}
       {!articleError && (
-        <div className="lg:hidden px-4 sm:px-6 pt-4">
-          <div className="not-prose">
+        <div className="px-4 sm:px-6 pt-4">
+          <div className="not-prose max-w-4xl mx-auto">
             <AdSlot
               slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_MOBILE_TOP}
-              format="horizontal"
+              format="auto"
               position={1}
-              mockLabel="MOBILE TOP"
+              mockLabel="PRIMEIRA DOBRA"
             />
           </div>
         </div>
       )}
 
-      {/* Main Container with Sidebar Layout */}
+      {/* Main Container - Full Width */}
       {!articleError && (
-      <div className="relative wide-container py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8">
-          {/* Main Article Column */}
-          <div className="min-w-0">
+      <div className="relative max-w-4xl mx-auto py-8 px-4 sm:px-6">
+        <div className="w-full">
           {/* Main Content */}
           <article className="w-full">
             
@@ -418,49 +416,19 @@ export default function Artigo() {
             ) : null}
 
           </article>
-          </div>
-          
-          {/* Desktop Sticky Sidebar (Positions 7 & 8) */}
-          {!articleError && (
-            <aside className="hidden lg:block">
-              <div className="sticky top-24 space-y-6">
-                {/* POSITION 7 - Sidebar Top (300x600 Half Page - Premium) */}
-                <div className="not-prose">
-                  <AdSlot
-                    slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_SIDEBAR_TOP}
-                    format="vertical"
-                    position={7}
-                    mockLabel="SIDEBAR TOP"
-                    style={{ width: '300px', height: '600px' }}
-                  />
-                </div>
-                
-                {/* POSITION 8 - Sidebar Bottom (300x250 Medium Rectangle) */}
-                <div className="not-prose">
-                  <AdSlot
-                    slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_SIDEBAR_BOTTOM}
-                    format="rectangle"
-                    position={8}
-                    mockLabel="SIDEBAR BOTTOM"
-                    style={{ width: '300px', height: '250px' }}
-                  />
-                </div>
-              </div>
-            </aside>
-          )}
         </div>
       </div>
       )}
 
-      {/* POSITION 9 - Before Related Mobile Ad (Mobile Only) */}
+      {/* POSITION 9 - Before Related Articles Ad */}
       {!articleError && (
-        <div className="lg:hidden px-4 sm:px-6 py-8">
-          <div className="not-prose">
+        <div className="px-4 sm:px-6 py-8">
+          <div className="not-prose max-w-4xl mx-auto">
             <AdSlot
               slot={import.meta.env.VITE_ADSENSE_SLOT_ARTIGO_BEFORE_RELATED_MOBILE}
-              format="horizontal"
+              format="auto"
               position={9}
-              mockLabel="BEFORE RELATED MOBILE"
+              mockLabel="ANTES DE ARTIGOS RELACIONADOS"
             />
           </div>
         </div>
