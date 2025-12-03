@@ -179,7 +179,7 @@ export function AppSidebar() {
                     <img 
                       src={SITE_LOGO} 
                       alt="Photon Logo" 
-                      className="flex-shrink-0 transition-all duration-200 group-hover:scale-110 w-10 h-10"
+                      className="flex-shrink-0 transition-all duration-200 group-hover:scale-110 w-10 h-10 dark:invert dark:brightness-0 dark:contrast-200"
                     />
                     {isCollapsed && (
                       <div className="absolute -inset-1 bg-primary/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 -z-10 blur-sm" />
