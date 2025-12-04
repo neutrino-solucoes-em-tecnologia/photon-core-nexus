@@ -1,16 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { SlidersHorizontal, TrendingUp, Clock, Eye } from 'lucide-react';
+import { TrendingUp, Clock, Eye } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@/components/ui/sheet';
-import { Checkbox } from '@/components/ui/checkbox';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -350,7 +341,6 @@ const mockCategories: Record<string, { title: string; description: string }> = {
 
 export default function Categoria() {
   const { slug } = useParams<{ slug: string }>();
-  const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const { isEnabled, clientId } = useAdSense();
   const itemsPerPage = 12;
@@ -417,77 +407,18 @@ export default function Categoria() {
       <div className="wide-container py-12">
           {/* Main Content */}
           <div>
-            {/* Filter Bar */}
+            {/* Info Bar */}
             <RevealOnScroll>
-              <div className="flex items-center justify-between mb-8 pb-6 border-b border-border/50">
-                <div className="flex items-center gap-3">
-                  <p className="text-muted-foreground font-medium">
-                    <span className="text-foreground font-bold">
-                      {articlesData?.meta.total || 0}
-                    </span> artigos encontrados
-                  </p>
-                  <span className="text-muted-foreground/50">•</span>
-                  <p className="text-muted-foreground text-sm">
-                    Página {currentPage} de {totalPages}
-                  </p>
-                </div>
-                
-                <Sheet>
-                  <SheetTrigger asChild>
-                    <Button variant="outline" className="hover-lift-enhanced shadow-sm hover:shadow-md">
-                      <SlidersHorizontal className="mr-2 h-4 w-4" />
-                      Filtros
-                      {selectedFilters.length > 0 && (
-                        <Badge className="ml-2 bg-primary/20 text-primary border-0 h-5 min-w-5 flex items-center justify-center px-1.5">
-                          {selectedFilters.length}
-                        </Badge>
-                      )}
-                    </Button>
-                  </SheetTrigger>
-                  <SheetContent className="slide-in-right">
-                    <SheetHeader>
-                      <SheetTitle>Filtros Avançados</SheetTitle>
-                      <SheetDescription>
-                        Refine sua busca por conteúdo específico
-                      </SheetDescription>
-                    </SheetHeader>
-                    <div className="mt-6 space-y-6">
-                      <div className="space-y-4">
-                        <h4 className="font-semibold text-sm uppercase tracking-wide text-muted-foreground">Subcategorias</h4>
-                        <div className="space-y-3">
-                          {['IA & Machine Learning', 'Cloud Computing', 'DevOps', 'Segurança'].map((item) => (
-                            <div key={item} className="flex items-center space-x-3 group">
-                              <Checkbox id={item} className="transition-all" />
-                              <label 
-                                htmlFor={item} 
-                                className="text-sm cursor-pointer group-hover:text-foreground transition-colors flex-1"
-                              >
-                                {item}
-                              </label>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      <div className="border-t border-border/50 pt-6 space-y-4">
-                        <h4 className="font-semibold text-sm uppercase tracking-wide text-muted-foreground">Tempo de Leitura</h4>
-                        <div className="space-y-3">
-                          {['Menos de 5 min', '5-10 min', 'Mais de 10 min'].map((item) => (
-                            <div key={item} className="flex items-center space-x-3 group">
-                              <Checkbox id={item} className="transition-all" />
-                              <label 
-                                htmlFor={item} 
-                                className="text-sm cursor-pointer group-hover:text-foreground transition-colors flex-1"
-                              >
-                                {item}
-                              </label>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </SheetContent>
-                </Sheet>
+              <div className="flex items-center gap-3 mb-8 pb-6 border-b border-border/50">
+                <p className="text-muted-foreground font-medium">
+                  <span className="text-foreground font-bold">
+                    {articlesData?.meta.total || 0}
+                  </span> artigos encontrados
+                </p>
+                <span className="text-muted-foreground/50">•</span>
+                <p className="text-muted-foreground text-sm">
+                  Página {currentPage} de {totalPages}
+                </p>
               </div>
             </RevealOnScroll>
 
