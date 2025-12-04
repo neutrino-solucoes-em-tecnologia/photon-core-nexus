@@ -1,5 +1,6 @@
 import { Shield, Lock, Eye, Database, Users, FileText, AlertCircle, CheckCircle, Mail, Cookie } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { siteConfig } from '@/lib/site-config';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Alert, AlertDescription } from '@/components/ui/alert';
@@ -13,7 +14,7 @@ export default function Privacidade() {
       id: 1,
       icon: FileText,
       title: '1. Introdução',
-      content: `A Photon Media ("nós", "nosso" ou "Plataforma") está comprometida em proteger sua privacidade e seus dados pessoais. Esta Política de Privacidade explica como coletamos, usamos, compartilhamos e protegemos suas informações pessoais.
+      content: `A ${siteConfig.name} ("nós", "nosso" ou "Plataforma") está comprometida em proteger sua privacidade e seus dados pessoais. Esta Política de Privacidade explica como coletamos, usamos, compartilhamos e protegemos suas informações pessoais.
 
 Esta política está em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018) e outras regulamentações aplicáveis de privacidade.
 
@@ -337,7 +338,7 @@ O DPO é responsável por:
 • Realizar auditorias de privacidade
 
 Endereço para Correspondência:
-Photon Media - Encarregado de Dados
+${siteConfig.name} - Encarregado de Dados
 Av. Paulista, 1000 - 10º andar
 São Paulo, SP - CEP 01310-100
 

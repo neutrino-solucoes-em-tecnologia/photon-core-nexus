@@ -1,5 +1,6 @@
 import { Globe, Zap, Users, TrendingUp } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { siteConfig } from '@/lib/site-config';
 import AnimatedNumber from '@/components/AnimatedNumber';
 import RevealOnScroll from '@/components/RevealOnScroll';
 import AdSlot from '@/components/AdSlot';
@@ -48,7 +49,7 @@ export default function Sobre() {
       {/* Hero */}
       <section className="wide-container py-16 md:py-24">
         <div className="max-w-3xl mx-auto text-center fade-in">
-          <h1 className="mb-6">Sobre o Photon Media</h1>
+          <h1 className="mb-6">Sobre o {siteConfig.name}</h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
             Somos o núcleo que move o universo do conhecimento digital. Uma rede internacional
             de portais de conteúdo, dedicada a expandir horizontes e conectar ideias.

@@ -1,5 +1,6 @@
 import { Cookie, Settings, Eye, BarChart, Target, Shield, CheckCircle, XCircle, Info, AlertCircle } from 'lucide-react';
 import { useState } from 'react';
+import { siteConfig } from '@/lib/site-config';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
@@ -157,7 +158,7 @@ Tipos de armazenamento:
       id: 2,
       icon: Eye,
       title: '2. Como Usamos Cookies',
-      content: `Usamos cookies para diversos fins na Photon Media:
+      content: `Usamos cookies para diversos fins na ${siteConfig.name}:
 
 Funcionamento do Site:
 • Manter você conectado durante a navegação

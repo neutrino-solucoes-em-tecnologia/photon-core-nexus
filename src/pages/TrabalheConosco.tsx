@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Upload, Briefcase, Users, TrendingUp, Heart, Zap, Award, Send, CheckCircle2, Globe, Coffee } from 'lucide-react';
+import { siteConfig } from '@/lib/site-config';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -164,7 +165,7 @@ export default function TrabalheConosco() {
         {/* Benefits Section */}
         <RevealOnScroll>
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Por que trabalhar na Photon?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Por que trabalhar na {siteConfig.name}?</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Oferecemos muito mais que um emprego. Aqui você cresce profissionalmente enquanto faz a diferença.
             </p>
@@ -358,7 +359,7 @@ export default function TrabalheConosco() {
                     </Label>
                     <Textarea
                       id="message"
-                      placeholder="Conte-nos um pouco sobre você, suas experiências e por que quer trabalhar na Photon Media..."
+                      placeholder={`Conte-nos um pouco sobre você, suas experiências e por que quer trabalhar na ${siteConfig.name}...`}
                       rows={6}
                       required
                       value={formData.message}
@@ -408,7 +409,7 @@ export default function TrabalheConosco() {
                 Nossa Cultura
               </h2>
               <p className="text-lg md:text-xl mb-8 opacity-90 leading-relaxed">
-                Na Photon Media, acreditamos em liberdade criativa, colaboração genuína e impacto real. 
+                Na {siteConfig.name}, acreditamos em liberdade criativa, colaboração genuína e impacto real. 
                 Somos uma equipe diversa, apaixonada por tecnologia e comprometida em criar conteúdo 
                 que faz a diferença no mundo.
               </p>

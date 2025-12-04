@@ -48,9 +48,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { useTheme } from '@/components/theme-provider';
 import { features } from '@/lib/features';
-
-const SITE_LOGO = import.meta.env.VITE_SITE_LOGO || '/photon-logo.svg';
-const SITE_NAME = import.meta.env.VITE_SITE_NAME || 'Photon Media';
+import { siteConfig } from '@/lib/site-config';
 
 // Menu items da navegação principal (fixos)
 const baseMenuItems = [
@@ -178,7 +176,7 @@ export function AppSidebar() {
                 <TooltipTrigger asChild>
                   <div className="relative group cursor-pointer">
                     <img 
-                      src={SITE_LOGO} 
+                      src={siteConfig.logo} 
                       alt="Photon Logo" 
                       className="flex-shrink-0 transition-all duration-200 group-hover:scale-110 w-10 h-10 dark:invert dark:brightness-0 dark:contrast-200"
                     />
@@ -186,7 +184,7 @@ export function AppSidebar() {
                   </div>
                 </TooltipTrigger>
                 <TooltipContent side="right" className="font-bold whitespace-nowrap">
-                  <p className="text-lg">{SITE_NAME}</p>
+                  <p className="text-lg">{siteConfig.name}</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>

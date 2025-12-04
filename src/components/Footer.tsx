@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Linkedin, Youtube, Mail } from 'lucide-react';
 import { features } from '@/lib/features';
-
-const SITE_NAME = import.meta.env.VITE_SITE_NAME || 'Photon Media';
-const SITE_ICON = import.meta.env.VITE_SITE_ICON || '/photon-logo.svg';
+import { siteConfig } from '@/lib/site-config';
 
 export default function Footer() {
   return (
@@ -15,11 +13,11 @@ export default function Footer() {
           <div className="space-y-3">
             <div className="flex items-center space-x-2">
               <img 
-                src={SITE_ICON} 
-                alt={SITE_NAME}
+                src={siteConfig.icon} 
+                alt={siteConfig.name}
                 className="w-8 h-8 dark:invert dark:brightness-0 dark:contrast-200"
               />
-              <span className="text-base font-bold">{SITE_NAME}</span>
+              <span className="text-base font-bold">{siteConfig.name}</span>
             </div>
             <p className="text-xs text-muted-foreground">
               O núcleo que move o universo. Conteúdo inteligente para mentes curiosas.
@@ -80,11 +78,11 @@ export default function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img 
-                src={SITE_ICON} 
-                alt={SITE_NAME}
+                src={siteConfig.icon} 
+                alt={siteConfig.name}
                 className="w-10 h-10 dark:invert dark:brightness-0 dark:contrast-200"
               />
-              <span className="text-lg font-bold">{SITE_NAME}</span>
+              <span className="text-lg font-bold">{siteConfig.name}</span>
             </div>
             <p className="text-sm text-muted-foreground max-w-xs">
               O núcleo que move o universo. Conteúdo inteligente para mentes curiosas.
@@ -148,7 +146,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t mt-6 md:mt-8 pt-6 md:pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-3 md:gap-4 text-xs md:text-sm text-muted-foreground">
-            <p>&copy; {new Date().getFullYear()} {SITE_NAME}. Todos os direitos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} {siteConfig.name}. Todos os direitos reservados.</p>
             <div className="flex items-center gap-3 md:gap-4">
               <Link to="/privacidade" className="hover:text-foreground transition-colors">Privacidade</Link>
               <span>•</span>

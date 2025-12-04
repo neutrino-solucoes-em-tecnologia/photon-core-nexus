@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
 import RevealOnScroll from '@/components/RevealOnScroll';
 import AdSlot from '@/components/AdSlot';
+import { siteConfig } from '@/lib/site-config';
 
 export default function Contato() {
   const { toast } = useToast();
@@ -84,7 +85,7 @@ export default function Contato() {
                 Vamos Conversar?
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                Tem uma pergunta, sugestão ou quer fazer parte do Photon Media? 
+                Tem uma pergunta, sugestão ou quer fazer parte do {siteConfig.name}? 
                 <br className="hidden md:block" />
                 Estamos aqui para ouvir você.
               </p>

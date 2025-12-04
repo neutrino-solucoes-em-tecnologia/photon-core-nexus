@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Download, Image as ImageIcon, FileText, Users, Phone, Mail, Calendar, ExternalLink, Newspaper, Award, TrendingUp, Globe } from 'lucide-react';
+import { siteConfig } from '@/lib/site-config';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -20,7 +21,7 @@ export default function Imprensa() {
   const pressReleases = [
     {
       date: '15 de Outubro, 2024',
-      title: 'Photon Media alcança 5 milhões de leitores mensais',
+      title: `${siteConfig.name} alcança 5 milhões de leitores mensais`,
       excerpt: 'Plataforma de conteúdo inteligente registra crescimento de 150% no último semestre, consolidando posição como referência em jornalismo digital.',
       category: 'Milestone',
     },
@@ -32,13 +33,13 @@ export default function Imprensa() {
     },
     {
       date: '20 de Agosto, 2024',
-      title: 'Photon Media vence prêmio de Inovação Digital 2024',
+      title: `${siteConfig.name} vence prêmio de Inovação Digital 2024`,
       excerpt: 'Reconhecimento destaca excelência em jornalismo investigativo e uso de tecnologia para democratização da informação.',
       category: 'Premiação',
     },
     {
       date: '10 de Julho, 2024',
-      title: 'Expansão internacional: Photon Media chega a 15 países',
+      title: `Expansão internacional: ${siteConfig.name} chega a 15 países`,
       excerpt: 'Nova rodada de investimentos possibilita expansão para América Latina e Europa, com conteúdo localizado e parcerias estratégicas.',
       category: 'Expansão',
     },
@@ -119,7 +120,7 @@ export default function Imprensa() {
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
                 Recursos, releases e contatos para jornalistas e profissionais de comunicação.
                 <br className="hidden md:block" />
-                Informações sempre atualizadas sobre a Photon Media.
+                Informações sempre atualizadas sobre a {siteConfig.name}.
               </p>
             </div>
           </RevealOnScroll>
@@ -151,7 +152,7 @@ export default function Imprensa() {
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Comunicados à Imprensa</h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Últimas notícias e anúncios oficiais da Photon Media
+                Últimas notícias e anúncios oficiais da {siteConfig.name}
               </p>
             </div>
           </RevealOnScroll>
@@ -282,12 +283,12 @@ export default function Imprensa() {
             <CardHeader>
               <CardTitle className="text-2xl flex items-center gap-3">
                 <Globe className="h-6 w-6 text-primary" />
-                Sobre a Photon Media
+                Sobre a {siteConfig.name}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                A <strong className="text-foreground">Photon Media</strong> é uma plataforma de conteúdo digital que revoluciona 
+                A <strong className="text-foreground">{siteConfig.name}</strong> é uma plataforma de conteúdo digital que revoluciona 
                 a forma como as pessoas consomem informação. Fundada em 2020, combinamos jornalismo de qualidade 
                 com tecnologia de ponta para oferecer experiências personalizadas e relevantes.
               </p>

@@ -1,5 +1,6 @@
 import { Shield, FileText, AlertTriangle, Scale, Lock, UserCheck, Globe, Mail } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { siteConfig } from '@/lib/site-config';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Alert, AlertDescription } from '@/components/ui/alert';
@@ -13,9 +14,9 @@ export default function Termos() {
       id: 1,
       icon: FileText,
       title: '1. Aceitação dos Termos',
-      content: `Ao acessar e usar o site Photon Media ("Plataforma"), você concorda em cumprir e estar vinculado aos seguintes Termos de Uso. Se você não concordar com qualquer parte destes termos, não deve usar nossos serviços.
+      content: `Ao acessar e usar o site ${siteConfig.name} ("Plataforma"), você concorda em cumprir e estar vinculado aos seguintes Termos de Uso. Se você não concordar com qualquer parte destes termos, não deve usar nossos serviços.
 
-Estes Termos de Uso constituem um acordo legal entre você ("Usuário") e a Photon Media ("nós", "nosso" ou "Plataforma"). Reservamo-nos o direito de atualizar ou modificar estes termos a qualquer momento, sem aviso prévio.`
+Estes Termos de Uso constituem um acordo legal entre você ("Usuário") e a ${siteConfig.name} ("nós", "nosso" ou "Plataforma"). Reservamo-nos o direito de atualizar ou modificar estes termos a qualquer momento, sem aviso prévio.`
     },
     {
       id: 2,
@@ -35,7 +36,7 @@ Estes Termos de Uso constituem um acordo legal entre você ("Usuário") e a Phot
       id: 3,
       icon: Lock,
       title: '3. Propriedade Intelectual',
-      content: `Todo o conteúdo presente na Plataforma, incluindo mas não limitado a textos, gráficos, logos, imagens, vídeos, áudio e software, é propriedade da Photon Media ou de seus licenciadores e está protegido por leis de direitos autorais e outras leis de propriedade intelectual.
+      content: `Todo o conteúdo presente na Plataforma, incluindo mas não limitado a textos, gráficos, logos, imagens, vídeos, áudio e software, é propriedade da ${siteConfig.name} ou de seus licenciadores e está protegido por leis de direitos autorais e outras leis de propriedade intelectual.
 
 Você não pode:
 • Modificar, publicar, transmitir, participar da transferência ou venda de, criar trabalhos derivados ou explorar de qualquer forma qualquer conteúdo da Plataforma
@@ -67,7 +68,7 @@ Seus direitos (LGPD):
       id: 5,
       icon: Globe,
       title: '5. Conteúdo do Usuário',
-      content: `Se você enviar, publicar ou exibir qualquer conteúdo na Plataforma (comentários, avaliações, etc.), você concede à Photon Media uma licença mundial, não exclusiva, livre de royalties para usar, reproduzir, modificar, adaptar, publicar e distribuir tal conteúdo em qualquer meio.
+      content: `Se você enviar, publicar ou exibir qualquer conteúdo na Plataforma (comentários, avaliações, etc.), você concede à ${siteConfig.name} uma licença mundial, não exclusiva, livre de royalties para usar, reproduzir, modificar, adaptar, publicar e distribuir tal conteúdo em qualquer meio.
 
 Você declara e garante que:
 • Possui ou controla todos os direitos sobre o conteúdo que publica
@@ -97,7 +98,7 @@ Precisão do Conteúdo: Embora nos esforcemos para fornecer informações precis
       id: 7,
       icon: Scale,
       title: '7. Limitação de Responsabilidade',
-      content: `Na extensão máxima permitida por lei, a Photon Media não será responsável por quaisquer danos diretos, indiretos, incidentais, especiais, consequenciais ou punitivos resultantes de:
+      content: `Na extensão máxima permitida por lei, a ${siteConfig.name} não será responsável por quaisquer danos diretos, indiretos, incidentais, especiais, consequenciais ou punitivos resultantes de:
 
 • Uso ou incapacidade de usar a Plataforma
 • Acesso não autorizado ou alteração de suas transmissões ou dados
@@ -173,7 +174,7 @@ Responderemos a todas as consultas dentro de 5 dias úteis.`
                 Termos de Uso
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-4">
-                Leia atentamente os termos e condições de uso da Photon Media
+                Leia atentamente os termos e condições de uso da {siteConfig.name}
               </p>
               <p className="text-sm text-muted-foreground">
                 Última atualização: {lastUpdate}
