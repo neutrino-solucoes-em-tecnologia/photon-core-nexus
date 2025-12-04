@@ -12,4 +12,5 @@ export const siteConfig = {
   title: import.meta.env.VITE_SITE_TITLE || 'Ozônio.site - Terapias com Ozônio Medicinal',
   description: import.meta.env.VITE_SITE_DESCRIPTION || 'Portal especializado em terapias com ozônio medicinal',
   author: import.meta.env.VITE_SITE_AUTHOR || 'Ozônio.site',
+  gtmId: import.meta.env.VITE_GTM_ID || '',
 } as const;
